@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देशबोली - पाठ्यक्रम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles (reused from index.html) */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .course-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .course-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .course-content h3 {
+            color: var(--dark);
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+
+        .course-content p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .course-content a {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .course-content a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        .pagination button {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            transform: translateY(-3px);
+        }
+
+        .pagination button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .pagination span {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Footer (reused from index.html) */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.4s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .courses-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .course-card {
+                margin: 0 auto;
+            }
+
+            .course-img {
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .course-content h3 {
+                font-size: 1.4rem;
+            }
+
+            .course-content p {
+                font-size: 0.95rem;
+            }
+
+            .pagination button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .course-img {
+                height: 130px;
+                font-size: 2rem;
+            }
+
+            .course-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .course-content a {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .pagination button {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <i class="fas fa-language"></i>
+                    <h1>देशबोली</h1>
+                </div>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fullscreen Navigation -->
+    <nav class="fullscreen-nav">
+        <button class="nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#">शब्दकोष</a></li>
+            <li><a href="#">लेख</a></li>
+            <li><a href="#">समुदाय</a></li>
+            <li><a href="#">सदस्यता</a></li>
+        </ul>
+    </nav>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <h2 class="section-title">हमारे पाठ्यक्रम</h2>
+            <div class="courses-grid" id="courses-grid">
+                <!-- Language cards will be dynamically inserted here -->
+            </div>
+            <div class="pagination" id="pagination">
+                <button id="prev-page" disabled><i class="fas fa-chevron-left"></i> पिछला</button>
+                <span id="page-info">Page 1 of 1</span>
+                <button id="next-page"><i class="fas fa-chevron-right"></i> अगला</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>देशबोली</h3>
+                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक्स</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">भाषाएं</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">शब्दकोष</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Toggle (same as index.html)
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        navClose.addEventListener('click', closeNav);
+
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+
+        // Language Data
+        const languages = [
+            { name: 'अवधी', key: 'awadhi', description: 'अवधी भाषा के साहित्य और संस्कृति को जानें।' },
+            { name: 'ब्रजभाषा', key: 'brajbhasha', description: 'ब्रजभाषा की मधुरता और काव्य को अनुभव करें।' },
+            { name: 'भोजपुरी', key: 'bhojpuri', description: 'भोजपुरी की जीवंत संस्कृति और भाषा सीखें।' },
+            { name: 'मगही', key: 'magahi', description: 'मगही की समृद्ध परंपराओं को जानें।' },
+            { name: 'मैथिली', key: 'maithili', description: 'मैथिली की साहित्यिक और सांस्कृतिक गहराई।' },
+            { name: 'अंगिका', key: 'angika', description: 'अंगिका की अनूठी बोली और संस्कृति सीखें।' },
+            { name: 'बघेली', key: 'bagheli', description: 'बघेली भाषा की परंपराओं का अन्वेषण करें।' },
+            { name: 'बुंदेली', key: 'bundeli', description: 'बुंदेली की सांस्कृतिक और ऐतिहासिक विरासत।' },
+            { name: 'कन्नौजी', key: 'kannauji', description: 'कन्नौजी की बोलचाल और साहित्य सीखें।' },
+            { name: 'हरियाणवी', key: 'hariyanvi', description: 'हरियाणवी की जीवंत बोली को अनुभव करें।' },
+            { name: 'मेवाती', key: 'mewati', description: 'मेवाती की अनूठी भाषाई शैली सीखें।' },
+            { name: 'मारवाड़ी', key: 'marwadi', description: 'मारवाड़ी की समृद्ध सांस्कृतिक परंपराएं।' },
+            { name: 'ढूंढाड़ी', key: 'dhundhari', description: 'ढूंढाड़ी की सांस्कृतिक और भाषाई गहराई।' },
+            { name: 'हाड़ौती', key: 'hadoti', description: 'हाड़ौती की परंपराओं और बोली को जानें।' },
+            { name: 'बगड़ी', key: 'bagdi', description: 'बगड़ी की अनूठी बोली और संस्कृति।' },
+            { name: 'मालवी', key: 'malvi', description: 'मालवी भाषा की समृद्ध विरासत सीखें।' },
+            { name: 'निमाड़ी', key: 'nimadi', description: 'निमाड़ी की सांस्कृतिक और भाषाई विशेषताएं।' },
+            { name: 'छत्तीसगढ़ी', key: 'chhattisgarhi', description: 'छत्तीसगढ़ी की जीवंत बोली और संस्कृति।' },
+            { name: 'सदरी', key: 'sadri', description: 'सदरी की लोक परंपराओं को जानें।' },
+            { name: 'खोरठा', key: 'khortha', description: 'खोरठा की अनूठी भाषा और साहित्य।' },
+            { name: 'संताली', key: 'santali', description: 'संताली की आदिवासी भाषा और संस्कृति।' },
+            { name: 'मुंडारी', key: 'mundari', description: 'मुंडारी की समृद्ध आदिवासी परंपराएं।' },
+            { name: 'गोंडी', key: 'gondi', description: 'गोंडी की आदिवासी भाषा और साहित्य।' },
+            { name: 'हलबी', key: 'halbi', description: 'हलबी की सांस्कृतिक और भाषाई विशेषताएं।' },
+            { name: 'बस्तरिया', key: 'bastariya', description: 'बस्तरिया की अनूठी बोली और परंपराएं।' },
+            { name: 'कोंकणी', key: 'konkani', description: 'कोंकणी की तटीय भाषा और संस्कृति।' },
+            { name: 'अहिराणी', key: 'ahirani', description: 'अहिराणी की ग्रामीण बोली और साहित्य।' },
+            { name: 'वरहाड़ी', key: 'varhadi', description: 'वरहाड़ी की जीवंत बोली को जानें।' },
+            { name: 'भटियाली', key: 'bhatiyali', description: 'भटियाली की नदी-प्रधान संस्कृति और बोली।' },
+            { name: 'कांगड़ी', key: 'kangri', description: 'कांगड़ी की पहाड़ी बोली और परंपराएं।' },
+            { name: 'पाहाड़ी', key: 'pahari', description: 'पाहाड़ी की विविध बोलियां और संस्कृति।' },
+            { name: 'गढ़वाली', key: 'garhvali', description: 'गढ़वाली की समृद्ध सांस्कृतिक विरासत।' },
+            { name: 'कुमाऊनी', key: 'kumauni', description: 'कुमाऊनी की पहाड़ी भाषा और साहित्य।' },
+            { name: 'डोगरी', key: 'dogri', description: 'डोगरी की साहित्यिक और सांस्कृतिक गहराई।' },
+            { name: 'कश्मीरी', key: 'kashmiri', description: 'कश्मीरी की काव्यात्मक भाषा और परंपराएं।' },
+            { name: 'लद्दाखी', key: 'ladakhi', description: 'लद्दाखी की अनूठी बोली और संस्कृति।' },
+            { name: 'लेपचा', key: 'lepcha', description: 'लेपचा की आदिवासी भाषा और परंपराएं।' },
+            { name: 'भूटिया', key: 'bhutia', description: 'भूटिया की हिमालयी संस्कृति और बोली।' },
+            { name: 'मणिपुरी', key: 'manipuri', description: 'मणिपुरी की समृद्ध सांस्कृतिक भाषा।' },
+            { name: 'मिजो', key: 'mizo', description: 'मिजो की जीवंत भाषा और परंपराएं।' },
+            { name: 'नागामी', key: 'nagami', description: 'नागामी की अनूठी बोली और संस्कृति।' },
+            { name: 'बोडो', key: 'bodo', description: 'बोडो की आदिवासी भाषा और साहित्य।' },
+            { name: 'कामतापुरी', key: 'kamtapuri', description: 'कामतापुरी की क्षेत्रीय बोली और परंपराएं।' },
+            { name: 'सिलेटी', key: 'sylheti', description: 'सिलेटी की अनूठी भाषा और सांस्कृतिक विरासत।' },
+            { name: 'रायलसीमा तेलुगु', key: 'rayalseema_telugu', description: 'रायलसीमा तेलुगु की क्षेत्रीय शैली सीखें।' },
+            { name: 'तटीय तेलुगु', key: 'coastal_telugu', description: 'तटीय तेलुगु की भाषा और संस्कृति।' },
+            { name: 'कूर्गी', key: 'coorgi', description: 'कूर्गी की अनूठी बोली और सांस्कृतिक विशेषताएं।' },
+            { name: 'तुलु', key: 'tulu', description: 'तुलु की तटीय भाषा और परंपराएं।' },
+            { name: 'कोंगु तमिल', key: 'kongu_tamil', description: 'कोंगु तमिल की क्षेत्रीय शैली और साहित्य।' },
+            { name: 'मालाबारी मलयालम', key: 'malabari_malayalam', description: 'मालाबारी मलयालम की अनूठी शैली सीखें।' }
+        ];
+
+        // Pagination Logic
+        const itemsPerPage = 12;
+        let currentPage = 1;
+        const totalPages = Math.ceil(languages.length / itemsPerPage);
+
+        const coursesGrid = document.getElementById('courses-grid');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const pageInfo = document.getElementById('page-info');
+
+        function renderPage(page) {
+            coursesGrid.innerHTML = '';
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = languages.slice(start, end);
+
+            pageItems.forEach(lang => {
+                const card = document.createElement('div');
+                card.className = 'course-card';
+                card.innerHTML = `
+                    <div class="course-img"><i class="fas fa-language"></i></div>
+                    <div class="course-content">
+                        <h3>${lang.name}</h3>
+                        <p>${lang.description}</p>
+                        <a href="learn.html?lang=${lang.key}">शुरू करें</a>
+                    </div>
+                `;
+                coursesGrid.appendChild(card);
+            });
+
+            pageInfo.textContent = `Page ${page} of ${totalPages}`;
+            prevPageBtn.disabled = page === 1;
+            nextPageBtn.disabled = page === totalPages;
+        }
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPage(currentPage);
+            }
+        });
+
+        // Initial render
+        renderPage(currentPage);
+    </script>
+</body>
+</html>

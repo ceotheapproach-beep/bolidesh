@@ -1,0 +1,126 @@
+{
+    "awadhi": {
+        "title": "अवधी बेसिक पाठ्यक्रम",
+        "description": "अवधी भाषा की मूल बातें सीखें, जिसमें आधारभूत व्याकरण, शब्दावली और उच्चारण शामिल हैं।",
+        "topics": [
+            {
+                "title": "अवधी का परिचय",
+                "summary": "अवधी भाषा का इतिहास और महत्व।",
+                "url": "awadhi_basic_topic1.html"
+            },
+            {
+                "title": "मूल शब्दावली",
+                "summary": "रोजमर्रा के उपयोग के लिए अवधी शब्द।",
+                "url": "awadhi_basic_topic2.html"
+            },
+            {
+                "title": "आधारभूत व्याकरण",
+                "summary": "अवधी में सरल वाक्य संरचना।",
+                "url": "awadhi_basic_topic3.html"
+            },
+            {
+                "title": "उच्चारण और ध्वनियाँ",
+                "summary": "अवधी की ध्वनियों का सही उच्चारण।",
+                "url": "awadhi_basic_topic4.html"
+            },
+            {
+                "title": "सामान्य वाक्य",
+                "summary": "बातचीत के लिए सरल वाक्य।",
+                "url": "awadhi_basic_topic5.html"
+            }
+        ]
+    },
+    "brajbhasha": {
+        "title": "ब्रजभाषा बेसिक पाठ्यक्रम",
+        "description": "ब्रजभाषा की मूल बातें, जिसमें शब्दावली, व्याकरण और सांस्कृतिक संदर्भ शामिल हैं।",
+        "topics": [
+            {
+                "title": "ब्रजभाषा का परिचय",
+                "summary": "ब्रजभाषा का इतिहास और सांस्कृतिक महत्व।",
+                "url": "brajbhasha_basic_topic1.html"
+            },
+            {
+                "title": "प्रारंभिक शब्दावली",
+                "summary": "ब्रजभाषा में रोजमर्रा के शब्द।",
+                "url": "brajbhasha_basic_topic2.html"
+            },
+            {
+                "title": "मूल व्याकरण",
+                "summary": "ब्रजभाषा में सरल वाक्य संरचना।",
+                "url": "brajbhasha_basic_topic3.html"
+            },
+            {
+                "title": "उच्चारण नियम",
+                "summary": "ब्रजभाषा की ध्वनियाँ और उच्चारण।",
+                "url": "brajbhasha_basic_topic4.html"
+            },
+            {
+                "title": "सामान्य संवाद",
+                "summary": "दैनिक जीवन में उपयोगी वाक्य।",
+                "url": "brajbhasha_basic_topic5.html"
+            }
+        ]
+    },
+    "malabari_malayalam": {
+        "title": "मालाबारी मलयालम बेसिक पाठ्यक्रम",
+        "description": "मालाबारी मलयालम की मूल बातें, जिसमें शब्दावली, व्याकरण और उच्चारण शामिल हैं।",
+        "topics": [
+            {
+                "title": "मलयालम का परिचय",
+                "summary": "मालाबारी मलयालम का इतिहास और क्षेत्र।",
+                "url": "malabari_malayalam_basic_topic1.html"
+            },
+            {
+                "title": "मूल शब्दावली",
+                "summary": "दैनिक उपयोग के लिए मलयालम शब्द।",
+                "url": "malabari_malayalam_basic_topic2.html"
+            },
+            {
+                "title": "आधारभूत व्याकरण",
+                "summary": "मलयालम में सरल वाक्य संरचना।",
+                "url": "malabari_malayalam_basic_topic3.html"
+            },
+            {
+                "title": "उच्चारण की मूल बातें",
+                "summary": "मलयालम की ध्वनियाँ और लिपि।",
+                "url": "malabari_malayalam_basic_topic4.html"
+            },
+            {
+                "title": "रोजमर्रा के वाक्य",
+                "summary": "बातचीत के लिए सरल वाक्य।",
+                "url": "malabari_malayalam_basic_topic5.html"
+            }
+        ]
+    },
+    "template_language": {
+        "title": "[Language] बेसिक पाठ्यक्रम",
+        "description": "[Language] की मूल बातें सीखें, जिसमें आधारभूत व्याकरण, शब्दावली और उच्चारण शामिल हैं।",
+        "topics": [
+            {
+                "title": "[Language] का परिचय",
+                "summary": "[Language] का इतिहास और महत्व।",
+                "url": "[language]_basic_topic1.html"
+            },
+            {
+                "title": "मूल शब्दावली",
+                "summary": "रोजमर्रा के उपयोग के लिए [Language] शब्द।",
+                "url": "[language]_basic_topic2.html"
+            },
+            {
+                "title": "आधारभूत व्याकरण",
+                "summary": "[Language] में सरल वाक्य संरचना।",
+                "url": "[language]_basic_topic3.html"
+            },
+            {
+                "title": "उच्चारण और ध्वनियाँ",
+                "summary": "[Language] की ध्वनियों का सही उच्चारण।",
+                "url": "[language]_basic_topic4.html"
+            },
+            {
+                "title": "सामान्य वाक्य",
+                "summary": "बातचीत के लिए सरल वाक्य।",
+                "url": "[language]_basic_topic5.html"
+            }
+        ]
+    }
+}

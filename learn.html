@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देशबोली - भाषा पाठ्यक्रम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .course-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .course-hero h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .course-hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 20px auto;
+            font-weight: 300;
+        }
+
+        .levels {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+
+        .level-link {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .level-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .level-link.premium {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        }
+
+        .course-content {
+            padding: 80px 0;
+        }
+
+        #welcome-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        #welcome-content h3 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        #welcome-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .levels {
+                flex-direction: column;
+            }
+
+            .course-hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .course-hero p {
+                font-size: 1.2rem;
+            }
+
+            #welcome-content {
+                padding: 25px;
+            }
+
+            #welcome-content h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .course-hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .course-hero p {
+                font-size: 1rem;
+            }
+
+            #welcome-content {
+                padding: 20px;
+            }
+
+            #welcome-content h3 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <i class="fas fa-language"></i>
+                    <h1>देशबोली</h1>
+                </div>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fullscreen Navigation -->
+    <nav class="fullscreen-nav">
+        <button class="nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">होम</a></li>
+            <li><a href="#">भाषाएं</a></li>
+            <li><a href="course.html">पाठ्यक्रम</a></li>
+            <li><a href="#">शब्दकोष</a></li>
+            <li><a href="#">लेख</a></li>
+            <li><a href="#">समुदाय</a></li>
+            <li><a href="#">सदस्यता</a></li>
+        </ul>
+    </nav>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+        <div class="container">
+            <h2 id="course-title">देशबोली पाठ्यक्रम</h2>
+            <p id="course-description">भारत की समृद्ध भाषाई और सांस्कृतिक विरासत को सीखें। अपनी पसंदीदा भाषा और स्तर चुनें।</p>
+        </div>
+    </section>
+
+    <!-- Levels Links -->
+    <div class="levels">
+        <a id="basic-link" href="#" class="level-link" data-level="basic">बेसिक (निःशुल्क)</a>
+        <a id="intermediate-link" href="#" class="level-link premium" data-level="intermediate">इंटरमीडिएट (प्रीमियम)</a>
+        <a id="advanced-link" href="#" class="level-link premium" data-level="advanced">एडवांस्ड (प्रीमियम)</a>
+    </div>
+
+    <!-- Welcome Content -->
+    <section class="course-content">
+        <div class="container">
+            <div id="welcome-content">
+                <h3>देशबोली में आपका स्वागत है</h3>
+                <p>हमारा मंच भारत की विविध भाषाओं और बोलियों को सीखने और संरक्षित करने के लिए समर्पित है। ऊपर दिए गए स्तरों में से किसी एक को चुनकर अपनी पसंदीदा भाषा की यात्रा शुरू करें।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>देशबोली</h3>
+                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच।</p>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक्स</h3>
+                    <ul>
+                        <li><a href="index.html">होम</a></li>
+                        <li><a href="course.html">पाठ्यक्रम</a></li>
+                        <li><a href="#">शब्दकोष</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+
+        navToggle.addEventListener('click', () => {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        navClose.addEventListener('click', closeNav);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+
+        fullscreenNav.addEventListener('click', (e) => {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+
+        // Set Level Links
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang');
+
+        if (lang) {
+            document.getElementById('basic-link').href = `basic.html?lang=${lang}`;
+            document.getElementById('intermediate-link').href = `intermediate.html?lang=${lang}`;
+            document.getElementById('advanced-link').href = `advanced.html?lang=${lang}`;
+        } else {
+            document.getElementById('basic-link').href = 'course.html';
+            document.getElementById('intermediate-link').href = 'course.html';
+            document.getElementById('advanced-link').href = 'course.html';
+            document.getElementById('welcome-content').innerHTML = `
+                <h3>कोई भाषा नहीं चुनी गई</h3>
+                <p>कृपया <a href="course.html">पाठ्यक्रम</a> पेज पर वापस जाकर एक भाषा चुनें।</p>
+            `;
+        }
+    </script>
+</body>
+</html>

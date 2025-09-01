@@ -1,0 +1,146 @@
+{
+    "awadhi": {
+        "title": "अवधी एडवांस्ड पाठ्यक्रम",
+        "description": "अवधी की उन्नत विशेषताओं और क्विज़ के साथ अपनी महारत हासिल करें।",
+        "topics": [
+            {
+                "title": "उन्नत व्याकरण क्विज़",
+                "summary": "अवधी में जटिल व्याकरण पर प्रश्न।",
+                "url": "awadhi_advanced_topic1.html",
+                "isQuiz": true
+            },
+            {
+                "title": "रामचरितमानस का विश्लेषण",
+                "summary": "तुलसीदास के महाकाव्य का गहन अध्ययन।",
+                "url": "awadhi_advanced_topic2.html",
+                "isQuiz": false
+            },
+            {
+                "title": "सांस्कृतिक संदर्भ क्विज़",
+                "summary": "अवधी संस्कृति और साहित्य पर प्रश्न।",
+                "url": "awadhi_advanced_topic3.html",
+                "isQuiz": true
+            },
+            {
+                "title": "भाषाई विकास",
+                "summary": "अवधी भाषा का ऐतिहासिक विकास।",
+                "url": "awadhi_advanced_topic4.html",
+                "isQuiz": false
+            },
+            {
+                "title": "उन्नत शब्दावली क्विज़",
+                "summary": "अवधी के जटिल शब्द और उनके अर्थ।",
+                "url": "awadhi_advanced_topic5.html",
+                "isQuiz": true
+            }
+        ]
+    },
+    "brajbhasha": {
+        "title": "ब्रजभाषा एडवांस्ड पाठ्यक्रम",
+        "description": "ब्रजभाषा की उन्नत विशेषताओं और क्विज़ के साथ गहन अध्ययन।",
+        "topics": [
+            {
+                "title": "काव्य विश्लेषण क्विज़",
+                "summary": "सूरदास के पदों पर आधारित प्रश्न।",
+                "url": "brajbhasha_advanced_topic1.html",
+                "isQuiz": true
+            },
+            {
+                "title": "भक्ति आंदोलन का इतिहास",
+                "summary": "ब्रजभाषा में भक्ति साहित्य का विकास।",
+                "url": "brajbhasha_advanced_topic2.html",
+                "isQuiz": false
+            },
+            {
+                "title": "उन्नत व्याकरण",
+                "summary": "ब्रजभाषा की जटिल संरचनाएँ।",
+                "url": "brajbhasha_advanced_topic3.html",
+                "isQuiz": false
+            },
+            {
+                "title": "लोकगीत क्विज़",
+                "summary": "होरी और अन्य लोकगीतों पर प्रश्न।",
+                "url": "brajbhasha_advanced_topic4.html",
+                "isQuiz": true
+            },
+            {
+                "title": "आधुनिक उपयोग",
+                "summary": "समकालीन ब्रजभाषा का उपयोग।",
+                "url": "brajbhasha_advanced_topic5.html",
+                "isQuiz": false
+            }
+        ]
+    },
+    "malabari_malayalam": {
+        "title": "मालाबारी मलयालम एडवांस्ड पाठ्यक्रम",
+        "description": "मालाबारी मलयालम की उन्नत विशेषताओं और क्विज़ के साथ गहराई से सीखें।",
+        "topics": [
+            {
+                "title": "उन्नत व्याकरण क्विज़",
+                "summary": "मलयालम में जटिल क्रिया रूप और संरचनाएँ।",
+                "url": "malabari_malayalam_advanced_topic1.html",
+                "isQuiz": true
+            },
+            {
+                "title": "बाल्यकालसखी का विश्लेषण",
+                "summary": "मदाथ थीवर की कृति का गहन अध्ययन।",
+                "url": "malabari_malayalam_advanced_topic2.html",
+                "isQuiz": false
+            },
+            {
+                "title": "सांस्कृतिक क्विज़",
+                "summary": "केरल की संस्कृति पर आधारित प्रश्न।",
+                "url": "malabari_malayalam_advanced_topic3.html",
+                "isQuiz": true
+            },
+            {
+                "title": "भाषाई विकास",
+                "summary": "मलयालम भाषा का ऐतिहासिक विकास।",
+                "url": "malabari_malayalam_advanced_topic4.html",
+                "isQuiz": false
+            },
+            {
+                "title": "उन्नत शब्दावली क्विज़",
+                "summary": "मलयालम के जटिल शब्द और अर्थ।",
+                "url": "malabari_malayalam_advanced_topic5.html",
+                "isQuiz": true
+            }
+        ]
+    },
+    "template_language": {
+        "title": "[Language] एडवांस्ड पाठ्यक्रम",
+        "description": "[Language] की उन्नत विशेषताओं और क्विज़ के साथ गहन अध्ययन।",
+        "topics": [
+            {
+                "title": "उन्नत व्याकरण क्विज़",
+                "summary": "[Language] में जटिल व्याकरण पर प्रश्न।",
+                "url": "[language]_advanced_topic1.html",
+                "isQuiz": true
+            },
+            {
+                "title": "साहित्य विश्लेषण",
+                "summary": "[Language] के प्रमुख साहित्यिक कार्य का अध्ययन।",
+                "url": "[language]_advanced_topic2.html",
+                "isQuiz": false
+            },
+            {
+                "title": "सांस्कृतिक क्विज़",
+                "summary": "[Language] की संस्कृति पर प्रश्न।",
+                "url": "[language]_advanced_topic3.html",
+                "isQuiz": true
+            },
+            {
+                "title": "भाषाई विकास",
+                "summary": "[Language] का ऐतिहासिक विकास।",
+                "url": "[language]_advanced_topic4.html",
+                "isQuiz": false
+            },
+            {
+                "title": "उन्नत शब्दावली क्विज़",
+                "summary": "[Language] के जटिल शब्द और अर्थ।",
+                "url": "[language]_advanced_topic5.html",
+                "isQuiz": true
+            }
+        ]
+    }
+}

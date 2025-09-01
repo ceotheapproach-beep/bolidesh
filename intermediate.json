@@ -1,0 +1,126 @@
+{
+    "awadhi": {
+        "title": "अवधी इंटरमीडिएट पाठ्यक्रम",
+        "description": "अवधी साहित्य और भाषा की गहराई में उतरें, जिसमें काव्य, लोककथाएँ और व्याकरण शामिल हैं।",
+        "topics": [
+            {
+                "title": "रामचरितमानस का परिचय",
+                "summary": "तुलसीदास द्वारा लिखित महाकाव्य का अवलोकन।",
+                "url": "awadhi_intermediate_topic1.html"
+            },
+            {
+                "title": "पद्मावत और जायसी",
+                "summary": "मलिक मुहम्मद जायसी की रचना का अध्ययन।",
+                "url": "awadhi_intermediate_topic2.html"
+            },
+            {
+                "title": "लोकगीत और कजरी",
+                "summary": "अवधी लोक साहित्य और गीत।",
+                "url": "awadhi_intermediate_topic3.html"
+            },
+            {
+                "title": "भक्ति साहित्य",
+                "summary": "अवधी में भक्ति काव्य की परंपरा।",
+                "url": "awadhi_intermediate_topic4.html"
+            },
+            {
+                "title": "आधुनिक अवधी साहित्य",
+                "summary": "समकालीन अवधी लेखन और रचनाएँ।",
+                "url": "awadhi_intermediate_topic5.html"
+            }
+        ]
+    },
+    "brajbhasha": {
+        "title": "ब्रजभाषा इंटरमीडिएट पाठ्यक्रम",
+        "description": "ब्रजभाषा के काव्य और सांस्कृतिक पहलुओं को गहराई से समझें।",
+        "topics": [
+            {
+                "title": "सूरदास के पद",
+                "summary": "सूरदास के कृष्ण भक्ति काव्य का अध्ययन।",
+                "url": "brajbhasha_intermediate_topic1.html"
+            },
+            {
+                "title": "रामचंद्रिका",
+                "summary": "केशवदास की रचना और उसका महत्व।",
+                "url": "brajbhasha_intermediate_topic2.html"
+            },
+            {
+                "title": "होरी गीत",
+                "summary": "ब्रजभाषा के लोकगीत और उनकी परंपरा।",
+                "url": "brajbhasha_intermediate_topic3.html"
+            },
+            {
+                "title": "भक्ति आंदोलन",
+                "summary": "ब्रज में भक्ति साहित्य का विकास।",
+                "url": "brajbhasha_intermediate_topic4.html"
+            },
+            {
+                "title": "आधुनिक ब्रज साहित्य",
+                "summary": "समकालीन ब्रजभाषा लेखन।",
+                "url": "brajbhasha_intermediate_topic5.html"
+            }
+        ]
+    },
+    "malabari_malayalam": {
+        "title": "मालाबारी मलयालम इंटरमीडिएट पाठ्यक्रम",
+        "description": "मालाबारी मलयालम के साहित्य और सांस्कृतिक पहलुओं की खोज करें।",
+        "topics": [
+            {
+                "title": "बाल्यकालसखी",
+                "summary": "मदाथ थीवर की कृति का अध्ययन।",
+                "url": "malabari_malayalam_intermediate_topic1.html"
+            },
+            {
+                "title": "मप्पिलाप्पाट्टु",
+                "summary": "मालाबारी मलयालम के लोकगीत।",
+                "url": "malabari_malayalam_intermediate_topic2.html"
+            },
+            {
+                "title": "आधुनिक कथा साहित्य",
+                "summary": "समकालीन मलयालम कहानियाँ।",
+                "url": "malabari_malayalam_intermediate_topic3.html"
+            },
+            {
+                "title": "कविता परंपरा",
+                "summary": "मलयालम काव्य का विकास।",
+                "url": "malabari_malayalam_intermediate_topic4.html"
+            },
+            {
+                "title": "सांस्कृतिक साहित्य",
+                "summary": "मालाबारी संस्कृति का साहित्यिक प्रभाव।",
+                "url": "malabari_malayalam_intermediate_topic5.html"
+            }
+        ]
+    },
+    "template_language": {
+        "title": "[Language] इंटरमीडिएट पाठ्यक्रम",
+        "description": "[Language] के साहित्य और भाषा की गहराई में उतरें।",
+        "topics": [
+            {
+                "title": "[Language] साहित्य का परिचय",
+                "summary": "[Language] के प्रमुख साहित्यिक कार्य।",
+                "url": "[language]_intermediate_topic1.html"
+            },
+            {
+                "title": "लोक साहित्य",
+                "summary": "[Language] के लोकगीत और कहानियाँ।",
+                "url": "[language]_intermediate_topic2.html"
+            },
+            {
+                "title": "मध्यकालीन साहित्य",
+                "summary": "[Language] का ऐतिहासिक साहित्य।",
+                "url": "[language]_intermediate_topic3.html"
+            },
+            {
+                "title": "आधुनिक लेखन",
+                "summary": "[Language] में समकालीन रचनाएँ।",
+                "url": "[language]_intermediate_topic4.html"
+            },
+            {
+                "title": "सांस्कृतिक संदर्भ",
+                "summary": "[Language] की संस्कृति और साहित्य।",
+                "url": "[language]_intermediate_topic5.html"
+            }
+        ]
+    }
+}

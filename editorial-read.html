@@ -1,0 +1,626 @@
+<!-- editorial-read.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देशबोली - संपादकीय पढ़ें</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Improved CSS with better article styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* Header, Nav, Footer same as editorial.html */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        /* Article Section Improved */
+        .article-section {
+            margin: 80px 0;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+        
+        .article-date {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 30px 0 15px;
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .back-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer same */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }   
+        /* Loading and Error */
+        .loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 50px 0;
+        }
+        
+        .error {
+            text-align: center;
+            font-size: 1.2rem;
+            color: red;
+            margin: 50px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .article-section {
+                padding: 20px;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <i class="fas fa-language"></i>
+                    <h1>देशबोली</h1>
+                </div>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="fullscreen-nav">
+        <button class="nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#">होम</a></li>
+            <li><a href="#">भाषाएं</a></li>
+            <li><a href="#">पाठ्यक्रम</a></li>
+            <li><a href="#">शब्दकोष</a></li>
+            <li><a href="#">लेख</a></li>
+            <li><a href="#">समुदाय</a></li>
+            <li><a href="#">सदस्यता</a></li>
+        </ul>
+    </nav>
+
+    <section class="container article-section">
+        <div id="loading" class="loading">लोड हो रहा है...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <h1 class="article-title" id="article-title" style="display: none;"></h1>
+        <div class="article-date" id="article-date" style="display: none;"></div>
+        <div class="article-content" id="article-content" style="display: none;"></div>
+        <a href="editorial.html" class="back-btn" id="back-btn" style="display: none;">वापस संपादकीय पृष्ठ पर</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>देशबोली</h3>
+                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक्स</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">होम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">भाषाएं</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">पाठ्यक्रम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">शब्दकोष</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">लेख</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संसाधन</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">डाउनलोड</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">सहायता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">सदस्यता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">समुदाय</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">योगदान दें</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                    </ul>
+                    <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                    <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                    <form class="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                        <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                        <button type="submit">सब्सक्राइब करें</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-badges">
+                <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="#">गोपनीयता नीति</a> | <a href="#">उपयोग की शर्तें</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Script same as above
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+
+        navToggle.addEventListener('click', () => {
+            if (isNavOpen) closeNav();
+            else openNav();
+        });
+
+        navClose.addEventListener('click', closeNav);
+
+        document.querySelectorAll('.nav-menu a').forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && isNavOpen) closeNav();
+        });
+
+        fullscreenNav.addEventListener('click', e => {
+            if (e.target === fullscreenNav) closeNav();
+        });
+
+        // Article Script with loading and error handling
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = decodeURIComponent(urlParams.get('title'));
+        const loading = document.getElementById('loading');
+        const errorDiv = document.getElementById('error');
+        const articleTitle = document.getElementById('article-title');
+        const articleDate = document.getElementById('article-date');
+        const articleContent = document.getElementById('article-content');
+        const backBtn = document.getElementById('back-btn');
+
+        async function loadArticle() {
+            try {
+                const response = await fetch('editorial.json');
+                if (!response.ok) {
+                    throw new Error('JSON फ़ाइल लोड करने में त्रुटि: ' + response.status);
+                }
+                const articles = await response.json();
+                const article = articles.find(a => a.title === title);
+                if (article) {
+                    articleTitle.textContent = article.title;
+                    articleDate.textContent = article.date;
+                    articleContent.innerHTML = article.content;
+                    loading.style.display = 'none';
+                    articleTitle.style.display = 'block';
+                    articleDate.style.display = 'block';
+                    articleContent.style.display = 'block';
+                    backBtn.style.display = 'inline-block';
+                } else {
+                    throw new Error('संपादकीय नहीं मिला: ' + title);
+                }
+            } catch (error) {
+                loading.style.display = 'none';
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = 'डेटा लोड करने में त्रुटि: ' + error.message + '. कृपया सुनिश्चित करें कि editorial.json फ़ाइल मौजूद है।';
+            }
+        }
+
+        if (title) {
+            loadArticle();
+        } else {
+            loading.style.display = 'none';
+            errorDiv.style.display = 'block';
+            errorDiv.textContent = 'कोई शीर्षक निर्दिष्ट नहीं किया गया।';
+        }
+    </script>
+</body>
+</html>

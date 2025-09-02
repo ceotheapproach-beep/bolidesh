@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उपयोग की शर्तें - देशबोली</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset और Base स्टाइल्स */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* मुख्य लेआउट */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* हैडर और नेविगेशन */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100 Aeronautics Engineer, backdrop-filter: blur(10px);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo img {
+            height: 45px;
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* हॅमबर्गर मेन्यू */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 102;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fullscreen-nav.active .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(7) { transition-delay: 0.7s; }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+        
+        /* उपयोग की शर्तें सेक्शन */
+        .terms-section {
+            padding: 80px 0;
+            background-color: white;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .terms-section h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .terms-section h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .terms-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .terms-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        /* फुटर */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: varROS: 0;
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            miércoles color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* रिस्पॉन्सिव स्टाइल्स */
+        @media (max-width: 1200px) {
+            .terms-section h1 {
+                font-size: 2.8rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .terms-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .terms-section p, .terms-section li {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .terms-section {
+                padding: 60px 0;
+            }
+            
+            .terms-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header-logo h1 {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .terms-section h1 {
+                font-size: 1.9rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.4rem;
+            }
+            
+            .terms-section p, .terms-section li {
+                font-size: 0.95rem;
+            }
+            
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- मुख्य कंटेंट -->
+    <div class="main-content">
+        <!-- हैडर -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <i class="fas fa-language" style="font-size: 36px; color: var(--primary);"></i>
+                        <h1>देशबोली</h1>
+                    </div>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- फुलस्क्रीन नेविगेशन मेन्यू -->
+        <nav class="fullscreen-nav">
+            <button class="nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+               <!-- <li><a href="course.html">पाठ्यक्रम</a></li>-->
+                <li><a href="dictionary.html">शब्दकोष</a></li>
+                <li><a href="editorial.html.html">लेख</a></li>
+                <li><a href="community.html.html">समुदाय</a></li>
+                <li><a href="subscription.html">सदस्यता</a></li>
+            </ul>
+        </nav>
+
+        <!-- उपयोग की शर्तें सेक्शन -->
+        <section class="terms-section">
+            <div class="container">
+                <h1>उपयोग की शर्तें</h1>
+                
+                <h2>परिचय</h2>
+                <p>देशबोली में आपका स्वागत है, जो भारत की समृद्ध भाषाई और सांस्कृतिक विरासत को समर्पित एक डिजिटल मंच है। हमारा उद्देश्य भारत की 22 आधिकारिक भाषाओं और सैकड़ों बोलियों को संरक्षित, प्रचारित और सीखने का अवसर प्रदान करना है। यह उपयोग की शर्तें (जिन्हें आगे "शर्तें" कहा जाएगा) देशबोली वेबसाइट (www.deshboli.in), मोबाइल ऐप, और संबंधित सेवाओं (सामूहिक रूप से "मंच") के उपयोग को नियंत्रित करती हैं। मंच का उपयोग करके, आप इन शर्तों को स्वीकार करते हैं। यदि आप इनसे सहमत नहीं हैं, तो कृपया मंच का उपयोग न करें।</p>
+                <p>ये शर्तें एक कानूनी अनुबंध की तरह हैं, जो हमारे और आपके बीच एक समझौता बनाती हैं। जैसे एक गांव में सामुदायिक नियम सभी को सामंजस्य में रखते हैं, वैसे ही ये शर्तें सुनिश्चित करती हैं कि हमारा मंच एक सुरक्षित, सम्मानजनक और उपयोगी स्थान रहे। यह दस्तावेज़ 1 सितंबर 2025 से प्रभावी है और समय-समय पर अपडेट हो सकता है। हम आपको सलाह देते हैं कि नियमित रूप से इन शर्तों की समीक्षा करें। मंच का निरंतर उपयोग अपडेटेड शर्तों की स्वीकृति माना जाएगा।</p>
+                <p>हमारी सेवाएं पाठ्यक्रम, शब्दकोष, लेख, संपादकीय, और समुदाय जैसे फीचर्स प्रदान करती हैं। ये शर्तें सभी उपयोगकर्ताओं पर लागू होती हैं, चाहे आप एक आगंतुक हों, पंजीकृत उपयोगकर्ता हों, या सदस्यता धारक हों। हमारा मंच भारत के डेटा संरक्षण कानूनों, GDPR, और अन्य प्रासंगिक नियमों का पालन करता है। इस दस्तावेज़ में हम मंच के उपयोग, सामग्री, भुगतान, और उपयोगकर्ता दायित्वों जैसे सभी पहलुओं को विस्तार से कवर करेंगे।</p>
+                
+                <h2>मंच का उपयोग</h2>
+                <p>देशबोली मंच का उपयोग केवल वैध और कानूनी उद्देश्यों के लिए किया जा सकता है। आपको निम्नलिखित नियमों का पालन करना होगा:</p>
+                <ul>
+                    <li>आप कम से कम 13 वर्ष के होने चाहिए। 13 वर्ष से कम आयु के उपयोगकर्ताओं को अभिभावक की सहमति की आवश्यकता है।</li>
+                    <li>आप मंच पर कोई भी ऐसी सामग्री पोस्ट नहीं करेंगे जो अवैध, अपमानजनक, अश्लील, या भेदभावपूर्ण हो।</li>
+                    <li>आप मंच के तकनीकी ढांचे को नुकसान पहुंचाने, हैक करने, या अनधिकृत पहुंच का प्रयास नहीं करेंगे।</li>
+                    <li>आप मंच की सामग्री को व्यावसायिक उद्देश्यों के लिए उपयोग नहीं करेंगे, बिना हमारी लिखित अनुमति के।</li>
+                </ul>
+                <p>उदाहरण के लिए, यदि आप हमारे समुदाय में एक लेख साझा करते हैं, तो वह मूल और गैर-आपत्तिजनक होना चाहिए। हम मंच पर उपयोगकर्ता व्यवहार की निगरानी करते हैं और अनुचित गतिविधियों के लिए खाता निलंबन या समाप्ति का अधिकार सुरक्षित रखते हैं। मंच का उपयोग एक पुस्तकालय की तरह है – सभी के लिए सुलभ, लेकिन नियमों का सम्मान करना अनिवार्य है।</p>
+                
+                <h2>खाता और पंजीकरण</h2>
+                <p>कुछ फीचर्स, जैसे पाठ्यक्रम या समुदाय में भाग लेना, के लिए खाता पंजीकरण आवश्यक है। आपको सटीक और अद्यतन जानकारी प्रदान करनी होगी। उदाहरण के लिए, यदि आप गलत ईमेल दर्ज करते हैं, तो आप न्यूज़लेटर या अपडेट प्राप्त नहीं कर पाएंगे। आप अपने खाते की सुरक्षा के लिए जिम्मेदार हैं। मजबूत पासवर्ड का उपयोग करें और इसे गोपनीय रखें। यदि आपका खाता हैक होता है, तो तुरंत हमें सूचित करें। हम खाता गतिविधियों की निगरानी करते हैं और संदिग्ध व्यवहार पर कार्रवाई कर सकते हैं।</p>
+                <p>खाता समाप्ति स्वैच्छिक या अनैच्छिक हो सकती है। यदि आप नियम तोड़ते हैं, जैसे कॉपीराइट सामग्री पोस्ट करना, तो हम आपका खाता निलंबित कर सकते हैं। आप कभी भी अपना खाता डिलीट करने का अनुरोध कर सकते हैं, और हम डेटा हटाने की प्रक्रिया शुरू करेंगे, जैसा कि हमारी गोपनीयता नीति में वर्णित है।</p>
+                
+                <h2>सामग्री और बौद्धिक संपदा</h2>
+                <p>देशबोली पर उपलब्ध सभी सामग्री, जैसे पाठ्यक्रम, शब्दकोष, और लेख, हमारी बौद्धिक संपदा है। यह सामग्री कॉपीराइट, ट्रेडमार्क, और अन्य कानूनों द्वारा संरक्षित है। आप इस सामग्री का उपयोग व्यक्तिगत, गैर-व्यावसायिक उद्देश्यों के लिए कर सकते हैं, लेकिन इसे कॉपी, वितरित, या संशोधित नहीं कर सकते। उदाहरण के लिए, आप हमारे भोजपुरी शब्दकोष को सीखने के लिए उपयोग कर सकते हैं, लेकिन इसे किसी अन्य वेबसाइट पर प्रकाशित नहीं कर सकते।</p>
+                <p>यदि आप सामग्री योगदान करते हैं, जैसे एक लेख या टिप्पणी, तो आप हमें इसे उपयोग करने, संशोधित करने, और प्रदर्शित करने का गैर-अनन्य, रॉयल्टी-मुक्त लाइसेंस प्रदान करते हैं। आप यह सुनिश्चित करेंगे कि आपकी सामग्री मूल हो और किसी तीसरे पक्ष के अधिकारों का उल्लंघन न करे। यदि आपकी सामग्री कॉपीराइट का उल्लंघन करती है, तो हम उसे हटा सकते हैं और आपके खिलाफ कार्रवाई कर सकते हैं।</p>
+                
+                <h2>उपयोगकर्ता-जनित सामग्री</h2>
+                <p>हमारा समुदाय उपयोगकर्ताओं को लेख, टिप्पणियां, और अन्य सामग्री साझा करने की अनुमति देता है। यह सामग्री सम्मानजनक और प्रासंगिक होनी चाहिए। उदाहरण के लिए, यदि आप एक लोककथा साझा करते हैं, तो सुनिश्चित करें कि वह आपकी मूल रचना हो या आपके पास उपयोग का अधिकार हो। हम अनुचित सामग्री, जैसे घृणास्पद भाषण या अश्लील सामग्री, को हटाने का अधिकार सुरक्षित रखते हैं। उपयोगकर्ता-जनित सामग्री की निगरानी की जाती है, लेकिन हम हर पोस्ट के लिए जिम्मेदार नहीं हैं।</p>
+                <p>आपकी सामग्री साझा करने से पहले, विचार करें कि यह एक सार्वजनिक मंच है। जैसे एक गांव के चौपाल में बातचीत, आपकी सामग्री दूसरों द्वारा देखी जाएगी। यदि आपकी सामग्री विवादास्पद पाई जाती है, तो हम उसे हटा सकते हैं और आपके खाते पर प्रतिबंध लगा सकते हैं।</p>
+                
+                <h2>सदस्यता और भुगतान</h2>
+                <p>देशबोली मुफ्त और सशुल्क दोनों तरह की सेवाएं प्रदान करता है। सशुल्क सेवाओं, जैसे प्रीमियम पाठ्यक्रम, के लिए भुगतान सुरक्षित थर्ड-पार्टी गेटवे के माध्यम से किया जाता है। आपको भुगतान से पहले सभी शुल्क और शर्तें स्पष्ट रूप से दिखाई देंगी। उदाहरण के लिए, यदि आप एक तमिल भाषा कोर्स की सदस्यता लेते हैं, तो आपको लागत और अवधि की जानकारी दी जाएगी।</p>
+                <p>सदस्यता स्वतः नवीनीकरण योग्य हो सकती है, और आप इसे रद्द कर सकते हैं। रिफंड नीति सीमित है – केवल तभी लागू होती है जब सेवा प्रदान नहीं की गई हो। हम भुगतान विवरण स्टोर नहीं करते; यह थर्ड-पार्टी प्रोसेसर द्वारा प्रबंधित होता है। यदि कोई विवाद होता है, तो हम मध्यस्थता के माध्यम से समाधान करेंगे।</p>
+                
+                <h2>स्वीकार्य उपयोग नीति</h2>
+                <p>मंच का उपयोग केवल स्वीकार्य गतिविधियों के लिए किया जा सकता है। निम्नलिखित गतिविधियां निषिद्ध हैं:</p>
+                <ul>
+                    <li>अवैध सामग्री अपलोड करना।</li>
+                    <li>मंच की तकनीकी प्रणाली को नुकसान पहुंचाना।</li>
+                    <li>अन्य उपयोगकर्ताओं को परेशान करना या धमकाना।</li>
+                    <li>मंच का उपयोग स्पैम या विज्ञापन के लिए करना।</li>
+                </ul>
+                <p>उदाहरण के लिए, यदि आप बार-बार अनुचित टिप्पणियां पोस्ट करते हैं, तो आपका खाता निलंबित हो सकता है। हम मंच को एक सकारात्मक स्थान बनाए रखने के लिए प्रतिबद्ध हैं।</p>
+                
+                <h2>दायित्व की सीमा</h2>
+                <p>देशबोली मंच को "जैसा है" आधार पर प्रदान करता है। हम सेवा की उपलब्धता या सटीकता की गारंटी नहीं देते। उदाहरण के लिए, यदि सर्वर डाउनटाइम के कारण आप पाठ्यक्रम तक पहुंच नहीं पाते, तो हम इसके लिए जिम्मेदार नहीं होंगे। हमारी अधिकतम देयता आपके द्वारा भुगतान की गई राशि तक सीमित है। हम अप्रत्यक्ष नुकसान, जैसे डेटा हानि या लाभ हानि, के लिए जिम्मेदार नहीं हैं।</p>
+                
+                <h2>समाप्ति</h2>
+                <p>हम नियमों के उल्लंघन पर आपका मंच तक पहुंच समाप्त कर सकते हैं। आप भी कभी भी मंच का उपयोग बंद कर सकते हैं। समाप्ति के बाद, आपकी कुछ सामग्री, जैसे सार्वजनिक पोस्ट, मंच पर रह सकती है। डेटा हटाने के लिए, हमारी गोपनीयता नीति के अनुसार अनुरोध करें।</p>
+                
+                <h2>कानूनी अनुपालन</h2>
+                <p>ये शर्तें भारत के कानूनों के अनुसार नियंत्रित होती हैं। किसी भी विवाद का समाधान नई दिल्ली की अदालतों में होगा। हम GDPR, CCPA, और अन्य प्रासंगिक नियमों का पालन करते हैं। यदि कोई शर्त अवैध पाई जाती है, तो शेष शर्तें प्रभावी रहेंगी।</p>
+                
+                <h2>परिवर्तन</h2>
+                <p>हम इन शर्तों को समय-समय पर अपडेट कर सकते हैं। परिवर्तनों की सूचना ईमेल या मंच पर दी जाएगी। निरंतर उपयोग नई शर्तों की स्वीकृति माना जाएगा। हम आपको नियमित समीक्षा की सलाह देते हैं।</p>
+                
+                <h2>संपर्क करें</h2>
+                <p>किसी भी प्रश्न या शिकायत के लिए, कृपया info@deshboli.in पर संपर्क करें। हम 30 दिनों के भीतर जवाब देंगे। आपकी प्रतिक्रिया हमारे लिए महत्वपूर्ण है।</p>
+            </div>
+        </section>
+
+        <!-- फुटर -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>देशबोली</h3>
+                        <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>त्वरित लिंक्स</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></a></li>
+                         <!--   <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम </a></li> -->
+                            <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="editorial.html">संपादकीय</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संसाधन</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संपर्क करें</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                        <form id="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                            <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                            <button type="submit">सब्सक्राइब करें</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-badges">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // नेविगेशन मेन्यू टॉगल
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+        
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+        
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+        
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+        
+        navClose.addEventListener('click', closeNav);
+        
+        // मेन्यू आइटम्स पर क्लिक करने पर मेन्यू बंद करना
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+        
+        // ESC key दबाने पर मेन्यू बंद करना
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+        
+        // मेन्यू के बाहर क्लिक करने पर बंद करना
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गोपनीयता नीति - देशबोली</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset और Base स्टाइल्स */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* मुख्य लेआउट */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* हैडर और नेविगेशन */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo img {
+            height: 45px;
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* हॅमबर्गर मेन्यू */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 102;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fullscreen-nav.active .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(7) { transition-delay: 0.7s; }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+        
+        /* मुख्य सामग्री सेक्शन */
+        .privacy-section {
+            padding: 80px 0;
+            background-color: white;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .privacy-section h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .privacy-section h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .privacy-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        /* फुटर */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* रिस्पॉन्सिव स्टाइल्स */
+        @media (max-width: 1200px) {
+            .privacy-section h1 {
+                font-size: 2.8rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .privacy-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .privacy-section p, .privacy-section li {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-section {
+                padding: 60px 0;
+            }
+            
+            .privacy-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header-logo h1 {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .privacy-section h1 {
+                font-size: 1.9rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.4rem;
+            }
+            
+            .privacy-section p, .privacy-section li {
+                font-size: 0.95rem;
+            }
+            
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- मुख्य कंटेंट -->
+    <div class="main-content">
+        <!-- हैडर -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <i class="fas fa-language" style="font-size: 36px; color: var(--primary);"></i>
+                        <h1>देशबोली</h1>
+                    </div>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- फुलस्क्रीन नेविगेशन मेन्यू -->
+        <nav class="fullscreen-nav">
+            <button class="nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <!--<li><a href="course.html">पाठ्यक्रम</a></li>-->
+                <li><a href="dictionary.html">शब्दकोष</a></li>
+                <li><a href="issues.html">पत्रिका</a></li>
+                <li><a href="editorial.html">समुदाय</a></li>
+                <li><a href="subscription.html">सदस्यता</a></li>
+            </ul>
+        </nav>
+
+        <!-- गोपनीयता नीति सेक्शन -->
+        <section class="privacy-section">
+            <div class="container">
+                <h1>गोपनीयता नीति</h1>
+                
+                <h2>परिचय</h2>
+                <p>देशबोली, भारत की विविध भाषाओं और बोलियों का एक अनोखा मंच है, जहां हम सांस्कृतिक विरासत को संरक्षित करने और भाषाई ज्ञान को फैलाने के लिए प्रतिबद्ध हैं। जैसे भारत की भाषाएं एक-दूसरे से जुड़ी हुई हैं, वैसे ही हमारी गोपनीयता नीति आपके व्यक्तिगत डेटा को सुरक्षित रखने के लिए एक मजबूत बंधन की तरह काम करती है। इस नीति में हम विस्तार से बताते हैं कि हम कैसे आपकी जानकारी एकत्रित करते हैं, उसका उपयोग करते हैं, और उसे सुरक्षित रखते हैं। यह नीति न केवल कानूनी आवश्यकताओं को पूरा करती है, बल्कि हमारे उपयोगकर्ताओं के साथ विश्वास की नींव मजबूत करती है।</p>
+                <p>देशबोली आपकी गोपनीयता की रक्षा करता है। हमारा मंच पाठ्यक्रम, शब्दकोष, लेख और समुदाय जैसे फीचर्स प्रदान करता है, और इन सबमें आपकी जानकारी का सम्मान सर्वोपरि है। इस नीति को पढ़कर आप समझेंगे कि हम GDPR, CCPA और भारत के डेटा संरक्षण कानूनों का पालन कैसे करते हैं। हमारी टीम लगातार इस नीति को अपडेट करती रहती है, ताकि नई तकनीकों और चुनौतियों के साथ कदम मिला सके। यदि आप इस नीति से सहमत हैं, तो आप हमारे मंच का उपयोग कर सकते हैं; अन्यथा, कृपया उपयोग न करें। यह नीति 1 सितंबर 2025 से प्रभावी है और पिछली नीतियों को प्रतिस्थापित करती है।</p>
+                <p>हमारे मंच पर आने वाले हर उपयोगकर्ता की तरह, आप भी हमारी सांस्कृतिक यात्रा का हिस्सा हैं। गोपनीयता नीति को समझना उतना ही महत्वपूर्ण है जितना एक नई भाषा सीखना। हम मानते हैं कि डेटा गोपनीयता आज की डिजिटल दुनिया में एक मूलभूत अधिकार है, और हम इसे दिल से सम्मान देते हैं। इस नीति में हम बताएंगे कि हम कौन सी जानकारी एकत्रित करते हैं, क्यों करते हैं, और आप कैसे अपनी जानकारी पर नियंत्रण रख सकते हैं। यदि आपके मन में कोई सवाल है, तो हमसे संपर्क करने में संकोच न करें – हम आपके प्रश्नों का स्वागत करते हैं।</p>
+                <p>देशबोली की स्थापना का उद्देश्य भारत की 22 आधिकारिक भाषाओं और सैकड़ों बोलियों को एक मंच पर लाना है। लेकिन इस यात्रा में, हम आपकी व्यक्तिगत जानकारी को कभी भी हल्के में नहीं लेते। हमारी नीति उपयोगकर्ता-केंद्रित है, जहां पारदर्शिता, सुरक्षा और जिम्मेदारी हमारे मूल सिद्धांत हैं। जैसे एक भाषा में शब्दों का सही उपयोग महत्वपूर्ण होता है, वैसे ही हम आपकी जानकारी का उपयोग केवल आवश्यक उद्देश्यों के लिए करते हैं। इस परिचय के माध्यम से हम उम्मीद करते हैं कि आप हमारी प्रतिबद्धता को समझेंगे।</p>
+                
+                <h2>हम कौन सी जानकारी एकत्रित करते हैं</h2>
+                <p>देशबोली पर, हम विभिन्न प्रकार की जानकारी एकत्रित करते हैं, जो हमारे मंच को बेहतर बनाने और आपको व्यक्तिगत अनुभव प्रदान करने में मदद करती है। सबसे पहले, व्यक्तिगत जानकारी: जब आप सदस्यता लेते हैं या न्यूज़लेटर सब्सक्राइब करते हैं, तो हम आपका नाम, ईमेल पता, फोन नंबर और पता एकत्रित कर सकते हैं। उदाहरण के लिए, यदि आप एक पाठ्यक्रम में नामांकन करते हैं, तो हम आपकी भाषा वरीयता और शिक्षा स्तर भी पूछ सकते हैं, ताकि हम आपको उपयुक्त सामग्री प्रदान कर सकें। यह जानकारी हमें आपकी सांस्कृतिक जड़ों से जोड़ने में मदद करती है, जैसे एक भाषा सीखते समय स्थानीय उच्चारण को समझना।</p>
+                <p>दूसरी श्रेणी है उपयोग डेटा। जब आप हमारी वेबसाइट ब्राउज करते हैं, तो हम आपके आईपी पता, ब्राउजर प्रकार, ऑपरेटिंग सिस्टम, और विज़िट का समय रिकॉर्ड करते हैं। यह डेटा हमें समझने में मदद करता है कि उपयोगकर्ता किस भाषा के पाठ्यक्रम में अधिक रुचि रखते हैं – उदाहरणस्वरूप, यदि अधिक लोग भोजपुरी शब्दकोष देखते हैं, तो हम उस पर अधिक ध्यान देते हैं। हम ट्रैकिंग टूल्स का उपयोग करते हैं जो एनालिटिक्स प्रदान करते हैं, लेकिन हम कभी भी संवेदनशील डेटा जैसे पासवर्ड या वित्तीय जानकारी एकत्रित नहीं करते, जब तक कि सदस्यता भुगतान के लिए आवश्यक न हो।</p>
+                <p>तीसरी श्रेणी है सामग्री-आधारित जानकारी। यदि आप हमारे समुदाय में योगदान देते हैं, जैसे लेख लिखते हैं या टिप्पणियां पोस्ट करते हैं, तो हम वह सामग्री एकत्रित करते हैं। यह हमें मंच को जीवंत रखने में मदद करता है, लेकिन हम सुनिश्चित करते हैं कि आपकी पहचान सुरक्षित रहे। इसके अलावा, हम कुकीज के माध्यम से प्राथमिकताएं एकत्रित करते हैं, जैसे आपकी पसंदीदा भाषा, ताकि अगली बार आप साइट खोलें तो वह आपके लिए अनुकूलित हो।</p>
+                <p>हम विशेष श्रेणी की जानकारी, जैसे स्वास्थ्य या धार्मिक विश्वास, एकत्रित नहीं करते, क्योंकि हमारा फोकस भाषा और संस्कृति पर है। लेकिन यदि कोई उपयोगकर्ता स्वेच्छा से साझा करता है, जैसे एक लोककथा में अपनी जातीय पृष्ठभूमि, तो हम उसे गोपनीय रखते हैं। हमारी नीति में हम स्पष्ट करते हैं कि अनाम डेटा, जैसे कुल विज़िटर्स की संख्या, को एकत्रित करके हम मंच को सुधारते हैं। यह सब इसलिए महत्वपूर्ण है क्योंकि डेटा गोपनीयता एक भाषा की तरह है – यदि शब्दों का दुरुपयोग हो, तो अर्थ बदल जाता है। हम सुनिश्चित करते हैं कि हर जानकारी का उपयोग नैतिक रूप से हो।</p>
+                <ul>
+                    <li>व्यक्तिगत पहचान योग्य जानकारी (PII): नाम, ईमेल, संपर्क विवरण।</li>
+                    <li>उपयोग और लॉग डेटा: आईपी पता, ब्राउजर जानकारी, पेज विज़िट।</li>
+                    <li>सामग्री डेटा: पोस्ट, टिप्पणियां, योगदान।</li>
+                    <li>प्राथमिकता डेटा: भाषा चयन, सर्च हिस्ट्री।</li>
+                </ul>
+                <p>यह जानकारी एकत्रित करने का उद्देश्य मंच को अधिक उपयोगी बनाना है। उदाहरण के लिए, यदि आप तमिल सीख रहे हैं, तो हम आपको संबंधित संसाधन सुझा सकते हैं। हम कभी भी अनावश्यक डेटा नहीं रखते और नियमित रूप से पुराने डेटा को हटाते हैं।</p>
+                
+                <h2>जानकारी कैसे एकत्रित की जाती है</h2>
+                <p>देशबोली पर जानकारी एकत्रित करने की प्रक्रिया पारदर्शी और उपयोगकर्ता-अनुकूल है। सबसे सामान्य तरीका है प्रत्यक्ष इनपुट: जब आप फॉर्म भरते हैं, जैसे सदस्यता फॉर्म या संपर्क फॉर्म, तो हम वह जानकारी प्राप्त करते हैं। उदाहरण के लिए, न्यूज़लेटर सब्सक्राइब करते समय आपका ईमेल हमें मिलता है, और हम उसे केवल अपडेट भेजने के लिए उपयोग करते हैं। यह प्रक्रिया एक दोस्त से बात करने जैसी है – आप जो साझा करते हैं, हम उसे सम्मान देते हैं।</p>
+                <p>दूसरा तरीका है स्वचालित एकत्रण। हम कुकीज, वेब बीकन्स और एनालिटिक्स टूल्स का उपयोग करते हैं। कुकीज छोटी फाइलें हैं जो आपके ब्राउजर में स्टोर होती हैं, और वे हमें याद रखती हैं कि आपने पिछली बार क्या देखा था। जैसे एक डायरी में नोट्स रखना, कुकीज हमें आपकी प्राथमिकताएं याद रखने में मदद करती हैं। हम Google Analytics जैसे थर्ड-पार्टी टूल्स का उपयोग करते हैं, जो उपयोग पैटर्न ट्रैक करते हैं, लेकिन व्यक्तिगत पहचान नहीं।</p>
+                <p>तीसरा, थर्ड-पार्टी स्रोत से: यदि आप सोशल मीडिया से लॉगिन करते हैं, जैसे फेसबुक या ट्विटर, तो हम वहां से बेसिक जानकारी प्राप्त कर सकते हैं, लेकिन केवल आपकी सहमति से। हम कभी भी अनधिकृत रूप से डेटा नहीं लेते। इसके अलावा, यदि आप हमारे ऐप का उपयोग करते हैं, तो हम डिवाइस जानकारी एकत्रित कर सकते हैं। हमारी नीति में हम स्पष्ट करते हैं कि आप कुकीज को अस्वीकार कर सकते हैं, लेकिन इससे कुछ फीचर्स प्रभावित हो सकते हैं।</p>
+                <p>एकत्रण की प्रक्रिया में हम सुरक्षा को प्राथमिकता देते हैं। सभी फॉर्म SSL एन्क्रिप्टेड हैं, ताकि डेटा ट्रांसफर सुरक्षित हो। हम उपयोगकर्ताओं को सूचित करते हैं कि कब और क्यों डेटा एकत्रित हो रहा है, जैसे पॉप-अप नोटिफिकेशन से। यह सब इसलिए क्योंकि गोपनीयता एक नदी की तरह है – यदि स्रोत साफ हो, तो पूरा प्रवाह शुद्ध रहता है। हम लगातार अपनी विधियों को अपडेट करते हैं ताकि नवीनतम मानकों का पालन हो। </p>
+                
+                <h2>जानकारी का उपयोग</h2>
+                <p>हम आपकी जानकारी का उपयोग मुख्य रूप से मंच को संचालित करने और सुधारने के लिए करते हैं। उदाहरण के लिए, आपका ईमेल न्यूज़लेटर भेजने के लिए उपयोग होता है, जहां हम नई भाषा पाठ्यक्रम या लेख साझा करते हैं। यह उपयोग उपयोगकर्ता अनुभव को व्यक्तिगत बनाता है, जैसे एक शिक्षक जो छात्र की रुचि के अनुसार पढ़ाता है। हम डेटा का उपयोग एनालिसिस के लिए भी करते हैं, ताकि समझ सकें कि कौन सी भाषाएं लोकप्रिय हैं और कहां सुधार की जरूरत है।</p>
+                <p>मार्केटिंग उद्देश्यों के लिए, हम आपको प्रमोशनल ईमेल भेज सकते हैं, लेकिन केवल यदि आपने सहमति दी हो। आप कभी भी अनसब्सक्राइब कर सकते हैं। इसके अलावा, कानूनी अनुपालन के लिए डेटा उपयोग होता है, जैसे ऑडिट या विवाद समाधान में। हम कभी भी डेटा को बेचते या किराए पर नहीं देते। उपयोग की प्रक्रिया नैतिक है, और हम न्यूनतम डेटा सिद्धांत का पालन करते हैं – केवल उतना ही उपयोग जितना आवश्यक हो।</p>
+                <p>समुदाय फीचर्स में, आपकी जानकारी पोस्ट दिखाने के लिए उपयोग होती है, लेकिन गोपनीय रखी जाती है। हम AI टूल्स का उपयोग करके सामग्री को बेहतर बनाने के लिए डेटा प्रोसेस करते हैं, जैसे सुझाव देना। कुल मिलाकर, उपयोग का उद्देश्य सकारात्मक है, और हम उपयोगकर्ताओं की भलाई को प्राथमिकता देते हैं। </p>
+                
+                <h2>जानकारी का साझाकरण</h2>
+                <p>देशबोली पर, हम आपकी जानकारी को सीमित रूप से साझा करते हैं। मुख्य रूप से, थर्ड-पार्टी सर्विस प्रोवाइडर्स के साथ, जैसे ईमेल सर्विस (Mailchimp) या पेमेंट गेटवे (Razorpay), लेकिन केवल आवश्यक सेवाओं के लिए। ये पार्टनर हमारे डेटा सुरक्षा मानकों का पालन करते हैं। उदाहरण के लिए, यदि आप सदस्यता लेते हैं, तो पेमेंट प्रोसेसर को आपका कार्ड विवरण मिलता है, लेकिन हम इसे स्टोर नहीं करते।</p>
+                <p>कानूनी आवश्यकताओं पर, हम सरकारी अनुरोधों का पालन कर सकते हैं, लेकिन केवल वैध मामलों में। हम कभी भी मार्केटिंग कंपनियों से डेटा साझा नहीं करते। अंतरराष्ट्रीय ट्रांसफर में, हम EU-US Privacy Shield का पालन करते हैं। साझाकरण हमेशा सहमति-आधारित होता है, और हम उपयोगकर्ताओं को सूचित करते हैं। यह प्रक्रिया एक परिवार की तरह है – विश्वास पर आधारित। </p>
+                
+                <h2>डेटा सुरक्षा</h2>
+                <p>हमारी डेटा सुरक्षा मजबूत है, जैसे एक किले की दीवारें। हम एन्क्रिप्शन, फायरवॉल और नियमित ऑडिट का उपयोग करते हैं। कर्मचारियों को प्रशिक्षित किया जाता है, और हम ब्रिच की स्थिति में तुरंत सूचित करते हैं। सुरक्षा उपायों में 2FA, एक्सेस कंट्रोल और बैकअप शामिल हैं। हम उपयोगकर्ताओं को सलाह देते हैं कि मजबूत पासवर्ड उपयोग करें। सुरक्षा हमारी प्राथमिकता है, और हम लगातार अपडेट करते हैं। </p>
+                
+                <h2>कुकीज और ट्रैकिंग</h2>
+                <p>कुकीज हमारे मंच का महत्वपूर्ण हिस्सा हैं। वे आवश्यक, कार्यात्मक और एनालिटिकल प्रकार की होती हैं। आप कुकी सेटिंग्स मैनेज कर सकते हैं। हम ट्रैकिंग से ऑप्ट-आउट विकल्प प्रदान करते हैं। कुकीज हमें बेहतर सेवा देने में मदद करती हैं, जैसे याद रखना कि आपने किस भाषा का चयन किया। हम थर्ड-पार्टी कुकीज का उपयोग सीमित रूप से करते हैं। </p>
+                
+                <h2>बच्चों की गोपनीयता</h2>
+                <p>हम 13 वर्ष से कम आयु के बच्चों से जानबूझकर डेटा एकत्रित नहीं करते। यदि ऐसा होता है, तो हम डेटा हटा देते हैं। अभिभावक सहमति आवश्यक है। हमारा मंच बच्चों के लिए सुरक्षित है, लेकिन हम COPPA का पालन करते हैं ।</p>
+                
+                <h2>आपके अधिकार</h2>
+                <p>आपके पास डेटा एक्सेस, सुधार, डिलीट और ऑप्ट-आउट के अधिकार हैं। हम अनुरोधों पर 30 दिनों में प्रतिक्रिया देते हैं। आप पोर्टेबिलिटी का अनुरोध कर सकते हैं। अधिकारों का उपयोग सरल है। </p>
+                
+                <h2>नीति में परिवर्तन</h2>
+                <p>हम नीति को अपडेट कर सकते हैं, और उपयोगकर्ताओं को सूचित करेंगे। परिवर्तन प्रभावी होने पर लागू होते हैं। नियमित जांच की सलाह देते हैं।</p>
+                
+                <h2>संपर्क करें</h2>
+                <p>किसी भी प्रश्न के लिए info@deshboli.in पर संपर्क करें। हम आपकी प्रतिक्रिया का स्वागत करते हैं।  </p>
+                
+            </div>
+        </section>
+
+        <!-- फुटर -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>देशबोली</h3>
+                        <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>त्वरित लिंक्स</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issue.html.html">पत्रिका</a></li>
+
+                           <!-- <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>-->
+                            <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="editorial.html">संपादकीय</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संसाधन</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="contact us.html">संपर्क</a></a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संपर्क करें</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                        <form id="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                            <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                            <button type="submit">सब्सक्राइब करें</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-badges">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // नेविगेशन मेन्यू टॉगल
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+        
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+        
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+        
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+        
+        navClose.addEventListener('click', closeNav);
+        
+        // मेन्यू आइटम्स पर क्लिक करने पर मेन्यू बंद करना
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+        
+        // ESC key दबाने पर मेन्यू बंद करना
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+        
+        // मेन्यू के बाहर क्लिक करने पर बंद करना
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!-- editorial.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देशबोली - संपादकीय</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Improved CSS with better responsiveness and animations */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Fullscreen Nav */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        /* ... add for more */
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 100px 0 60px;
+            color: var(--primary);
+            font-size: 2.8rem;
+            position: relative;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+        
+        /* Editorials Grid */
+        .editorials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .editorial-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .editorial-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .editorial-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .editorial-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        
+        .editorial-card:hover .editorial-img::after {
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .editorial-content {
+            padding: 25px;
+        }
+        
+        .editorial-content h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .editorial-content .date {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .editorial-content a {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .editorial-content a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Pagination */
+        .pagination {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .pagination button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .pagination button:hover {
+            background: var(--secondary);
+            transform: scale(1.05);
+        }
+        
+        .pagination button.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .pagination .page-num {
+            background: var(--accent);
+        }
+        
+        .pagination .page-num.active {
+            background: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        /* Footer (improved with better spacing) */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Improvements */
+        @media (max-width: 768px) {
+            .editorials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .pagination button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .nav-menu a {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Loading State */
+        .loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 50px 0;
+        }
+        
+        .error {
+            text-align: center;
+            font-size: 1.2rem;
+            color: red;
+            margin: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <i class="fas fa-language"></i>
+                    <h1>देशबोली</h1>
+                </div>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="fullscreen-nav">
+        <button class="nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#">होम</a></li>
+            <li><a href="#">भाषाएं</a></li>
+            <li><a href="#">पाठ्यक्रम</a></li>
+            <li><a href="#">शब्दकोष</a></li>
+            <li><a href="#">लेख</a></li>
+            <li><a href="#">समुदाय</a></li>
+            <li><a href="#">सदस्यता</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2 class="section-title">संपादकीय</h2>
+        <div id="loading" class="loading">लोड हो रहा है...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div class="editorials-grid" id="editorials-grid" style="display: none;"></div>
+        <div class="pagination" id="pagination" style="display: none;"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>देशबोली</h3>
+                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक्स</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">होम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">भाषाएं</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">पाठ्यक्रम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">शब्दकोष</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">लेख</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संसाधन</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">डाउनलोड</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">सहायता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">सदस्यता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">समुदाय</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#">योगदान दें</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                    </ul>
+                    <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                    <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                    <form class="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                        <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                        <button type="submit">सब्सक्राइब करें</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-badges">
+                <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="#">गोपनीयता नीति</a> | <a href="#">उपयोग की शर्तें</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Script
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+
+        navToggle.addEventListener('click', () => {
+            if (isNavOpen) closeNav();
+            else openNav();
+        });
+
+        navClose.addEventListener('click', closeNav);
+
+        document.querySelectorAll('.nav-menu a').forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && isNavOpen) closeNav();
+        });
+
+        fullscreenNav.addEventListener('click', e => {
+            if (e.target === fullscreenNav) closeNav();
+        });
+
+        // Editorial Script with improvements: loading state, error handling, fixed pagination
+        const grid = document.getElementById('editorials-grid');
+        const pagination = document.getElementById('pagination');
+        const loading = document.getElementById('loading');
+        const errorDiv = document.getElementById('error');
+        let articles = [];
+        const itemsPerPage = 6;
+        let currentPage = 1;
+
+        async function loadArticles() {
+            try {
+                const response = await fetch('editorial.json');
+                if (!response.ok) {
+                    throw new Error('JSON फ़ाइल लोड करने में त्रुटि: ' + response.status);
+                }
+                articles = await response.json();
+                // Sort by date descending (latest first)
+                articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                loading.style.display = 'none';
+                grid.style.display = 'grid';
+                pagination.style.display = 'block';
+                displayPage(1);
+            } catch (error) {
+                loading.style.display = 'none';
+                errorDiv.style.display = 'block';
+                errorDiv.textContent = 'डेटा लोड करने में त्रुटि: ' + error.message + '. कृपया सुनिश्चित करें कि editorial.json फ़ाइल मौजूद है और सही है।';
+            }
+        }
+
+        function displayPage(page) {
+            currentPage = page;
+            grid.innerHTML = '';
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageArticles = articles.slice(start, end);
+
+            pageArticles.forEach((article, index) => {
+                const card = document.createElement('div');
+                card.classList.add('editorial-card');
+                card.innerHTML = `
+                    <div class="editorial-img">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="editorial-content">
+                        <h3>${article.title}</h3>
+                        <div class="date">${article.date}</div>
+                        <a href="editorial-read.html?title=${encodeURIComponent(article.title)}">पढ़ें</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(articles.length / itemsPerPage);
+
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'पिछला';
+            if (currentPage === 1) {
+                prevBtn.classList.add('disabled');
+            } else {
+                prevBtn.addEventListener('click', () => displayPage(currentPage - 1));
+            }
+            pagination.appendChild(prevBtn);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.textContent = i;
+                pageBtn.classList.add('page-num');
+                if (i === currentPage) pageBtn.classList.add('active');
+                pageBtn.addEventListener('click', () => displayPage(i));
+                pagination.appendChild(pageBtn);
+            }
+
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'अगला';
+            if (currentPage === totalPages) {
+                nextBtn.classList.add('disabled');
+            } else {
+                nextBtn.addEventListener('click', () => displayPage(currentPage + 1));
+            }
+            pagination.appendChild(nextBtn);
+        }
+
+        loadArticles();
+    </script>
+</body>
+</html>

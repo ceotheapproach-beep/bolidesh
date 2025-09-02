@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>देशबोली साप्ताहिक अंक - अंक 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fullscreen-nav.active .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(7) { transition-delay: 0.7s; }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+
+        /* Wikipedia-Style Article Layout */
+        .issue-container {
+            display: flex;
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        .issue-main {
+            flex: 3;
+        }
+
+        .issue-sidebar {
+            flex: 1;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .issue-header {
+            margin-bottom: 30px;
+        }
+
+        .issue-header h1 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .issue-meta {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .toc {
+            background: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .toc h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc ul li {
+            margin-bottom: 10px;
+        }
+
+        .toc ul li a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-section {
+            margin-bottom: 40px;
+        }
+
+        .article-section h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .article-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .article-section .author {
+            font-style: italic;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .sidebar-box {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-box h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .sidebar-box p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .sidebar-box img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .issue-container {
+                flex-direction: column;
+            }
+            .issue-sidebar {
+                order: -1;
+            }
+            .issue-header h1 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-logo h1 {
+                font-size: 1.7rem;
+            }
+            .issue-header h1 {
+                font-size: 2rem;
+            }
+            .article-section h2 {
+                font-size: 1.8rem;
+            }
+            .nav-menu a {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            .issue-header h1 {
+                font-size: 1.8rem;
+            }
+            .article-section h2 {
+                font-size: 1.6rem;
+            }
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+            .sidebar-box img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-logo">
+                    <i class="fas fa-language"></i>
+                    <h1>देशबोली</h1>
+                </div>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fullscreen Navigation Menu -->
+    <nav class="fullscreen-nav">
+        <button class="nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">होम</a></li>
+            <li><a href="issue.html">पत्रिका</a></li>
+            <!--<li><a href="course.html">पाठ्यक्रम</a></li>-->
+            <li><a href="dictionary.html">शब्दकोष</a></li>
+            <li><a href="editorial.html">लेख</a></li>
+            <li><a href="community.html">समुदाय</a></li>
+            <li><a href="subscription.html">सदस्यता</a></li>
+        </ul>
+    </nav>
+
+    <!-- Issue Content -->
+    <section class="issue-container">
+        <div class="container">
+            <div class="issue-main">
+                <div class="issue-header">
+                    <h1 id="issue-title"></h1>
+                    <p class="issue-meta">प्रकाशन तिथि: <span id="issue-date"></span></p>
+                </div>
+                <div class="toc">
+                    <h2>सामग्री</h2>
+                    <ul id="toc-list"></ul>
+                </div>
+                <div id="articles-list"></div>
+            </div>
+            <div class="issue-sidebar">
+                <div class="sidebar-box">
+                    <h3>अंक विवरण</h3>
+                    <p><strong>अंक:</strong> <span id="sidebar-issue-number"></span></p>
+                    <p><strong>प्रकाशन:</strong> <span id="sidebar-issue-date"></span></p>
+                    <p><strong>लेखक:</strong> <span id="sidebar-authors"></span></p>
+                </div>
+                <div class="sidebar-box">
+                    <img id="sidebar-cover" src="" alt="Issue Cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>देशबोली</h3>
+                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक्स</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
+                       <!-- <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>-->
+                        <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="editorial.html.html">लेख</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संसाधन</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="contact us.html">संपर्क</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                        <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                    </ul>
+                    <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                    <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                    <form class="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                        <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                        <button type="submit">सब्सक्राइब करें</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-badges">
+                <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        navClose.addEventListener('click', closeNav);
+
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+
+        // Issue Page Script
+        const issueTitle = document.getElementById('issue-title');
+        const issueDate = document.getElementById('issue-date');
+        const articlesList = document.getElementById('articles-list');
+        const tocList = document.getElementById('toc-list');
+        const sidebarIssueNumber = document.getElementById('sidebar-issue-number');
+        const sidebarIssueDate = document.getElementById('sidebar-issue-date');
+        const sidebarAuthors = document.getElementById('sidebar-authors');
+        const sidebarCover = document.getElementById('sidebar-cover');
+
+        async function fetchIssueData() {
+            try {
+                // Fetch JSON for issue-1
+                const response = await fetch('issue-1.json');
+                const data = await response.json();
+                issueTitle.textContent = data.title;
+                issueDate.textContent = data.date;
+                sidebarIssueNumber.textContent = data.issueNumber;
+                sidebarIssueDate.textContent = data.date;
+                sidebarAuthors.textContent = data.articles.map(article => article.author).join(', ');
+                sidebarCover.src = data.cover;
+                displayTOC(data.articles);
+                displayArticles(data.articles);
+            } catch (error) {
+                console.error('Error fetching issue:', error);
+            }
+        }
+
+        function displayTOC(articles) {
+            articles.forEach((article, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#section-${index + 1}">${article.title}</a>`;
+                tocList.appendChild(li);
+            });
+        }
+
+        function displayArticles(articles) {
+            articles.forEach((article, index) => {
+                const section = document.createElement('div');
+                section.className = 'article-section';
+                section.id = `section-${index + 1}`;
+                section.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                    <p class="author">द्वारा: ${article.author}</p>
+                `;
+                articlesList.appendChild(section);
+            });
+        }
+
+        fetchIssueData();
+    </script>
+</body>
+</html>

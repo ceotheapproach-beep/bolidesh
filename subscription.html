@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सदस्यता - देशबोली</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset और Base स्टाइल्स */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* मुख्य लेआउट */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* हैडर और नेविगेशन */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo img {
+            height: 45px;
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* हॅमबर्गर मेन्यू */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 102;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fullscreen-nav.active .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(7) { transition-delay: 0.7s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(8) { transition-delay: 0.8s; }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+        
+        /* सदस्यता सेक्शन */
+        .subscription-section {
+            padding: 80px 0;
+            background-color: white;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .subscription-section h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .subscription-section h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .subscription-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .subscription-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .subscription-section li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .plan-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .plan-card.popular {
+            border: 3px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-card.popular::before {
+            content: 'लोकप्रिय';
+            position: absolute;
+            top: 20px;
+            right: -45px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 50px;
+            transform: rotate(45deg);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .plan-card h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .plan-card .price {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .plan-card .price span {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .plan-card ul {
+            list-style-type: none;
+            margin-bottom: 30px;
+        }
+        
+        .plan-card li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .plan-card li i {
+            color: var(--accent);
+            margin-right: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        /* फुटर */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* रिस्पॉन्सिव स्टाइल्स */
+        @media (max-width: 1200px) {
+            .subscription-section h1 {
+                font-size: 2.8rem;
+            }
+            
+            .subscription-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .plan-card .price {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .subscription-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subscription-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .subscription-section p, .subscription-section li {
+                font-size: 1rem;
+            }
+            
+            .pricing-plans {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .plan-card h3 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .subscription-section {
+                padding: 60px 0;
+            }
+            
+            .subscription-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subscription-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header-logo h1 {
+                font-size: 1.7rem;
+            }
+            
+            .pricing-plans {
+                grid-template-columns: 1fr;
+            }
+            
+            .plan-card {
+                padding: 25px;
+            }
+            
+            .plan-card .price {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subscription-section h1 {
+                font-size: 1.9rem;
+            }
+            
+            .subscription-section h2 {
+                font-size: 1.4rem;
+            }
+            
+            .subscription-section p, .subscription-section li {
+                font-size: 0.95rem;
+            }
+            
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            .plan-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .plan-card .price {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- मुख्य कंटेंट -->
+    <div class="main-content">
+        <!-- हैडर -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <i class="fas fa-language" style="font-size: 36px; color: var(--primary);"></i>
+                        <h1>देशबोली</h1>
+                    </div>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- फुलस्क्रीन नेविगेशन मेन्यू -->
+        <nav class="fullscreen-nav">
+            <button class="nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+               <!-- <li><a href="course.html">पाठ्यक्रम</a></li>-->
+                <li><a href="dictionary.html">शब्दकोष</a></li>
+                <li><a href="issues.html">पत्रिका</a></a></li>
+                <li><a href="editorial.html">लेख</a></li>
+                <li><a href="subscription.html">सदस्यता</a></li>
+                <li><a href="contribute.html">योगदान करें</a></li>
+            </ul>
+        </nav>
+
+        <!-- सदस्यता सेक्शन -->
+        <section class="subscription-section">
+            <div class="container">
+                <h1>देशबोली प्रीमियम सदस्यता</h1>
+                
+                <h2>हमारी प्रीमियम सदस्यता के साथ और अधिक खोजें</h2>
+                <p>देशबोली प्रीमियम सदस्यता आपको भारत की समृद्ध भाषाई और सांस्कृतिक विरासत को गहराई से अनुभव करने का अवसर देती है। हमारे विशेष पाठ्यक्रम, विस्तृत शब्दकोष, और समुदाय की विशेष सुविधाओं तक असीमित पहुंच प्राप्त करें। चाहे आप एक नई भाषा सीखना चाहते हों या अपनी मातृभाषा को और समृद्ध करना चाहते हों, हमारी प्रीमियम योजना आपके लिए बनाई गई है।</p>
+                <p>हमारी सदस्यता योजनाएं लचीली और किफायती हैं, जो आपको आपकी आवश्यकताओं के अनुसार विकल्प चुनने की सुविधा देती हैं। जैसे एक गांव का चौपाल सभी को एकजुट करता है, वैसे ही हमारा मंच आपको भारत की विविध भाषाओं और संस्कृतियों से जोड़ता है। अपनी यात्रा शुरू करने के लिए नीचे दी गई योजनाओं में से चुनें।</p>
+                
+                <h2>हमारी योजनाएं</h2>
+                <div class="pricing-plans">
+                    <div class="plan-card">
+                        <h3>मासिक योजना</h3>
+                        <div class="price">₹350 <span>/माह</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>सभी पाठ्यक्रमों तक असीमित पहुंच</li>
+                            <li><i class="fas fa-check-circle"></i>विस्तृत शब्दकोष और उच्चारण गाइड</li>
+                            <li><i class="fas fa-check-circle"></i>साप्ताहिक लेख और संपादकीय सामग्री</li>
+                            <li><i class="fas fa-check-circle"></i>सदस्य-विशेष वेबिनार</li>
+                        </ul>
+                        <a href="https://forms.gle/your-google-form-link" class="btn">अभी सब्सक्राइब करें</a>
+                    </div>
+                    <div class="plan-card popular">
+                        <h3>छह माह की योजना</h3>
+                        <div class="price">₹1700 <span>/6 माह</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>सभी पाठ्यक्रमों तक असीमित पहुंच</li>
+                            <li><i class="fas fa-check-circle"></i>विस्तृत शब्दकोष और उच्चारण गाइड</li>
+                            <li><i class="fas fa-check-circle"></i>साप्ताहिक लेख और संपादकीय सामग्री</li>
+                            <li><i class="fas fa-check-circle"></i>सदस्य-विशेष वेबिनार</li>
+                            <li><i class="fas fa-check-circle"></i>विशेष छूट और प्राथमिकता समर्थन</li>
+                        </ul>
+                        <a href="https://forms.gle/your-google-form-link" class="btn">अभी सब्सक्राइब करें</a>
+                    </div>
+                    <div class="plan-card">
+                        <h3>वार्षिक योजना</h3>
+                        <div class="price">₹3000 <span>/वर्ष</span></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>सभी पाठ्यक्रमों तक असीमित पहुंच</li>
+                            <li><i class="fas fa-check-circle"></i>विस्तृत शब्दकोष और उच्चारण गाइड</li>
+                            <li><i class="fas fa-check-circle"></i>साप्ताहिक लेख और संपादकीय सामग्री</li>
+                            <li><i class="fas fa-check-circle"></i>सदस्य-विशेष वेबिनार</li>
+                            <li><i class="fas fa-check-circle"></i>विशेष छूट और प्राथमिकता समर्थन</li>
+                            <li><i class="fas fa-check-circle"></i>विशेष बैज और मान्यता</li>
+                        </ul>
+                        <a href="https://forms.gle/your-google-form-link" class="btn">अभी सब्सक्राइब करें</a>
+                    </div>
+                </div>
+                
+                <h2>सदस्यता के लाभ</h2>
+                <p>देशबोली प्रीमियम के साथ, आप निम्नलिखित विशेष सुविधाओं का आनंद लेंगे:</p>
+                <ul>
+                    <li><strong>असीमित पहुंच:</strong> सभी पाठ्यक्रमों, शब्दकोषों, और लेखों तक पहुंच, जिसमें भोजपुरी, मैथिली, और संथाली जैसे क्षेत्रीय भाषा संसाधन शामिल हैं।</li>
+                    <li><strong>विशेष सामग्री:</strong> सदस्य-विशेष वेबिनार, कार्यशालाएं, और सांस्कृतिक कहानियां जो भारत की भाषाई विविधता को उजागर करती हैं।</li>
+                    <li><strong>प्राथमिकता समर्थन:</strong> किसी भी प्रश्न या तकनीकी सहायता के लिए तेज और व्यक्तिगत सहायता।</li>
+                    <li><strong>समुदाय की भागीदारी:</strong> हमारे समुदाय में विशेष भूमिकाएं, जैसे संपादकीय योगदान या सामग्री समीक्षा में भाग लेने का अवसर।</li>
+                    <li><strong>विशेष छूट:</strong> छह माह और वार्षिक योजनाओं में विशेष छूट और अतिरिक्त सुविधाएं।</li>
+                </ul>
+                <p>हमारी सदस्यता योजनाएं आपके लिए लचीलापन प्रदान करती हैं। मासिक योजना उन लोगों के लिए आदर्श है जो कम अवधि के लिए अनुभव लेना चाहते हैं, जबकि छह माह और वार्षिक योजनाएं लागत बचत और अतिरिक्त लाभ प्रदान करती हैं।</p>
+                
+                <h2>सदस्यता कैसे लें</h2>
+                <p>सदस्यता लेना आसान है! निम्नलिखित चरणों का पालन करें:</p>
+                <ol>
+                    <li>ऊपर दी गई योजनाओं में से अपनी पसंदीदा योजना चुनें और "अभी सब्सक्राइब करें" बटन पर क्लिक करें।</li>
+                    <li>हमारे Google Form पर जाएं, जहां आपको अपनी जानकारी और भुगतान विवरण दर्ज करना होगा।</li>
+                    <li>भुगतान पूरा करने के बाद, आपको अपने सदस्यता विवरण और पहुंच के लिए पुष्टिकरण प्राप्त होगा।</li>
+                </ol>
+                <p>सभी भुगतान सुरक्षित और SSL-एन्क्रिप्टेड थर्ड-पार्टी गेटवे के माध्यम से संसाधित किए जाते हैं। हम आपके भुगतान विवरण को स्टोर नहीं करते। यदि आपको भुगतान के दौरान कोई समस्या आती है, तो कृपया हमें WhatsApp पर (+91 9555754494) संपर्क करें।</p>
+                
+                <h2>रद्दीकरण और रिफंड</h2>
+                <p>हमारी सदस्यता योजनाएं स्वतः नवीनीकरण योग्य हैं, लेकिन आप किसी भी समय अपनी सदस्यता रद्द कर सकते हैं। रद्द करने के लिए, कृपया हमें info@deshboli.in पर संपर्क करें। रिफंड केवल तभी संभव हैं जब सेवा प्रदान नहीं की गई हो। रिफंड अनुरोधों की समीक्षा केस-दर-केस आधार पर की जाएगी।</p>
+                
+                <h2>प्रश्न या सहायता</h2>
+                <p>यदि आपके पास सदस्यता से संबंधित कोई प्रश्न हैं या आपको सहायता चाहिए, तो कृपया हमें WhatsApp पर (+91 9555754494) या ईमेल (info@deshboli.in) के माध्यम से संपर्क करें। हम 30 दिनों के भीतर जवाब देंगे। आपकी संतुष्टि हमारी प्राथमिकता है।</p>
+                <p>देशबोली प्रीमियम के साथ, भारत की भाषाई और सांस्कृतिक विरासत की गहराई में उतरें। आज ही अपनी योजना चुनें और हमारी यात्रा का हिस्सा बनें!</p>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="https://forms.gle/your-google-form-link" class="btn">अभी शुरू करें</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- फुटर -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>देशबोली</h3>
+                        <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>त्वरित लिंक्स</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
+                           <!-- <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>-->
+                            <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="editorial.html">संपादकीय</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संसाधन</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संपर्क करें</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                        <form id="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                            <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                            <button type="submit">सब्सक्राइब करें</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-badges">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // नेविगेशन मेन्यू टॉगल
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+        
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+        
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+        
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+        
+        navClose.addEventListener('click', closeNav);
+        
+        // मेन्यू आइटम्स पर क्लिक करने पर मेन्यू बंद करना
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+        
+        // ESC key दबाने पर मेन्यू बंद करना
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+        
+        // मेन्यू के बाहर क्लिक करने पर बंद करना
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+    </script>
+</body>
+</html>

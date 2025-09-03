@@ -13,22 +13,22 @@
     <meta name="google-site-verification" content="S0Suti98_eb_NTpEV1xOwnVpDS-ZPLKivfBBSDonrTo" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का सबसे बड़ा मंच। पाठ्यक्रम, शब्दकोष, और सांस्कृतिक लेखों के माध्यम से भारत की भाषाई विविधता की खोज करें।">
-    <meta name="keywords" content="देशबोली, भारतीय भाषाएं, स्थानीय बोलियां, भाषा सीखें, शब्दकोष, सांस्कृतिक विरासत, हिंदी, क्षेत्रीय भाषाएं, भारत">
+    <meta name="description" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का सबसे बड़ा मंच। इस क्विज के माध्यम से अपनी भाषाई जानकारी का परीक्षण करें।">
+    <meta name="keywords" content="देशबोली, भारतीय भाषाएं, भाषा क्विज, स्थानीय बोलियां, भाषा सीखें, सांस्कृतिक विरासत, हिंदी, क्षेत्रीय भाषाएं, भारत">
     <meta name="author" content="Deshboli Team">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <meta property="og:title" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का संग्रह">
-    <meta property="og:description" content="देशबोली के साथ भारत की विविध भाषाओं और बोलियों को सीखें, संरक्षित करें और उनका आनंद लें। पाठ्यक्रम, शब्दकोष, और साप्ताहिक लेखों के साथ जुड़ें।">
+    <meta property="og:title" content="देशबोली - भाषा ज्ञान क्विज">
+    <meta property="og:description" content="देशबोली के क्विज के साथ भारत की विविध भाषाओं और बोलियों के बारे में अपनी जानकारी का परीक्षण करें। 20 प्रश्नों के साथ अपनी भाषाई समझ को परखें।">
     <meta property="og:image" content="https://bolidesh.in/logo.png">
     <meta property="og:image:alt" content="देशबोली लोगो - भारतीय भाषाओं का प्रतीक">
-    <meta property="og:url" content="https://bolidesh.in">
+    <meta property="og:url" content="https://bolidesh.in/quiz.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deshboli">
     <meta property="og:locale" content="hi_IN">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का मंच">
-    <meta name="twitter:description" content="देशबोली भारत की भाषाई और सांस्कृतिक विरासत को संरक्षित करने का मंच है। हमारे पाठ्यक्रम, शब्दकोष, और लेखों के साथ जुड़ें।">
+    <meta name="twitter:title" content="देशबोली - भाषा ज्ञान क्विज">
+    <meta name="twitter:description" content="देशबोली के क्विज के साथ भारत की भाषाई और सांस्कृतिक विरासत को परखें। हमारे 20 प्रश्नों के क्विज में शामिल हों।">
     <meta name="twitter:image" content="https://bolidesh.in/logo.png">
     <meta name="twitter:creator" content="@Deshboli">
     <script type="application/ld+json">
@@ -58,12 +58,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Existing styles from the provided HTML */
+        /* Reset और Base स्टाइल्स */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+            font-family: 'Hind Biliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
         }
         
         :root {
@@ -86,7 +86,7 @@
             direction: ltr;
         }
         
-        /* Splash screen styles... (copy all existing styles here) */
+        /* स्प्लैश स्क्रीन */
         #splash-screen {
             position: fixed;
             top: 0;
@@ -102,9 +102,419 @@
             transition: opacity 0.8s ease-out;
         }
         
-        /* ... (all other styles from the original HTML) */
-
-        /* New styles for quiz */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .logo-circle {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            animation: pulse 2s infinite alternate, float 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--gold));
+            animation: rotate 4s linear infinite;
+        }
+        
+        .logo-circle::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo i {
+            font-size: 90px;
+            color: white;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+        }
+        
+        .site-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            margin-top: 2.5rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--gold) 0%, var(--cream) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-out;
+            position: relative;
+        }
+        
+        .site-tagline {
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.95);
+            margin-top: 1.5rem;
+            text-align: center;
+            max-width: 80%;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            animation: fadeIn 3s ease-out;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+            100% { transform: scale(1.08); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes glow {
+            0% { 
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--gold), 0 0 20px var(--gold);
+                background-position: 0% 50%;
+            }
+            100% { 
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--gold), 0 0 40px var(--gold);
+                background-position: 100% 50%;
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* मुख्य लेआउट */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* हैडर और नेविगेशन */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo img {
+            height: 45px;
+        }
+        
+        .header-logo h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-left: 12px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-toggle:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* हॅमबर्गर मेन्यू */
+        .fullscreen-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            background: none;
+            border: none;
+            font-size: 2.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 102;
+        }
+        
+        .nav-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .nav-menu li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .fullscreen-nav.active .nav-menu li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fullscreen-nav.active .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+        .fullscreen-nav.active .nav-menu li:nth-child(7) { transition-delay: 0.7s; }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            border-radius: 8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+        
+        /* हीरो सेक्शन */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            color: white;
+            padding: 180px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+            font-family: 'Playfair Display', serif;
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 850px;
+            margin: 0 auto 50px;
+            font-weight: 300;
+            line-height: 1.9;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-left: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        
+        .whatsapp-btn:hover::before {
+            width: 100%;
+        }
+        
+        /* क्विज सेक्शन */
         #quiz-container {
             max-width: 800px;
             margin: 0 auto 60px;
@@ -119,6 +529,7 @@
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
         }
 
         #timer {
@@ -148,6 +559,7 @@
             font-size: 1.6rem;
             margin-bottom: 25px;
             color: var(--dark);
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         .options {
@@ -177,6 +589,7 @@
         .option label {
             cursor: pointer;
             font-size: 1.2rem;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         #quiz-buttons {
@@ -193,6 +606,7 @@
             cursor: pointer;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
 
         #prev-btn {
@@ -213,7 +627,7 @@
             cursor: not-allowed;
         }
 
-        /* Modal styles */
+        /* रिजल्ट मोडल */
         #result-modal {
             position: fixed;
             top: 50%;
@@ -246,6 +660,7 @@
             font-size: 2.2rem;
             color: var(--accent);
             margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
         }
 
         .result-question {
@@ -257,6 +672,7 @@
         .result-question h4 {
             font-size: 1.4rem;
             margin-bottom: 10px;
+            font-family: 'Hind Siliguri', sans-serif;
         }
 
         .result-correct {
@@ -283,6 +699,7 @@
             cursor: pointer;
             font-size: 1.2rem;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
 
         #share-btn:hover {
@@ -299,6 +716,346 @@
             background: rgba(0,0,0,0.6);
             z-index: 999;
             display: none;
+        }
+
+        /* फुटर */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 120px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column ul52 {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column ul li i {
+            margin-right: 12px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            color: #999;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .badge i {
+            margin-right: 8px;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* रिस्पॉन्सिव स्टाइल्स */
+        @media (max-width: 1200px) {
+            .site-title {
+                font-size: 3.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .site-title {
+                font-size: 3.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            #quiz-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-circle {
+                width: 170px;
+                height: 170px;
+            }
+            
+            .logo i {
+                font-size: 70px;
+            }
+            
+            .site-title {
+                font-size: 2.8rem;
+            }
+            
+            .site-tagline {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding: 120px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            #quiz-title {
+                font-size: 2rem;
+            }
+            
+            #question-text {
+                font-size: 1.4rem;
+            }
+            
+            .option label {
+                font-size: 1.1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header-logo h1 {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-circle {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .logo i {
+                font-size: 60px;
+            }
+            
+            .site-title {
+                font-size: 2.3rem;
+            }
+            
+            .site-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.9rem;
+            }
+            
+            .btn, .whatsapp-btn {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+            
+            #quiz-container {
+                padding: 20px;
+            }
+            
+            #quiz-title {
+                font-size: 1.8rem;
+            }
+            
+            #question-text {
+                font-size: 1.2rem;
+            }
+            
+            .option label {
+                font-size: 1rem;
+            }
+            
+            .quiz-btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            #result-score {
+                font-size: 1.8rem;
+            }
+            
+            .result-question h4 {
+                font-size: 1.2rem;
+            }
+            
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -346,7 +1103,7 @@
             </ul>
         </nav>
 
-        <!-- हीरो सेक्शन (similar but adjusted for quiz) -->
+        <!-- हीरो सेक्शन -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -386,7 +1143,7 @@
             <button id="share-btn"><i class="fas fa-share-alt"></i> साझा करें</button>
         </div>
 
-        <!-- फुटर (same as original) -->
+        <!-- फुटर -->
         <footer>
             <div class="container">
                 <div class="footer-content">
@@ -453,7 +1210,7 @@
     </div>
 
     <script>
-        // स्प्लैश स्क्रीन और नेविगेशन स्क्रिप्ट (same as original)
+        // स्प्लैश स्क्रीन
         setTimeout(function() {
             const splashScreen = document.getElementById('splash-screen');
             const mainContent = document.querySelector('.main-content');
@@ -467,7 +1224,8 @@
                 console.error('Splash screen or main content element not found.');
             }
         }, 5000);
-        
+
+        // नेविगेशन मेन्यू टॉगल
         const navToggle = document.querySelector('.nav-toggle');
         const navClose = document.querySelector('.nav-close');
         const fullscreenNav = document.querySelector('.fullscreen-nav');
@@ -659,7 +1417,6 @@
             if (navigator.share) {
                 navigator.share(shareData).catch(console.error);
             } else {
-                // Fallback: copy to clipboard
                 navigator.clipboard.writeText(shareText).then(() => {
                     alert('शेयर टेक्स्ट क्लिपबोर्ड पर कॉपी कर लिया गया है!');
                 }).catch(console.error);

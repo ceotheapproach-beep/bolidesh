@@ -43,9 +43,9 @@
 
 ## 📚 संसाधन (Resources)
 
-- **शब्दकोष (Dictionary):** [Bolidesh Dictionary](https://bolidesh.in/dictionary)  
-- **लेख और ब्लॉग (Articles & Blog):** [Bolidesh Articles](https://bolidesh.in/articles)  
-- **समुदाय (Community):** [Bolidesh Community](https://bolidesh.in/community)  
+- **शब्दकोष (Dictionary):** [Bolidesh Dictionary](https://bolidesh.in/dictionary.html)  
+- **लेख और ब्लॉग (Articles & Blog):** [Bolidesh Articles](https://bolidesh.in/editorial.html)  
+- **समुदाय (Community):** [Bolidesh Community](https://bolidesh.in/community.html)  
 
 ---
 
@@ -57,7 +57,7 @@ Bolidesh समुदाय में योगदान करने के ल
 2. लेख, ब्लॉग या शोध सामग्री साझा करना।  
 3. वेबसाइट और इंटरैक्टिव टूल्स के विकास में सहयोग।  
 
-> योगदान के लिए कृपया [सम्पर्क करें](https://bolidesh.in/contact)।
+> योगदान के लिए कृपया [सम्पर्क करें](https://bolidesh.in/contact.html)।
 
 ---
 

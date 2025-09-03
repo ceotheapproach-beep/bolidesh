@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFPVE46RRM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XFPVE46RRM');
-</script>
-
-
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFPVE46RRM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XFPVE46RRM');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Bolidesh - भारतीय भाषाओं का मंच">
-<meta property="og:description" content="भारत की बोलियों और भाषाओं का सबसे बड़ा संग्रह।">
-<meta property="og:image" content="https://bolidesh.in/logo.png">
-<meta property="og:url" content="https://bolidesh.in">
-<meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Bolidesh",
-  "url": "https://bolidesh.in",
-  "description": "भारत की बोलियों और भाषाओं का सबसे बड़ा मंच",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bolidesh"
-  }
-}
-</script>
+    <meta name="description" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का सबसे बड़ा मंच। विभिन्न भाषाओं को सीखें, शब्दकोष खोजें, और सांस्कृतिक विरासत को संरक्षित करें।">
+    <meta name="keywords" content="भारतीय भाषाएं, स्थानीय बोलियां, देशबोली, भाषा सीखें, शब्दकोष, सांस्कृतिक विरासत, हिंदी, क्षेत्रीय भाषाएं">
+    <meta name="author" content="Deshboli Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content="देशबोली - भारतीय भाषाओं और बोलियों का मंच">
+    <meta property="og:description" content="देशबोली के साथ भारत की विविध भाषाओं और बोलियों की खोज करें। पाठ्यक्रम, शब्दकोष, और सांस्कृतिक लेखों के माध्यम से अपनी भाषाई यात्रा शुरू करें।">
+    <meta property="og:image" content="https://bolidesh.in/logo.png">
+    <meta property="og:image:alt" content="देशबोली लोगो - भारतीय भाषाओं का प्रतीक">
+    <meta property="og:url" content="https://bolidesh.in">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Deshboli">
+    <meta property="og:locale" content="hi_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का संग्रह">
+    <meta name="twitter:description" content="देशबोली भारत की सभी स्थ竞赛
+    <meta name="twitter:image" content="https://bolidesh.in/logo.png">
+    <meta name="twitter:creator" content="@Deshboli">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Deshboli",
+        "url": "https://bolidesh.in",
+        "description": "भारत की स्थानीय भाषाओं और बोलियों को सीखने, संरक्षित करने और बढ़ावा देने के लिए समर्पित मंच।",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Deshboli",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bolidesh.in/logo.png"
+            }
+        },
+        "inLanguage": "hi",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bolidesh.in/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
     <title>देशबोली - भारत की स्थानीय भाषाओं और बोलियों का संग्रह</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
@@ -448,6 +466,53 @@
             width: 100%;
         }
         
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-left: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+        
+        .whatsapp-btn:hover::before {
+            width: 100%;
+        }
+        
         /* फीचर्ड सेक्शन */
         .section-title {
             text-align: center;
@@ -827,7 +892,7 @@
                 font-size: 1.9rem;
             }
             
-            .btn {
+            .btn, .whatsapp-btn {
                 padding: 15px 35px;
                 font-size: 1.1rem;
             }
@@ -894,9 +959,7 @@
                 <i class="fas fa-times"></i>
             </button>
             <ul class="nav-menu">
-                
-                <li><a href="about us.html">हमारे बारे में</a></a></li>
-              <!--  <li><a href="course.html">पाठ्यक्रम</a></li>-->
+                <li><a href="about us.html">हमारे बारे में</a></li>
                 <li><a href="dictionary.html">शब्दकोष</a></li>
                 <li><a href="editorial.html">लेख</a></li>
                 <li><a href="community.html">समुदाय</a></li>
@@ -910,52 +973,55 @@
                 <div class="hero-content">
                     <h2>भारत की विविध भाषाओं की खोज करें</h2>
                     <p>देशबोली भारत की सभी स्थानीय भाषाओं और बोलियों को सीखने, संरक्षित करने और उनका आनंद लेने का मंच है। हमारे संसाधनों के माध्यम से भारत की भाषाई विविधता से जुड़ें।</p>
-                    <a href="https://whatsapp.com/channel/0029Vb5n5uoEquiObSRz5>"class="btn">अभी जुड़ें</a>
+                    <a href="https://whatsapp.com/channel/0029Vb5n5uoEquiObSRz5o1V" class="btn">अभी जुड़ें</a>
+                    <a href="https://whatsapp.com/channel/0029Vb5n5uoEquiObSRz5o1V" class="whatsapp-btn"><i class="fab fa-whatsapp"></i>WhatsApp चैनल</a>
                 </div>
             </div>
         </section>
 
         <!-- फीचर्ड सेक्शन -->
-<section class="container">
-  <h2 class="section-title">हमारी विशेषताएं</h2>
-  <div class="features">
-    <div class="feature-card">
-      <div class="feature-img" aria-hidden="true">
-        <i class="fas fa-book"></i>
-      </div>
-      <div class="feature-content">
-        <h3>पाठ्यक्रम</h3>
-        <p>प्रारंभिक से उन्नत स्तर तक के संरचित पाठ्यक्रम। विभिन्न भाषाओं को सीखने के लिए व्यवस्थित मार्गदर्शन।</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-img" aria-hidden="true">
-        <i class="fas fa-book-open"></i>
-      </div>
-      <div class="feature-content">
-        <h3>शब्दकोष</h3>
-        <p>विस्तृत शब्दसंग्रह के साथ शब्दों के अर्थ, उच्चारण और उपयोग के उदाहरण। आसान खोज और सीखने की सुविधा।</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-img" aria-hidden="true">
-        <i class="fas fa-newspaper"></i>
-      </div>
-        <h3>देशबोली साप्ताहिक अंक</h3>
-        <p>भाषा, साहित्य और संस्कृति पर नवीनतम लेख। देशभर से योगदानित सामग्री और लोककथाएं।</p>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-img" aria-hidden="true">
-        <i class="fas fa-pen"></i>
-      </div>
-      <div class="feature-content">
-        <h3>संपादकीय</h3>
-        <p>स्थानीय बोलियों का साहित्य,उनके मुद्दों और पांडुलिपियों पर संपादकीय और चर्चाएं।</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section class="container">
+            <h2 class="section-title">हमारी विशेषताएं</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-img" aria-hidden="true">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>पाठ्यक्रम</h3>
+                        <p>प्रारंभिक से उन्नत स्तर तक के संरचित पाठ्यक्रम। विभिन्न भाषाओं को सीखने के लिए व्यवस्थित मार्गदर्शन।</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" aria-hidden="true">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>शब्दकोष</h3>
+                        <p>विस्तृत शब्दसंग्रह के साथ शब्दों के अर्थ, उच्चारण और उपयोग के उदाहरण। आसान खोज और सीखने की सुविधा।</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" aria-hidden="true">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>देशबोली साप्ताहिक अंक</h3>
+                        <p>भाषा, साहित्य और संस्कृति पर नवीनतम लेख। देशभर से योगदानित सामग्री और लोककथाएं।</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" aria-hidden="true">
+                        <i class="fas fa-pen"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>संपादकीय</h3>
+                        <p>स्थानीय बोलियों का साहित्य, उनके मुद्दों और पांडुलिपियों पर संपादकीय और चर्चाएं।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- फुटर -->
         <footer>
             <div class="container">
@@ -976,7 +1042,6 @@
                         <ul>
                             <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
-                      <!--      <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>-->
                             <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="editorial.html">संपादकीय</a></li>
                         </ul>
@@ -986,103 +1051,4 @@
                         <ul>
                             <li><i class="fas fa-chevron-right"></i><a href="contact us.html">संपर्क</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="about us.html">हमारे बारे में</a></li>
-
                             <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>संपर्क करें</h3>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
-                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
-                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
-                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
-<form id="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
-    <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
-    <button type="submit">सब्सक्राइब करें</button>
-</form>
-                    </div>
-                </div>
-                
-                <div class="footer-badges">
-                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
-                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
-                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
-                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
-                </div>
-                
-                <div class="copyright">
-                    <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        // स्प्लैश स्क्रीन को 5 सेकंड के बाद हटाना
-        setTimeout(function() {
-            const splashScreen = document.getElementById('splash-screen');
-            splashScreen.style.opacity = '0';
-            
-            setTimeout(function() {
-                splashScreen.style.display = 'none';
-                document.querySelector('.main-content').style.display = 'block';
-            }, 800);
-        }, 5000);
-        
-        // नेविगेशन मेन्यू टॉगल
-        const navToggle = document.querySelector('.nav-toggle');
-        const navClose = document.querySelector('.nav-close');
-        const fullscreenNav = document.querySelector('.fullscreen-nav');
-        let isNavOpen = false;
-        
-        function openNav() {
-            fullscreenNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            isNavOpen = true;
-        }
-        
-        function closeNav() {
-            fullscreenNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            isNavOpen = false;
-        }
-        
-        navToggle.addEventListener('click', function() {
-            if (isNavOpen) {
-                closeNav();
-            } else {
-                openNav();
-            }
-        });
-        
-        navClose.addEventListener('click', closeNav);
-        
-        // मेन्यू आइटम्स पर क्लिक करने पर मेन्यू बंद करना
-        const navItems = document.querySelectorAll('.nav-menu a');
-        navItems.forEach(item => {
-            item.addEventListener('click', closeNav);
-        });
-        
-        // ESC key दबाने पर मेन्यू बंद करना
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isNavOpen) {
-                closeNav();
-            }
-        });
-        
-        // मेन्यू के बाहर क्लिक करने पर बंद करना
-        fullscreenNav.addEventListener('click', function(e) {
-            if (e.target === fullscreenNav) {
-                closeNav();
-            }
-        });
-    </script>
-</body>
-</html>

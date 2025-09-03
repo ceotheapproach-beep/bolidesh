@@ -1089,19 +1089,24 @@
 
     <script>
         // Splash Screen
-        setTimeout(function() {
+        document.addEventListener('DOMContentLoaded', () => {
             const splashScreen = document.getElementById('splash-screen');
             const mainContent = document.querySelector('.main-content');
+
             if (splashScreen && mainContent) {
-                splashScreen.style.opacity = '0';
-                setTimeout(function() {
-                    splashScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                }, 800);
+                setTimeout(() => {
+                    splashScreen.style.opacity = '0';
+                    splashScreen.style.transition = 'opacity 0.8s ease-out';
+                    setTimeout(() => {
+                        splashScreen.style.display = 'none';
+                        mainContent.style.display = 'block';
+                    }, 800); // Matches the transition duration
+                }, 5000); // 5 seconds delay
             } else {
-                console.error('Splash screen or main content element not found.');
+                console.warn('Splash screen or main content element not found. Showing main content.');
+                if (mainContent) mainContent.style.display = 'block';
             }
-        }, 5000);
+        });
 
         // Navigation Menu
         const navToggle = document.querySelector('.nav-toggle');
@@ -1138,8 +1143,7 @@
         ];
 
         const dialectNames = {
-            ' цифра 1
-awadhi': 'अवधी',
+            'awadhi': 'अवधी',
             'braj': 'ब्रजभाषा',
             'bhojpuri': 'भोजपुरी',
             'magahi': 'मगही',
@@ -1325,7 +1329,7 @@ awadhi': 'अवधी',
                     word.dialectWord.toLowerCase(),
                     word.reference.toLowerCase(),
                     dialectNames[word.dialect].toLowerCase()
-                    ];
+                ];
                 return fields.some(field => field.includes(query) || fuzzyMatch(field, query) > 0.7);
             });
             if (dialectSelect.value !== 'all') {

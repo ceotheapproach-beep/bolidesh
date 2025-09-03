@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFPVE46RRM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XFPVE46RRM');
+    </script>
+
+    <meta name="google-site-verification" content="S0Suti98_eb_NTpEV1xOwnVpDS-ZPLKivfBBSDonrTo" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का सबसे बड़ा मंच। पाठ्यक्रम, शब्दकोष, और सांस्कृतिक लेखों के माध्यम से भारत की भाषाई विविधता की खोज करें।">
+    <meta name="keywords" content="देशबोली, भारतीय भाषाएं, स्थानीय बोलियां, भाषा सीखें, शब्दकोष, सांस्कृतिक विरासत, हिंदी, क्षेत्रीय भाषाएं, भारत">
+    <meta name="author" content="Deshboli Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का संग्रह">
+    <meta property="og:description" content="देशबोली के साथ भारत की विविध भाषाओं और बोलियों को सीखें, संरक्षित करें और उनका आनंद लें। पाठ्यक्रम, शब्दकोष, और साप्ताहिक लेखों के साथ जुड़ें।">
+    <meta property="og:image" content="https://bolidesh.in/logo.png">
+    <meta property="og:image:alt" content="देशबोली लोगो - भारतीय भाषाओं का प्रतीक">
+    <meta property="og:url" content="https://bolidesh.in">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Deshboli">
+    <meta property="og:locale" content="hi_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="देशबोली - भारत की स्थानीय भाषाओं और बोलियों का मंच">
+    <meta name="twitter:description" content="देशबोली भारत की भाषाई और सांस्कृतिक विरासत को संरक्षित करने का मंच है। हमारे पाठ्यक्रम, शब्दकोष, और लेखों के साथ जुड़ें।">
+    <meta name="twitter:image" content="https://bolidesh.in/logo.png">
+    <meta name="twitter:creator" content="@Deshboli">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Deshboli",
+        "url": "https://bolidesh.in",
+        "description": "भारत की स्थानीय भाषाओं और बोलियों को सीखने, संरक्षित करने और बढ़ावा देने के लिए समर्पित मंच।",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Deshboli",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bolidesh.in/logo.png"
+            }
+        },
+        "inLanguage": "hi",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bolidesh.in/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <title>देशबोली - भाषा ज्ञान क्विज</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Existing styles from the provided HTML */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary: #3a7c8c;
+            --secondary: #d35400;
+            --accent: #27ae60;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --gold: #ffd700;
+            --copper: #b87333;
+            --cream: #fffdd0;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            direction: ltr;
+        }
+        
+        /* Splash screen styles... (copy all existing styles here) */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        /* ... (all other styles from the original HTML) */
+
+        /* New styles for quiz */
+        #quiz-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        #quiz-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #progress {
+            background: var(--light);
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        #question-text {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: #e0e0e0;
+        }
+
+        .option input {
+            margin-right: 15px;
+        }
+
+        .option label {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        #quiz-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .quiz-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        #prev-btn {
+            background: var(--dark);
+        }
+
+        #next-btn, #submit-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+        }
+
+        .quiz-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .quiz-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Modal styles */
+        #result-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none;
+        }
+
+        #modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        #result-score {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .result-question {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-question h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .result-correct {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .result-user {
+            color: var(--secondary);
+        }
+
+        .result-wrong {
+            color: red;
+        }
+
+        #share-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        #share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- स्प्लैश स्क्रीन -->
+    <div id="splash-screen">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <div class="logo">
+                    <i class="fas fa-language"></i>
+                </div>
+            </div>
+            <h1 class="site-title">देशबोली</h1>
+        </div>
+    </div>
+
+    <!-- मुख्य कंटेंट -->
+    <div class="main-content" style="display: none;">
+        <!-- हैडर -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <i class="fas fa-language" style="font-size: 36px; color: var(--primary);"></i>
+                        <h1>देशबोली</h1>
+                    </div>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- फुलस्क्रीन नेविगेशन मेन्यू -->
+        <nav class="fullscreen-nav">
+            <button class="nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about us.html">हमारे बारे में</a></li>
+                <li><a href="dictionary.html">शब्दकोष</a></li>
+                <li><a href="editorial.html">लेख</a></li>
+                <li><a href="community.html">समुदाय</a></li>
+                <li><a href="subscription.html">सदस्यता</a></li>
+            </ul>
+        </nav>
+
+        <!-- हीरो सेक्शन (similar but adjusted for quiz) -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>अपना भाषा ज्ञान जांचें</h2>
+                    <p>देशबोली क्विज के साथ भारत की भाषाओं के बारे में अपना ज्ञान परखें। 20 प्रश्न, 15 मिनट में पूरा करें।</p>
+                    <a href="https://whatsapp.com/channel/0029Vb5n5uoEquiObSRz5o1V" class="whatsapp-btn"><i class="fab fa-whatsapp"></i>WhatsApp चैनल</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- क्विज सेक्शन -->
+        <section class="container">
+            <div id="quiz-container">
+                <h2 id="quiz-title"></h2>
+                <div id="timer">समय शेष: 15:00</div>
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="question-container">
+                    <p id="question-text"></p>
+                    <div class="options" id="options"></div>
+                </div>
+                <div id="quiz-buttons">
+                    <button id="prev-btn" class="quiz-btn" disabled>पिछला</button>
+                    <button id="next-btn" class="quiz-btn">अगला</button>
+                    <button id="submit-btn" class="quiz-btn" style="display: none;">जमा करें</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- रिजल्ट मोडल -->
+        <div id="modal-overlay"></div>
+        <div id="result-modal">
+            <button id="modal-close"><i class="fas fa-times"></i></button>
+            <h2 id="result-score"></h2>
+            <div id="result-details"></div>
+            <button id="share-btn"><i class="fas fa-share-alt"></i> साझा करें</button>
+        </div>
+
+        <!-- फुटर (same as original) -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>देशबोली</h3>
+                        <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>त्वरित लिंक्स</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="editorial.html">संपादकीय</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संसाधन</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="contact us.html">संपर्क</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="about us.html">हमारे बारे में</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संपर्क करें</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                        </ul>
+                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                        <form id="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST" class="newsletter-form">
+                            <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                            <button type="submit">सब्सक्राइब करें</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-badges">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
+                    <a href="sitemap.xml">sitemap</a> 
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // स्प्लैश स्क्रीन और नेविगेशन स्क्रिप्ट (same as original)
+        setTimeout(function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.querySelector('.main-content');
+            if (splashScreen && mainContent) {
+                splashScreen.style.opacity = '0';
+                setTimeout(function() {
+                    splashScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 800);
+            } else {
+                console.error('Splash screen or main content element not found.');
+            }
+        }, 5000);
+        
+        const navToggle = document.querySelector('.nav-toggle');
+        const navClose = document.querySelector('.nav-close');
+        const fullscreenNav = document.querySelector('.fullscreen-nav');
+        let isNavOpen = false;
+        
+        function openNav() {
+            fullscreenNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            isNavOpen = true;
+        }
+        
+        function closeNav() {
+            fullscreenNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            isNavOpen = false;
+        }
+        
+        navToggle.addEventListener('click', function() {
+            if (isNavOpen) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+        
+        navClose.addEventListener('click', closeNav);
+        
+        const navItems = document.querySelectorAll('.nav-menu a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeNav);
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isNavOpen) {
+                closeNav();
+            }
+        });
+        
+        fullscreenNav.addEventListener('click', function(e) {
+            if (e.target === fullscreenNav) {
+                closeNav();
+            }
+        });
+
+        // क्विज लॉजिक
+        let quizData;
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let timerInterval;
+        let timeLeft;
+
+        async function loadQuiz() {
+            try {
+                const response = await fetch('quiz.json');
+                quizData = await response.json();
+                timeLeft = quizData.timeLimit;
+                document.getElementById('quiz-title').textContent = quizData.quizTitle;
+                userAnswers = new Array(quizData.questions.length).fill(null);
+                startTimer();
+                showQuestion();
+            } catch (error) {
+                console.error('Error loading quiz:', error);
+                document.getElementById('quiz-container').innerHTML = '<p>क्विज लोड करने में त्रुटि हुई। कृपया पुनः प्रयास करें।</p>';
+            }
+        }
+
+        function startTimer() {
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `समय शेष: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        function showQuestion() {
+            const question = quizData.questions[currentQuestion];
+            document.getElementById('question-text').textContent = `${currentQuestion + 1}. ${question.question}`;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            question.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'option';
+                input.id = `option${index}`;
+                input.value = index;
+                input.checked = userAnswers[currentQuestion] === index;
+                input.addEventListener('change', () => {
+                    userAnswers[currentQuestion] = index;
+                });
+                const label = document.createElement('label');
+                label.htmlFor = `option${index}`;
+                label.textContent = option;
+                div.appendChild(input);
+                div.appendChild(label);
+                optionsContainer.appendChild(div);
+            });
+
+            document.getElementById('prev-btn').disabled = currentQuestion === 0;
+            document.getElementById('next-btn').style.display = currentQuestion === quizData.questions.length - 1 ? 'none' : 'block';
+            document.getElementById('submit-btn').style.display = currentQuestion === quizData.questions.length - 1 ? 'block' : 'none';
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentQuestion < quizData.questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            }
+        });
+
+        document.getElementById('submit-btn').addEventListener('click', submitQuiz);
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            let score = 0;
+            userAnswers.forEach((answer, index) => {
+                if (answer === quizData.questions[index].correct) {
+                    score++;
+                }
+            });
+
+            document.getElementById('result-score').textContent = `आपका स्कोर: ${score}/20`;
+
+            const details = document.getElementById('result-details');
+            details.innerHTML = '';
+            quizData.questions.forEach((q, i) => {
+                const div = document.createElement('div');
+                div.className = 'result-question';
+                div.innerHTML = `
+                    <h4>${i + 1}. ${q.question}</h4>
+                    <p class="result-correct">सही उत्तर: ${q.options[q.correct]}</p>
+                    <p class="result-user ${userAnswers[i] === q.correct ? 'result-correct' : 'result-wrong'}">आपका उत्तर: ${userAnswers[i] !== null ? q.options[userAnswers[i]] : 'कोई उत्तर नहीं'}</p>
+                `;
+                details.appendChild(div);
+            });
+
+            document.getElementById('modal-overlay').style.display = 'block';
+            document.getElementById('result-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        document.getElementById('modal-close').addEventListener('click', () => {
+            document.getElementById('modal-overlay').style.display = 'none';
+            document.getElementById('result-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        document.getElementById('modal-overlay').addEventListener('click', () => {
+            document.getElementById('modal-overlay').style.display = 'none';
+            document.getElementById('result-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        document.getElementById('share-btn').addEventListener('click', () => {
+            const score = document.getElementById('result-score').textContent.split(': ')[1];
+            const shareText = `मैंने देशबोली भाषा ज्ञान क्विज में ${score} अंक प्राप्त किए! अपना ज्ञान जांचें: https://bolidesh.in/quiz.html`;
+            const shareData = {
+                title: 'देशबोली क्विज रिजल्ट',
+                text: shareText,
+                url: 'https://bolidesh.in/quiz.html'
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('शेयर टेक्स्ट क्लिपबोर्ड पर कॉपी कर लिया गया है!');
+                }).catch(console.error);
+            }
+        });
+
+        // लोड क्विज
+        loadQuiz();
+    </script>
+</body>
+</html>

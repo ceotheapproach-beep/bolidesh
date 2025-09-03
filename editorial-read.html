@@ -1,39 +1,67 @@
-<!-- editorial-read.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFPVE46RRM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XFPVE46RRM');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Bolidesh - भारतीय भाषाओं का मंच">
-<meta property="og:description" content="भारत की बोलियों और भाषाओं का सबसे बड़ा संग्रह।">
-<meta property="og:image" content="https://bolidesh.in/logo.png">
-<meta property="og:url" content="https://bolidesh.in">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Bolidesh",
-  "url": "https://bolidesh.in",
-  "description": "भारत की बोलियों और भाषाओं का सबसे बड़ा मंच",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Bolidesh"
-  }
-}
-</script>
+    <meta name="description" content="देशबोली के संपादकीय लेख पढ़ें। भारत की स्थानीय भाषाओं, बोलियों, और सांस्कृतिक विरासत पर गहन लेख और विचार।">
+    <meta name="keywords" content="देशबोली, संपादकीय, लेख, भारतीय भाषाएं, बोली, सांस्कृतिक विरासत, हिंदी, अवधी, भोजपुरी, मैथिली">
+    <meta name="author" content="Deshboli Team">
+    <meta property="og:title" content="देशबोली - संपादकीय पढ़ें">
+    <meta property="og:description" content="देशबोली के संपादकीय लेखों के माध्यम से भारत की स्थानीय भाषाओं और सांस्कृतिक विरासत पर गहन विचार और विश्लेषण पढ़ें।">
+    <meta property="og:image" content="https://bolidesh.in/logo.png">
+    <meta property="og:image:alt" content="देशबोली लोगो - भारतीय भाषाओं का प्रतीक">
+    <meta property="og:url" content="https://bolidesh.in/editorial-read.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Deshboli">
+    <meta property="og:locale" content="hi_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="देशबोली - संपादकीय पढ़ें">
+    <meta name="twitter:description" content="देशबोली के संपादकीय लेखों में भारत की भाषाई और सांस्कृतिक विरासत पर गहन लेख पढ़ें। अभी पढ़ना शुरू करें।">
+    <meta name="twitter:image" content="https://bolidesh.in/logo.png">
+    <meta name="twitter:creator" content="@Deshboli">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "देशबोली - संपादकीय पढ़ें",
+        "url": "https://bolidesh.in/editorial-read.html",
+        "description": "देशबोली के संपादकीय लेखों के माध्यम से भारत की स्थानीय भाषाओं और सांस्कृतिक विरासत पर गहन विचार और विश्लेषण पढ़ें।",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Deshboli",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bolidesh.in/logo.png"
+            }
+        },
+        "inLanguage": "hi",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Deshboli",
+            "url": "https://bolidesh.in"
+        }
+    }
+    </script>
     <title>देशबोली - संपादकीय पढ़ें</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Improved CSS with better article styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Hind Siliguri', 'Nirmala UI', 'Shree Devanagari 714', Arial, sans-serif;
         }
-        
+
         :root {
             --primary: #3a7c8c;
             --secondary: #d35400;
@@ -45,7 +73,7 @@
             --copper: #b87333;
             --cream: #fffdd0;
         }
-        
+
         body {
             background-color: #f5f5f5;
             color: var(--text);
@@ -53,8 +81,142 @@
             overflow-x: hidden;
             direction: ltr;
         }
-        
-        /* Header, Nav, Footer same as editorial.html */
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .logo-circle {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            animation: pulse 2s infinite alternate, float 6s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--gold));
+            animation: rotate 4s linear infinite;
+        }
+
+        .logo-circle::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo i {
+            font-size: 90px;
+            color: white;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+        }
+
+        .site-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            margin-top: 2.5rem;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--gold) 0%, var(--cream) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-out;
+            position: relative;
+        }
+
+        .site-tagline {
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.95);
+            margin-top: 1.5rem;
+            text-align: center;
+            max-width: 80%;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            animation: fadeIn 3s ease-out;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+            100% { transform: scale(1.08); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--gold), 0 0 20px var(--gold);
+                background-position: 0% 50%;
+            }
+            100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--gold), 0 0 40px var(--gold);
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
         header {
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
@@ -63,30 +225,24 @@
             z-index: 100;
             backdrop-filter: blur(10px);
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 18px 0;
         }
-        
+
         .header-logo {
             display: flex;
             align-items: center;
         }
-        
+
         .header-logo i {
             font-size: 36px;
             color: var(--primary);
         }
-        
+
         .header-logo h1 {
             font-size: 2rem;
             margin-left: 12px;
@@ -96,7 +252,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .nav-toggle {
             background: none;
             border: none;
@@ -105,11 +261,12 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        
+
         .nav-toggle:hover {
             transform: rotate(90deg);
         }
-        
+
+        /* Fullscreen Navigation */
         .fullscreen-nav {
             position: fixed;
             top: 0;
@@ -126,12 +283,12 @@
             visibility: hidden;
             transition: all 0.5s ease;
         }
-        
+
         .fullscreen-nav.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .nav-close {
             position: absolute;
             top: 35px;
@@ -143,28 +300,28 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        
+
         .nav-close:hover {
             transform: rotate(90deg);
         }
-        
+
         .nav-menu {
             list-style: none;
             text-align: center;
         }
-        
+
         .nav-menu li {
             margin: 30px 0;
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.5s ease;
         }
-        
+
         .fullscreen-nav.active .nav-menu li {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .nav-menu a {
             color: white;
             text-decoration: none;
@@ -177,13 +334,59 @@
             position: relative;
             font-family: 'Playfair Display', serif;
         }
-        
+
         .nav-menu a:hover {
             color: var(--gold);
             transform: translateY(-5px);
         }
-        
-        /* Article Section Improved */
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .whatsapp-btn:hover::before {
+            width: 100%;
+        }
+
+        /* Article Section */
         .article-section {
             margin: 80px 0;
             background: white;
@@ -191,7 +394,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .article-title {
             font-size: 2.5rem;
             color: var(--dark);
@@ -199,30 +402,30 @@
             font-family: 'Playfair Display', serif;
             text-align: center;
         }
-        
+
         .article-date {
             font-size: 1.2rem;
             color: #666;
             margin-bottom: 30px;
             text-align: center;
         }
-        
+
         .article-content {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #333;
         }
-        
+
         .article-content p {
             margin-bottom: 20px;
         }
-        
+
         .article-content h2 {
             font-size: 1.8rem;
             color: var(--primary);
             margin: 30px 0 15px;
         }
-        
+
         .article-content img {
             max-width: 100%;
             height: auto;
@@ -230,7 +433,7 @@
             margin: 20px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         /* Back Button */
         .back-btn {
             display: inline-block;
@@ -244,13 +447,13 @@
             transition: all 0.3s;
             text-align: center;
         }
-        
+
         .back-btn:hover {
             background: var(--secondary);
             transform: translateY(-3px);
         }
-        
-        /* Footer same */
+
+        /* Footer */
         footer {
             background: linear-gradient(to bottom, #2c3e50, #1a2530);
             color: white;
@@ -258,7 +461,7 @@
             margin-top: 120px;
             position: relative;
         }
-        
+
         footer::before {
             content: '';
             position: absolute;
@@ -268,14 +471,14 @@
             height: 6px;
             background: linear-gradient(to right, var(--secondary), var(--accent));
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 45px;
             margin-bottom: 50px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.7rem;
             margin-bottom: 30px;
@@ -284,7 +487,7 @@
             font-weight: 700;
             font-family: 'Playfair Display', serif;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -294,52 +497,52 @@
             height: 4px;
             background: var(--secondary);
         }
-        
+
         .footer-column p {
             color: #ccc;
             line-height: 1.9;
             margin-bottom: 25px;
             font-size: 1.1rem;
         }
-        
+
         .footer-column ul {
             list-style: none;
         }
-        
+
         .footer-column ul li {
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             transition: transform 0.3s ease;
         }
-        
+
         .footer-column ul li:hover {
             transform: translateX(5px);
         }
-        
+
         .footer-column ul li i {
             margin-right: 12px;
             color: var(--secondary);
             font-size: 1.2rem;
         }
-        
+
         .footer-column a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s ease;
             font-size: 1.1rem;
         }
-        
+
         .footer-column a:hover {
             color: var(--secondary);
         }
-        
+
         .social-links {
             display: flex;
             gap: 18px;
             margin-top: 25px;
         }
-        
+
         .social-links a {
             display: inline-flex;
             justify-content: center;
@@ -352,13 +555,13 @@
             color: white;
             font-size: 1.3rem;
         }
-        
+
         .social-links a:hover {
             background-color: var(--secondary);
             transform: translateY(-8px) rotate(5deg);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .newsletter-form {
             display: flex;
             margin-top: 20px;
@@ -366,7 +569,7 @@
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         .newsletter-form input {
             flex: 1;
             padding: 15px 20px;
@@ -376,11 +579,11 @@
             outline: none;
             font-size: 1rem;
         }
-        
+
         .newsletter-form input::placeholder {
             color: #ccc;
         }
-        
+
         .newsletter-form button {
             background-color: var(--secondary);
             color: white;
@@ -390,11 +593,11 @@
             transition: background-color 0.3s ease;
             font-size: 1.2rem;
         }
-        
+
         .newsletter-form button:hover {
             background-color: var(--accent);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 40px;
@@ -402,7 +605,7 @@
             font-size: 1rem;
             color: #999;
         }
-        
+
         .footer-badges {
             display: flex;
             justify-content: center;
@@ -410,7 +613,7 @@
             margin-top: 30px;
             flex-wrap: wrap;
         }
-        
+
         .badge {
             background: rgba(255, 255, 255, 0.1);
             padding: 10px 20px;
@@ -420,17 +623,18 @@
             align-items: center;
             transition: all 0.3s ease;
         }
-        
+
         .badge:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.15);
         }
-        
+
         .badge i {
             margin-right: 8px;
             color: var(--accent);
             font-size: 1.1rem;
-        }   
+        }
+
         /* Loading and Error */
         .loading {
             text-align: center;
@@ -438,127 +642,184 @@
             color: var(--primary);
             margin: 50px 0;
         }
-        
+
         .error {
             text-align: center;
             font-size: 1.2rem;
             color: red;
             margin: 50px 0;
         }
-        
+
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .article-section {
                 padding: 20px;
             }
-            
+
             .article-title {
                 font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo h1 {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu a {
+                font-size: 1.7rem;
+                padding: 12px 25px;
+            }
+
+            .social-links a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .whatsapp-btn {
+                font-size: 1rem;
+                padding: 12px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <div class="header-logo">
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="logo-container">
+            <div class="logo-circle">
+                <div class="logo">
                     <i class="fas fa-language"></i>
-                    <h1>देशबोली</h1>
                 </div>
-                <button class="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
+            <h1 class="site-title">देशबोली</h1>
         </div>
-    </header>
+    </div>
 
-    <nav class="fullscreen-nav">
-        <button class="nav-close">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="nav-menu">
-            <li><a href="index.html">होम</a></li>
-            
-           <!-- <li><a href="course.html">पाठ्यक्रम</a></li>-->
-            <li><a href="dictionary.html">शब्दकोष</a></li>
-            <li><a href="editorial.html">लेख</a></li>
-            <li><a href="community.html">समुदाय</a></li>
-            <li><a href="subscription.html">सदस्यता</a></li>
-        </ul>
-    </nav>
+    <!-- Main Content -->
+    <div class="main-content" style="display: none;">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <i class="fas fa-language"></i>
+                        <h1>देशबोली</h1>
+                    </div>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
 
-    <section class="container article-section">
-        <div id="loading" class="loading">लोड हो रहा है...</div>
-        <div id="error" class="error" style="display: none;"></div>
-        <h1 class="article-title" id="article-title" style="display: none;"></h1>
-        <div class="article-date" id="article-date" style="display: none;"></div>
-        <div class="article-content" id="article-content" style="display: none;"></div>
-        <a href="editorial.html" class="back-btn" id="back-btn" style="display: none;">वापस संपादकीय पृष्ठ पर</a>
-    </section>
+        <!-- Fullscreen Navigation Menu -->
+        <nav class="fullscreen-nav">
+            <button class="nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">होम</a></li>
+                <li><a href="course.html">पाठ्यक्रम</a></li>
+                <li><a href="dictionary.html">शब्दकोष</a></li>
+                <li><a href="issue.html">लेख</a></li>
+                <li><a href="editorial.html">समुदाय</a></li>
+                <li><a href="subscription.html">सदस्यता</a></li>
+                <li><a href="contribute.html">योगदान करें</a></li>
+            </ul>
+        </nav>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>देशबोली</h3>
-                    <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Article Section -->
+        <section class="container article-section">
+            <a href="https://whatsapp.com/channel/0029Vb5n5uoEquiObSRz5o1V" class="whatsapp-btn"><i class="fab fa-whatsapp"></i>WhatsApp चैनल</a>
+            <div id="loading" class="loading">लोड हो रहा है...</div>
+            <div id="error" class="error" style="display: none;"></div>
+            <h1 class="article-title" id="article-title" style="display: none;"></h1>
+            <div class="article-date" id="article-date" style="display: none;"></div>
+            <div class="article-content" id="article-content" style="display: none;"></div>
+            <a href="editorial.html" class="back-btn" id="back-btn" style="display: none;">वापस संपादकीय पृष्ठ पर</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>देशबोली</h3>
+                        <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>त्वरित लिंक्स</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issues.html">पत्रिका</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संसाधन</h3>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान करें</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contact.html">संपर्क करें</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>संपर्क करें</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
+                            <li><i class="fas fa-phone"></i> +91 9555754494</li>
+                            <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
+                        </ul>
+                        <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
+                        <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
+                        <form class="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
+                            <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
+                            <button type="submit">सब्सक्राइब करें</button>
+                        </form>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>त्वरित लिंक्स</h3>
-                    <ul>
-                        <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
-                     <!--   <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>-->
-                        <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="editorial.html">लेख</a></li>
-                    </ul>
+                <div class="footer-badges">
+                    <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
+                    <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
+                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
                 </div>
-                <div class="footer-column">
-                    <h3>संसाधन</h3>
-                    <ul>
-                       
-                        <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान दें</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>संपर्क करें</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</li>
-                        <li><i class="fas fa-phone"></i> +91 9555754494</li>
-                        <li><i class="fas fa-envelope"></i> info@deshboli.in</li>
-                    </ul>
-                    <h3 style="margin-top: 30px;">न्यूज़लेटर</h3>
-                    <p>नवीनतम अपडेट प्राप्त करने के लिए सदस्यता लें</p>
-                    <form class="newsletter-form" action="https://formspree.io/f/mgvlzajj" method="POST">
-                        <input type="email" name="email" placeholder="आपका ईमेल दर्ज करें" required>
-                        <button type="submit">सब्सक्राइब करें</button>
-                    </form>
+                <div class="copyright">
+                    <p>&copy; 2025 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
                 </div>
             </div>
-            <div class="footer-badges">
-                <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
-                <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
-                <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
-                <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 देशबोली. सर्वाधिकार सुरक्षित। | <a href="privacy.html">गोपनीयता नीति</a> | <a href="terms of use.html">उपयोग की शर्तें</a></p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script>
-        // Navigation Script same as above
+        // Splash Screen
+        setTimeout(function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.querySelector('.main-content');
+            if (splashScreen && mainContent) {
+                splashScreen.style.opacity = '0';
+                setTimeout(function() {
+                    splashScreen.style.display = 'none';
+                    mainContent.style.display = 'block';
+                }, 800);
+            } else {
+                console.error('Splash screen or main content element not found.');
+            }
+        }, 5000);
+
+        // Navigation Script
         const navToggle = document.querySelector('.nav-toggle');
         const navClose = document.querySelector('.nav-close');
         const fullscreenNav = document.querySelector('.fullscreen-nav');

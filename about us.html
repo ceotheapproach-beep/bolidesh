@@ -85,133 +85,7 @@
             direction: ltr;
         }
         
-        /* स्प्लैश स्क्रीन */
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease-out;
-        }
         
-        .logo-container {
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .logo-circle {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            animation: pulse 2s infinite alternate, float 6s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .logo-circle::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, transparent, transparent, var(--gold));
-            animation: rotate 4s linear infinite;
-        }
-        
-        .logo-circle::after {
-            content: '';
-            position: absolute;
-            inset: 5px;
-            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .logo {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo i {
-            font-size: 90px;
-            color: white;
-            text-shadow: 0 0 20px rgba(0,0,0,0.5);
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
-        }
-        
-        .site-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            color: white;
-            margin-top: 2.5rem;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
-            letter-spacing: 3px;
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(to right, var(--gold) 0%, var(--cream) 50%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-out;
-            position: relative;
-        }
-        
-        .site-tagline {
-            font-size: 1.6rem;
-            color: rgba(255,255,255,0.95);
-            margin-top: 1.5rem;
-            text-align: center;
-            max-width: 80%;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            line-height: 1.8;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-            animation: fadeIn 3s ease-out;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-            100% { transform: scale(1.08); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes glow {
-            0% { 
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--gold), 0 0 20px var(--gold);
-                background-position: 0% 50%;
-            }
-            100% { 
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--gold), 0 0 40px var(--gold);
-                background-position: 100% 50%;
-            }
-        }
-        
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
         
         /* मुख्य लेआउट */
         .container {
@@ -839,17 +713,7 @@
     </style>
 </head>
 <body>
-    <!-- स्प्लैश स्क्रीन -->
-    <div id="splash-screen">
-        <div class="logo-container">
-            <div class="logo-circle">
-                <div class="logo">
-                    <i class="fas fa-language"></i>
-                </div>
-            </div>
-            <h1 class="site-title">देशबोली</h1>
-        </div>
-    </div>
+   
 
     <!-- मुख्य कंटेंट -->
     <div class="main-content" style="display: none;">
@@ -890,7 +754,7 @@
                 <h1>हमारे बारे में</h1>
                 
                 <h2>देशबोली क्या है?</h2>
-                <p>देशबोली भारत की भाषाई और सांस्कृतिक विरासत को संरक्षित करने, प्रचारित करने और उत्सव मनाने के लिए समर्पित एक डिजिटल मंच है। हमारा उद्देश्य भारत की विविध स्थानीय भाषाओं और बोलियों को एकजुट करना है, जो देश की सांस्कृतिक आत्मा का आधार हैं। भोजपुरी से मैथिली, मगही से रायलसीमा तमिल, और तमिल से कश्मीरी तक, देशबोली हर भाषा को एक मंच प्रदान करता है जहां उपयोगकर्ता सीख सकते हैं, योगदान दे सकते हैं, और भारत की समृद्ध भाषाई टेपेस्ट्री का हिस्सा बन सकते हैं।</p>
+                <p>देशबोली भारत की भाषाई और सांस्कृतिक विरासत को संरक्षित करने, प्रचारित करने और उत्सव मनाने के लिए समर्पित एक डिजिटल मंच है। हमारा उद्देश्य भारत की विविध स्थानीय भाषाओं और बोलियों ( पचास से भी अधिक भारतीय स्थानीय बोलियों ) को एकजुट करना है, जो देश की सांस्कृतिक आत्मा का आधार हैं। भोजपुरी से मैथिली, मगही से रायलसीमा तमिल, और तमिल से कश्मीरी तक, देशबोली हर भाषा को एक मंच प्रदान करता है जहां उपयोगकर्ता सीख सकते हैं, योगदान दे सकते हैं, और भारत की समृद्ध भाषाई टेपेस्ट्री का हिस्सा बन सकते हैं। हर बोली पर विस्तृत सामग्री, वृहत शब्दकोश और पाठ्यक्रम हम प्रदान करते है ।</p>
                 <p>हमारा मंच केवल एक शैक्षिक उपकरण नहीं है; यह एक सामुदायिक प्रयास है जो भाषा प्रेमियों, विद्वानों, साहित्यकारों, और सांस्कृतिक उत्साहियों को एक साथ लाता है। हम मानते हैं कि प्रत्येक बोली, चाहे वह कितनी भी छोटी क्यों न हो, भारत की सांस्कृतिक कहानी का एक अनमोल हिस्सा है। देशबोली के माध्यम से, हम इन भाषाओं को जीवित रखने और अगली पीढ़ियों तक पहुंचाने का प्रयास करते हैं।</p>
                 
                 <h2>हमारा मिशन</h2>
@@ -904,15 +768,15 @@
                 </ul>
                 
                 <h2>हमारी कहानी</h2>
-                <p>देशबोली की शुरुआत 2024 में एक साधारण विचार के साथ हुई थी: भारत की भाषाई विविधता को डिजिटल युग में जीवित रखना। हमारे संस्थापक, जो स्वयं विभिन्न भारतीय भाषाओं के प्रति उत्साही थे, ने देखा कि कई स्थानीय बोलियां और भाषाएं, जैसे भोजपुरी, मैथिली, और बोडो, धीरे-धीरे विलुप्त हो रही थीं क्योंकि युवा पीढ़ी वैश्विक भाषाओं की ओर आकर्षित हो रही थी। इस चिंता ने हमें एक ऐसा मंच बनाने के लिए प्रेरित किया जो न केवल इन भाषाओं को सीखने के लिए संसाधन प्रदान करे, बल्कि उन्हें सांस्कृतिक गर्व का विषय बनाए।</p>
-                <p>पिछले कुछ वर्षों में, देशबोली एक छोटे से प्रोजेक्ट से एक पूर्ण विकसित मंच में विकसित हो गया है, जिसमें हजारों उपयोगकर्ता, सैकड़ों पाठ्यक्रम, और एक जीवंत समुदाय शामिल है। हमने भाषा विशेषज्ञों, साहित्यकारों, और तकनीकी नवप्रवर्तकों के साथ मिलकर एक ऐसा मंच बनाया है जो शिक्षा, संरक्षण, और सामुदायिक सहभागिता को जोड़ता है। आज, देशबोली भारत की 50 से अधिक भाषाओं और बोलियों के लिए संसाधन प्रदान करता है, और हमारा लक्ष्य अगले पांच वर्षों में 100 से अधिक भाषाओं को शामिल करना है।</p>
+                <p>देशबोली की शुरुआत 2024 में एक साधारण विचार के साथ हुई थी: भारत की भाषाई विविधता को डिजिटल युग में जीवित रखना। हमारे संस्थापक प्रांशु वर्मा, जो स्वयं विभिन्न भारतीय भाषाओं और बोलियों के प्रति उत्साही थे, ने देखा कि कई स्थानीय बोलियां और भाषाएं, जैसे भोजपुरी, मैथिली, और बोडो, धीरे-धीरे विलुप्त हो रही थीं क्योंकि युवा पीढ़ी वैश्विक भाषाओं की ओर आकर्षित हो रही थी। इस चिंता ने हमें एक ऐसा मंच बनाने के लिए प्रेरित किया जो न केवल इन भाषाओं को सीखने के लिए संसाधन प्रदान करे, बल्कि उन्हें सांस्कृतिक गर्व का विषय बनाए।</p>
+                <p>पिछले कुछ वर्षों में, देशबोली एक छोटे से प्रोजेक्ट से एक पूर्ण विकसित मंच में विकसित हो गया है, जिसमें हजारों उपयोगकर्ता, पचास से अधिक पाठ्यक्रम, और एक जीवंत समुदाय शामिल है। हमने भाषा विशेषज्ञों, साहित्यकारों, और तकनीकी नवप्रवर्तकों के साथ मिलकर एक ऐसा मंच बनाया है जो शिक्षा, संरक्षण, और सामुदायिक सहभागिता को जोड़ता है। आज, देशबोली भारत की 50 से अधिक भाषाओं और बोलियों के लिए संसाधन प्रदान करता है, और हमारा लक्ष्य अगले पांच वर्षों में 100 से अधिक भाषाओं को शामिल करना है।</p>
                 
                 <h2>हमारी विशेषताएं</h2>
                 <p>देशबोली एक बहुआयामी मंच है जो विभिन्न प्रकार की सेवाएं और संसाधन प्रदान करता है। हमारी मुख्य विशेषताएं निम्नलिखित हैं:</p>
                 <ul>
                     <li><strong>संरचित पाठ्यक्रम:</strong> प्रारंभिक से उन्नत स्तर तक के पाठ्यक्रम, जो उपयोगकर्ताओं को विभिन्न भारतीय भाषाएं सीखने में मदद करते हैं।</li>
-                    <li><strong>शब्दकोष:</strong> एक विस्तृत डिजिटल शब्दकोष जो शब्दों के अर्थ, उच्चारण, और उपयोग के उदाहरण प्रदान करता है।</li>
-                    <li><strong>लेख और पत्रिका:</strong> भाषा, साहित्य, और संस्कृति पर लेख, जो देशभर के योगदानकर्ताओं द्वारा लिखे जाते हैं।</li>
+                    <li><strong>शब्दकोष:</strong> भारतीय स्थानीय बोलियो के लाखों शब्दों का एक विस्तृत डिजिटल शब्दकोष जो शब्दों के अर्थ, उच्चारण, और उपयोग के उदाहरण प्रदान करता है।</li>
+                    <li><strong>लेख और पत्रिका:</strong> भाषा, साहित्य, बोलियों और संस्कृति पर लेख, जो देशभर के योगदानकर्ताओं द्वारा लिखे जाते हैं।</li>
                     <li><strong>समुदाय:</strong> एक जीवंत समुदाय जहां उपयोगकर्ता चर्चा में भाग ले सकते हैं, सामग्री साझा कर सकते हैं, और वेबिनार में शामिल हो सकते हैं।</li>
                     <li><strong>संपादकीय:</strong> स्थानीय बोलियों के साहित्य और मुद्दों पर चर्चाएं और विश्लेषण।</li>
                 </ul>
@@ -932,7 +796,7 @@
                     <div class="team-card">
                         <img src="https://via.placeholder.com/120" alt="जेविन नगा">
                         <h3>जेविन नगा</h3>
-                        <p>मुख्य तकनीकी अधिकारी<br>डिजिटल मंच विकास</p>
+                        <p>मुख्य तकनीकी अधिकारी<br>मंच विकास</p>
                     </div>
                     <div class="team-card">
                         <img src="https://via.placeholder.com/120" alt="सांदली दास">
@@ -951,7 +815,7 @@
                 <ul>
                     <li>50,000 से अधिक उपयोगकर्ताओं का एक सक्रिय समुदाय।</li>
                     <li>50 से अधिक भारतीय भाषाओं और बोलियों के लिए संसाधन।</li>
-                    <li>1000 से अधिक पाठ्यक्रम और शैक्षिक मॉड्यूल।</li>
+                    <li>50 से अधिक पाठ्यक्रम और शैक्षिक मॉड्यूल।</li>
                     <li>हजारों लेख, कहानियां, और लोककथाएं जो देशभर के योगदानकर्ताओं से प्राप्त हुई हैं।</li>
                     <li>मासिक वेबिनार और सांस्कृतिक आयोजन जो हजारों प्रतिभागियों को आकर्षित करते हैं।</li>
                 </ul>
@@ -976,9 +840,9 @@
                         <p>भारत की स्थानीय भाषाओं और बोलियों को संरक्षित और प्रसारित करने के लिए समर्पित मंच। हमारा उद्देश्य है भाषाई विविधता को बढ़ावा देना और सांस्कृतिक विरासत को सुरक्षित रखना।</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                         
                             <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                          
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -986,7 +850,7 @@
                         <h3>त्वरित लिंक्स</h3>
                         <ul>
                             <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="issues.html">भाषाएं</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issues.html">पत्रिका</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
                         </ul>
@@ -1022,7 +886,7 @@
                     <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
                     <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
                     <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
-                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-book"></i> 50+ पाठ्यक्रम</div>
                 </div>
                 
                 <div class="copyright">
@@ -1033,20 +897,7 @@
     </div>
 
     <script>
-        // स्प्लैश स्क्रीन को 5 सेकंड के बाद हटाना
-        setTimeout(function() {
-            const splashScreen = document.getElementById('splash-screen');
-            const mainContent = document.querySelector('.main-content');
-            if (splashScreen && mainContent) {
-                splashScreen.style.opacity = '0';
-                setTimeout(function() {
-                    splashScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                }, 800);
-            } else {
-                console.error('Splash screen or main content element not found.');
-            }
-        }, 5000);
+        
         
         // नेविगेशन मेन्यू टॉगल
         const navToggle = document.querySelector('.nav-toggle');

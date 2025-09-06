@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@netlify/plugin-prerender-spa": "^1.0.0"
+  }
+}

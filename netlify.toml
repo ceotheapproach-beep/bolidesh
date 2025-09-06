@@ -1,11 +1,15 @@
+
+
+
+
+
 [build]
-  publish = "public"          # आपकी build folder
-  command = ""                # pure HTML+JS है तो खाली
+  publish = "public"
+  command = ""
 
 [[plugins]]
   package = "@netlify/plugin-prerender-spa"
-
   [plugins.inputs]
-    crawl = ["/", "/about", "/contact", "/blog"]  # pre-render pages
+    crawl = ["/", "/about", "/contact", "/blog"]
     renderer = "chrome"
     staticDir = "public"

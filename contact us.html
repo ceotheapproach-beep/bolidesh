@@ -86,132 +86,6 @@
         }
 
         /* स्प्लैश स्क्रीन */
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease-out;
-        }
-
-        .logo-container {
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .logo-circle {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            animation: pulse 2s infinite alternate, float 6s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-circle::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(transparent, transparent, transparent, var(--gold));
-            animation: rotate 4s linear infinite;
-        }
-
-        .logo-circle::after {
-            content: '';
-            position: absolute;
-            inset: 5px;
-            background: radial-gradient(circle, var(--gold) 0%, var(--copper) 100%);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .logo {
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo i {
-            font-size: 90px;
-            color: white;
-            text-shadow: 0 0 20px rgba(0,0,0,0.5);
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
-        }
-
-        .site-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            color: white;
-            margin-top: 2.5rem;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.6);
-            letter-spacing: 3px;
-            font-family: 'Playfair Display', serif;
-            background: linear-gradient(to right, var(--gold) 0%, var(--cream) 50%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-out;
-            position: relative;
-        }
-
-        .site-tagline {
-            font-size: 1.6rem;
-            color: rgba(255,255,255,0.95);
-            margin-top: 1.5rem;
-            text-align: center;
-            max-width: 80%;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            line-height: 1.8;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-            animation: fadeIn 3s ease-out;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-            100% { transform: scale(1.08); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--gold), 0 0 20px var(--gold);
-                background-position: 0% 50%;
-            }
-            100% {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--gold), 0 0 40px var(--gold);
-                background-position: 100% 50%;
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
         
         /* मुख्य लेआउट */
         .container {
@@ -878,17 +752,7 @@
     </style>
 </head>
 <body>
-    <!-- स्प्लैश स्क्रीन -->
-    <div id="splash-screen">
-        <div class="logo-container">
-            <div class="logo-circle">
-                <div class="logo">
-                    <i class="fas fa-language"></i>
-                </div>
-            </div>
-            <h1 class="site-title">देशबोली</h1>
-        </div>
-    </div>
+    
 
     <!-- मुख्य कंटेंट -->
     <div class="main-content" style="display: none;">
@@ -916,7 +780,7 @@
                 <li><a href="index.html">होम</a></li>
                 <li><a href="course.html">पाठ्यक्रम</a></li>
                 <li><a href="dictionary.html">शब्दकोष</a></li>
-                <li><a href="issue.html">लेख</a></li>
+                <li><a href="issue.html">पत्रिका</a></li>
                 <li><a href="editorial.html">समुदाय</a></li>
                 <li><a href="subscription.html">सदस्यता</a></li>
                 <li><a href="contribute.html">योगदान करें</a></li>
@@ -998,15 +862,14 @@
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            
                         </div>
                     </div>
                     <div class="footer-column">
                         <h3>त्वरित लिंक्स</h3>
                         <ul>
                             <li><i class="fas fa-chevron-right"></i><a href="index.html">होम</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="issues.html">पत्रिका</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="issue.html">पत्रिका</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="course.html">पाठ्यक्रम</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="dictionary.html">शब्दकोष</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="community.html">समुदाय</a></li>
@@ -1018,7 +881,7 @@
                             <li><i class="fas fa-chevron-right"></i><a href="help.html">सहायता</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="subscription.html">सदस्यता</a></li>
                             <li><i class="fas fa-chevron-right"></i><a href="contribute.html">योगदान करें</a></li>
-                            <li><i class="fas fa-chevron-right"></i><a href="contact.html">संपर्क करें</a></li>
+                            <li><i class="fas fa-chevron-right"></i><a href="contact us.html">संपर्क करें</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -1042,7 +905,7 @@
                     <div class="badge"><i class="fas fa-shield-alt"></i> सुरक्षित भुगतान</div>
                     <div class="badge"><i class="fas fa-award"></i> प्रमाणित पाठ्यक्रम</div>
                     <div class="badge"><i class="fas fa-users"></i> 50,000+ सदस्य</div>
-                    <div class="badge"><i class="fas fa-book"></i> 1000+ पाठ्यक्रम</div>
+                    <div class="badge"><i class="fas fa-book"></i> 50+ पाठ्यक्रम</div>
                 </div>
                 
                 <div class="copyright">
@@ -1053,20 +916,7 @@
     </div>
 
     <script>
-        // स्प्लैश स्क्रीन को 5 सेकंड के बाद हटाना
-        setTimeout(function() {
-            const splashScreen = document.getElementById('splash-screen');
-            const mainContent = document.querySelector('.main-content');
-            if (splashScreen && mainContent) {
-                splashScreen.style.opacity = '0';
-                setTimeout(function() {
-                    splashScreen.style.display = 'none';
-                    mainContent.style.display = 'block';
-                }, 800);
-            } else {
-                console.error('Splash screen or main content element not found.');
-            }
-        }, 5000);
+        
 
         // नेविगेशन मेन्यू टॉगल
         const navToggle = document.querySelector('.nav-toggle');

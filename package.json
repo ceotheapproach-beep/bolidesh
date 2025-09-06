@@ -1,8 +1,0 @@
-{
-  "name": "bolidesh",
-  "version": "1.0.0",
-  "private": true,
-  "devDependencies": {
-    "@netlify/plugin-prerender-spa": "^1.0.0"
-  }
-}

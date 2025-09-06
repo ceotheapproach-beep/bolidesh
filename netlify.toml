@@ -1,0 +1,13 @@
+[build]
+  command = "echo 'No build step'"
+  publish = "."
+
+[[plugins]]
+  package = "@netlify/plugin-prerender-spa"
+
+  [plugins.inputs]
+    prerenderedUrls = [
+      "/",
+      "/dictionary.html"
+    ]
+    renderAfterTime = 5000

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://bolidesh.in/sitemap.xml
+Host: bolidesh.in

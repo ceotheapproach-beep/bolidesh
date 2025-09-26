@@ -23,8 +23,487 @@
 
     <title>Bolidesh Foundation | District</title>
 
+    <!-- Google Fonts for "Inter" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --primary-color: #8B4513; /* Brown */
+            --secondary-color: #A0522D; /* Sienna */
+            --text-dark: #2c3e50;
+            --text-light: #fff;
+            --bg-light: #f4f7f6;
+            --card-bg: #fff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--text-light);
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .nav-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .nav-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--secondary-color);
+            border-bottom: 2px solid var(--text-light);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            text-align: center;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .controls input, .controls select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .controls {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        .article-card h2 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .article-card h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .article-card .meta {
+            font-size: 0.8rem;
+            color: #777;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--primary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .pagination button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background-color: var(--secondary-color);
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .pagination .page-info {
+            font-weight: 600;
+        }
+
+        .categories {
+            background-color: var(--card-bg);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .categories .container {
+            text-align: center;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: #555;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-pill:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .donation-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .donation-icon i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .donation-section p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            color: var(--text-light);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+        
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 3rem 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .footer-column {
+            flex: 1 1 200px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 8px auto 0;
+            border-radius: 1.5px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-contact p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .newsletter-input {
+            width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .sub-footer {
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                text-align: left;
+                justify-content: space-between;
+            }
+            .footer-column {
+                text-align: left;
+            }
+            .footer-column h3::after {
+                margin: 8px 0 0;
+            }
+            .social-links {
+                justify-content: flex-start;
+            }
+            .newsletter-form {
+                align-items: flex-start;
+            }
+        }
+
+        /* Hidden data container */
+        .data-container {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -65,70 +544,857 @@
         <h1 class="section-title">District-Level News & Updates</h1>
         <p class="section-subtitle">Coverage of district initiatives, local development projects, and community stories across India.</p>
         
-        <div class="articles-grid">
-            <article class="article-card">
-                <h2><a href="district-education-initiatives.html">Education Initiatives in Local Districts</a></h2>
-                <div class="meta">
-                    <span><i class="far fa-calendar" aria-hidden="true"></i> September 18, 2025</span>
-                    <span><i class="fas fa-tag" aria-hidden="true"></i> Education</span>
-                </div>
-                <p>Insight into district-level education programs, literacy campaigns, and community-driven educational reforms.</p>
-                <a href="district-education-initiatives.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="district-healthcare-updates.html">Healthcare Updates in Districts</a></h2>
-                <div class="meta">
-                    <span><i class="far fa-calendar" aria-hidden="true"></i> August 28, 2025</span>
-                    <span><i class="fas fa-tag" aria-hidden="true"></i> Healthcare</span>
-                </div>
-                <p>Latest developments in local healthcare services, vaccination drives, and public health campaigns across districts.</p>
-                <a href="district-healthcare-updates.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="district-infrastructure-projects.html">District Infrastructure Projects Overview</a></h2>
-                <div class="meta">
-                    <span><i class="far fa-calendar" aria-hidden="true"></i> July 22, 2025</span>
-                    <span><i class="fas fa-tag" aria-hidden="true"></i> Infrastructure</span>
-                </div>
-                <p>Comprehensive analysis of local infrastructure projects, urban development, and rural improvement programs at the district level.</p>
-                <a href="district-infrastructure-projects.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="district-cultural-events.html">Cultural Events Across Districts</a></h2>
-                <div class="meta">
-                    <span><i class="far fa-calendar" aria-hidden="true"></i> June 30, 2025</span>
-                    <span><i class="fas fa-tag" aria-hidden="true"></i> Culture</span>
-                </div>
-                <p>Updates on district-level cultural festivals, heritage programs, and arts initiatives promoting local traditions.</p>
-                <a href="district-cultural-events.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="district-community-development.html">Community Development Initiatives</a></h2>
-                <div class="meta">
-                    <span><i class="far fa-calendar" aria-hidden="true"></i> May 15, 2025</span>
-                    <span><i class="fas fa-tag" aria-hidden="true"></i> Community</span>
-                </div>
-                <p>Highlighting district-level community development programs, local governance projects, and grassroots movements for social welfare.</p>
-                <a href="district-community-development.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-            </article>
+        <!-- Controls for filtering, sorting, and search -->
+        <div class="controls">
+            <input type="search" id="district-search" placeholder="Search for a district or state...">
+            <select id="district-sort">
+                <option value="state-asc">State (A-Z)</option>
+                <option value="state-desc">State (Z-A)</option>
+                <option value="district-asc">District (A-Z)</option>
+                <option value="district-desc">District (Z-A)</option>
+            </select>
+        </div>
+
+        <div id="articles-container" class="articles-grid">
+            <!-- Districts will be displayed here by JavaScript -->
         </div>
         
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="District News Pagination">
-            <ul>
-                <li class="page-item">
-                    <a href="#" class="page-link prev disabled" aria-disabled="true"><i class="fas fa-chevron-left" aria-hidden="true"></i> Previous</a>
-                </li>
-                <li class="page-item">
-                    <a href="district-page-2.html" class="page-link next">Next <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Pagination controls -->
+        <div class="pagination">
+            <button id="prev-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+            <div class="page-info">
+                <span id="current-page">1</span> of <span id="total-pages">1</span>
+            </div>
+            <button id="next-btn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
     </main>
+
+    <!-- Hidden data container with all district information -->
+    <div class="data-container" id="districts-data">
+<!-- Arunachal Pradesh (27 districts) -->
+    <div class="district" data-name="Anjaw" data-state="Arunachal Pradesh" data-link="anjaw-district.html"></div>
+    <div class="district" data-name="Changlang" data-state="Arunachal Pradesh" data-link="changlang-district.html"></div>
+    <div class="district" data-name="East Kameng" data-state="Arunachal Pradesh" data-link="east-kameng-district.html"></div>
+    <div class="district" data-name="East Siang" data-state="Arunachal Pradesh" data-link="east-siang-district.html"></div>
+    <div class="district" data-name="Kamle" data-state="Arunachal Pradesh" data-link="kamle-district.html"></div>
+    <div class="district" data-name="Kra Daadi" data-state="Arunachal Pradesh" data-link="kra-daadi-district.html"></div>
+    <div class="district" data-name="Kurung Kumey" data-state="Arunachal Pradesh" data-link="kurung-kumey-district.html"></div>
+    <div class="district" data-name="Lepa Rada" data-state="Arunachal Pradesh" data-link="lepa-rada-district.html"></div>
+    <div class="district" data-name="Lohit" data-state="Arunachal Pradesh" data-link="lohit-district.html"></div>
+    <div class="district" data-name="Longding" data-state="Arunachal Pradesh" data-link="longding-district.html"></div>
+    <div class="district" data-name="Lower Dibang Valley" data-state="Arunachal Pradesh" data-link="lower-dibang-valley-district.html"></div>
+    <div class="district" data-name="Lower Siang" data-state="Arunachal Pradesh" data-link="lower-siang-district.html"></div>
+    <div class="district" data-name="Lower Subansiri" data-state="Arunachal Pradesh" data-link="lower-subansiri-district.html"></div>
+    <div class="district" data-name="Namsai" data-state="Arunachal Pradesh" data-link="namsai-district.html"></div>
+    <div class="district" data-name="Pakke-Kessang" data-state="Arunachal Pradesh" data-link="pakke-kessang-district.html"></div>
+    <div class="district" data-name="Papum Pare" data-state="Arunachal Pradesh" data-link="papum-pare-district.html"></div>
+    <div class="district" data-name="Shi Yomi" data-state="Arunachal Pradesh" data-link="shi-yomi-district.html"></div>
+    <div class="district" data-name="Siang" data-state="Arunachal Pradesh" data-link="siang-district.html"></div>
+    <div class="district" data-name="Tawang" data-state="Arunachal Pradesh" data-link="tawang-district.html"></div>
+    <div class="district" data-name="Tirap" data-state="Arunachal Pradesh" data-link="tirap-district.html"></div>
+    <div class="district" data-name="Upper Dibang Valley" data-state="Arunachal Pradesh" data-link="upper-dibang-valley-district.html"></div>
+    <div class="district" data-name="Upper Siang" data-state="Arunachal Pradesh" data-link="upper-siang-district.html"></div>
+    <div class="district" data-name="Upper Subansiri" data-state="Arunachal Pradesh" data-link="upper-subansiri-district.html"></div>
+    <div class="district" data-name="West Kameng" data-state="Arunachal Pradesh" data-link="west-kameng-district.html"></div>
+    <div class="district" data-name="West Siang" data-state="Arunachal Pradesh" data-link="west-siang-district.html"></div>
+    <div class="district" data-name="Keyi Panyor" data-state="Arunachal Pradesh" data-link="keyi-panyor-district.html"></div>
+    <div class="district" data-name="Bichom" data-state="Arunachal Pradesh" data-link="bichom-district.html"></div>
+
+    <!-- Assam (35 districts) -->
+    <div class="district" data-name="Baksa" data-state="Assam" data-link="baksa-district.html"></div>
+    <div class="district" data-name="Bajali" data-state="Assam" data-link="bajali-district.html"></div>
+    <div class="district" data-name="Barpeta" data-state="Assam" data-link="barpeta-district.html"></div>
+    <div class="district" data-name="Biswanath" data-state="Assam" data-link="biswanath-district.html"></div>
+    <div class="district" data-name="Bongaigaon" data-state="Assam" data-link="bongaigaon-district.html"></div>
+    <div class="district" data-name="Cachar" data-state="Assam" data-link="cachar-district.html"></div>
+    <div class="district" data-name="Charaideo" data-state="Assam" data-link="charaideo-district.html"></div>
+    <div class="district" data-name="Chirang" data-state="Assam" data-link="chirang-district.html"></div>
+    <div class="district" data-name="Darrang" data-state="Assam" data-link="darrang-district.html"></div>
+    <div class="district" data-name="Dhemaji" data-state="Assam" data-link="dhemaji-district.html"></div>
+    <div class="district" data-name="Dhubri" data-state="Assam" data-link="dhubri-district.html"></div>
+    <div class="district" data-name="Dibrugarh" data-state="Assam" data-link="dibrugarh-district.html"></div>
+    <div class="district" data-name="Dima Hasao" data-state="Assam" data-link="dima-hasao-district.html"></div>
+    <div class="district" data-name="Goalpara" data-state="Assam" data-link="goalpara-district.html"></div>
+    <div class="district" data-name="Golaghat" data-state="Assam" data-link="golaghat-district.html"></div>
+    <div class="district" data-name="Hailakandi" data-state="Assam" data-link="hailakandi-district.html"></div>
+    <div class="district" data-name="Hojai" data-state="Assam" data-link="hojai-district.html"></div>
+    <div class="district" data-name="Jorhat" data-state="Assam" data-link="jorhat-district.html"></div>
+    <div class="district" data-name="Kamrup" data-state="Assam" data-link="kamrup-district.html"></div>
+    <div class="district" data-name="Kamrup Metropolitan" data-state="Assam" data-link="kamrup-metropolitan-district.html"></div>
+    <div class="district" data-name="Karbi Anglong" data-state="Assam" data-link="karbi-anglong-district.html"></div>
+    <div class="district" data-name="Karimganj" data-state="Assam" data-link="karimganj-district.html"></div>
+    <div class="district" data-name="Kokrajhar" data-state="Assam" data-link="kokrajhar-district.html"></div>
+    <div class="district" data-name="Lakhimpur" data-state="Assam" data-link="lakhimpur-district.html"></div>
+    <div class="district" data-name="Majuli" data-state="Assam" data-link="majuli-district.html"></div>
+    <div class="district" data-name="Morigaon" data-state="Assam" data-link="morigaon-district.html"></div>
+    <div class="district" data-name="Nagaon" data-state="Assam" data-link="nagaon-district.html"></div>
+    <div class="district" data-name="Nalbari" data-state="Assam" data-link="nalbari-district.html"></div>
+    <div class="district" data-name="Sivasagar" data-state="Assam" data-link="sivasagar-district.html"></div>
+    <div class="district" data-name="Sonitpur" data-state="Assam" data-link="sonitpur-district.html"></div>
+    <div class="district" data-name="South Salmara-Mankachar" data-state="Assam" data-link="south-salmara-mankachar-district.html"></div>
+    <div class="district" data-name="Tamulpur" data-state="Assam" data-link="tamulpur-district.html"></div>
+    <div class="district" data-name="Tinsukia" data-state="Assam" data-link="tinsukia-district.html"></div>
+    <div class="district" data-name="Udalguri" data-state="Assam" data-link="udalguri-district.html"></div>
+    <div class="district" data-name="West Karbi Anglong" data-state="Assam" data-link="west-karbi-anglong-district.html"></div>
+
+    <!-- Bihar (38 districts) -->
+    <div class="district" data-name="Araria" data-state="Bihar" data-link="araria-district.html"></div>
+    <div class="district" data-name="Arwal" data-state="Bihar" data-link="arwal-district.html"></div>
+    <div class="district" data-name="Aurangabad" data-state="Bihar" data-link="aurangabad-district.html"></div>
+    <div class="district" data-name="Banka" data-state="Bihar" data-link="banka-district.html"></div>
+    <div class="district" data-name="Begusarai" data-state="Bihar" data-link="begusarai-district.html"></div>
+    <div class="district" data-name="Bhagalpur" data-state="Bihar" data-link="bhagalpur-district.html"></div>
+    <div class="district" data-name="Bhojpur" data-state="Bihar" data-link="bhojpur-district.html"></div>
+    <div class="district" data-name="Buxar" data-state="Bihar" data-link="buxar-district.html"></div>
+    <div class="district" data-name="Darbhanga" data-state="Bihar" data-link="darbhanga-district.html"></div>
+    <div class="district" data-name="East Champaran" data-state="Bihar" data-link="east-champaran-district.html"></div>
+    <div class="district" data-name="Gaya" data-state="Bihar" data-link="gaya-district.html"></div>
+    <div class="district" data-name="Gopalganj" data-state="Bihar" data-link="gopalganj-district.html"></div>
+    <div class="district" data-name="Jamui" data-state="Bihar" data-link="jamui-district.html"></div>
+    <div class="district" data-name="Jehanabad" data-state="Bihar" data-link="jehanabad-district.html"></div>
+    <div class="district" data-name="Kaimur" data-state="Bihar" data-link="kaimur-district.html"></div>
+    <div class="district" data-name="Katihar" data-state="Bihar" data-link="katihar-district.html"></div>
+    <div class="district" data-name="Khagaria" data-state="Bihar" data-link="khagaria-district.html"></div>
+    <div class="district" data-name="Kishanganj" data-state="Bihar" data-link="kishanganj-district.html"></div>
+    <div class="district" data-name="Lakhisarai" data-state="Bihar" data-link="lakhisarai-district.html"></div>
+    <div class="district" data-name="Madhepura" data-state="Bihar" data-link="madhepura-district.html"></div>
+    <div class="district" data-name="Madhubani" data-state="Bihar" data-link="madhubani-district.html"></div>
+    <div class="district" data-name="Munger" data-state="Bihar" data-link="munger-district.html"></div>
+    <div class="district" data-name="Muzaffarpur" data-state="Bihar" data-link="muzaffarpur-district.html"></div>
+    <div class="district" data-name="Nalanda" data-state="Bihar" data-link="nalanda-district.html"></div>
+    <div class="district" data-name="Nawada" data-state="Bihar" data-link="nawada-district.html"></div>
+    <div class="district" data-name="Patna" data-state="Bihar" data-link="patna-district.html"></div>
+    <div class="district" data-name="Purnia" data-state="Bihar" data-link="purnia-district.html"></div>
+    <div class="district" data-name="Rohtas" data-state="Bihar" data-link="rohtas-district.html"></div>
+    <div class="district" data-name="Saharsa" data-state="Bihar" data-link="saharsa-district.html"></div>
+    <div class="district" data-name="Samastipur" data-state="Bihar" data-link="samastipur-district.html"></div>
+    <div class="district" data-name="Saran" data-state="Bihar" data-link="saran-district.html"></div>
+    <div class="district" data-name="Sheikhpura" data-state="Bihar" data-link="sheikhpura-district.html"></div>
+    <div class="district" data-name="Sheohar" data-state="Bihar" data-link="sheohar-district.html"></div>
+    <div class="district" data-name="Sitamarhi" data-state="Bihar" data-link="sitamarhi-district.html"></div>
+    <div class="district" data-name="Siwan" data-state="Bihar" data-link="siwan-district.html"></div>
+    <div class="district" data-name="Supaul" data-state="Bihar" data-link="supaul-district.html"></div>
+    <div class="district" data-name="Vaishali" data-state="Bihar" data-link="vaishali-district.html"></div>
+    <div class="district" data-name="West Champaran" data-state="Bihar" data-link="west-champaran-district.html"></div>
+
+    <!-- Chhattisgarh (33 districts) -->
+    <div class="district" data-name="Balod" data-state="Chhattisgarh" data-link="balod-district.html"></div>
+    <div class="district" data-name="Baloda Bazar" data-state="Chhattisgarh" data-link="baloda-bazar-district.html"></div>
+    <div class="district" data-name="Balrampur-Ramanujganj" data-state="Chhattisgarh" data-link="balrampur-ramanujganj-district.html"></div>
+    <div class="district" data-name="Bastar" data-state="Chhattisgarh" data-link="bastar-district.html"></div>
+    <div class="district" data-name="Bemetara" data-state="Chhattisgarh" data-link="bemetara-district.html"></div>
+    <div class="district" data-name="Bijapur" data-state="Chhattisgarh" data-link="bijapur-district.html"></div>
+    <div class="district" data-name="Bilaspur" data-state="Chhattisgarh" data-link="bilaspur-district.html"></div>
+    <div class="district" data-name="Dantewada" data-state="Chhattisgarh" data-link="dantewada-district.html"></div>
+    <div class="district" data-name="Dhamtari" data-state="Chhattisgarh" data-link="dhamtari-district.html"></div>
+    <div class="district" data-name="Durg" data-state="Chhattisgarh" data-link="durg-district.html"></div>
+    <div class="district" data-name="Gariaband" data-state="Chhattisgarh" data-link="gariaband-district.html"></div>
+    <div class="district" data-name="Gaurela-Pendra-Marwahi" data-state="Chhattisgarh" data-link="gaurela-pendra-marwahi-district.html"></div>
+    <div class="district" data-name="Janjgir-Champa" data-state="Chhattisgarh" data-link="janjgir-champa-district.html"></div>
+    <div class="district" data-name="Jashpur" data-state="Chhattisgarh" data-link="jashpur-district.html"></div>
+    <div class="district" data-name="Kabirdham" data-state="Chhattisgarh" data-link="kabirdham-district.html"></div>
+    <div class="district" data-name="Kanker" data-state="Chhattisgarh" data-link="kanker-district.html"></div>
+    <div class="district" data-name="Khairagarh-Chhuikhadan-Gandai" data-state="Chhattisgarh" data-link="khairagarh-chhuikhadan-gandai-district.html"></div>
+    <div class="district" data-name="Kondagaon" data-state="Chhattisgarh" data-link="kondagaon-district.html"></div>
+    <div class="district" data-name="Korba" data-state="Chhattisgarh" data-link="korba-district.html"></div>
+    <div class="district" data-name="Korea" data-state="Chhattisgarh" data-link="korea-district.html"></div>
+    <div class="district" data-name="Mahasamund" data-state="Chhattisgarh" data-link="mahasamund-district.html"></div>
+    <div class="district" data-name="Manendragarh-Chirmiri-Bharatpur" data-state="Chhattisgarh" data-link="manendragarh-chirmiri-bharatpur-district.html"></div>
+    <div class="district" data-name="Mohla-Manpur-Ambagarh Chowki" data-state="Chhattisgarh" data-link="mohla-manpur-ambagarh-chowki-district.html"></div>
+    <div class="district" data-name="Mungeli" data-state="Chhattisgarh" data-link="mungeli-district.html"></div>
+    <div class="district" data-name="Narayanpur" data-state="Chhattisgarh" data-link="narayanpur-district.html"></div>
+    <div class="district" data-name="Raigarh" data-state="Chhattisgarh" data-link="raigarh-district.html"></div>
+    <div class="district" data-name="Raipur" data-state="Chhattisgarh" data-link="raipur-district.html"></div>
+    <div class="district" data-name="Rajnandgaon" data-state="Chhattisgarh" data-link="rajnandgaon-district.html"></div>
+    <div class="district" data-name="Sarangarh-Bilaigarh" data-state="Chhattisgarh" data-link="sarangarh-bilaigarh-district.html"></div>
+    <div class="district" data-name="Sakti" data-state="Chhattisgarh" data-link="sakti-district.html"></div>
+    <div class="district" data-name="Sukma" data-state="Chhattisgarh" data-link="sukma-district.html"></div>
+    <div class="district" data-name="Surajpur" data-state="Chhattisgarh" data-link="surajpur-district.html"></div>
+    <div class="district" data-name="Surguja" data-state="Chhattisgarh" data-link="surguja-district.html"></div>
+
+    <!-- Goa (2 districts) -->
+    <div class="district" data-name="North Goa" data-state="Goa" data-link="north-goa-district.html"></div>
+    <div class="district" data-name="South Goa" data-state="Goa" data-link="south-goa-district.html"></div>
+
+    <!-- Gujarat (34 districts) -->
+    <div class="district" data-name="Ahmedabad" data-state="Gujarat" data-link="ahmedabad-district.html"></div>
+    <div class="district" data-name="Amreli" data-state="Gujarat" data-link="amreli-district.html"></div>
+    <div class="district" data-name="Anand" data-state="Gujarat" data-link="anand-district.html"></div>
+    <div class="district" data-name="Aravalli" data-state="Gujarat" data-link="aravalli-district.html"></div>
+    <div class="district" data-name="Banaskantha" data-state="Gujarat" data-link="banaskantha-district.html"></div>
+    <div class="district" data-name="Bharuch" data-state="Gujarat" data-link="bharuch-district.html"></div>
+    <div class="district" data-name="Bhavnagar" data-state="Gujarat" data-link="bhavnagar-district.html"></div>
+    <div class="district" data-name="Botad" data-state="Gujarat" data-link="botad-district.html"></div>
+    <div class="district" data-name="Chhota Udaipur" data-state="Gujarat" data-link="chhota-udaipur-district.html"></div>
+    <div class="district" data-name="Dahod" data-state="Gujarat" data-link="dahod-district.html"></div>
+    <div class="district" data-name="Dang" data-state="Gujarat" data-link="dang-district.html"></div>
+    <div class="district" data-name="Devbhumi Dwarka" data-state="Gujarat" data-link="devbhumi-dwarka-district.html"></div>
+    <div class="district" data-name="Gandhinagar" data-state="Gujarat" data-link="gandhinagar-district.html"></div>
+    <div class="district" data-name="Gir Somnath" data-state="Gujarat" data-link="gir-somnath-district.html"></div>
+    <div class="district" data-name="Jamnagar" data-state="Gujarat" data-link="jamnagar-district.html"></div>
+    <div class="district" data-name="Junagadh" data-state="Gujarat" data-link="junagadh-district.html"></div>
+    <div class="district" data-name="Kheda" data-state="Gujarat" data-link="kheda-district.html"></div>
+    <div class="district" data-name="Kutch" data-state="Gujarat" data-link="kutch-district.html"></div>
+    <div class="district" data-name="Mahisagar" data-state="Gujarat" data-link="mahisagar-district.html"></div>
+    <div class="district" data-name="Mehsana" data-state="Gujarat" data-link="mehsana-district.html"></div>
+    <div class="district" data-name="Morbi" data-state="Gujarat" data-link="morbi-district.html"></div>
+    <div class="district" data-name="Narmada" data-state="Gujarat" data-link="narmada-district.html"></div>
+    <div class="district" data-name="Navsari" data-state="Gujarat" data-link="navsari-district.html"></div>
+    <div class="district" data-name="Panchmahal" data-state="Gujarat" data-link="panchmahal-district.html"></div>
+    <div class="district" data-name="Patan" data-state="Gujarat" data-link="patan-district.html"></div>
+    <div class="district" data-name="Porbandar" data-state="Gujarat" data-link="porbandar-district.html"></div>
+    <div class="district" data-name="Rajkot" data-state="Gujarat" data-link="rajkot-district.html"></div>
+    <div class="district" data-name="Sabarkantha" data-state="Gujarat" data-link="sabarkantha-district.html"></div>
+    <div class="district" data-name="Surat" data-state="Gujarat" data-link="surat-district.html"></div>
+    <div class="district" data-name="Surendranagar" data-state="Gujarat" data-link="surendranagar-district.html"></div>
+    <div class="district" data-name="Tapi" data-state="Gujarat" data-link="tapi-district.html"></div>
+    <div class="district" data-name="Vadodara" data-state="Gujarat" data-link="vadodara-district.html"></div>
+    <div class="district" data-name="Valsad" data-state="Gujarat" data-link="valsad-district.html"></div>
+    <div class="district" data-name="Vav-Tharad" data-state="Gujarat" data-link="vav-tharad-district.html"></div>
+
+    <!-- Haryana (22 districts) -->
+    <div class="district" data-name="Ambala" data-state="Haryana" data-link="ambala-district.html"></div>
+    <div class="district" data-name="Bhiwani" data-state="Haryana" data-link="bhiwani-district.html"></div>
+    <div class="district" data-name="Charkhi Dadri" data-state="Haryana" data-link="charkhi-dadri-district.html"></div>
+    <div class="district" data-name="Faridabad" data-state="Haryana" data-link="faridabad-district.html"></div>
+    <div class="district" data-name="Fatehabad" data-state="Haryana" data-link="fatehabad-district.html"></div>
+    <div class="district" data-name="Gurugram" data-state="Haryana" data-link="gurugram-district.html"></div>
+    <div class="district" data-name="Hisar" data-state="Haryana" data-link="hisar-district.html"></div>
+    <div class="district" data-name="Jhajjar" data-state="Haryana" data-link="jhajjar-district.html"></div>
+    <div class="district" data-name="Jind" data-state="Haryana" data-link="jind-district.html"></div>
+    <div class="district" data-name="Kaithal" data-state="Haryana" data-link="kaithal-district.html"></div>
+    <div class="district" data-name="Karnal" data-state="Haryana" data-link="karnal-district.html"></div>
+    <div class="district" data-name="Kurukshetra" data-state="Haryana" data-link="kurukshetra-district.html"></div>
+    <div class="district" data-name="Mahendragarh" data-state="Haryana" data-link="mahendragarh-district.html"></div>
+    <div class="district" data-name="Nuh" data-state="Haryana" data-link="nuh-district.html"></div>
+    <div class="district" data-name="Palwal" data-state="Haryana" data-link="palwal-district.html"></div>
+    <div class="district" data-name="Panchkula" data-state="Haryana" data-link="panchkula-district.html"></div>
+    <div class="district" data-name="Panipat" data-state="Haryana" data-link="panipat-district.html"></div>
+    <div class="district" data-name="Rewari" data-state="Haryana" data-link="rewari-district.html"></div>
+    <div class="district" data-name="Rohtak" data-state="Haryana" data-link="rohtak-district.html"></div>
+    <div class="district" data-name="Sirsa" data-state="Haryana" data-link="sirsa-district.html"></div>
+    <div class="district" data-name="Sonipat" data-state="Haryana" data-link="sonipat-district.html"></div>
+    <div class="district" data-name="Yamunanagar" data-state="Haryana" data-link="yamunanagar-district.html"></div>
+
+    <!-- Himachal Pradesh (12 districts) -->
+    <div class="district" data-name="Bilaspur" data-state="Himachal Pradesh" data-link="bilaspur-district.html"></div>
+    <div class="district" data-name="Chamba" data-state="Himachal Pradesh" data-link="chamba-district.html"></div>
+    <div class="district" data-name="Hamirpur" data-state="Himachal Pradesh" data-link="hamirpur-district.html"></div>
+    <div class="district" data-name="Kangra" data-state="Himachal Pradesh" data-link="kangra-district.html"></div>
+    <div class="district" data-name="Kinnaur" data-state="Himachal Pradesh" data-link="kinnaur-district.html"></div>
+    <div class="district" data-name="Kullu" data-state="Himachal Pradesh" data-link="kullu-district.html"></div>
+    <div class="district" data-name="Lahaul and Spiti" data-state="Himachal Pradesh" data-link="lahaul-and-spiti-district.html"></div>
+    <div class="district" data-name="Mandi" data-state="Himachal Pradesh" data-link="mandi-district.html"></div>
+    <div class="district" data-name="Shimla" data-state="Himachal Pradesh" data-link="shimla-district.html"></div>
+    <div class="district" data-name="Sirmaur" data-state="Himachal Pradesh" data-link="sirmaur-district.html"></div>
+    <div class="district" data-name="Solan" data-state="Himachal Pradesh" data-link="solan-district.html"></div>
+    <div class="district" data-name="Una" data-state="Himachal Pradesh" data-link="una-district.html"></div>
+
+    <!-- Jharkhand (24 districts) -->
+    <div class="district" data-name="Bokaro" data-state="Jharkhand" data-link="bokaro-district.html"></div>
+    <div class="district" data-name="Chatra" data-state="Jharkhand" data-link="chatra-district.html"></div>
+    <div class="district" data-name="Deoghar" data-state="Jharkhand" data-link="deoghar-district.html"></div>
+    <div class="district" data-name="Dhanbad" data-state="Jharkhand" data-link="dhanbad-district.html"></div>
+    <div class="district" data-name="Dumka" data-state="Jharkhand" data-link="dumka-district.html"></div>
+    <div class="district" data-name="East Singhbhum" data-state="Jharkhand" data-link="east-singhbhum-district.html"></div>
+    <div class="district" data-name="Garhwa" data-state="Jharkhand" data-link="garhwa-district.html"></div>
+    <div class="district" data-name="Giridih" data-state="Jharkhand" data-link="giridih-district.html"></div>
+    <div class="district" data-name="Godda" data-state="Jharkhand" data-link="godda-district.html"></div>
+    <div class="district" data-name="Gumla" data-state="Jharkhand" data-link="gumla-district.html"></div>
+    <div class="district" data-name="Hazaribag" data-state="Jharkhand" data-link="hazaribag-district.html"></div>
+    <div class="district" data-name="Jamtara" data-state="Jharkhand" data-link="jamtara-district.html"></div>
+    <div class="district" data-name="Khunti" data-state="Jharkhand" data-link="khunti-district.html"></div>
+    <div class="district" data-name="Koderma" data-state="Jharkhand" data-link="koderma-district.html"></div>
+    <div class="district" data-name="Latehar" data-state="Jharkhand" data-link="latehar-district.html"></div>
+    <div class="district" data-name="Lohardaga" data-state="Jharkhand" data-link="lohardaga-district.html"></div>
+    <div class="district" data-name="Pakur" data-state="Jharkhand" data-link="pakur-district.html"></div>
+    <div class="district" data-name="Palamu" data-state="Jharkhand" data-link="palamu-district.html"></div>
+    <div class="district" data-name="Ramgarh" data-state="Jharkhand" data-link="ramgarh-district.html"></div>
+    <div class="district" data-name="Ranchi" data-state="Jharkhand" data-link="ranchi-district.html"></div>
+    <div class="district" data-name="Sahibganj" data-state="Jharkhand" data-link="sahibganj-district.html"></div>
+    <div class="district" data-name="Seraikela-Kharsawan" data-state="Jharkhand" data-link="seraikela-kharsawan-district.html"></div>
+    <div class="district" data-name="Simdega" data-state="Jharkhand" data-link="simdega-district.html"></div>
+    <div class="district" data-name="West Singhbhum" data-state="Jharkhand" data-link="west-singhbhum-district.html"></div>
+
+    <!-- Karnataka (31 districts) -->
+    <div class="district" data-name="Bagalkot" data-state="Karnataka" data-link="bagalkot-district.html"></div>
+    <div class="district" data-name="Ballari" data-state="Karnataka" data-link="ballari-district.html"></div>
+    <div class="district" data-name="Belagavi" data-state="Karnataka" data-link="belagavi-district.html"></div>
+    <div class="district" data-name="Bangalore Rural" data-state="Karnataka" data-link="bangalore-rural-district.html"></div>
+    <div class="district" data-name="Bangalore Urban" data-state="Karnataka" data-link="bangalore-urban-district.html"></div>
+    <div class="district" data-name="Bidar" data-state="Karnataka" data-link="bidar-district.html"></div>
+    <div class="district" data-name="Chamarajanagar" data-state="Karnataka" data-link="chamarajanagar-district.html"></div>
+    <div class="district" data-name="Chikkaballapur" data-state="Karnataka" data-link="chikkaballapur-district.html"></div>
+    <div class="district" data-name="Chikmagalur" data-state="Karnataka" data-link="chikmagalur-district.html"></div>
+    <div class="district" data-name="Chitradurga" data-state="Karnataka" data-link="chitradurga-district.html"></div>
+    <div class="district" data-name="Dakshina Kannada" data-state="Karnataka" data-link="dakshina-kannada-district.html"></div>
+    <div class="district" data-name="Davanagere" data-state="Karnataka" data-link="davanagere-district.html"></div>
+    <div class="district" data-name="Dharwad" data-state="Karnataka" data-link="dharwad-district.html"></div>
+    <div class="district" data-name="Gadaga" data-state="Karnataka" data-link="gadaga-district.html"></div>
+    <div class="district" data-name="Kalaburagi" data-state="Karnataka" data-link="kalaburagi-district.html"></div>
+    <div class="district" data-name="Hassan" data-state="Karnataka" data-link="hassan-district.html"></div>
+    <div class="district" data-name="Haveri" data-state="Karnataka" data-link="haveri-district.html"></div>
+    <div class="district" data-name="Kodagu" data-state="Karnataka" data-link="kodagu-district.html"></div>
+    <div class="district" data-name="Kolar" data-state="Karnataka" data-link="kolar-district.html"></div>
+    <div class="district" data-name="Koppal" data-state="Karnataka" data-link="koppal-district.html"></div>
+    <div class="district" data-name="Mandya" data-state="Karnataka" data-link="mandya-district.html"></div>
+    <div class="district" data-name="Mysore" data-state="Karnataka" data-link="mysore-district.html"></div>
+    <div class="district" data-name="Raichur" data-state="Karnataka" data-link="raichur-district.html"></div>
+    <div class="district" data-name="Ramanagara" data-state="Karnataka" data-link="ramanagara-district.html"></div>
+    <div class="district" data-name="Shimoga" data-state="Karnataka" data-link="shimoga-district.html"></div>
+    <div class="district" data-name="Tumakuru" data-state="Karnataka" data-link="tumakuru-district.html"></div>
+    <div class="district" data-name="Udupi" data-state="Karnataka" data-link="udupi-district.html"></div>
+    <div class="district" data-name="Uttara Kannada" data-state="Karnataka" data-link="uttara-kannada-district.html"></div>
+    <div class="district" data-name="Vijayanagara" data-state="Karnataka" data-link="vijayanagara-district.html"></div>
+    <div class="district" data-name="Bijapur" data-state="Karnataka" data-link="bijapur-district.html"></div>
+    <div class="district" data-name="Yadgir" data-state="Karnataka" data-link="yadgir-district.html"></div>
+
+    <!-- Kerala (14 districts) -->
+    <div class="district" data-name="Alappuzha" data-state="Kerala" data-link="alappuzha-district.html"></div>
+    <div class="district" data-name="Ernakulam" data-state="Kerala" data-link="ernakulam-district.html"></div>
+    <div class="district" data-name="Idukki" data-state="Kerala" data-link="idukki-district.html"></div>
+    <div class="district" data-name="Kannur" data-state="Kerala" data-link="kannur-district.html"></div>
+    <div class="district" data-name="Kasaragod" data-state="Kerala" data-link="kasaragod-district.html"></div>
+    <div class="district" data-name="Kollam" data-state="Kerala" data-link="kollam-district.html"></div>
+    <div class="district" data-name="Kottayam" data-state="Kerala" data-link="kottayam-district.html"></div>
+    <div class="district" data-name="Kozhikode" data-state="Kerala" data-link="kozhikode-district.html"></div>
+    <div class="district" data-name="Malappuram" data-state="Kerala" data-link="malappuram-district.html"></div>
+    <div class="district" data-name="Palakkad" data-state="Kerala" data-link="palakkad-district.html"></div>
+    <div class="district" data-name="Pathanamthitta" data-state="Kerala" data-link="pathanamthitta-district.html"></div>
+    <div class="district" data-name="Thrissur" data-state="Kerala" data-link="thrissur-district.html"></div>
+    <div class="district" data-name="Thiruvananthapuram" data-state="Kerala" data-link="thiruvananthapuram-district.html"></div>
+    <div class="district" data-name="Wayanad" data-state="Kerala" data-link="wayanad-district.html"></div>
+
+    <!-- Madhya Pradesh (55 districts) -->
+    <div class="district" data-name="Agar Malwa" data-state="Madhya Pradesh" data-link="agar-malwa-district.html"></div>
+    <div class="district" data-name="Alirajpur" data-state="Madhya Pradesh" data-link="alirajpur-district.html"></div>
+    <div class="district" data-name="Anuppur" data-state="Madhya Pradesh" data-link="anuppur-district.html"></div>
+    <div class="district" data-name="Ashoknagar" data-state="Madhya Pradesh" data-link="ashoknagar-district.html"></div>
+    <div class="district" data-name="Balaghat" data-state="Madhya Pradesh" data-link="balaghat-district.html"></div>
+    <div class="district" data-name="Barwani" data-state="Madhya Pradesh" data-link="barwani-district.html"></div>
+    <div class="district" data-name="Betul" data-state="Madhya Pradesh" data-link="betul-district.html"></div>
+    <div class="district" data-name="Bhind" data-state="Madhya Pradesh" data-link="bhind-district.html"></div>
+    <div class="district" data-name="Bhopal" data-state="Madhya Pradesh" data-link="bhopal-district.html"></div>
+    <div class="district" data-name="Burhanpur" data-state="Madhya Pradesh" data-link="burhanpur-district.html"></div>
+    <div class="district" data-name="Chhatarpur" data-state="Madhya Pradesh" data-link="chhatarpur-district.html"></div>
+    <div class="district" data-name="Chhindwara" data-state="Madhya Pradesh" data-link="chhindwara-district.html"></div>
+    <div class="district" data-name="Damoh" data-state="Madhya Pradesh" data-link="damoh-district.html"></div>
+    <div class="district" data-name="Datia" data-state="Madhya Pradesh" data-link="datia-district.html"></div>
+    <div class="district" data-name="Dewas" data-state="Madhya Pradesh" data-link="dewas-district.html"></div>
+    <div class="district" data-name="Dhar" data-state="Madhya Pradesh" data-link="dhar-district.html"></div>
+    <div class="district" data-name="Dindori" data-state="Madhya Pradesh" data-link="dindori-district.html"></div>
+    <div class="district" data-name="Guna" data-state="Madhya Pradesh" data-link="guna-district.html"></div>
+    <div class="district" data-name="Gwalior" data-state="Madhya Pradesh" data-link="gwalior-district.html"></div>
+    <div class="district" data-name="Harda" data-state="Madhya Pradesh" data-link="harda-district.html"></div>
+    <div class="district" data-name="Hoshangabad" data-state="Madhya Pradesh" data-link="hoshangabad-district.html"></div>
+    <div class="district" data-name="Indore" data-state="Madhya Pradesh" data-link="indore-district.html"></div>
+    <div class="district" data-name="Jabalpur" data-state="Madhya Pradesh" data-link="jabalpur-district.html"></div>
+    <div class="district" data-name="Jhabua" data-state="Madhya Pradesh" data-link="jhabua-district.html"></div>
+    <div class="district" data-name="Katni" data-state="Madhya Pradesh" data-link="katni-district.html"></div>
+    <div class="district" data-name="Khandwa" data-state="Madhya Pradesh" data-link="khandwa-district.html"></div>
+    <div class="district" data-name="Khargone" data-state="Madhya Pradesh" data-link="khargone-district.html"></div>
+    <div class="district" data-name="Maihar" data-state="Madhya Pradesh" data-link="maihar-district.html"></div>
+    <div class="district" data-name="Mandla" data-state="Madhya Pradesh" data-link="mandla-district.html"></div>
+    <div class="district" data-name="Mandsaur" data-state="Madhya Pradesh" data-link="mandsaur-district.html"></div>
+    <div class="district" data-name="Mauganj" data-state="Madhya Pradesh" data-link="mauganj-district.html"></div>
+    <div class="district" data-name="Morena" data-state="Madhya Pradesh" data-link="morena-district.html"></div>
+    <div class="district" data-name="Narsinghpur" data-state="Madhya Pradesh" data-link="narsinghpur-district.html"></div>
+    <div class="district" data-name="Neemuch" data-state="Madhya Pradesh" data-link="neemuch-district.html"></div>
+    <div class="district" data-name="Niwari" data-state="Madhya Pradesh" data-link="niwari-district.html"></div>
+    <div class="district" data-name="Panna" data-state="Madhya Pradesh" data-link="panna-district.html"></div>
+    <div class="district" data-name="Pandhurna" data-state="Madhya Pradesh" data-link="pandhurna-district.html"></div>
+    <div class="district" data-name="Raisen" data-state="Madhya Pradesh" data-link="raisen-district.html"></div>
+    <div class="district" data-name="Rajgarh" data-state="Madhya Pradesh" data-link="rajgarh-district.html"></div>
+    <div class="district" data-name="Ratlam" data-state="Madhya Pradesh" data-link="ratlam-district.html"></div>
+    <div class="district" data-name="Rewa" data-state="Madhya Pradesh" data-link="rewa-district.html"></div>
+    <div class="district" data-name="Sagar" data-state="Madhya Pradesh" data-link="sagar-district.html"></div>
+    <div class="district" data-name="Satna" data-state="Madhya Pradesh" data-link="satna-district.html"></div>
+    <div class="district" data-name="Sehore" data-state="Madhya Pradesh" data-link="sehore-district.html"></div>
+    <div class="district" data-name="Seoni" data-state="Madhya Pradesh" data-link="seoni-district.html"></div>
+    <div class="district" data-name="Shahdol" data-state="Madhya Pradesh" data-link="shahdol-district.html"></div>
+    <div class="district" data-name="Shajapur" data-state="Madhya Pradesh" data-link="shajapur-district.html"></div>
+    <div class="district" data-name="Sheopur" data-state="Madhya Pradesh" data-link="sheopur-district.html"></div>
+    <div class="district" data-name="Shivpuri" data-state="Madhya Pradesh" data-link="shivpuri-district.html"></div>
+    <div class="district" data-name="Sidhi" data-state="Madhya Pradesh" data-link="sidhi-district.html"></div>
+    <div class="district" data-name="Singrauli" data-state="Madhya Pradesh" data-link="singrauli-district.html"></div>
+    <div class="district" data-name="Tikamgarh" data-state="Madhya Pradesh" data-link="tikamgarh-district.html"></div>
+    <div class="district" data-name="Ujjain" data-state="Madhya Pradesh" data-link="ujjain-district.html"></div>
+    <div class="district" data-name="Umaria" data-state="Madhya Pradesh" data-link="umaria-district.html"></div>
+    <div class="district" data-name="Vidisha" data-state="Madhya Pradesh" data-link="vidisha-district.html"></div>
+
+    <!-- Maharashtra (36 districts) -->
+    <div class="district" data-name="Ahmednagar" data-state="Maharashtra" data-link="ahmednagar-district.html"></div>
+    <div class="district" data-name="Akola" data-state="Maharashtra" data-link="akola-district.html"></div>
+    <div class="district" data-name="Amravati" data-state="Maharashtra" data-link="amravati-district.html"></div>
+    <div class="district" data-name="Aurangabad" data-state="Maharashtra" data-link="aurangabad-district.html"></div>
+    <div class="district" data-name="Beed" data-state="Maharashtra" data-link="beed-district.html"></div>
+    <div class="district" data-name="Bhandara" data-state="Maharashtra" data-link="bhandara-district.html"></div>
+    <div class="district" data-name="Buldhana" data-state="Maharashtra" data-link="buldhana-district.html"></div>
+    <div class="district" data-name="Chandrapur" data-state="Maharashtra" data-link="chandrapur-district.html"></div>
+    <div class="district" data-name="Osmanabad" data-state="Maharashtra" data-link="osmanabad-district.html"></div>
+    <div class="district" data-name="Dhule" data-state="Maharashtra" data-link="dhule-district.html"></div>
+    <div class="district" data-name="Gadchiroli" data-state="Maharashtra" data-link="gadchiroli-district.html"></div>
+    <div class="district" data-name="Gondia" data-state="Maharashtra" data-link="gondia-district.html"></div>
+    <div class="district" data-name="Hingoli" data-state="Maharashtra" data-link="hingoli-district.html"></div>
+    <div class="district" data-name="Jalgaon" data-state="Maharashtra" data-link="jalgaon-district.html"></div>
+    <div class="district" data-name="Jalna" data-state="Maharashtra" data-link="jalna-district.html"></div>
+    <div class="district" data-name="Kolhapur" data-state="Maharashtra" data-link="kolhapur-district.html"></div>
+    <div class="district" data-name="Latur" data-state="Maharashtra" data-link="latur-district.html"></div>
+    <div class="district" data-name="Mumbai City" data-state="Maharashtra" data-link="mumbai-city-district.html"></div>
+    <div class="district" data-name="Mumbai Suburban" data-state="Maharashtra" data-link="mumbai-suburban-district.html"></div>
+    <div class="district" data-name="Nanded" data-state="Maharashtra" data-link="nanded-district.html"></div>
+    <div class="district" data-name="Nandurbar" data-state="Maharashtra" data-link="nandurbar-district.html"></div>
+    <div class="district" data-name="Nagpur" data-state="Maharashtra" data-link="nagpur-district.html"></div>
+    <div class="district" data-name="Nashik" data-state="Maharashtra" data-link="nashik-district.html"></div>
+    <div class="district" data-name="Palghar" data-state="Maharashtra" data-link="palghar-district.html"></div>
+    <div class="district" data-name="Parbhani" data-state="Maharashtra" data-link="parbhani-district.html"></div>
+    <div class="district" data-name="Pune" data-state="Maharashtra" data-link="pune-district.html"></div>
+    <div class="district" data-name="Raigad" data-state="Maharashtra" data-link="raigad-district.html"></div>
+    <div class="district" data-name="Ratnagiri" data-state="Maharashtra" data-link="ratnagiri-district.html"></div>
+    <div class="district" data-name="Sangli" data-state="Maharashtra" data-link="sangli-district.html"></div>
+    <div class="district" data-name="Satara" data-state="Maharashtra" data-link="satara-district.html"></div>
+    <div class="district" data-name="Sindhudurg" data-state="Maharashtra" data-link="sindhudurg-district.html"></div>
+    <div class="district" data-name="Solapur" data-state="Maharashtra" data-link="solapur-district.html"></div>
+    <div class="district" data-name="Thane" data-state="Maharashtra" data-link="thane-district.html"></div>
+    <div class="district" data-name="Wardha" data-state="Maharashtra" data-link="wardha-district.html"></div>
+    <div class="district" data-name="Washim" data-state="Maharashtra" data-link="washim-district.html"></div>
+    <div class="district" data-name="Yavatmal" data-state="Maharashtra" data-link="yavatmal-district.html"></div>
+
+    <!-- Manipur (16 districts) -->
+    <div class="district" data-name="Bishnupur" data-state="Manipur" data-link="bishnupur-district.html"></div>
+    <div class="district" data-name="Chandel" data-state="Manipur" data-link="chandel-district.html"></div>
+    <div class="district" data-name="Churachandpur" data-state="Manipur" data-link="churachandpur-district.html"></div>
+    <div class="district" data-name="Imphal East" data-state="Manipur" data-link="imphal-east-district.html"></div>
+    <div class="district" data-name="Imphal West" data-state="Manipur" data-link="imphal-west-district.html"></div>
+    <div class="district" data-name="Jiribam" data-state="Manipur" data-link="jiribam-district.html"></div>
+    <div class="district" data-name="Kakching" data-state="Manipur" data-link="kakching-district.html"></div>
+    <div class="district" data-name="Kamjong" data-state="Manipur" data-link="kamjong-district.html"></div>
+    <div class="district" data-name="Kangpokpi" data-state="Manipur" data-link="kangpokpi-district.html"></div>
+    <div class="district" data-name="Noney" data-state="Manipur" data-link="noney-district.html"></div>
+    <div class="district" data-name="Pherzawl" data-state="Manipur" data-link="pherzawl-district.html"></div>
+    <div class="district" data-name="Senapati" data-state="Manipur" data-link="senapati-district.html"></div>
+    <div class="district" data-name="Tamenglong" data-state="Manipur" data-link="tamenglong-district.html"></div>
+    <div class="district" data-name="Tengnoupal" data-state="Manipur" data-link="tengnoupal-district.html"></div>
+    <div class="district" data-name="Thoubal" data-state="Manipur" data-link="thoubal-district.html"></div>
+    <div class="district" data-name="Ukhrul" data-state="Manipur" data-link="ukhrul-district.html"></div>
+
+    <!-- Meghalaya (12 districts) -->
+    <div class="district" data-name="East Garo Hills" data-state="Meghalaya" data-link="east-garo-hills-district.html"></div>
+    <div class="district" data-name="East Jaintia Hills" data-state="Meghalaya" data-link="east-jaintia-hills-district.html"></div>
+    <div class="district" data-name="East Khasi Hills" data-state="Meghalaya" data-link="east-khasi-hills-district.html"></div>
+    <div class="district" data-name="Eastern West Khasi Hills" data-state="Meghalaya" data-link="eastern-west-khasi-hills-district.html"></div>
+    <div class="district" data-name="North Garo Hills" data-state="Meghalaya" data-link="north-garo-hills-district.html"></div>
+    <div class="district" data-name="Ri Bhoi" data-state="Meghalaya" data-link="ri-bhoi-district.html"></div>
+    <div class="district" data-name="South Garo Hills" data-state="Meghalaya" data-link="south-garo-hills-district.html"></div>
+    <div class="district" data-name="South West Garo Hills" data-state="Meghalaya" data-link="south-west-garo-hills-district.html"></div>
+    <div class="district" data-name="South West Khasi Hills" data-state="Meghalaya" data-link="south-west-khasi-hills-district.html"></div>
+    <div class="district" data-name="West Garo Hills" data-state="Meghalaya" data-link="west-garo-hills-district.html"></div>
+    <div class="district" data-name="West Jaintia Hills" data-state="Meghalaya" data-link="west-jaintia-hills-district.html"></div>
+    <div class="district" data-name="West Khasi Hills" data-state="Meghalaya" data-link="west-khasi-hills-district.html"></div>
+
+    <!-- Mizoram (11 districts) -->
+    <div class="district" data-name="Aizawl" data-state="Mizoram" data-link="aizawl-district.html"></div>
+    <div class="district" data-name="Champhai" data-state="Mizoram" data-link="champhai-district.html"></div>
+    <div class="district" data-name="Hnahthial" data-state="Mizoram" data-link="hnahthial-district.html"></div>
+    <div class="district" data-name="Khawzawl" data-state="Mizoram" data-link="khawzawl-district.html"></div>
+    <div class="district" data-name="Kolasib" data-state="Mizoram" data-link="kolasib-district.html"></div>
+    <div class="district" data-name="Lawngtlai" data-state="Mizoram" data-link="lawngtlai-district.html"></div>
+    <div class="district" data-name="Lunglei" data-state="Mizoram" data-link="lunglei-district.html"></div>
+    <div class="district" data-name="Mamit" data-state="Mizoram" data-link="mamit-district.html"></div>
+    <div class="district" data-name="Saiha" data-state="Mizoram" data-link="saiha-district.html"></div>
+    <div class="district" data-name="Saitual" data-state="Mizoram" data-link="saitual-district.html"></div>
+    <div class="district" data-name="Serchhip" data-state="Mizoram" data-link="serchhip-district.html"></div>
+
+    <!-- Nagaland (16 districts) -->
+    <div class="district" data-name="Chümoukedima" data-state="Nagaland" data-link="chumoukedima-district.html"></div>
+    <div class="district" data-name="Dimapur" data-state="Nagaland" data-link="dimapur-district.html"></div>
+    <div class="district" data-name="Kiphire" data-state="Nagaland" data-link="kiphire-district.html"></div>
+    <div class="district" data-name="Kohima" data-state="Nagaland" data-link="kohima-district.html"></div>
+    <div class="district" data-name="Longleng" data-state="Nagaland" data-link="longleng-district.html"></div>
+    <div class="district" data-name="Mokokchung" data-state="Nagaland" data-link="mokokchung-district.html"></div>
+    <div class="district" data-name="Mon" data-state="Nagaland" data-link="mon-district.html"></div>
+    <div class="district" data-name="Niuland" data-state="Nagaland" data-link="niuland-district.html"></div>
+    <div class="district" data-name="Noklak" data-state="Nagaland" data-link="noklak-district.html"></div>
+    <div class="district" data-name="Peren" data-state="Nagaland" data-link="peren-district.html"></div>
+    <div class="district" data-name="Phek" data-state="Nagaland" data-link="phek-district.html"></div>
+    <div class="district" data-name="Shamator" data-state="Nagaland" data-link="shamator-district.html"></div>
+    <div class="district" data-name="Tseminyü" data-state="Nagaland" data-link="tseminyu-district.html"></div>
+    <div class="district" data-name="Tuensang" data-state="Nagaland" data-link="tuensang-district.html"></div>
+    <div class="district" data-name="Wokha" data-state="Nagaland" data-link="wokha-district.html"></div>
+    <div class="district" data-name="Zunheboto" data-state="Nagaland" data-link="zunheboto-district.html"></div>
+
+    <!-- Odisha (30 districts) -->
+    <div class="district" data-name="Angul" data-state="Odisha" data-link="angul-district.html"></div>
+    <div class="district" data-name="Boudh" data-state="Odisha" data-link="boudh-district.html"></div>
+    <div class="district" data-name="Bhadrak" data-state="Odisha" data-link="bhadrak-district.html"></div>
+    <div class="district" data-name="Balangir" data-state="Odisha" data-link="balangir-district.html"></div>
+    <div class="district" data-name="Bargarh" data-state="Odisha" data-link="bargarh-district.html"></div>
+    <div class="district" data-name="Balasore" data-state="Odisha" data-link="balasore-district.html"></div>
+    <div class="district" data-name="Cuttack" data-state="Odisha" data-link="cuttack-district.html"></div>
+    <div class="district" data-name="Debagarh" data-state="Odisha" data-link="debagarh-district.html"></div>
+    <div class="district" data-name="Dhenkanal" data-state="Odisha" data-link="dhenkanal-district.html"></div>
+    <div class="district" data-name="Ganjam" data-state="Odisha" data-link="ganjam-district.html"></div>
+    <div class="district" data-name="Gajapati" data-state="Odisha" data-link="gajapati-district.html"></div>
+    <div class="district" data-name="Jharsuguda" data-state="Odisha" data-link="jharsuguda-district.html"></div>
+    <div class="district" data-name="Jajpur" data-state="Odisha" data-link="jajpur-district.html"></div>
+    <div class="district" data-name="Jagatsinghpur" data-state="Odisha" data-link="jagatsinghpur-district.html"></div>
+    <div class="district" data-name="Khordha" data-state="Odisha" data-link="khordha-district.html"></div>
+    <div class="district" data-name="Kendujhar" data-state="Odisha" data-link="kendujhar-district.html"></div>
+    <div class="district" data-name="Kalahandi" data-state="Odisha" data-link="kalahandi-district.html"></div>
+    <div class="district" data-name="Kandhamal" data-state="Odisha" data-link="kandhamal-district.html"></div>
+    <div class="district" data-name="Koraput" data-state="Odisha" data-link="koraput-district.html"></div>
+    <div class="district" data-name="Kendrapara" data-state="Odisha" data-link="kendrapara-district.html"></div>
+    <div class="district" data-name="Malkangiri" data-state="Odisha" data-link="malkangiri-district.html"></div>
+    <div class="district" data-name="Mayurbhanj" data-state="Odisha" data-link="mayurbhanj-district.html"></div>
+    <div class="district" data-name="Nabarangpur" data-state="Odisha" data-link="nabarangpur-district.html"></div>
+    <div class="district" data-name="Nuapada" data-state="Odisha" data-link="nuapada-district.html"></div>
+    <div class="district" data-name="Nayagarh" data-state="Odisha" data-link="nayagarh-district.html"></div>
+    <div class="district" data-name="Puri" data-state="Odisha" data-link="puri-district.html"></div>
+    <div class="district" data-name="Rayagada" data-state="Odisha" data-link="rayagada-district.html"></div>
+    <div class="district" data-name="Sambalpur" data-state="Odisha" data-link="sambalpur-district.html"></div>
+    <div class="district" data-name="Subarnapur" data-state="Odisha" data-link="subarnapur-district.html"></div>
+    <div class="district" data-name="Sundargarh" data-state="Odisha" data-link="sundargarh-district.html"></div>
+
+    <!-- Punjab (23 districts) -->
+    <div class="district" data-name="Amritsar" data-state="Punjab" data-link="amritsar-district.html"></div>
+    <div class="district" data-name="Barnala" data-state="Punjab" data-link="barnala-district.html"></div>
+    <div class="district" data-name="Bathinda" data-state="Punjab" data-link="bathinda-district.html"></div>
+    <div class="district" data-name="Faridkot" data-state="Punjab" data-link="faridkot-district.html"></div>
+    <div class="district" data-name="Fatehgarh Sahib" data-state="Punjab" data-link="fatehgarh-sahib-district.html"></div>
+    <div class="district" data-name="Fazilka" data-state="Punjab" data-link="fazilka-district.html"></div>
+    <div class="district" data-name="Firozpur" data-state="Punjab" data-link="firozpur-district.html"></div>
+    <div class="district" data-name="Gurdaspur" data-state="Punjab" data-link="gurdaspur-district.html"></div>
+    <div class="district" data-name="Hoshiarpur" data-state="Punjab" data-link="hoshiarpur-district.html"></div>
+    <div class="district" data-name="Jalandhar" data-state="Punjab" data-link="jalandhar-district.html"></div>
+    <div class="district" data-name="Kapurthala" data-state="Punjab" data-link="kapurthala-district.html"></div>
+    <div class="district" data-name="Ludhiana" data-state="Punjab" data-link="ludhiana-district.html"></div>
+    <div class="district" data-name="Malerkotla" data-state="Punjab" data-link="malerkotla-district.html"></div>
+    <div class="district" data-name="Mansa" data-state="Punjab" data-link="mansa-district.html"></div>
+    <div class="district" data-name="Moga" data-state="Punjab" data-link="moga-district.html"></div>
+    <div class="district" data-name="Pathankot" data-state="Punjab" data-link="pathankot-district.html"></div>
+    <div class="district" data-name="Patiala" data-state="Punjab" data-link="patiala-district.html"></div>
+    <div class="district" data-name="Rupnagar" data-state="Punjab" data-link="rupnagar-district.html"></div>
+    <div class="district" data-name="Sahibzada Ajit Singh Nagar" data-state="Punjab" data-link="sahibzada-ajit-singh-nagar-district.html"></div>
+    <div class="district" data-name="Sangrur" data-state="Punjab" data-link="sangrur-district.html"></div>
+    <div class="district" data-name="Shahid Bhagat Singh Nagar" data-state="Punjab" data-link="shahid-bhagat-singh-nagar-district.html"></div>
+    <div class="district" data-name="Sri Muktsar Sahib" data-state="Punjab" data-link="sri-muktsar-sahib-district.html"></div>
+    <div class="district" data-name="Tarn Taran" data-state="Punjab" data-link="tarn-taran-district.html"></div>
+
+    <!-- Rajasthan (41 districts) -->
+    <div class="district" data-name="Ajmer" data-state="Rajasthan" data-link="ajmer-district.html"></div>
+    <div class="district" data-name="Alwar" data-state="Rajasthan" data-link="alwar-district.html"></div>
+    <div class="district" data-name="Balotra" data-state="Rajasthan" data-link="balotra-district.html"></div>
+    <div class="district" data-name="Banswara" data-state="Rajasthan" data-link="banswara-district.html"></div>
+    <div class="district" data-name="Baran" data-state="Rajasthan" data-link="baran-district.html"></div>
+    <div class="district" data-name="Barmer" data-state="Rajasthan" data-link="barmer-district.html"></div>
+    <div class="district" data-name="Beawar" data-state="Rajasthan" data-link="beawar-district.html"></div>
+    <div class="district" data-name="Bharatpur" data-state="Rajasthan" data-link="bharatpur-district.html"></div>
+    <div class="district" data-name="Bhilwara" data-state="Rajasthan" data-link="bhilwara-district.html"></div>
+    <div class="district" data-name="Bikaner" data-state="Rajasthan" data-link="bikaner-district.html"></div>
+    <div class="district" data-name="Bundi" data-state="Rajasthan" data-link="bundi-district.html"></div>
+    <div class="district" data-name="Chittorgarh" data-state="Rajasthan" data-link="chittorgarh-district.html"></div>
+    <div class="district" data-name="Churu" data-state="Rajasthan" data-link="churu-district.html"></div>
+    <div class="district" data-name="Dausa" data-state="Rajasthan" data-link="dausa-district.html"></div>
+    <div class="district" data-name="Deeg" data-state="Rajasthan" data-link="deeg-district.html"></div>
+    <div class="district" data-name="Dholpur" data-state="Rajasthan" data-link="dholpur-district.html"></div>
+    <div class="district" data-name="Didwana Kuchaman" data-state="Rajasthan" data-link="didwana-kuchaman-district.html"></div>
+    <div class="district" data-name="Dungarpur" data-state="Rajasthan" data-link="dungarpur-district.html"></div>
+    <div class="district" data-name="Hanumangarh" data-state="Rajasthan" data-link="hanumangarh-district.html"></div>
+    <div class="district" data-name="Jaipur" data-state="Rajasthan" data-link="jaipur-district.html"></div>
+    <div class="district" data-name="Jaisalmer" data-state="Rajasthan" data-link="jaisalmer-district.html"></div>
+    <div class="district" data-name="Jalore" data-state="Rajasthan" data-link="jalore-district.html"></div>
+    <div class="district" data-name="Jhalawar" data-state="Rajasthan" data-link="jhalawar-district.html"></div>
+    <div class="district" data-name="Jhunjhunu" data-state="Rajasthan" data-link="jhunjhunu-district.html"></div>
+    <div class="district" data-name="Jodhpur" data-state="Rajasthan" data-link="jodhpur-district.html"></div>
+    <div class="district" data-name="Karauli" data-state="Rajasthan" data-link="karauli-district.html"></div>
+    <div class="district" data-name="Khairthal-Tijara" data-state="Rajasthan" data-link="khairthal-tijara-district.html"></div>
+    <div class="district" data-name="Kota" data-state="Rajasthan" data-link="kota-district.html"></div>
+    <div class="district" data-name="Kotputli-Behror" data-state="Rajasthan" data-link="kotputli-behror-district.html"></div>
+    <div class="district" data-name="Nagaur" data-state="Rajasthan" data-link="nagaur-district.html"></div>
+    <div class="district" data-name="Pali" data-state="Rajasthan" data-link="pali-district.html"></div>
+    <div class="district" data-name="Phalodi" data-state="Rajasthan" data-link="phalodi-district.html"></div>
+    <div class="district" data-name="Pratapgarh" data-state="Rajasthan" data-link="pratapgarh-district.html"></div>
+    <div class="district" data-name="Rajsamand" data-state="Rajasthan" data-link="rajsamand-district.html"></div>
+    <div class="district" data-name="Salumbar" data-state="Rajasthan" data-link="salumbar-district.html"></div>
+    <div class="district" data-name="Sawai Madhopur" data-state="Rajasthan" data-link="sawai-madhopur-district.html"></div>
+    <div class="district" data-name="Sikar" data-state="Rajasthan" data-link="sikar-district.html"></div>
+    <div class="district" data-name="Sirohi" data-state="Rajasthan" data-link="sirohi-district.html"></div>
+    <div class="district" data-name="Sri Ganganagar" data-state="Rajasthan" data-link="sri-ganganagar-district.html"></div>
+    <div class="district" data-name="Tonk" data-state="Rajasthan" data-link="tonk-district.html"></div>
+    <div class="district" data-name="Udaipur" data-state="Rajasthan" data-link="udaipur-district.html"></div>
+
+    <!-- Sikkim (6 districts) -->
+    <div class="district" data-name="Gangtok" data-state="Sikkim" data-link="gangtok-district.html"></div>
+    <div class="district" data-name="Gyalshing" data-state="Sikkim" data-link="gyalshing-district.html"></div>
+    <div class="district" data-name="Mangan" data-state="Sikkim" data-link="mangan-district.html"></div>
+    <div class="district" data-name="Namchi" data-state="Sikkim" data-link="namchi-district.html"></div>
+    <div class="district" data-name="Pakyong" data-state="Sikkim" data-link="pakyong-district.html"></div>
+    <div class="district" data-name="Soreng" data-state="Sikkim" data-link="soreng-district.html"></div>
+
+    <!-- Tamil Nadu (38 districts) -->
+    <div class="district" data-name="Ariyalur" data-state="Tamil Nadu" data-link="ariyalur-district.html"></div>
+    <div class="district" data-name="Chengalpattu" data-state="Tamil Nadu" data-link="chengalpattu-district.html"></div>
+    <div class="district" data-name="Chennai" data-state="Tamil Nadu" data-link="chennai-district.html"></div>
+    <div class="district" data-name="Coimbatore" data-state="Tamil Nadu" data-link="coimbatore-district.html"></div>
+    <div class="district" data-name="Cuddalore" data-state="Tamil Nadu" data-link="cuddalore-district.html"></div>
+    <div class="district" data-name="Dharmapuri" data-state="Tamil Nadu" data-link="dharmapuri-district.html"></div>
+    <div class="district" data-name="Dindigul" data-state="Tamil Nadu" data-link="dindigul-district.html"></div>
+    <div class="district" data-name="Erode" data-state="Tamil Nadu" data-link="erode-district.html"></div>
+    <div class="district" data-name="Kallakurichi" data-state="Tamil Nadu" data-link="kallakurichi-district.html"></div>
+    <div class="district" data-name="Kancheepuram" data-state="Tamil Nadu" data-link="kancheepuram-district.html"></div>
+    <div class="district" data-name="Kanyakumari" data-state="Tamil Nadu" data-link="kanyakumari-district.html"></div>
+    <div class="district" data-name="Karur" data-state="Tamil Nadu" data-link="karur-district.html"></div>
+    <div class="district" data-name="Krishnagiri" data-state="Tamil Nadu" data-link="krishnagiri-district.html"></div>
+    <div class="district" data-name="Madurai" data-state="Tamil Nadu" data-link="madurai-district.html"></div>
+    <div class="district" data-name="Mayiladuthurai" data-state="Tamil Nadu" data-link="mayiladuthurai-district.html"></div>
+    <div class="district" data-name="Nagapattinam" data-state="Tamil Nadu" data-link="nagapattinam-district.html"></div>
+    <div class="district" data-name="Namakkal" data-state="Tamil Nadu" data-link="namakkal-district.html"></div>
+    <div class="district" data-name="Nilgiris" data-state="Tamil Nadu" data-link="nilgiris-district.html"></div>
+    <div class="district" data-name="Perambalur" data-state="Tamil Nadu" data-link="perambalur-district.html"></div>
+    <div class="district" data-name="Pudukkottai" data-state="Tamil Nadu" data-link="pudukkottai-district.html"></div>
+    <div class="district" data-name="Ramanathapuram" data-state="Tamil Nadu" data-link="ramanathapuram-district.html"></div>
+    <div class="district" data-name="Ranipet" data-state="Tamil Nadu" data-link="ranipet-district.html"></div>
+    <div class="district" data-name="Salem" data-state="Tamil Nadu" data-link="salem-district.html"></div>
+    <div class="district" data-name="Sivaganga" data-state="Tamil Nadu" data-link="sivaganga-district.html"></div>
+    <div class="district" data-name="Tenkasi" data-state="Tamil Nadu" data-link="tenkasi-district.html"></div>
+    <div class="district" data-name="Thanjavur" data-state="Tamil Nadu" data-link="thanjavur-district.html"></div>
+    <div class="district" data-name="Theni" data-state="Tamil Nadu" data-link="theni-district.html"></div>
+    <div class="district" data-name="Thoothukudi" data-state="Tamil Nadu" data-link="thoothukudi-district.html"></div>
+    <div class="district" data-name="Tiruchirappalli" data-state="Tamil Nadu" data-link="tiruchirappalli-district.html"></div>
+    <div class="district" data-name="Tirunelveli" data-state="Tamil Nadu" data-link="tirunelveli-district.html"></div>
+    <div class="district" data-name="Tirupathur" data-state="Tamil Nadu" data-link="tirupathur-district.html"></div>
+    <div class="district" data-name="Tiruppur" data-state="Tamil Nadu" data-link="tiruppur-district.html"></div>
+    <div class="district" data-name="Tiruvallur" data-state="Tamil Nadu" data-link="tiruvallur-district.html"></div>
+    <div class="district" data-name="Tiruvannamalai" data-state="Tamil Nadu" data-link="tiruvannamalai-district.html"></div>
+    <div class="district" data-name="Tiruvarur" data-state="Tamil Nadu" data-link="tiruvarur-district.html"></div>
+    <div class="district" data-name="Vellore" data-state="Tamil Nadu" data-link="vellore-district.html"></div>
+    <div class="district" data-name="Viluppuram" data-state="Tamil Nadu" data-link="viluppuram-district.html"></div>
+    <div class="district" data-name="Virudhunagar" data-state="Tamil Nadu" data-link="virudhunagar-district.html"></div>
+
+    <!-- Telangana (33 districts) -->
+    <div class="district" data-name="Adilabad" data-state="Telangana" data-link="adilabad-district.html"></div>
+    <div class="district" data-name="Bhadradri Kothagudem" data-state="Telangana" data-link="bhadradri-kothagudem-district.html"></div>
+    <div class="district" data-name="Hyderabad" data-state="Telangana" data-link="hyderabad-district.html"></div>
+    <div class="district" data-name="Jagtial" data-state="Telangana" data-link="jagtial-district.html"></div>
+    <div class="district" data-name="Jangaon" data-state="Telangana" data-link="jangaon-district.html"></div>
+    <div class="district" data-name="Jayashankar Bhupalpally" data-state="Telangana" data-link="jayashankar-bhupalpally-district.html"></div>
+    <div class="district" data-name="Jogulamba Gadwal" data-state="Telangana" data-link="jogulamba-gadwal-district.html"></div>
+    <div class="district" data-name="Kamareddy" data-state="Telangana" data-link="kamareddy-district.html"></div>
+    <div class="district" data-name="Karimnagar" data-state="Telangana" data-link="karimnagar-district.html"></div>
+    <div class="district" data-name="Khammam" data-state="Telangana" data-link="khammam-district.html"></div>
+    <div class="district" data-name="Kumuram Bheem Asifabad" data-state="Telangana" data-link="kumuram-bheem-asifabad-district.html"></div>
+    <div class="district" data-name="Mahabubabad" data-state="Telangana" data-link="mahabubabad-district.html"></div>
+    <div class="district" data-name="Mahabubnagar" data-state="Telangana" data-link="mahabubnagar-district.html"></div>
+    <div class="district" data-name="Mancherial" data-state="Telangana" data-link="mancherial-district.html"></div>
+    <div class="district" data-name="Medak" data-state="Telangana" data-link="medak-district.html"></div>
+    <div class="district" data-name="Medchal–Malkajgiri" data-state="Telangana" data-link="medchal-malkajgiri-district.html"></div>
+    <div class="district" data-name="Mulugu" data-state="Telangana" data-link="mulugu-district.html"></div>
+    <div class="district" data-name="Nagarkurnool" data-state="Telangana" data-link="nagarkurnool-district.html"></div>
+    <div class="district" data-name="Nalgonda" data-state="Telangana" data-link="nalgonda-district.html"></div>
+    <div class="district" data-name="Narayankhed" data-state="Telangana" data-link="narayankhed-district.html"></div>
+    <div class="district" data-name="Nirmal" data-state="Telangana" data-link="nirmal-district.html"></div>
+    <div class="district" data-name="Nizamabad" data-state="Telangana" data-link="nizamabad-district.html"></div>
+    <div class="district" data-name="Peddapalli" data-state="Telangana" data-link="peddapalli-district.html"></div>
+    <div class="district" data-name="Rajanna Sircilla" data-state="Telangana" data-link="rajanna-sircilla-district.html"></div>
+    <div class="district" data-name="Rangareddy" data-state="Telangana" data-link="rangareddy-district.html"></div>
+    <div class="district" data-name="Sangareddy" data-state="Telangana" data-link="sangareddy-district.html"></div>
+    <div class="district" data-name="Siddipet" data-state="Telangana" data-link="siddipet-district.html"></div>
+    <div class="district" data-name="Suryapet" data-state="Telangana" data-link="suryapet-district.html"></div>
+    <div class="district" data-name="Vikarabad" data-state="Telangana" data-link="vikarabad-district.html"></div>
+    <div class="district" data-name="Wanaparthy" data-state="Telangana" data-link="wanaparthy-district.html"></div>
+    <div class="district" data-name="Warangal Rural" data-state="Telangana" data-link="warangal-rural-district.html"></div>
+    <div class="district" data-name="Warangal Urban" data-state="Telangana" data-link="warangal-urban-district.html"></div>
+    <div class="district" data-name="Yadadri Bhuvanagiri" data-state="Telangana" data-link="yadadri-bhuvanagiri-district.html"></div>
+
+    <!-- Tripura (8 districts) -->
+    <div class="district" data-name="Dhalai" data-state="Tripura" data-link="dhalai-district.html"></div>
+    <div class="district" data-name="Gomati" data-state="Tripura" data-link="gomati-district.html"></div>
+    <div class="district" data-name="Khowai" data-state="Tripura" data-link="khowai-district.html"></div>
+    <div class="district" data-name="North Tripura" data-state="Tripura" data-link="north-tripura-district.html"></div>
+    <div class="district" data-name="Sepahijala" data-state="Tripura" data-link="sepahijala-district.html"></div>
+    <div class="district" data-name="South Tripura" data-state="Tripura" data-link="south-tripura-district.html"></div>
+    <div class="district" data-name="Unakoti" data-state="Tripura" data-link="unakoti-district.html"></div>
+    <div class="district" data-name="West Tripura" data-state="Tripura" data-link="west-tripura-district.html"></div>
+
+    <!-- Uttar Pradesh (75 districts) -->
+    <div class="district" data-name="Agra" data-state="Uttar Pradesh" data-link="agra-district.html"></div>
+    <div class="district" data-name="Aligarh" data-state="Uttar Pradesh" data-link="aligarh-district.html"></div>
+    <div class="district" data-name="Ambedkar Nagar" data-state="Uttar Pradesh" data-link="ambedkar-nagar-district.html"></div>
+    <div class="district" data-name="Amethi" data-state="Uttar Pradesh" data-link="amethi-district.html"></div>
+    <div class="district" data-name="Amroha" data-state="Uttar Pradesh" data-link="amroha-district.html"></div>
+    <div class="district" data-name="Auraiya" data-state="Uttar Pradesh" data-link="auraiya-district.html"></div>
+    <div class="district" data-name="Ayodhya" data-state="Uttar Pradesh" data-link="ayodhya-district.html"></div>
+    <div class="district" data-name="Azamgarh" data-state="Uttar Pradesh" data-link="azamgarh-district.html"></div>
+    <div class="district" data-name="Baghpat" data-state="Uttar Pradesh" data-link="baghpat-district.html"></div>
+    <div class="district" data-name="Bahraich" data-state="Uttar Pradesh" data-link="bahraich-district.html"></div>
+    <div class="district" data-name="Ballia" data-state="Uttar Pradesh" data-link="ballia-district.html"></div>
+    <div class="district" data-name="Balrampur" data-state="Uttar Pradesh" data-link="balrampur-district.html"></div>
+    <div class="district" data-name="Banda" data-state="Uttar Pradesh" data-link="banda-district.html"></div>
+    <div class="district" data-name="Barabanki" data-state="Uttar Pradesh" data-link="barabanki-district.html"></div>
+    <div class="district" data-name="Bareilly" data-state="Uttar Pradesh" data-link="bareilly-district.html"></div>
+    <div class="district" data-name="Basti" data-state="Uttar Pradesh" data-link="basti-district.html"></div>
+    <div class="district" data-name="Bhadohi" data-state="Uttar Pradesh" data-link="bhadohi-district.html"></div>
+    <div class="district" data-name="Bijnor" data-state="Uttar Pradesh" data-link="bijnor-district.html"></div>
+    <div class="district" data-name="Budaun" data-state="Uttar Pradesh" data-link="budaun-district.html"></div>
+    <div class="district" data-name="Bulandshahr" data-state="Uttar Pradesh" data-link="bulandshahr-district.html"></div>
+    <div class="district" data-name="Chandauli" data-state="Uttar Pradesh" data-link="chandauli-district.html"></div>
+    <div class="district" data-name="Chitrakoot" data-state="Uttar Pradesh" data-link="chitrakoot-district.html"></div>
+    <div class="district" data-name="Deoria" data-state="Uttar Pradesh" data-link="deoria-district.html"></div>
+    <div class="district" data-name="Etah" data-state="Uttar Pradesh" data-link="etah-district.html"></div>
+    <div class="district" data-name="Etawah" data-state="Uttar Pradesh" data-link="etawah-district.html"></div>
+    <div class="district" data-name="Farrukhabad" data-state="Uttar Pradesh" data-link="farrukhabad-district.html"></div>
+    <div class="district" data-name="Fatehpur" data-state="Uttar Pradesh" data-link="fatehpur-district.html"></div>
+    <div class="district" data-name="Firozabad" data-state="Uttar Pradesh" data-link="firozabad-district.html"></div>
+    <div class="district" data-name="Gautam Buddha Nagar" data-state="Uttar Pradesh" data-link="gautam-buddha-nagar-district.html"></div>
+    <div class="district" data-name="Ghaziabad" data-state="Uttar Pradesh" data-link="ghaziabad-district.html"></div>
+    <div class="district" data-name="Ghazipur" data-state="Uttar Pradesh" data-link="ghazipur-district.html"></div>
+    <div class="district" data-name="Gonda" data-state="Uttar Pradesh" data-link="gonda-district.html"></div>
+    <div class="district" data-name="Gorakhpur" data-state="Uttar Pradesh" data-link="gorakhpur-district.html"></div>
+    <div class="district" data-name="Hamirpur" data-state="Uttar Pradesh" data-link="hamirpur-district.html"></div>
+    <div class="district" data-name="Hapur" data-state="Uttar Pradesh" data-link="hapur-district.html"></div>
+    <div class="district" data-name="Hardoi" data-state="Uttar Pradesh" data-link="hardoi-district.html"></div>
+    <div class="district" data-name="Hathras" data-state="Uttar Pradesh" data-link="hathras-district.html"></div>
+    <div class="district" data-name="Jalaun" data-state="Uttar Pradesh" data-link="jalaun-district.html"></div>
+    <div class="district" data-name="Jaunpur" data-state="Uttar Pradesh" data-link="jaunpur-district.html"></div>
+    <div class="district" data-name="Jhansi" data-state="Uttar Pradesh" data-link="jhansi-district.html"></div>
+    <div class="district" data-name="Kannauj" data-state="Uttar Pradesh" data-link="kannauj-district.html"></div>
+    <div class="district" data-name="Kanpur Dehat" data-state="Uttar Pradesh" data-link="kanpur-dehat-district.html"></div>
+    <div class="district" data-name="Kanpur Nagar" data-state="Uttar Pradesh" data-link="kanpur-nagar-district.html"></div>
+    <div class="district" data-name="Kasganj" data-state="Uttar Pradesh" data-link="kasganj-district.html"></div>
+    <div class="district" data-name="Kaushambi" data-state="Uttar Pradesh" data-link="kaushambi-district.html"></div>
+    <div class="district" data-name="Kheri" data-state="Uttar Pradesh" data-link="kheri-district.html"></div>
+    <div class="district" data-name="Kushinagar" data-state="Uttar Pradesh" data-link="kushinagar-district.html"></div>
+    <div class="district" data-name="Lalitpur" data-state="Uttar Pradesh" data-link="lalitpur-district.html"></div>
+    <div class="district" data-name="Lucknow" data-state="Uttar Pradesh" data-link="lucknow-district.html"></div>
+    <div class="district" data-name="Maharajganj" data-state="Uttar Pradesh" data-link="maharajganj-district.html"></div>
+    <div class="district" data-name="Mahoba" data-state="Uttar Pradesh" data-link="mahoba-district.html"></div>
+    <div class="district" data-name="Mainpuri" data-state="Uttar Pradesh" data-link="mainpuri-district.html"></div>
+    <div class="district" data-name="Mathura" data-state="Uttar Pradesh" data-link="mathura-district.html"></div>
+    <div class="district" data-name="Mau" data-state="Uttar Pradesh" data-link="mau-district.html"></div>
+    <div class="district" data-name="Meerut" data-state="Uttar Pradesh" data-link="meerut-district.html"></div>
+    <div class="district" data-name="Mirzapur" data-state="Uttar Pradesh" data-link="mirzapur-district.html"></div>
+    <div class="district" data-name="Moradabad" data-state="Uttar Pradesh" data-link="moradabad-district.html"></div>
+    <div class="district" data-name="Muzaffarnagar" data-state="Uttar Pradesh" data-link="muzaffarnagar-district.html"></div>
+    <div class="district" data-name="Pilibhit" data-state="Uttar Pradesh" data-link="pilibhit-district.html"></div>
+    <div class="district" data-name="Pratapgarh" data-state="Uttar Pradesh" data-link="pratapgarh-district.html"></div>
+    <div class="district" data-name="Prayagraj" data-state="Uttar Pradesh" data-link="prayagraj-district.html"></div>
+    <div class="district" data-name="Raebareli" data-state="Uttar Pradesh" data-link="raebareli-district.html"></div>
+    <div class="district" data-name="Rampur" data-state="Uttar Pradesh" data-link="rampur-district.html"></div>
+    <div class="district" data-name="Saharanpur" data-state="Uttar Pradesh" data-link="saharanpur-district.html"></div>
+    <div class="district" data-name="Sambhal" data-state="Uttar Pradesh" data-link="sambhal-district.html"></div>
+    <div class="district" data-name="Sant Kabir Nagar" data-state="Uttar Pradesh" data-link="sant-kabir-nagar-district.html"></div>
+    <div class="district" data-name="Shahjahanpur" data-state="Uttar Pradesh" data-link="shahjahanpur-district.html"></div>
+    <div class="district" data-name="Shamli" data-state="Uttar Pradesh" data-link="shamli-district.html"></div>
+    <div class="district" data-name="Shravasti" data-state="Uttar Pradesh" data-link="shravasti-district.html"></div>
+    <div class="district" data-name="Siddharthnagar" data-state="Uttar Pradesh" data-link="siddharthnagar-district.html"></div>
+    <div class="district" data-name="Sitapur" data-state="Uttar Pradesh" data-link="sitapur-district.html"></div>
+    <div class="district" data-name="Sonbhadra" data-state="Uttar Pradesh" data-link="sonbhadra-district.html"></div>
+    <div class="district" data-name="Sultanpur" data-state="Uttar Pradesh" data-link="sultanpur-district.html"></div>
+    <div class="district" data-name="Unnao" data-state="Uttar Pradesh" data-link="unnao-district.html"></div>
+    <div class="district" data-name="Varanasi" data-state="Uttar Pradesh" data-link="varanasi-district.html"></div>
+
+    <!-- Uttarakhand (13 districts) -->
+    <div class="district" data-name="Almora" data-state="Uttarakhand" data-link="almora-district.html"></div>
+    <div class="district" data-name="Bageshwar" data-state="Uttarakhand" data-link="bageshwar-district.html"></div>
+    <div class="district" data-name="Chamoli" data-state="Uttarakhand" data-link="chamoli-district.html"></div>
+    <div class="district" data-name="Champawat" data-state="Uttarakhand" data-link="champawat-district.html"></div>
+    <div class="district" data-name="Dehradun" data-state="Uttarakhand" data-link="dehradun-district.html"></div>
+    <div class="district" data-name="Haridwar" data-state="Uttarakhand" data-link="haridwar-district.html"></div>
+    <div class="district" data-name="Nainital" data-state="Uttarakhand" data-link="nainital-district.html"></div>
+    <div class="district" data-name="Pauri Garhwal" data-state="Uttarakhand" data-link="pauri-garhwal-district.html"></div>
+    <div class="district" data-name="Pithoragarh" data-state="Uttarakhand" data-link="pithoragarh-district.html"></div>
+    <div class="district" data-name="Rudraprayag" data-state="Uttarakhand" data-link="rudraprayag-district.html"></div>
+    <div class="district" data-name="Tehri Garhwal" data-state="Uttarakhand" data-link="tehri-garhwal-district.html"></div>
+    <div class="district" data-name="Udham Singh Nagar" data-state="Uttarakhand" data-link="udham-singh-nagar-district.html"></div>
+    <div class="district" data-name="Uttarkashi" data-state="Uttarakhand" data-link="uttarkashi-district.html"></div>
+
+    <!-- West Bengal (23 districts) -->
+    <div class="district" data-name="Alipurduar" data-state="West Bengal" data-link="alipurduar-district.html"></div>
+    <div class="district" data-name="Bankura" data-state="West Bengal" data-link="bankura-district.html"></div>
+    <div class="district" data-name="Birbhum" data-state="West Bengal" data-link="birbhum-district.html"></div>
+    <div class="district" data-name="Cooch Behar" data-state="West Bengal" data-link="cooch-behar-district.html"></div>
+    <div class="district" data-name="Dakshin Dinajpur" data-state="West Bengal" data-link="dakshin-dinajpur-district.html"></div>
+    <div class="district" data-name="Darjeeling" data-state="West Bengal" data-link="darjeeling-district.html"></div>
+    <div class="district" data-name="Hooghly" data-state="West Bengal" data-link="hooghly-district.html"></div>
+    <div class="district" data-name="Howrah" data-state="West Bengal" data-link="howrah-district.html"></div>
+    <div class="district" data-name="Jalpaiguri" data-state="West Bengal" data-link="jalpaiguri-district.html"></div>
+    <div class="district" data-name="Jhargram" data-state="West Bengal" data-link="jhargram-district.html"></div>
+    <div class="district" data-name="Kalimpong" data-state="West Bengal" data-link="kalimpong-district.html"></div>
+    <div class="district" data-name="Kolkata" data-state="West Bengal" data-link="kolkata-district.html"></div>
+    <div class="district" data-name="Malda" data-state="West Bengal" data-link="malda-district.html"></div>
+    <div class="district" data-name="Murshidabad" data-state="West Bengal" data-link="murshidabad-district.html"></div>
+    <div class="district" data-name="Nadia" data-state="West Bengal" data-link="nadia-district.html"></div>
+    <div class="district" data-name="North 24 Parganas" data-state="West Bengal" data-link="north-24-parganas-district.html"></div>
+    <div class="district" data-name="Paschim Bardhaman" data-state="West Bengal" data-link="paschim-bardhaman-district.html"></div>
+    <div class="district" data-name="Paschim Medinipur" data-state="West Bengal" data-link="paschim-medinipur-district.html"></div>
+    <div class="district" data-name="Purba Bardhaman" data-state="West Bengal" data-link="purba-bardhaman-district.html"></div>
+    <div class="district" data-name="Purba Medinipur" data-state="West Bengal" data-link="purba-medinipur-district.html"></div>
+    <div class="district" data-name="Purulia" data-state="West Bengal" data-link="purulia-district.html"></div>
+    <div class="district" data-name="South 24 Parganas" data-state="West Bengal" data-link="south-24-parganas-district.html"></div>
+    <div class="district" data-name="Uttar Dinajpur" data-state="West Bengal" data-link="uttar-dinajpur-district.html"></div>
+
+    <!-- Andaman and Nicobar Islands (3 districts) -->
+    <div class="district" data-name="Nicobar" data-state="Andaman and Nicobar Islands" data-link="nicobar-district.html"></div>
+    <div class="district" data-name="North and Middle Andaman" data-state="Andaman and Nicobar Islands" data-link="north-and-middle-andaman-district.html"></div>
+    <div class="district" data-name="South Andaman" data-state="Andaman and Nicobar Islands" data-link="south-andaman-district.html"></div>
+
+    <!-- Chandigarh (1 district) -->
+    <div class="district" data-name="Chandigarh" data-state="Chandigarh" data-link="chandigarh-district.html"></div>
+
+    <!-- Dadra and Nagar Haveli and Daman and Diu (3 districts) -->
+    <div class="district" data-name="Dadra and Nagar Haveli" data-state="Dadra and Nagar Haveli and Daman and Diu" data-link="dadra-and-nagar-haveli-district.html"></div>
+    <div class="district" data-name="Daman" data-state="Dadra and Nagar Haveli and Daman and Diu" data-link="daman-district.html"></div>
+    <div class="district" data-name="Diu" data-state="Dadra and Nagar Haveli and Daman and Diu" data-link="diu-district.html"></div>
+
+    <!-- Delhi (11 districts) -->
+    <div class="district" data-name="Central Delhi" data-state="Delhi" data-link="central-delhi-district.html"></div>
+    <div class="district" data-name="East Delhi" data-state="Delhi" data-link="east-delhi-district.html"></div>
+    <div class="district" data-name="New Delhi" data-state="Delhi" data-link="new-delhi-district.html"></div>
+    <div class="district" data-name="North Delhi" data-state="Delhi" data-link="north-delhi-district.html"></div>
+    <div class="district" data-name="North East Delhi" data-state="Delhi" data-link="north-east-delhi-district.html"></div>
+    <div class="district" data-name="North West Delhi" data-state="Delhi" data-link="north-west-delhi-district.html"></div>
+    <div class="district" data-name="Shahdara" data-state="Delhi" data-link="shahdara-district.html"></div>
+    <div class="district" data-name="South Delhi" data-state="Delhi" data-link="south-delhi-district.html"></div>
+    <div class="district" data-name="South East Delhi" data-state="Delhi" data-link="south-east-delhi-district.html"></div>
+    <div class="district" data-name="South West Delhi" data-state="Delhi" data-link="south-west-delhi-district.html"></div>
+    <div class="district" data-name="West Delhi" data-state="Delhi" data-link="west-delhi-district.html"></div>
+
+    <!-- Jammu and Kashmir (20 districts) -->
+    <div class="district" data-name="Anantnag" data-state="Jammu and Kashmir" data-link="anantnag-district.html"></div>
+    <div class="district" data-name="Bandipora" data-state="Jammu and Kashmir" data-link="bandipora-district.html"></div>
+    <div class="district" data-name="Baramulla" data-state="Jammu and Kashmir" data-link="baramulla-district.html"></div>
+    <div class="district" data-name="Budgam" data-state="Jammu and Kashmir" data-link="budgam-district.html"></div>
+    <div class="district" data-name="Doda" data-state="Jammu and Kashmir" data-link="doda-district.html"></div>
+    <div class="district" data-name="Ganderbal" data-state="Jammu and Kashmir" data-link="ganderbal-district.html"></div>
+    <div class="district" data-name="Jammu" data-state="Jammu and Kashmir" data-link="jammu-district.html"></div>
+    <div class="district" data-name="Kathua" data-state="Jammu and Kashmir" data-link="kathua-district.html"></div>
+    <div class="district" data-name="Kishtwar" data-state="Jammu and Kashmir" data-link="kishtwar-district.html"></div>
+    <div class="district" data-name="Kulgam" data-state="Jammu and Kashmir" data-link="kulgam-district.html"></div>
+    <div class="district" data-name="Kupwara" data-state="Jammu and Kashmir" data-link="kupwara-district.html"></div>
+    <div class="district" data-name="Poonch" data-state="Jammu and Kashmir" data-link="poonch-district.html"></div>
+    <div class="district" data-name="Pulwama" data-state="Jammu and Kashmir" data-link="pulwama-district.html"></div>
+    <div class="district" data-name="Rajouri" data-state="Jammu and Kashmir" data-link="rajouri-district.html"></div>
+    <div class="district" data-name="Ramban" data-state="Jammu and Kashmir" data-link="ramban-district.html"></div>
+    <div class="district" data-name="Reasi" data-state="Jammu and Kashmir" data-link="reasi-district.html"></div>
+    <div class="district" data-name="Samba" data-state="Jammu and Kashmir" data-link="samba-district.html"></div>
+    <div class="district" data-name="Shopian" data-state="Jammu and Kashmir" data-link="shopian-district.html"></div>
+    <div class="district" data-name="Srinagar" data-state="Jammu and Kashmir" data-link="srinagar-district.html"></div>
+    <div class="district" data-name="Udhampur" data-state="Jammu and Kashmir" data-link="udhampur-district.html"></div>
+
+    <!-- Ladakh (2 districts) -->
+    <div class="district" data-name="Kargil" data-state="Ladakh" data-link="kargil-district.html"></div>
+    <div class="district" data-name="Leh" data-state="Ladakh" data-link="leh-district.html"></div>
+
+    <!-- Lakshadweep (1 district) -->
+    <div class="district" data-name="Lakshadweep" data-state="Lakshadweep" data-link="lakshadweep-district.html"></div>
+
+    <!-- Puducherry (4 districts) -->
+    <div class="district" data-name="Karaikal" data-state="Puducherry" data-link="karaikal-district.html"></div>
+    <div class="district" data-name="Mahe" data-state="Puducherry" data-link="mahe-district.html"></div>
+    <div class="district" data-name="Pondicherry" data-state="Puducherry" data-link="pondicherry-district.html"></div>
+    <div class="district" data-name="Yanam" data-state="Puducherry" data-link="yanam-district.html"></div>
+</div>
+    </div>
 
     <!-- Categories Section -->
     <section class="categories">
@@ -237,5 +1503,135 @@
             <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
         </div>
     </footer>
+
+    <script>
+        // JavaScript for pagination and sorting only
+        document.addEventListener('DOMContentLoaded', () => {
+            // Extract district data from HTML
+            const districtElements = document.querySelectorAll('.district');
+            const allDistricts = Array.from(districtElements).map(el => ({
+                name: el.dataset.name,
+                state: el.dataset.state,
+                link: el.dataset.link
+            }));
+
+            const districtsPerPage = 12;
+            let currentPage = 1;
+            let filteredDistricts = [...allDistricts];
+            let currentSort = 'state-asc';
+
+            const searchInput = document.getElementById('district-search');
+            const sortSelect = document.getElementById('district-sort');
+            const articlesContainer = document.getElementById('articles-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentPageSpan = document.getElementById('current-page');
+            const totalPagesSpan = document.getElementById('total-pages');
+
+            // Function to sort districts
+            function sortDistricts(districts) {
+                switch (currentSort) {
+                    case 'state-asc':
+                        return districts.sort((a, b) => a.state.localeCompare(b.state) || a.name.localeCompare(b.name));
+                    case 'state-desc':
+                        return districts.sort((a, b) => b.state.localeCompare(a.state) || b.name.localeCompare(a.name));
+                    case 'district-asc':
+                        return districts.sort((a, b) => a.name.localeCompare(b.name) || a.state.localeCompare(b.state));
+                    case 'district-desc':
+                        return districts.sort((a, b) => b.name.localeCompare(a.name) || b.state.localeCompare(a.state));
+                    default:
+                        return districts;
+                }
+            }
+
+            // Function to render districts
+            function renderDistricts() {
+                const start = (currentPage - 1) * districtsPerPage;
+                const end = start + districtsPerPage;
+                const districtsToDisplay = filteredDistricts.slice(start, end);
+
+                articlesContainer.innerHTML = '';
+                
+                if (districtsToDisplay.length === 0) {
+                    articlesContainer.innerHTML = `<p style="text-align:center; font-size:1.2rem; color:#888;">No districts found matching your criteria.</p>`;
+                    prevBtn.disabled = true;
+                    nextBtn.disabled = true;
+                    currentPageSpan.textContent = 0;
+                    totalPagesSpan.textContent = 0;
+                    return;
+                }
+
+                districtsToDisplay.forEach(district => {
+                    const card = document.createElement('article');
+                    card.className = 'article-card';
+                    card.innerHTML = `
+                        <h2><a href="${district.link}">${district.name}</a></h2>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> ${district.state}</span>
+                        </div>
+                        <p>Latest news, updates, and community stories from ${district.name} district, ${district.state}.</p>
+                        <a href="${district.link}" class="read-more">View District Page <i class="fas fa-arrow-right"></i></a>
+                    `;
+                    articlesContainer.appendChild(card);
+                });
+
+                updatePaginationControls();
+            }
+
+            // Function to update pagination controls
+            function updatePaginationControls() {
+                const totalPages = Math.ceil(filteredDistricts.length / districtsPerPage);
+                
+                currentPageSpan.textContent = filteredDistricts.length > 0 ? currentPage : 0;
+                totalPagesSpan.textContent = totalPages;
+
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+            }
+
+            // Handle search input
+            searchInput.addEventListener('input', (event) => {
+                const query = event.target.value.toLowerCase();
+                filteredDistricts = allDistricts.filter(district => 
+                    district.name.toLowerCase().includes(query) || 
+                    district.state.toLowerCase().includes(query)
+                );
+                
+                filteredDistricts = sortDistricts(filteredDistricts);
+                currentPage = 1;
+                renderDistricts();
+            });
+
+            // Handle sorting dropdown
+            sortSelect.addEventListener('change', (event) => {
+                currentSort = event.target.value;
+                filteredDistricts = sortDistricts(filteredDistricts);
+                currentPage = 1;
+                renderDistricts();
+            });
+
+            // Handle pagination buttons
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderDistricts();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredDistricts.length / districtsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderDistricts();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            // Initial rendering
+            sortDistricts(filteredDistricts);
+            renderDistricts();
+        });
+    </script>
 </body>
 </html>

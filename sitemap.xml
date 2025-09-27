@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.bolidesh.in/index.html</loc>
-    <priority>1.0</priority>
+    <loc>https://www.bolidesh.in/about.html</loc>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/archives.html</loc>
-    <priority>0.8</priority>
+    <loc>https://www.bolidesh.in/accessibility.html</loc>
+    <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/news.html</loc>
+    <loc>https://www.bolidesh.in/ahmedabad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ambala-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/amreli-district.html</loc>
     <priority>0.9</priority>
   </url>
 
@@ -22,8 +34,308 @@
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/national.html</loc>
+    <loc>https://www.bolidesh.in/anand-district.html</loc>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ancient-india-pets.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ancient-indian-textile-dyeing.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/anjaw-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/anonymous-indian-artisans.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/araria-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/aravalli-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/archives.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/article.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/arwal-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/aurangabad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bajali-districts.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/baksa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/balod-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/baloda-bazar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/balrampur-ramanujganj-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/banaskantha-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/banka-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/barpeta-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bastar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/begusarai-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bemetara-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bhagalpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bharuch-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bhavnagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bhiwani-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bhojpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bichom-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bijapur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bilaspur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/biswanath-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bokaro-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/bongaigaon-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/botad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/buxar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/cachar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/chamba-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/changlang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/charaideo-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/chatra-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/chhota-udaipur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/chirang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/culture.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/curfew-leh-ladakh-2025.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dahod-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dantewada-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/darbhanga-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/darrang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/deendayal-upadhyaya-tribute.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/deoghar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/devbhumi-dwarka-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dhamtari-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dhanbad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dhemaji-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dhubri-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dibrugarh.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dima-hasao-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/disability-ancient-india.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/disclaimer.html</loc>
+    <priority>0.4</priority>
   </url>
 
   <url>
@@ -32,8 +344,468 @@
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/culture.html</loc>
-    <priority>0.7</priority>
+    <loc>https://www.bolidesh.in/donate.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/dumka-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/durg-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/east-champaran-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/east-kameng-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/east-siang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/east-singhbhum-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/espionage-intelligence-india.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/faridabad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/fatehabad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gandhinagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ganikas-ancient-india.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/garhwa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gariaband-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gaurela-pendra-marwahi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gaya-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/giridih-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/goalpara-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/godda-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/golaghat-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gopalganj-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gumla-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/gurugram-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/hailakandi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/hamirpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/hazaribag-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/hisar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/history.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/history-of-indian-toys.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/hojai-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/india-us-trade-2025.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/indian-pilgrimages-social-networks.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jamnagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jamtara-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jamui-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/janjgir-champa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jashpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jehanabad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jhajjar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jind-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/jorhat-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/junagadh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kabirdham-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kaimur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kaithal-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kamle-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kamrup-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kamrup-metropolitan-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kangra-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kanker-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/karbi-anglong-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/karimganj-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/karnal-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/katihar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/keyi-panyor-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/khagaria-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/khairagarh-chhuikhadan-gandai-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kheda-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/khunti-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kinnaur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kishanganj-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/koderma-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kokrajhar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kondagaon-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/korba-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/korea-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kra-daadi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kullu-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kurukshetra-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kurung-kumey-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/kutch-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lahaul-and-spiti-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lakhimpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lakhisarai-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/latehar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lepa-rada-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/local.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/local-tribal-deities-history.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lohardaga-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lohit-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/longding-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lower-dibang-valley-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lower-siang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/lower-subansiri-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/madhepura-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/madhubani-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mahasamund-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mahendragarh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mahisagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/majuli-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mandi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/manendragarh-chirmiri-bharatpur-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
@@ -47,18 +819,168 @@
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/local.html</loc>
+    <loc>https://www.bolidesh.in/mehsana-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mental-health-india-history.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/contact.html</loc>
-    <priority>0.5</priority>
+    <loc>https://www.bolidesh.in/mohla-manpur-ambagarh-chowki-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/about.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.bolidesh.in/morbi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/morigaon-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/mungeli-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/munger-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/muzaffarpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/nagaon-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/nalanda-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/nalbari-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/namsai-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/narayanpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/narmada-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/national.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/national-geoscience-awards.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/navsari-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/nawada-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/news.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/north-goa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/nuh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/pakke-kessang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/pakur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/palamu-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/palwal-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/panchkula-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/panchmahal-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/panipat-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/papum-pare-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/patan-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/patna-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/porbandar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/pre-marital-love-india.html</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -67,33 +989,318 @@
   </url>
 
   <url>
+    <loc>https://www.bolidesh.in/purnia-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/raigarh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/raipur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/rajkot-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/rajnandgaon-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ramgarh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/ranchi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/rewari-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/rohtak-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/rohtas-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sabarkantha-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/saharsa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sahibganj-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sakti-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/samastipur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/saran-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sarangarh-bilaigarh-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sarguja-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/seraikela-kharsawan-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sheikhpura-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sheohar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/shi-yomi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/shimla-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/siang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/simdega-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sirmaur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sirsa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sitamarhi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sivasagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/siwan-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/solan-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/somnath-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sonam-wangchuk-arrest-ladakh.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sonipat-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sonitpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/south-goa-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/south-salmara-mankachar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/sukma-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/supaul-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/surajpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/surat-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/surendranagar-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/tamulpur-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/tapi-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/tawang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://www.bolidesh.in/terms-of-service.html</loc>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/disclaimer.html</loc>
-    <priority>0.4</priority>
+    <loc>https://www.bolidesh.in/tinsukia-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/accessibility.html</loc>
-    <priority>0.4</priority>
+    <loc>https://www.bolidesh.in/tirap-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/article.html</loc>
-    <priority>0.8</priority>
+    <loc>https://www.bolidesh.in/udalguri-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/donate.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.bolidesh.in/una-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.bolidesh.in/history.html</loc>
-    <priority>0.6</priority>
+    <loc>https://www.bolidesh.in/upper-dibang-valley-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/upper-siang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/upper-subansiri-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/vadodara-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/vaishali-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/valsad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/vav-tharad-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/west-champaran-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/west-kameng-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/west-karbi-anglong-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/west-siang-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/west-singhbhum-district.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.bolidesh.in/yamunanagar-district.html</loc>
+    <priority>0.9</priority>
   </url>
 
 </urlset>

@@ -25,6 +25,35 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Load More Feature */
+        .load-more-checkbox {
+            display: none;
+        }
+        .load-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .load-more-button:hover {
+            background-color: #0056b3;
+        }
+        .articles-grid .article-card:nth-child(n+11) {
+            display: none;
+        }
+        .load-more-checkbox:checked ~ .articles-grid .article-card:nth-child(n+11) {
+            display: block;
+        }
+        .load-more-checkbox:checked ~ .load-more-button {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -65,6 +94,7 @@
         <h1 class="section-title">Latest News</h1>
         <p class="section-subtitle">Stay updated with the most recent news, events, and developments on cultural heritage, community initiatives, and research from bolidesh.in.</p>
         
+        <input type="checkbox" id="load-more" class="load-more-checkbox">
         <div class="articles-grid">
             <!-- Article 1 -->
             <article class="article-card">
@@ -176,7 +206,7 @@
                 <a href="supreme-court-custodial-deaths-rajasthan-2025.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
-            <!-- Article 11 -->
+            <!-- Article 11 (Initially Hidden) -->
             <article class="article-card">
                 <h2><a href="sonam-wangchuk-arrest-ladakh-2025.html">Climate Activist Sonam Wangchuk Arrested in Leh</a></h2>
                 <div class="meta">
@@ -187,7 +217,7 @@
                 <a href="sonam-wangchuk-arrest-ladakh-2025.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
-            <!-- Article 12 -->
+            <!-- Article 12 (Initially Hidden) -->
             <article class="article-card">
                 <h2><a href="national-geoscience-awards-2024.html">National Geoscience Awards 2024 Presented in Delhi</a></h2>
                 <div class="meta">
@@ -198,6 +228,8 @@
                 <a href="national-geoscience-awards-2024.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
         </div>
+        
+        <label for="load-more" class="load-more-button">Load More <i class="fas fa-arrow-down" aria-hidden="true"></i></label>
     </main>
 
     <!-- Categories Section -->
@@ -220,7 +252,7 @@
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/9555754494" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -280,7 +312,7 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.comin</p>
                     <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
                 </div>
                 

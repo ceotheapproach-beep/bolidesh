@@ -3,98 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bolidesh Foundation is dedicated to preserving and promoting India's cultural heritage through research, education, and community engagement. Explore our initiatives in history, culture, media, and more.">
-    <meta name="keywords" content="Bolidesh Foundation, cultural heritage, India, preservation, community engagement, history, culture, media, local initiatives, bolidesh.in">
+    <meta name="description" content="Discover Bolidesh Foundation, an independent non-profit dedicated to preserving India's cultural heritage, promoting community development, and fostering sustainable initiatives through research, education, and innovation.">
+    <meta name="keywords" content="Bolidesh Foundation, cultural heritage, India, preservation, community development, sustainable initiatives, cultural education, bolidesh.in">
     <meta name="author" content="Bolidesh Foundation">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Bolidesh Foundation | Preserving India's Cultural Heritage">
-    <meta property="og:description" content="Join Bolidesh Foundation in preserving India's rich cultural heritage through research, education, and community-driven initiatives.">
-    <meta property="og:image" content="https://bolidesh.in/logo.jpg">
-    <meta property="og:url" content="https://bolidesh.in/index.html">
+    <meta property="og:title" content="About Bolidesh Foundation | Preserving India's Cultural Heritage | bolidesh.in">
+    <meta property="og:description" content="Learn about Bolidesh Foundation’s mission to preserve India’s cultural heritage, empower communities, and drive sustainable development through innovative initiatives.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1585059895524-6f9b853f92f2?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop">
+    <meta property="og:url" content="https://bolidesh.in/about.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bolidesh Foundation">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bolidesh Foundation | Preserving India's Cultural Heritage">
-    <meta name="twitter:description" content="Join Bolidesh Foundation in preserving India's rich cultural heritage through research, education, and community-driven initiatives.">
-    <meta name="twitter:image" content="https://bolidesh.in/logo.jpg">
+    <meta name="twitter:title" content="About Bolidesh Foundation | Preserving India's Cultural Heritage">
+    <meta name="twitter:description" content="Learn about Bolidesh Foundation’s mission to preserve India’s cultural heritage, empower communities, and drive sustainable development through innovative initiatives.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1585059895524-6f9b853f92f2?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop">
 
-    <title>Bolidesh Foundation | Preserving India's Cultural Heritage</title>
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bolidesh Foundation",
+      "url": "https://bolidesh.in",
+      "logo": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&q=80&w=300&auto=format&fit=crop",
+      "description": "Bolidesh Foundation is an independent non-profit dedicated to preserving India's cultural heritage, promoting community development, and fostering sustainable initiatives through research, education, and innovation.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9555754494",
+        "contactType": "Customer Service",
+        "email": "help.bolidesh@gmail.com"
+      },
+      "sameAs": [
+        "https://facebook.com/bolideshfoundation",
+        "https://twitter.com/bolidesh",
+        "https://instagram.com/bolideshfoundation",
+        "https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p"
+      ]
+    }
+    </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Bolidesh Foundation | Preserving India's Cultural Heritage | bolidesh.in</title>
+
+    <!-- External Styles and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&q=80&w=50&auto=format&fit=crop" type="image/x-icon">
     <style>
-        /* CSS for Donation Popup */
-        .donation-popup-checkbox {
-            display: none;
-        }
-        .donation-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .donation-popup-checkbox:checked ~ .donation-popup {
-            display: flex;
-        }
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-        }
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .popup-icon {
-            font-size: 40px;
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-        .popup-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-        .btn-primary, .btn-secondary {
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn-primary {
-            background: #007bff;
-            color: white;
-        }
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        /* Hero Section Image */
-        .hero {
-            background: url('images/hero-banner.jpg') center/cover no-repeat;
-            padding: 60px 20px;
-            text-align: center;
-            color: white;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
-        /* Section Images */
-        .mission-section img, .focus-areas img {
+        .about-introduction img, .about-history img, .about-mission img, .about-vision img,
+        .about-values img, .about-initiatives img, .about-impact img, .about-team img,
+        .about-cta img {
             width: 100%;
             max-height: 300px;
             object-fit: cover;
@@ -108,172 +69,77 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&q=80&w=300&auto=format&fit=crop" alt="Bolidesh Foundation Logo" loading="lazy">
                 <div>
                     <div class="logo-text">Bolidesh Foundation</div>
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>
                 </div>
             </div>
         </div>
-        
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
-                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
-                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to Bolidesh Foundation</h1>
-        <p class="hero-subtitle">Preserving India's rich cultural heritage through research, education, and community-driven initiatives.</p>
-        <a href="about.html" class="btn btn-primary">Learn More About Us <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-    </section>
+    <!-- About Section -->
+    <main class="container">
+        <h1>About Bolidesh Foundation</h1>
 
-    <!-- Mission Section -->
-    <section class="container mission-section">
-        <h2 class="section-title">Our Mission</h2>
-        <p class="section-subtitle">At Bolidesh Foundation, we are committed to safeguarding India's diverse cultural heritage, fostering sustainable development, and empowering communities through knowledge and collaboration.</p>
-        <img src="images/mission-image.jpg" alt="Community gathering for cultural preservation" loading="lazy">
-        <p>Founded with a vision to bridge tradition and modernity, we work tirelessly to document, preserve, and promote the rich tapestry of India's history, art, and traditions. Our initiatives span research, education, digital archiving, and community engagement, ensuring that cultural heritage is accessible to future generations.</p>
-        <a href="about.html" class="btn btn-primary">Discover Our Vision <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-    </section>
+        <section class="about-introduction">
+            <h2>Who We Are</h2>
+            <img src="https://images.unsplash.com/photo-1524492449090-1a065f2f8e8f?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Indian cultural festival" loading="lazy">
+            <p>Bolidesh Foundation, established in 2025, stands as a beacon...</p>
+        </section>
 
-    <!-- Focus Areas Section -->
-    <section class="container focus-areas">
-        <h2 class="section-title">Our Focus Areas</h2>
-        <p class="section-subtitle">Explore the diverse domains where we drive impact through preservation and innovation.</p>
-        <img src="images/focus-areas-image.jpg" alt="Diverse cultural elements of India" loading="lazy">
-        <div class="categories-container" role="navigation" aria-label="Focus Areas Navigation">
-            <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National: Uniting India's cultural narrative through nationwide initiatives.</a>
-            <a href="district.html" class="category-pill"><i class="fas fa-map-marked" aria-hidden="true"></i> District: Empowering local communities with region-specific programs.</a>
-            <a href="history.html" class="category-pill"><i class="fas fa-history" aria-hidden="true"></i> History: Documenting and preserving India's historical legacy.</a>
-            <a href="culture.html" class="category-pill"><i class="fas fa-palette" aria-hidden="true"></i> Culture: Celebrating and sustaining traditional arts and practices.</a>
-            <a href="market.html" class="category-pill"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market: Supporting artisans through economic opportunities.</a>
-            <a href="media.html" class="category-pill"><i class="fas fa-film" aria-hidden="true"></i> Media: Sharing stories through documentaries and visual media.</a>
-            <a href="local.html" class="category-pill"><i class="fas fa-users" aria-hidden="true"></i> Local: Strengthening community-driven cultural initiatives.</a>
-            <a href="news.html" class="category-pill"><i class="fas fa-newspaper" aria-hidden="true"></i> News: Keeping you updated on cultural and community developments.</a>
-            <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis: Providing insights into cultural and economic trends.</a>
-        </div>
-    </section>
+        <section class="about-history">
+            <h2>Our Founding Story</h2>
+            <img src="https://images.unsplash.com/photo-1605379399642-870262d3d8dc?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Ancient Indian architecture" loading="lazy">
+            <p>The Bolidesh Foundation was born from a collective vision...</p>
+        </section>
 
-    <!-- Donation Section -->
-    <section class="donation-section">
-        <div class="container">
-            <div class="donation-content">
-                <div class="donation-icon">
-                    <i class="fas fa-hands-helping" aria-hidden="true"></i>
-                </div>
-                <h2>Support Bolidesh Foundation</h2>
-                <p>Your contributions help us preserve cultural heritage, support local communities, and continue our research and educational programs.</p>
-                <div class="donation-buttons">
-                    <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="about-mission">
+            <h2>Our Mission</h2>
+            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Community cultural workshop" loading="lazy">
+            <p>At Bolidesh Foundation, our mission is to preserve...</p>
+        </section>
 
-    <!-- Donation Popup -->
-    <input type="checkbox" id="donation-popup" class="donation-popup-checkbox">
-    <div class="donation-popup">
-        <div class="popup-content">
-            <label for="donation-popup" class="popup-close">&times;</label>
-            <div class="popup-icon">
-                <i class="fas fa-hands-helping" aria-hidden="true"></i>
-            </div>
-            <h3>Support Bolidesh Foundation</h3>
-            <p>Your generous donation helps us preserve cultural heritage, support local communities, and continue our research and educational programs.</p>
-            <div class="popup-buttons">
-                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
-                <label for="donation-popup" class="btn btn-secondary">Maybe Later</label>
-            </div>
-        </div>
-    </div>
+        <section class="about-vision">
+            <h2>Our Vision</h2>
+            <img src="https://images.unsplash.com/photo-1616400619175-1c19e78146ee?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Indian artisans at work" loading="lazy">
+            <p>We envision a world where cultural heritage is preserved...</p>
+        </section>
 
-    <!-- WhatsApp Button -->
-    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
+        <section class="about-values">
+            <h2>Our Core Values</h2>
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Diverse group collaborating" loading="lazy">
+            <p>Our work is guided by a set of core values...</p>
+        </section>
+
+        <section class="about-initiatives">
+            <h2>Our Key Initiatives</h2>
+            <img src="https://images.unsplash.com/photo-1542367597-8f89f1c6e6f0?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Traditional crafts preservation" loading="lazy">
+            <p>Bolidesh Foundation drives impact through innovative initiatives...</p>
+        </section>
+
+        <section class="about-impact">
+            <h2>Our Impact</h2>
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Community project celebration" loading="lazy">
+            <p>Since 2025, Bolidesh Foundation has achieved...</p>
+        </section>
+
+        <section class="about-team">
+            <h2>Our Team</h2>
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Team of cultural preservation experts" loading="lazy">
+            <p>Our team comprises passionate historians, scholars...</p>
+        </section>
+
+        <section class="about-cta">
+            <h2>Get Involved</h2>
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&q=80&w=1080&auto=format&fit=crop" alt="Community volunteering" loading="lazy">
+            <p>Join us in preserving India’s cultural heritage...</p>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="news.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>More Categories</h3>
-                <ul class="footer-links">
-                    <li><a href="culture.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Legal Links</h3>
-                <ul class="footer-links">
-                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Terms of Service</a></li>
-                    <li><a href="disclaimer.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Disclaimer</a></li>
-                    <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.com</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for updates on cultural preservation initiatives and events.</p>
-                <form class="newsletter-form" aria-label="Newsletter Subscription">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="sub-footer">
-            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
-        </div>
+        <p>© 2025 Bolidesh Foundation | All rights reserved | bolidesh.in</p>
     </footer>
 </body>
 </html>

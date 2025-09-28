@@ -21,6 +21,38 @@
     <title>Bolidesh Foundation | Archives</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Load More Feature */
+        .load-more-checkbox {
+            display: none;
+        }
+        .load-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .load-more-button:hover {
+            background-color: #0056b3;
+        }
+        /* Hide articles beyond the first 10 by default */
+        .articles-grid .article-card:nth-child(n+11) {
+            display: none;
+        }
+        /* Show next 10 articles when checkbox is checked */
+        .load-more-checkbox:checked ~ .articles-grid .article-card:nth-child(n+11):nth-child(-n+20) {
+            display: block;
+        }
+        /* Hide the Load More button after all articles are shown (optional, can be adjusted for more batches) */
+        .load-more-checkbox:checked ~ .load-more-button {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -33,7 +65,6 @@
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>
                 </div>
             </div>
-            </label>
         </div>
         
         <div class="nav-container" role="navigation" aria-label="Main Navigation">
@@ -62,7 +93,9 @@
         <h1 class="section-title">Cultural Heritage Archives</h1>
         <p class="section-subtitle">Explore our curated collection of articles, research papers, and stories dedicated to preserving cultural heritage, history, and community development at bolidesh.in.</p>
         
+        <input type="checkbox" id="load-more" class="load-more-checkbox">
         <div class="articles-grid">
+            <!-- Article 1 -->
             <article class="article-card">
                 <h2><a href="evolution-traditional-weaving-techniques.html">Evolution of Traditional Weaving Techniques</a></h2>
                 <div class="meta">
@@ -73,6 +106,7 @@
                 <a href="evolution-traditional-weaving-techniques.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
             
+            <!-- Article 2 -->
             <article class="article-card">
                 <h2><a href="forgotten-folk-tales-oral-traditions.html">Rediscovering Forgotten Folk Tales and Oral Traditions</a></h2>
                 <div class="meta">
@@ -83,6 +117,7 @@
                 <a href="forgotten-folk-tales-oral-traditions.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
             
+            <!-- Article 3 -->
             <article class="article-card">
                 <h2><a href="economic-impacts-cultural-festivals.html">Economic Impacts of Cultural Festivals</a></h2>
                 <div class="meta">
@@ -93,6 +128,7 @@
                 <a href="economic-impacts-cultural-festivals.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
             
+            <!-- Article 4 -->
             <article class="article-card">
                 <h2><a href="preserving-indigenous-languages-education.html">Preserving Indigenous Languages Through Education</a></h2>
                 <div class="meta">
@@ -103,6 +139,7 @@
                 <a href="preserving-indigenous-languages-education.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
             
+            <!-- Article 5 -->
             <article class="article-card">
                 <h2><a href="role-museums-cultural-preservation.html">Role of Museums in Cultural Preservation</a></h2>
                 <div class="meta">
@@ -113,6 +150,7 @@
                 <a href="role-museums-cultural-preservation.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
             
+            <!-- Article 6 -->
             <article class="article-card">
                 <h2><a href="digital-tools-archiving-cultural-heritage.html">Digital Tools for Archiving Cultural Heritage</a></h2>
                 <div class="meta">
@@ -124,17 +162,7 @@
             </article>
         </div>
         
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="Archives Pagination">
-            <ul>
-                <li class="page-item">
-                    <a href="#" class="page-link prev disabled" aria-disabled="true"><i class="fas fa-chevron-left" aria-hidden="true"></i> Previous</a>
-                </li>
-                <li class="page-item">
-                    <a href="archives-page-2.html" class="page-link next">Next <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+        <label for="load-more" class="load-more-button">Load More <i class="fas fa-arrow-down" aria-hidden="true"></i></label>
     </main>
 
     <!-- Categories Section -->
@@ -158,7 +186,7 @@
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+    <a href="https://wa.me/9555754494" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -219,11 +247,11 @@
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
                     <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 (555) 123-4567</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp">
+                    <a href="https://wa.me/9555754494" class="social-link" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
                     <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook">

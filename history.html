@@ -25,6 +25,38 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Load More Feature */
+        .load-more-checkbox {
+            display: none;
+        }
+        .load-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .load-more-button:hover {
+            background-color: #0056b3;
+        }
+        /* Hide articles beyond the first 10 by default */
+        .articles-grid .article-card:nth-child(n+11) {
+            display: none;
+        }
+        /* Show next 10 articles when checkbox is checked */
+        .load-more-checkbox:checked ~ .articles-grid .article-card:nth-child(n+11):nth-child(-n+20) {
+            display: block;
+        }
+        /* Hide the Load More button after all articles are shown */
+        .load-more-checkbox:checked ~ .load-more-button {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -64,7 +96,9 @@
         <h1 class="section-title">Indian History & Heritage</h1>
         <p class="section-subtitle">Exploring the rich historical narratives, cultural heritage, and lesser-known stories of India.</p>
 
+        <input type="checkbox" id="load-more" class="load-more-checkbox">
         <div class="articles-grid">
+            <!-- Article 1 -->
             <article class="article-card">
                 <h2><a href="espionage-intelligence-indian-empires.html">Evolution of Espionage and Intelligence Systems in Indian Empires</a></h2>
                 <div class="meta">
@@ -75,6 +109,7 @@
                 <a href="espionage-intelligence-indian-empires.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 2 -->
             <article class="article-card">
                 <h2><a href="ganikas-ancient-india.html">Social, Economic, and Cultural Role of Ganikas in Ancient India</a></h2>
                 <div class="meta">
@@ -85,6 +120,7 @@
                 <a href="ganikas-ancient-india.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 3 -->
             <article class="article-card">
                 <h2><a href="pre-marital-love-india.html">Pre-Marital Love in Ancient India</a></h2>
                 <div class="meta">
@@ -95,6 +131,7 @@
                 <a href="pre-marital-love-india.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 4 -->
             <article class="article-card">
                 <h2><a href="disability-ancient-india.html">Disability in Ancient India</a></h2>
                 <div class="meta">
@@ -105,6 +142,7 @@
                 <a href="disability-ancient-india.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 5 -->
             <article class="article-card">
                 <h2><a href="ancient-indian-textile-dyeing.html">Ancient Indian Textile Dyeing</a></h2>
                 <div class="meta">
@@ -115,6 +153,7 @@
                 <a href="ancient-indian-textile-dyeing.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 6 -->
             <article class="article-card">
                 <h2><a href="history-of-indian-toys.html">History of Indian Toys</a></h2>
                 <div class="meta">
@@ -125,6 +164,7 @@
                 <a href="history-of-indian-toys.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 7 -->
             <article class="article-card">
                 <h2><a href="mental-health-india-history-analysis.html">Mental Health in India: History & Analysis</a></h2>
                 <div class="meta">
@@ -135,6 +175,7 @@
                 <a href="mental-health-india-history-analysis.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 8 -->
             <article class="article-card">
                 <h2><a href="ancient-india-pets.html">Pets in Ancient India</a></h2>
                 <div class="meta">
@@ -145,6 +186,7 @@
                 <a href="ancient-india-pets.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 9 -->
             <article class="article-card">
                 <h2><a href="anonymous-indian-artisans-history.html">Anonymous Indian Artisans: A Hidden Legacy</a></h2>
                 <div class="meta">
@@ -155,6 +197,7 @@
                 <a href="anonymous-indian-artisans-history.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 10 -->
             <article class="article-card">
                 <h2><a href="indian-pilgrimages-social-network.html">Indian Pilgrimages and Social Networks</a></h2>
                 <div class="meta">
@@ -165,6 +208,7 @@
                 <a href="indian-pilgrimages-social-network.html" class="read-more">Read More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </article>
 
+            <!-- Article 11 -->
             <article class="article-card">
                 <h2><a href="local-tribal-deities-history.html">Local Tribal Deities in Indian History</a></h2>
                 <div class="meta">
@@ -176,17 +220,7 @@
             </article>
         </div>
 
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="History News Pagination">
-            <ul>
-                <li class="page-item">
-                    <a href="#" class="page-link prev disabled" aria-disabled="true"><i class="fas fa-chevron-left" aria-hidden="true"></i> Previous</a>
-                </li>
-                <li class="page-item">
-                    <a href="history-page-2.html" class="page-link next">Next <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+        <label for="load-more" class="load-more-button">Load More <i class="fas fa-arrow-down" aria-hidden="true"></i></label>
     </main>
 
     <!-- Categories Section -->
@@ -210,7 +244,7 @@
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -270,12 +304,12 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.com</p>
                     <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>

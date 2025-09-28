@@ -1,77 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Donate to Bolidesh Foundation via PhonePe QR Code.">
-  <title>Donate - Bolidesh Foundation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-      text-align: center;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Bolidesh Foundation’s mission to preserve India’s cultural heritage and empower communities. Donate via PhonePe to fund our research, education, and sustainable initiatives.">
+    <meta name="keywords" content="Bolidesh Foundation, donate, cultural heritage, India, community empowerment, sustainable initiatives, PhonePe donation, bolidesh.in">
+    <meta name="author" content="Bolidesh Foundation">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Donate to Bolidesh Foundation | Preserve India’s Cultural Heritage | bolidesh.in">
+    <meta property="og:description" content="Your donation to Bolidesh Foundation supports cultural preservation, community empowerment, and sustainable development across India. Contribute via PhonePe today.">
+    <meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
+    <meta property="og:url" content="https://bolidesh.in/donate.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bolidesh Foundation">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Donate to Bolidesh Foundation | Preserve India’s Cultural Heritage">
+    <meta name="twitter:description" content="Your donation to Bolidesh Foundation supports cultural preservation, community empowerment, and sustainable development across India. Contribute via PhonePe today.">
+    <meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bolidesh Foundation",
+      "url": "https://bolidesh.in",
+      "logo": "https://bolidesh.in/images/logo.jpg",
+      "description": "Bolidesh Foundation is an independent non-profit dedicated to preserving India's cultural heritage, promoting community development, and fostering sustainable initiatives through research, education, and innovation.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9555754494",
+        "contactType": "Customer Service",
+        "email": "help.bolidesh@gmail.com"
+      },
+      "sameAs": [
+        "https://facebook.com/bolideshfoundation",
+        "https://twitter.com/bolidesh",
+        "https://instagram.com/bolideshfoundation",
+        "https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p"
+      ]
     }
-    header {
-      background: #004aad;
-      color: #fff;
-      padding: 20px 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    main {
-      padding: 40px 20px;
-    }
-    .qr-container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .qr-container img {
-      width: 280px;
-      max-width: 90%;
-      border: 3px solid #004aad;
-      border-radius: 10px;
-    }
-    .note {
-      margin-top: 15px;
-      font-size: 16px;
-      color: #555;
-    }
-    footer {
-      background: #222;
-      color: #ddd;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
-    }
-  </style>
+    </script>
+
+    <title>Donate to Bolidesh Foundation | Preserve India’s Cultural Heritage | bolidesh.in</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://bolidesh.in/images/favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS for Images */
+        .donate-introduction img, .donate-impact img, .donate-how img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        /* CSS for Donation Popup */
+        .donation-popup-checkbox {
+            display: none;
+        }
+        .donation-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .donation-popup-checkbox:checked ~ .donation-popup {
+            display: flex;
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .popup-icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .btn-primary, .btn-secondary {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        /* QR Code Styling */
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: block;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+        }
+        /* Donation Levels */
+        .donation-levels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .donation-level {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 200px;
+        }
+        .donation-level h3 {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://bolidesh.in/images/logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
+                <div>
+                    <div class="logo-text">Bolidesh Foundation</div>
+                    <div class="logo-subtitle">Preserving Cultural Heritage</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
+                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
+                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
+                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
+                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
+                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
+                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
+                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
+                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
+                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                    <li><a href="donate.html" class="active" aria-current="page"><i class="fas fa-donate" aria-hidden="true"></i> Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <h1>Donate to Bolidesh Foundation</h1>
-  </header>
+    <!-- Donation Section -->
+    <main class="container" role="main">
+        <h1 class="section-title">Support Bolidesh Foundation</h1>
+        <p class="section-subtitle">Your generous contribution helps preserve India’s cultural heritage, empower communities, and drive sustainable initiatives for a brighter future.</p>
 
-  <main>
-    <h2>Scan QR Code to Donate</h2>
-    <div class="qr-container">
-      <!-- Yahan apna PhonePe QR code image dalna -->
-      <img src="images/phonepe-qr.png" alt="PhonePe QR Code for Donation">
+        <section class="donate-introduction">
+            <h2>Why Your Donation Matters</h2>
+            <img src="https://images.unsplash.com/photo-1590402494587-44e996b4c4a5" alt="Vibrant Indian cultural festival" loading="lazy">
+            <p>At Bolidesh Foundation, we are committed to preserving India’s rich cultural heritage while empowering communities through education, research, and sustainable development. Your donation fuels our mission to safeguard traditions, support artisans, and make cultural knowledge accessible to all. Every contribution, no matter the size, creates a lasting impact on communities across India and beyond.</p>
+            <p>By donating, you become a partner in our journey to protect ancient manuscripts, revive traditional crafts, and empower the next generation with cultural pride. Join us in ensuring that India’s heritage remains vibrant for future generations.</p>
+            <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
+        </section>
+
+        <section class="donate-impact">
+            <h2>The Impact of Your Donation</h2>
+            <img src="https://images.pexels.com/photos/5723444/pexels-photo-5723444.jpeg" alt="Community celebrating cultural preservation" loading="lazy">
+            <p>Your support directly contributes to transformative initiatives that preserve cultural heritage and uplift communities. Here’s how your donation makes a difference:</p>
+            <ul>
+                <li><strong>Preserving Heritage:</strong> Fund the digitization of cultural artifacts, oral histories, and traditional practices, ensuring they are accessible worldwide.</li>
+                <li><strong>Empowering Communities:</strong> Support education programs and workshops that teach traditional crafts and foster cultural pride among youth and adults.</li>
+                <li><strong>Sustainable Development:</strong> Provide resources for artisans and performers to create sustainable livelihoods through their cultural skills.</li>
+                <li><strong>Global Advocacy:</strong> Enable partnerships with international organizations to protect cultural heritage from threats like urbanization and climate change.</li>
+            </ul>
+            <p>With your help, we’ve already digitized over 15,000 artifacts, empowered 75,000 individuals, and supported 2,000 artisans. Your donation will help us expand this impact.</p>
+        </section>
+
+        <section class="donate-how">
+            <h2>How to Donate</h2>
+            <img src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg" alt="Hands symbolizing giving" loading="lazy">
+            <p>We’ve made donating simple and secure through PhonePe, a trusted payment platform. Follow these steps to contribute:</p>
+            <ol>
+                <li>Open the PhonePe app on your smartphone.</li>
+                <li>Tap the “Scan” option to scan the QR code below.</li>
+                <li>Enter the amount you wish to donate and confirm the payment.</li>
+                <li>You’ll receive a confirmation of your donation, and we’ll follow up with a thank-you note and impact updates.</li>
+            </ol>
+            <img src="YOUR_PHONEPE_QR_CODE_URL" alt="PhonePe QR Code for Bolidesh Foundation Donations" class="qr-code" loading="lazy">
+            <p><strong>Important:</strong> Replace <code>YOUR_PHONEPE_QR_CODE_URL</code> with the actual URL of your PhonePe QR code image. Ensure the image is hosted securely (e.g., on a cloud service like Google Drive, Dropbox, or your website) and accessible publicly.</p>
+            <p>If you encounter issues or have questions, contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a> or <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p">WhatsApp</a>.</p>
+            <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
+        </section>
+
+        <section class="donate-levels">
+            <h2>Donation Levels</h2>
+            <p>Choose a donation level that suits you, or contribute any amount to support our mission:</p>
+            <div class="donation-levels">
+                <div class="donation-level">
+                    <h3>Supporter</h3>
+                    <p>₹500+</p>
+                    <p>Fund educational workshops for local communities.</p>
+                </div>
+                <div class="donation-level">
+                    <h3>Guardian</h3>
+                    <p>₹2,000+</p>
+                    <p>Support the digitization of cultural artifacts.</p>
+                </div>
+                <div class="donation-level">
+                    <h3>Champion</h3>
+                    <p>₹5,000+</p>
+                    <p>Empower artisans with sustainable livelihoods.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="donate-transparency">
+            <h2>Our Commitment to Transparency</h2>
+            <p>At Bolidesh Foundation, we value your trust. Every donation is used responsibly to advance our mission of cultural preservation and community empowerment. We provide annual impact reports to our donors, detailing how funds are allocated and the outcomes achieved. Your contribution is a vital part of our journey, and we are committed to ensuring it creates meaningful change.</p>
+            <p>For more information, visit our <a href="about.html">About page</a> or contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a>.</p>
+        </section>
+    </main>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Explore Categories</h2>
+            <p class="section-subtitle">Browse our content by category to learn more about our initiatives.</p>
+            <div class="categories-container" role="navigation" aria-label="Category Navigation">
+                <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National</a>
+                <a href="district.html" class="category-pill"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a>
+                <a href="history.html" class="category-pill"><i class="fas fa-history" aria-hidden="true"></i> History</a>
+                <a href="culture.html" class="category-pill"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a>
+                <a href="market.html" class="category-pill"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a>
+                <a href="media.html" class="category-pill"><i class="fas fa-film" aria-hidden="true"></i> Media</a>
+                <a href="local.html" class="category-pill"><i class="fas fa-users" aria-hidden="true"></i> Local</a>
+                <a href="news.html" class="category-pill"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a>
+                <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Popup -->
+    <input type="checkbox" id="donation-popup" class="donation-popup-checkbox">
+    <div class="donation-popup">
+        <div class="popup-content">
+            <label for="donation-popup" class="popup-close">&times;</label>
+            <div class="popup-icon">
+                <i class="fas fa-hands-helping" aria-hidden="true"></i>
+            </div>
+            <h3>Thank You for Supporting Us</h3>
+            <p>Your donation will help preserve India’s cultural heritage and empower communities. Scan the PhonePe QR code to complete your contribution.</p>
+            <div class="popup-buttons">
+                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Proceed to QR Code</a>
+                <label for="donation-popup" class="btn btn-secondary">Close</label>
+            </div>
+        </div>
     </div>
-    <p class="note">आप केवल QR Code स्कैन करके ही डोनेट कर सकते हैं।</p>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Bolidesh Foundation. All Rights Reserved.</p>
-  </footer>
+    <!-- WhatsApp Button -->
+    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="news.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> News</a></li>
+                    <li><a href="analysis.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Analysis</a></li>
+                    <li><a href="national.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> National</a></li>
+                    <li><a href="district.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> District</a></li>
+                    <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>More Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="culture.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Culture</a></li>
+                    <li><a href="market.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Market</a></li>
+                    <li><a href="media.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media</a></li>
+                    <li><a href="local.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Local</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal Links</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Terms of Service</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Disclaimer</a></li>
+                    <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.com</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates on Bolidesh Foundation initiatives.</p>
+                <form class="newsletter-form" aria-label="Newsletter Subscription">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="sub-footer">
+            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
+        </div>
+    </footer>
 </body>
 </html>

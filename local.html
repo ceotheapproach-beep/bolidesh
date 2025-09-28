@@ -25,6 +25,38 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Load More Feature */
+        .load-more-checkbox {
+            display: none;
+        }
+        .load-more-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .load-more-button:hover {
+            background-color: #0056b3;
+        }
+        /* Hide articles beyond the first 10 by default */
+        .articles-grid .article-card:nth-child(n+11) {
+            display: none;
+        }
+        /* Show next 10 articles when checkbox is checked */
+        .load-more-checkbox:checked ~ .articles-grid .article-card:nth-child(n+11):nth-child(-n+20) {
+            display: block;
+        }
+        /* Hide the Load More button after all articles are shown (optional, can be adjusted for more batches) */
+        .load-more-checkbox:checked ~ .load-more-button {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -65,6 +97,7 @@
         <h1 class="section-title">Local News & Community Stories</h1>
         <p class="section-subtitle">Stay updated with local initiatives, events, and community-driven projects that preserve culture and promote development.</p>
         
+        <input type="checkbox" id="load-more" class="load-more-checkbox">
         <div class="articles-grid">
             <article class="article-card">
                 <h2><a href="community-festival-highlight.html">Community Festival Highlights</a></h2>
@@ -117,17 +150,7 @@
             </article>
         </div>
 
-        <!-- Pagination -->
-        <nav class="pagination" aria-label="Local Articles Pagination">
-            <ul>
-                <li class="page-item">
-                    <a href="#" class="page-link prev disabled" aria-disabled="true"><i class="fas fa-chevron-left" aria-hidden="true"></i> Previous</a>
-                </li>
-                <li class="page-item">
-                    <a href="local-page-2.html" class="page-link next">Next <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </nav>
+        <label for="load-more" class="load-more-button">Load More <i class="fas fa-arrow-down" aria-hidden="true"></i></label>
     </main>
 
     <!-- Categories Section -->
@@ -151,7 +174,7 @@
     </section>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
@@ -211,11 +234,12 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.com</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                     <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>

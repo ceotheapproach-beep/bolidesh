@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bolidesh Foundation is a non-profit dedicated to preserving India’s cultural heritage through research, education, and community empowerment. Join us to protect traditions, empower artisans, and promote sustainable development.">
+    <meta name="description" content="Bolidesh Foundation preserves India’s cultural heritage through research, education, and community empowerment. Support our mission to protect traditions and empower artisans.">
     <meta name="keywords" content="Bolidesh Foundation, cultural heritage, India, preservation, community empowerment, sustainable development, cultural education, artisans, digital archives, bolidesh.in">
     <meta name="author" content="Bolidesh Foundation">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Bolidesh Foundation | Preserve India’s Cultural Heritage | bolidesh.in">
-    <meta property="og:description" content="Join Bolidesh Foundation to preserve India’s rich cultural heritage through research, education, and community-driven initiatives. Support our mission today.">
+    <meta property="og:description" content="Join Bolidesh Foundation to preserve India’s cultural heritage through research, education, and community initiatives. Donate to support our mission.">
     <meta property="og:url" content="https://bolidesh.in">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bolidesh Foundation">
@@ -18,7 +18,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Bolidesh Foundation | Preserve India’s Cultural Heritage">
-    <meta name="twitter:description" content="Join Bolidesh Foundation to preserve India’s rich cultural heritage through research, education, and community-driven initiatives. Support our mission today.">
+    <meta name="twitter:description" content="Join Bolidesh Foundation to preserve India’s cultural heritage through research, education, and community initiatives. Donate to support our mission.">
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -64,6 +64,168 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://bolidesh.in/images/favicon.ico" type="image/x-icon">
     <style>
+        /* Mobile-First Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+        h1 {
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .section-spacing {
+            padding: 2rem 0;
+        }
+        .content-block {
+            margin-bottom: 1.5rem;
+        }
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            min-width: 120px;
+        }
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        /* Header */
+        .header-container {
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Navigation (Mobile Hamburger Menu) */
+        .nav-container {
+            position: relative;
+        }
+        .nav-toggle {
+            display: none;
+        }
+        .nav-toggle-label {
+            display: block;
+            font-size: 1.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            text-align: right;
+        }
+        .nav-container ul {
+            display: none;
+            flex-direction: column;
+            background: #f8f9fa;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        .nav-toggle:checked ~ ul {
+            display: flex;
+        }
+        .nav-container li {
+            list-style: none;
+        }
+        .nav-container a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .nav-container a.active {
+            background: #007bff;
+            color: white;
+        }
+        .nav-container a:hover {
+            background: #e9ecef;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 3rem 1rem;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        /* Focus Areas and Impact */
+        .focus-areas-grid, .impact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .category-pill, .impact-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+            max-width: 280px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s;
+        }
+        .category-pill:hover {
+            background: #e9ecef;
+        }
+        .impact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Donation Section */
+        .donation-content {
+            text-align: center;
+        }
+        .donation-icon {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+
         /* Donation Popup */
         .donation-popup-checkbox {
             display: none;
@@ -85,10 +247,9 @@
         }
         .popup-content {
             background: white;
-            padding: 20px;
+            padding: 1.5rem;
             border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
+            max-width: 90%;
             text-align: center;
         }
         .popup-close {
@@ -97,131 +258,185 @@
             right: 10px;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 1.2rem;
             cursor: pointer;
         }
         .popup-icon {
-            font-size: 40px;
+            font-size: 2rem;
             color: #007bff;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
         .popup-buttons {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 1rem;
             justify-content: center;
         }
-        .btn-primary, .btn-secondary {
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn-primary {
-            background: #007bff;
-            color: white;
-        }
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-        /* Hero Section (No Image) */
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: #f8f9fa;
-            color: #333;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        /* Spacing and Formatting */
-        .section-spacing {
-            margin-bottom: 40px;
-            padding: 20px 0;
-        }
-        .content-block {
-            margin-bottom: 20px;
-        }
-        .focus-areas-grid {
+
+        /* Footer */
+        .footer-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .category-pill {
+            gap: 1.5rem;
+            padding: 2rem 1rem;
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            width: 250px;
-            text-decoration: none;
-            color: #333;
-            transition: background 0.3s;
         }
-        .category-pill:hover {
+        .footer-column {
+            flex: 1 1 100%;
+        }
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+        }
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-link {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .newsletter-input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .sub-footer {
+            text-align: center;
+            padding: 1rem;
             background: #e9ecef;
         }
-        .impact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            z-index: 100;
         }
-        .impact-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            width: 200px;
-            min-height: 120px;
+
+        /* Media Queries for Larger Screens */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .header-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .nav-toggle-label {
+                display: none;
+            }
+            .nav-container ul {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background: none;
+            }
+            .nav-container a {
+                padding: 0.5rem 1rem;
+            }
+            .hero {
+                padding: 4rem 2rem;
+            }
+            .focus-areas-grid, .impact-grid {
+                gap: 1.5rem;
+            }
+            .category-pill, .impact-item {
+                width: 220px;
+            }
+            .footer-container {
+                flex-wrap: nowrap;
+            }
+            .footer-column {
+                flex: 1 1 20%;
+            }
+            .newsletter-form {
+                flex-direction: row;
+            }
+            .newsletter-input {
+                flex: 1;
+            }
+        }
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .category-pill, .impact-item {
+                width: 250px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="container header-container">
             <div class="logo">
                 <div>
                     <div class="logo-text">Bolidesh Foundation</div>
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>
                 </div>
             </div>
-        </div>
-        
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
-                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
-                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                    <li><a href="donate.html"><i class="fas fa-donate" aria-hidden="true"></i> Donate</a></li>
-                </ul>
-            </nav>
+            <div class="nav-container" role="navigation" aria-label="Main Navigation">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars" aria-hidden="true"></i></label>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
+                        <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
+                        <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
+                        <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
+                        <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
+                        <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
+                        <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
+                        <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
+                        <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
+                        <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                        <li><a href="donate.html"><i class="fas fa-donate" aria-hidden="true"></i> Donate</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero section-spacing">
-        <h1>Welcome to Bolidesh Foundation</h1>
-        <p class="section-subtitle">Join us in preserving India’s vibrant cultural heritage through research, education, and community-driven initiatives. Together, we safeguard traditions and empower future generations.</p>
-        <div class="hero-buttons">
-            <a href="about.html" class="btn btn-primary"><i class="fas fa-info-circle" aria-hidden="true"></i> Learn More</a>
-            <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
+        <div class="container">
+            <h1>Welcome to Bolidesh Foundation</h1>
+            <p class="section-subtitle">Join us in preserving India’s vibrant cultural heritage through research, education, and community-driven initiatives. Together, we safeguard traditions and empower future generations.</p>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn btn-primary"><i class="fas fa-info-circle" aria-hidden="true"></i> Learn More</a>
+                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
+            </div>
         </div>
     </section>
 
@@ -229,16 +444,16 @@
     <section class="container mission-section section-spacing">
         <h2 class="section-title">Our Mission</h2>
         <div class="content-block">
-            <p>Bolidesh Foundation is dedicated to preserving India’s rich cultural heritage while fostering sustainable development and community empowerment. Established in 2025, we operate independently to protect the tangible and intangible elements of India’s identity—artifacts, traditions, languages, and stories.</p>
-            <p>Our mission is built on five pillars:</p>
+            <p>Bolidesh Foundation, established in 2025, is dedicated to preserving India’s rich cultural heritage while fostering sustainable development and community empowerment. As an independent non-profit, we protect the tangible and intangible elements of India’s identity—artifacts, traditions, languages, and stories.</p>
+            <p>Our mission is guided by five pillars:</p>
             <ul>
                 <li><strong>Preservation:</strong> Documenting cultural artifacts and oral histories for global accessibility.</li>
                 <li><strong>Education:</strong> Empowering communities with knowledge to celebrate their heritage.</li>
-                <li><strong>Innovation:</strong> Using technology like digital archives to preserve and share culture.</li>
+                <li><strong>Innovation:</strong> Leveraging technology like digital archives to share culture worldwide.</li>
                 <li><strong>Community Empowerment:</strong> Supporting artisans and local communities for sustainable growth.</li>
                 <li><strong>Advocacy:</strong> Raising awareness to protect cultural heritage from modern challenges.</li>
             </ul>
-            <p>We bridge tradition and modernity, ensuring India’s cultural legacy thrives for future generations. <a href="about.html">Discover our story</a>.</p>
+            <p>We bridge tradition and modernity to ensure India’s cultural legacy thrives. <a href="about.html">Discover our story</a>.</p>
         </div>
         <a href="about.html" class="btn btn-primary"><i class="fas fa-arrow-right" aria-hidden="true"></i> Explore Our Vision</a>
     </section>
@@ -247,7 +462,7 @@
     <section class="container focus-areas section-spacing">
         <h2 class="section-title">Our Focus Areas</h2>
         <div class="content-block">
-            <p>Explore the diverse domains where Bolidesh Foundation drives impact through preservation, innovation, and community engagement.</p>
+            <p>Explore the diverse domains where we drive impact through preservation, innovation, and community engagement.</p>
         </div>
         <div class="focus-areas-grid" role="navigation" aria-label="Focus Areas Navigation">
             <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National: Unifying India’s cultural narrative through nationwide initiatives.</a>
@@ -266,24 +481,24 @@
     <section class="container impact-section section-spacing">
         <h2 class="section-title">Our Impact</h2>
         <div class="content-block">
-            <p>Since 2025, Bolidesh Foundation has made significant strides in cultural preservation and community empowerment:</p>
+            <p>Since 2025, Bolidesh Foundation has transformed cultural preservation and community empowerment:</p>
         </div>
         <div class="impact-grid">
             <div class="impact-item">
                 <h3>15,000+</h3>
-                <p>Cultural artifacts digitized and made accessible globally.</p>
+                <p>Artifacts digitized for global access.</p>
             </div>
             <div class="impact-item">
                 <h3>75,000+</h3>
-                <p>Individuals reached through education and cultural programs.</p>
+                <p>Individuals engaged in cultural programs.</p>
             </div>
             <div class="impact-item">
                 <h3>2,000+</h3>
-                <p>Artisans empowered with sustainable livelihoods.</p>
+                <p>Artisans empowered with livelihoods.</p>
             </div>
             <div class="impact-item">
                 <h3>Global Reach</h3>
-                <p>Collaborating with international partners to advocate for cultural heritage.</p>
+                <p>Advocating for heritage with international partners.</p>
             </div>
         </div>
         <a href="about.html#about-impact" class="btn btn-primary"><i class="fas fa-arrow-right" aria-hidden="true"></i> See Our Full Impact</a>
@@ -298,7 +513,7 @@
                 </div>
                 <h2>Support Our Mission</h2>
                 <div class="content-block">
-                    <p>Your contributions fuel our efforts to preserve cultural heritage, empower communities, and drive sustainable initiatives. Every donation, big or small, helps protect India’s legacy.</p>
+                    <p>Your contributions fuel our efforts to preserve India’s cultural heritage, empower communities, and drive sustainable initiatives. Every donation makes a difference.</p>
                 </div>
                 <div class="donation-buttons">
                     <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
@@ -316,7 +531,7 @@
                 <i class="fas fa-hands-helping" aria-hidden="true"></i>
             </div>
             <h3>Support Bolidesh Foundation</h3>
-            <p>Your donation helps preserve India’s cultural heritage and empower communities. Contribute via PhonePe to make a lasting impact.</p>
+            <p>Your donation preserves India’s cultural heritage and empowers communities. Contribute via PhonePe today.</p>
             <div class="popup-buttons">
                 <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Proceed to Donate</a>
                 <label for="donation-popup" class="btn btn-secondary">Close</label>
@@ -331,7 +546,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
+        <div class="container footer-container">
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
@@ -343,7 +558,6 @@
                     <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>More Categories</h3>
                 <ul class="footer-links">
@@ -355,7 +569,6 @@
                     <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>Legal Links</h3>
                 <ul class="footer-links">
@@ -365,7 +578,6 @@
                     <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
@@ -379,10 +591,9 @@
                     <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
-            
             <div class="footer-column">
                 <h3>Newsletter</h3>
-                <p>Stay updated on our cultural preservation initiatives and events.</p>
+                <p>Stay updated on our cultural preservation initiatives.</p>
                 <form class="newsletter-form" aria-label="Newsletter Subscription">
                     <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
                     <button type="submit" class="btn btn-primary">Subscribe</button>

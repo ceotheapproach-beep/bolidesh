@@ -11,16 +11,14 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Donate to Bolidesh Foundation | Preserve India’s Cultural Heritage | bolidesh.in">
     <meta property="og:description" content="Your donation to Bolidesh Foundation supports cultural preservation, community empowerment, and sustainable development across India. Contribute via PhonePe today.">
-    <meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
     <meta property="og:url" content="https://bolidesh.in/donate.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bolidesh Foundation">
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Donate to Bolidesh Foundation | Preserve India’s Cultural Heritage">
     <meta name="twitter:description" content="Your donation to Bolidesh Foundation supports cultural preservation, community empowerment, and sustainable development across India. Contribute via PhonePe today.">
-    <meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -29,7 +27,6 @@
       "@type": "Organization",
       "name": "Bolidesh Foundation",
       "url": "https://bolidesh.in",
-      "logo": "https://bolidesh.in/images/logo.jpg",
       "description": "Bolidesh Foundation is an independent non-profit dedicated to preserving India's cultural heritage, promoting community development, and fostering sustainable initiatives through research, education, and innovation.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -52,14 +49,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://bolidesh.in/images/favicon.ico" type="image/x-icon">
     <style>
-        /* CSS for Images */
-        .donate-introduction img, .donate-impact img, .donate-how img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
         /* CSS for Donation Popup */
         .donation-popup-checkbox {
             display: none;
@@ -119,16 +108,14 @@
             background: #6c757d;
             color: white;
         }
-        /* QR Code Styling */
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            display: block;
-            border: 2px solid #007bff;
-            border-radius: 8px;
+        /* Spacing and Formatting */
+        .section-spacing {
+            margin-bottom: 40px;
+            padding: 20px 0;
         }
-        /* Donation Levels */
+        .content-block {
+            margin-bottom: 20px;
+        }
         .donation-levels {
             display: flex;
             flex-wrap: wrap;
@@ -142,9 +129,20 @@
             border-radius: 8px;
             text-align: center;
             width: 200px;
+            min-height: 150px;
         }
         .donation-level h3 {
             margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .qr-placeholder {
+            background: #f8f9fa;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 300px;
         }
     </style>
 </head>
@@ -153,7 +151,6 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://bolidesh.in/images/logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
                 <div>
                     <div class="logo-text">Bolidesh Foundation</div>
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>
@@ -188,74 +185,82 @@
         <h1 class="section-title">Support Bolidesh Foundation</h1>
         <p class="section-subtitle">Your generous contribution helps preserve India’s cultural heritage, empower communities, and drive sustainable initiatives for a brighter future.</p>
 
-        <section class="donate-introduction">
+        <section class="donate-introduction section-spacing">
             <h2>Why Your Donation Matters</h2>
-            <img src="https://images.unsplash.com/photo-1590402494587-44e996b4c4a5" alt="Vibrant Indian cultural festival" loading="lazy">
-            <p>At Bolidesh Foundation, we are committed to preserving India’s rich cultural heritage while empowering communities through education, research, and sustainable development. Your donation fuels our mission to safeguard traditions, support artisans, and make cultural knowledge accessible to all. Every contribution, no matter the size, creates a lasting impact on communities across India and beyond.</p>
-            <p>By donating, you become a partner in our journey to protect ancient manuscripts, revive traditional crafts, and empower the next generation with cultural pride. Join us in ensuring that India’s heritage remains vibrant for future generations.</p>
+            <div class="content-block">
+                <p>At Bolidesh Foundation, we are dedicated to preserving India’s rich cultural heritage while empowering communities through education, research, and sustainable development. Your donation fuels our mission to safeguard traditions, support artisans, and make cultural knowledge accessible to all. Every contribution, no matter the size, creates a lasting impact across India and beyond.</p>
+                <p>By donating, you become a partner in protecting ancient manuscripts, reviving traditional crafts, and fostering cultural pride among future generations. Join us in ensuring India’s heritage remains vibrant.</p>
+            </div>
             <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
         </section>
 
-        <section class="donate-impact">
+        <section class="donate-impact section-spacing">
             <h2>The Impact of Your Donation</h2>
-            <img src="https://images.pexels.com/photos/5723444/pexels-photo-5723444.jpeg" alt="Community celebrating cultural preservation" loading="lazy">
-            <p>Your support directly contributes to transformative initiatives that preserve cultural heritage and uplift communities. Here’s how your donation makes a difference:</p>
-            <ul>
-                <li><strong>Preserving Heritage:</strong> Fund the digitization of cultural artifacts, oral histories, and traditional practices, ensuring they are accessible worldwide.</li>
-                <li><strong>Empowering Communities:</strong> Support education programs and workshops that teach traditional crafts and foster cultural pride among youth and adults.</li>
-                <li><strong>Sustainable Development:</strong> Provide resources for artisans and performers to create sustainable livelihoods through their cultural skills.</li>
-                <li><strong>Global Advocacy:</strong> Enable partnerships with international organizations to protect cultural heritage from threats like urbanization and climate change.</li>
-            </ul>
-            <p>With your help, we’ve already digitized over 15,000 artifacts, empowered 75,000 individuals, and supported 2,000 artisans. Your donation will help us expand this impact.</p>
+            <div class="content-block">
+                <p>Your support directly contributes to transformative initiatives that preserve cultural heritage and uplift communities. Here’s how your donation makes a difference:</p>
+                <ul>
+                    <li><strong>Preserving Heritage:</strong> Funds the digitization of cultural artifacts, oral histories, and traditional practices, ensuring global accessibility.</li>
+                    <li><strong>Empowering Communities:</strong> Supports education programs and workshops that foster cultural pride among youth and adults.</li>
+                    <li><strong>Sustainable Development:</strong> Provides resources for artisans to create sustainable livelihoods through their cultural skills.</li>
+                    <li><strong>Global Advocacy:</strong> Enables partnerships with international organizations to protect cultural heritage from urbanization and climate change.</li>
+                </ul>
+                <p>With your help, we’ve digitized over 15,000 artifacts, empowered 75,000 individuals, and supported 2,000 artisans. Your donation will expand this impact.</p>
+            </div>
         </section>
 
-        <section class="donate-how">
+        <section class="donate-how section-spacing">
             <h2>How to Donate</h2>
-            <img src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg" alt="Hands symbolizing giving" loading="lazy">
-            <p>We’ve made donating simple and secure through PhonePe, a trusted payment platform. Follow these steps to contribute:</p>
-            <ol>
-                <li>Open the PhonePe app on your smartphone.</li>
-                <li>Tap the “Scan” option to scan the QR code below.</li>
-                <li>Enter the amount you wish to donate and confirm the payment.</li>
-                <li>You’ll receive a confirmation of your donation, and we’ll follow up with a thank-you note and impact updates.</li>
-            </ol>
-            <img src="YOUR_PHONEPE_QR_CODE_URL" alt="PhonePe QR Code for Bolidesh Foundation Donations" class="qr-code" loading="lazy">
-            <p><strong>Important:</strong> Replace <code>YOUR_PHONEPE_QR_CODE_URL</code> with the actual URL of your PhonePe QR code image. Ensure the image is hosted securely (e.g., on a cloud service like Google Drive, Dropbox, or your website) and accessible publicly.</p>
-            <p>If you encounter issues or have questions, contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a> or <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p">WhatsApp</a>.</p>
+            <div class="content-block">
+                <p>We’ve made donating simple and secure through PhonePe, a trusted payment platform. Follow these steps to contribute:</p>
+                <ol>
+                    <li>Open the PhonePe app on your smartphone.</li>
+                    <li>Tap the “Scan” option to scan our QR code.</li>
+                    <li>Enter the amount you wish to donate and confirm the payment.</li>
+                    <li>You’ll receive a confirmation, and we’ll follow up with a thank-you note and impact updates.</li>
+                </ol>
+                <div class="qr-placeholder">
+                    <p><strong>PhonePe QR Code:</strong> To donate, please contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a> or via <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p">WhatsApp</a> to receive our PhonePe QR code. Replace <code>YOUR_PHONEPE_QR_CODE_URL</code> with the actual QR code URL we provide.</p>
+                </div>
+                <p>If you encounter issues or have questions, contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a> or <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p">WhatsApp</a>.</p>
+            </div>
             <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
         </section>
 
-        <section class="donate-levels">
+        <section class="donate-levels section-spacing">
             <h2>Donation Levels</h2>
-            <p>Choose a donation level that suits you, or contribute any amount to support our mission:</p>
-            <div class="donation-levels">
-                <div class="donation-level">
-                    <h3>Supporter</h3>
-                    <p>₹500+</p>
-                    <p>Fund educational workshops for local communities.</p>
-                </div>
-                <div class="donation-level">
-                    <h3>Guardian</h3>
-                    <p>₹2,000+</p>
-                    <p>Support the digitization of cultural artifacts.</p>
-                </div>
-                <div class="donation-level">
-                    <h3>Champion</h3>
-                    <p>₹5,000+</p>
-                    <p>Empower artisans with sustainable livelihoods.</p>
+            <div class="content-block">
+                <p>Choose a donation level that suits you, or contribute any amount to support our mission:</p>
+                <div class="donation-levels">
+                    <div class="donation-level">
+                        <h3>Supporter</h3>
+                        <p>₹500+</p>
+                        <p>Fund educational workshops for local communities.</p>
+                    </div>
+                    <div class="donation-level">
+                        <h3>Guardian</h3>
+                        <p>₹2,000+</p>
+                        <p>Support the digitization of cultural artifacts.</p>
+                    </div>
+                    <div class="donation-level">
+                        <h3>Champion</h3>
+                        <p>₹5,000+</p>
+                        <p>Empower artisans with sustainable livelihoods.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="donate-transparency">
+        <section class="donate-transparency section-spacing">
             <h2>Our Commitment to Transparency</h2>
-            <p>At Bolidesh Foundation, we value your trust. Every donation is used responsibly to advance our mission of cultural preservation and community empowerment. We provide annual impact reports to our donors, detailing how funds are allocated and the outcomes achieved. Your contribution is a vital part of our journey, and we are committed to ensuring it creates meaningful change.</p>
-            <p>For more information, visit our <a href="about.html">About page</a> or contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a>.</p>
+            <div class="content-block">
+                <p>We value your trust. Every donation is used responsibly to advance our mission of cultural preservation and community empowerment. We provide annual impact reports to donors, detailing fund allocation and outcomes. Your contribution is vital, and we ensure it creates meaningful change.</p>
+                <p>For more information, visit our <a href="about.html">About page</a> or contact us at <a href="mailto:help.bolidesh@gmail.com">help.bolidesh@gmail.com</a>.</p>
+            </div>
         </section>
     </main>
 
     <!-- Categories Section -->
-    <section class="categories">
+    <section class="categories section-spacing">
         <div class="container">
             <h2 class="section-title">Explore Categories</h2>
             <p class="section-subtitle">Browse our content by category to learn more about our initiatives.</p>
@@ -281,10 +286,10 @@
             <div class="popup-icon">
                 <i class="fas fa-hands-helping" aria-hidden="true"></i>
             </div>
-            <h3>Thank You for Supporting Us</h3>
-            <p>Your donation will help preserve India’s cultural heritage and empower communities. Scan the PhonePe QR code to complete your contribution.</p>
+            <h3>Support Bolidesh Foundation</h3>
+            <p>Your donation helps preserve India’s cultural heritage and empower communities. Contact us to receive our PhonePe QR code and contribute.</p>
             <div class="popup-buttons">
-                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Proceed to QR Code</a>
+                <a href="#donate-how" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> How to Donate</a>
                 <label for="donation-popup" class="btn btn-secondary">Close</label>
             </div>
         </div>

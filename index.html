@@ -3,16 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bolidesh Foundation | Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Bolidesh Foundation is dedicated to preserving and promoting India's cultural heritage through research, education, and community engagement. Explore our initiatives in history, culture, media, and more.">
+    <meta name="keywords" content="Bolidesh Foundation, cultural heritage, India, preservation, community engagement, history, culture, media, local initiatives, bolidesh.in">
+    <meta name="author" content="Bolidesh Foundation">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bolidesh Foundation | Preserving India's Cultural Heritage">
+    <meta property="og:description" content="Join Bolidesh Foundation in preserving India's rich cultural heritage through research, education, and community-driven initiatives.">
+    <meta property="og:image" content="https://bolidesh.in/logo.jpg">
+    <meta property="og:url" content="https://bolidesh.in/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bolidesh Foundation | Preserving India's Cultural Heritage">
+    <meta name="twitter:description" content="Join Bolidesh Foundation in preserving India's rich cultural heritage through research, education, and community-driven initiatives.">
+    <meta name="twitter:image" content="https://bolidesh.in/logo.jpg">
+
+    <title>Bolidesh Foundation | Preserving India's Cultural Heritage</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for Donation Popup */
+        .donation-popup-checkbox {
+            display: none;
+        }
+        .donation-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .donation-popup-checkbox:checked ~ .donation-popup {
+            display: flex;
+        }
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .popup-icon {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .btn-primary, .btn-secondary {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        /* Hero Section Image */
+        .hero {
+            background: url('images/hero-banner.jpg') center/cover no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        /* Section Images */
+        .mission-section img, .focus-areas img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.jpg" alt="Bolidesh Foundation Logo">
+                <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
                 <div>
                     <div class="logo-text">Bolidesh Foundation</div>
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>
@@ -20,22 +116,22 @@
             </div>
         </div>
         
-        <div class="nav-container">
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="archives.html"><i class="fas fa-archive"></i> Archives</a></li>
-                    <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chart-line"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-flag"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-map-marked"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
-                    <li><a href="culture.html"><i class="fas fa-palette"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chart-bar"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-film"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-users"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
+                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
+                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
+                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
+                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
+                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
+                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
+                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
+                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
+                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -44,195 +140,74 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to Bolidesh Foundation</h1>
-        <p class="hero-subtitle">Dedicated to preserving and promoting cultural heritage through research, education, and community engagement.</p>
-        
-        <div class="featured-grid">
-            <div class="featured-article main-feature">
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 15, 2025</span>
-                    <span><i class="fas fa-tag"></i> National</span>
-                </div>
-                <h2><a href="article-title.html">Revitalizing Local Economies Through Cultural Preservation</a></h2>
-                <p>In-depth analysis of how preserving traditional crafts and cultural practices can stimulate economic growth in rural communities. This article explores successful case studies from various districts and provides actionable strategies for policymakers and community leaders.</p>
-                <p>We examine the intersection of cultural heritage and economic development, highlighting how traditional knowledge can be leveraged for sustainable growth while maintaining authenticity.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="featured-article">
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 14, 2025</span>
-                    <span><i class="fas fa-tag"></i> Culture</span>
-                </div>
-                <h2><a href="article-title.html">The Resurgence of Folk Music in Modern Media</a></h2>
-                <p>Exploring how traditional folk music is finding new audiences through digital platforms and contemporary adaptations.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="featured-article">
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 13, 2025</span>
-                    <span><i class="fas fa-tag"></i> Market</span>
-                </div>
-                <h2><a href="article-title.html">Local Artisans See 30% Growth in Online Sales</a></h2>
-                <p>Market analysis reveals significant growth in e-commerce platforms specializing in traditional crafts and handmade products.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="featured-article">
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 12, 2025</span>
-                    <span><i class="fas fa-tag"></i> History</span>
-                </div>
-                <h2><a href="article-title.html">Rediscovering Lost Architectural Traditions</a></h2>
-                <p>Historical research uncovers forgotten building techniques that could inform sustainable architecture today.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="featured-article">
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 11, 2025</span>
-                    <span><i class="fas fa-tag"></i> Local</span>
-                </div>
-                <h2><a href="article-title.html">Community-Led Initiative Revives Dying Language</a></h2>
-                <p>How a small village successfully implemented a language preservation program with minimal resources.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
+        <p class="hero-subtitle">Preserving India's rich cultural heritage through research, education, and community-driven initiatives.</p>
+        <a href="about.html" class="btn btn-primary">Learn More About Us <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="container mission-section">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="section-subtitle">At Bolidesh Foundation, we are committed to safeguarding India's diverse cultural heritage, fostering sustainable development, and empowering communities through knowledge and collaboration.</p>
+        <img src="images/mission-image.jpg" alt="Community gathering for cultural preservation" loading="lazy">
+        <p>Founded with a vision to bridge tradition and modernity, we work tirelessly to document, preserve, and promote the rich tapestry of India's history, art, and traditions. Our initiatives span research, education, digital archiving, and community engagement, ensuring that cultural heritage is accessible to future generations.</p>
+        <a href="about.html" class="btn btn-primary">Discover Our Vision <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </section>
+
+    <!-- Focus Areas Section -->
+    <section class="container focus-areas">
+        <h2 class="section-title">Our Focus Areas</h2>
+        <p class="section-subtitle">Explore the diverse domains where we drive impact through preservation and innovation.</p>
+        <img src="images/focus-areas-image.jpg" alt="Diverse cultural elements of India" loading="lazy">
+        <div class="categories-container" role="navigation" aria-label="Focus Areas Navigation">
+            <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National: Uniting India's cultural narrative through nationwide initiatives.</a>
+            <a href="district.html" class="category-pill"><i class="fas fa-map-marked" aria-hidden="true"></i> District: Empowering local communities with region-specific programs.</a>
+            <a href="history.html" class="category-pill"><i class="fas fa-history" aria-hidden="true"></i> History: Documenting and preserving India's historical legacy.</a>
+            <a href="culture.html" class="category-pill"><i class="fas fa-palette" aria-hidden="true"></i> Culture: Celebrating and sustaining traditional arts and practices.</a>
+            <a href="market.html" class="category-pill"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market: Supporting artisans through economic opportunities.</a>
+            <a href="media.html" class="category-pill"><i class="fas fa-film" aria-hidden="true"></i> Media: Sharing stories through documentaries and visual media.</a>
+            <a href="local.html" class="category-pill"><i class="fas fa-users" aria-hidden="true"></i> Local: Strengthening community-driven cultural initiatives.</a>
+            <a href="news.html" class="category-pill"><i class="fas fa-newspaper" aria-hidden="true"></i> News: Keeping you updated on cultural and community developments.</a>
+            <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis: Providing insights into cultural and economic trends.</a>
         </div>
     </section>
 
-    <!-- Latest Articles -->
-    <section class="container">
-        <h2 class="section-title">Latest Articles</h2>
-        <p class="section-subtitle">Stay updated with our most recent publications on cultural heritage, preservation, and community development.</p>
-        
-        <div class="articles-grid">
-            <div class="article-card">
-                <h3><a href="article-title.html">Digital Archives: Preserving Cultural Heritage for Future Generations</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 10, 2025</span>
-                    <span><i class="fas fa-tag"></i> Media</span>
-                </div>
-                <p>Exploring innovative approaches to digitizing cultural artifacts and making them accessible to global audiences while respecting intellectual property rights.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card">
-                <h3><a href="article-title.html">Traditional Textiles Find New Market in Sustainable Fashion</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 9, 2025</span>
-                    <span><i class="fas fa-tag"></i> Market</span>
-                </div>
-                <p>How traditional weaving techniques are being incorporated into contemporary fashion designs, creating new economic opportunities for artisans.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card">
-                <h3><a href="article-title.html">The Role of Local Festivals in Community Cohesion</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 8, 2025</span>
-                    <span><i class="fas fa-tag"></i> Culture</span>
-                </div>
-                <p>Examining how traditional festivals strengthen social bonds and preserve cultural practices in increasingly urbanized societies.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card">
-                <h3><a href="article-title.html">Policy Recommendations for Cultural Preservation Funding</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 7, 2025</span>
-                    <span><i class="fas fa-tag"></i> National</span>
-                </div>
-                <p>Analysis of current government funding mechanisms for cultural preservation and proposed improvements based on international best practices.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card">
-                <h3><a href="article-title.html">Oral History Projects: Capturing Living Memory</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 6, 2025</span>
-                    <span><i class="fas fa-tag"></i> History</span>
-                </div>
-                <p>Methodologies and ethical considerations for conducting oral history interviews with elders and tradition-bearers in indigenous communities.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="article-card">
-                <h3><a href="article-title.html">Youth Engagement in Cultural Preservation: Challenges and Opportunities</a></h3>
-                <div class="meta">
-                    <span><i class="far fa-calendar"></i> June 5, 2025</span>
-                    <span><i class="fas fa-tag"></i> Local</span>
-                </div>
-                <p>Strategies for involving younger generations in cultural preservation efforts, with case studies from successful youth-led initiatives.</p>
-                <a href="article-title.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-        
-        <!-- Pagination -->
-        <ul class="pagination">
-            <li class="page-item">
-                <a href="#" class="page-link prev disabled"><i class="fas fa-chevron-left"></i> Previous</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link active">1</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">2</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">3</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">4</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link">5</a>
-            </li>
-            <li class="page-item">
-                <a href="#" class="page-link next">Next <i class="fas fa-chevron-right"></i></a>
-            </li>
-        </ul>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories">
+    <!-- Donation Section -->
+    <section class="donation-section">
         <div class="container">
-            <h2 class="section-title">Explore Categories</h2>
-            <p class="section-subtitle">Browse our content by category to find exactly what you're looking for.</p>
-            
-            <div class="categories-container">
-                <a href="national.html" class="category-pill"><i class="fas fa-flag"></i> National</a>
-                <a href="district.html" class="category-pill"><i class="fas fa-map-marked"></i> District</a>
-                <a href="history.html" class="category-pill"><i class="fas fa-history"></i> History</a>
-                <a href="culture.html" class="category-pill"><i class="fas fa-palette"></i> Culture</a>
-                <a href="market.html" class="category-pill"><i class="fas fa-chart-bar"></i> Market</a>
-                <a href="media.html" class="category-pill"><i class="fas fa-film"></i> Media</a>
-                <a href="local.html" class="category-pill"><i class="fas fa-users"></i> Local</a>
-                <a href="news.html" class="category-pill"><i class="fas fa-newspaper"></i> News</a>
-                <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line"></i> Analysis</a>
+            <div class="donation-content">
+                <div class="donation-icon">
+                    <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                </div>
+                <h2>Support Bolidesh Foundation</h2>
+                <p>Your contributions help us preserve cultural heritage, support local communities, and continue our research and educational programs.</p>
+                <div class="donation-buttons">
+                    <label for="donation-popup" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</label>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <!-- Donation Popup -->
-    <div class="donation-popup" id="donationPopup">
+    <input type="checkbox" id="donation-popup" class="donation-popup-checkbox">
+    <div class="donation-popup">
         <div class="popup-content">
-            <button class="popup-close" id="closePopup">&times;</button>
+            <label for="donation-popup" class="popup-close">&times;</label>
             <div class="popup-icon">
-                <i class="fas fa-hands-helping"></i>
+                <i class="fas fa-hands-helping" aria-hidden="true"></i>
             </div>
             <h3>Support Bolidesh Foundation</h3>
             <p>Your generous donation helps us preserve cultural heritage, support local communities, and continue our research and educational programs.</p>
             <div class="popup-buttons">
-                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate"></i> Donate Now</a>
-                <button class="btn btn-secondary" id="closePopupBtn">Maybe Later</button>
+                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
+                <label for="donation-popup" class="btn btn-secondary">Maybe Later</label>
             </div>
         </div>
     </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
 
     <!-- Footer -->
     <footer>
@@ -240,66 +215,65 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="news.html"><i class="fas fa-chevron-right"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chevron-right"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-chevron-right"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-chevron-right"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-chevron-right"></i> History</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="news.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> News</a></li>
+                    <li><a href="analysis.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Analysis</a></li>
+                    <li><a href="national.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> National</a></li>
+                    <li><a href="district.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> District</a></li>
+                    <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h3>More Categories</h3>
                 <ul class="footer-links">
-                    <li><a href="culture.html"><i class="fas fa-chevron-right"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chevron-right"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-chevron-right"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-chevron-right"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="culture.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Culture</a></li>
+                    <li><a href="market.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Market</a></li>
+                    <li><a href="media.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media</a></li>
+                    <li><a href="local.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Local</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal Links</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Terms of Service</a></li>
+                    <li><a href="disclaimer.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Disclaimer</a></li>
+                    <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <div class="footer-contact">
-                    <p><i class="fas fa-envelope"></i> info@bolideshfoundation.org</p>
-                    <p><i class="fas fa-phone"></i> +91 9555754494</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> help.bolidesh@gmail.com</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <a href="https://whatsapp.com/channel/0029Vb6yPVu6BIEamuQbjf3p" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
             
             <div class="footer-column">
                 <h3>Newsletter</h3>
                 <p>Subscribe to our newsletter for updates on cultural preservation initiatives and events.</p>
-                
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                <form class="newsletter-form" aria-label="Newsletter Subscription">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
         </div>
         
         <div class="sub-footer">
-            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage</p>
+            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
         </div>
     </footer>
-
-    <script src="main.js"></script>
 </body>
 </html>

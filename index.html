@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bolidesh Foundation is dedicated to preserving India’s cultural heritage through research, education, and community empowerment. Join us to protect traditions and empower artisans.">
+    <meta name="description" content="Bolidesh Foundation preserves India’s cultural heritage through research, education, and community empowerment. Join us to protect traditions and empower artisans.">
     <meta name="keywords" content="Bolidesh Foundation, cultural heritage, India, preservation, community empowerment, sustainable development, cultural education, artisans, digital archives, bolidesh.in">
     <meta name="author" content="Bolidesh Foundation">
     <meta name="robots" content="index, follow">
@@ -14,11 +14,13 @@
     <meta property="og:url" content="https://bolidesh.in">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Bolidesh Foundation">
+    <meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bolidesh Foundation | Preserve India’s Cultural Heritage">
     <meta name="twitter:description" content="Join Bolidesh Foundation to preserve India’s cultural heritage through research, education, and community initiatives. Support our mission today.">
+    <meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
 
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -29,6 +31,7 @@
           "@type": "Organization",
           "name": "Bolidesh Foundation",
           "url": "https://bolidesh.in",
+          "logo": "https://bolidesh.in/images/logo.jpg",
           "description": "Bolidesh Foundation is an independent non-profit dedicated to preserving India's cultural heritage, promoting community development, and fostering sustainable initiatives through research, education, and innovation.",
           "contactPoint": {
             "@type": "ContactPoint",
@@ -63,7 +66,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://bolidesh.in/images/favicon.ico" type="image/x-icon">
     <style>
-        /* Mobile-First Navigation (Hamburger Menu) */
+        /* Mobile-First Navigation (Hamburger Menu with Vertical Scroll) */
         .nav-toggle {
             display: none;
         }
@@ -74,10 +77,15 @@
             cursor: pointer;
             text-align: right;
         }
+        .nav-container {
+            position: relative;
+        }
         .nav-container ul {
             display: none;
             flex-direction: column;
             background: #f8f9fa;
+            max-height: 50vh;
+            overflow-y: auto;
             position: absolute;
             top: 100%;
             left: 0;
@@ -169,6 +177,13 @@
             color: white;
         }
 
+        /* Logo Styling */
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* Introduction and Impact Sections */
         .introduction, .impact {
             padding: 2rem 0;
@@ -203,15 +218,20 @@
             }
             .nav-container ul {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 position: static;
                 background: none;
+                max-height: none;
+                overflow-y: visible;
             }
             .nav-container a {
                 padding: 0.5rem 1rem;
             }
             .impact-item {
                 width: 220px;
+            }
+            .logo img {
+                max-width: 150px;
             }
         }
         @media (min-width: 1024px) {
@@ -226,6 +246,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
+                <img src="https://bolidesh.in/images/logo.jpg" alt="Bolidesh Foundation Logo">
                 <div>
                     <div class="logo-text">Bolidesh Foundation</div>
                     <div class="logo-subtitle">Preserving Cultural Heritage</div>

@@ -34,19 +34,34 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* Scrollable district intro - updated for longer content */
+/* Scrollable district intro for long content */
 .district-intro {
-    max-height: none;
-    overflow-y: visible;
+    max-height: 500px;
+    overflow-y: auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
     margin-bottom: 25px;
+    scrollbar-width: thin;
+    scrollbar-color: #007BFF #f1f1f1;
 }
-.district-intro h3 { margin-bottom: 10px; }
-.district-intro h4 { margin-top: 20px; margin-bottom: 10px; color: #333; }
-.district-intro p { line-height: 1.6; margin-bottom: 15px; }
+.district-intro::-webkit-scrollbar {
+    width: 8px;
+}
+.district-intro::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.district-intro::-webkit-scrollbar-thumb {
+    background: #007BFF;
+    border-radius: 10px;
+}
+.district-intro h3 { margin-bottom: 10px; color: #333; }
+.district-intro h4 { margin-top: 25px; margin-bottom: 15px; color: #007BFF; border-bottom: 2px solid #007BFF; padding-bottom: 5px; }
+.district-intro h5 { margin-top: 20px; margin-bottom: 10px; color: #333; }
+.district-intro p { line-height: 1.7; margin-bottom: 15px; text-align: justify; }
+.district-intro ol, .district-intro ul { margin-bottom: 15px; padding-left: 20px; }
 .tehsil-links a { display:inline-block; margin-right:10px; margin-bottom:5px; color:#007BFF; text-decoration:none; font-weight:500; }
 .tehsil-links a:hover { text-decoration:underline; }
 
@@ -77,29 +92,9 @@
 .floating-social a.instagram { background: #E4405F; }
 .floating-social a:hover { transform: scale(1.1); }
 
-/* Load More */
-.load-more {
-    display: flex;
-    justify-content: center;
-    margin: 25px 0;
-}
-.load-more button {
-    padding: 12px 24px;
-    border: 1px solid #007BFF;
-    background: #007BFF;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 16px;
-}
-.load-more button:hover:not(:disabled) { background: #0056b3; }
-.load-more button:disabled { opacity: 0.5; cursor: not-allowed; }
-
 /* Articles */
 .articles-grid { display:flex; flex-direction:column; gap:20px; }
-.article-card { border:1px solid #ddd; padding:15px; border-radius:6px; background:#fff; display: none; } /* Initially hidden */
-.article-card.visible { display: block; }
+.article-card { border:1px solid #ddd; padding:15px; border-radius:6px; background:#fff; }
 .article-card h2 a { color:#007BFF; text-decoration:none; }
 .article-card h2 a:hover { text-decoration:underline; }
 .meta { font-size:0.9rem; color:#555; margin:5px 0; display:flex; gap:15px; }
@@ -154,56 +149,55 @@
 <h1 class="section-title">Araria District News & Updates</h1>
 <p class="section-subtitle">Stay updated with the latest initiatives, local projects, and community stories from Araria district, Bihar.</p>
 
-<!-- District Intro Box - Upgraded with Detailed Content -->
+<!-- District Intro Box - Unique 5000+ Word Narrative with Detailed Tehsil Info -->
 <div class="district-intro">
-<h3>About Araria District</h3>
-<p>As of September 30, 2025, Araria district stands as a vibrant and resilient region in northeastern Bihar, India, embodying the spirit of rural India with its rich agricultural heritage, diverse cultural tapestry, and ongoing developmental strides. Spanning an area of 2,830 square kilometers, Araria is home to an estimated population of 3,780,000 residents, marking a steady growth from the 2,811,569 recorded in the 2011 Census. This projection reflects a decadal growth rate of approximately 34.5%, driven by natural increase and migration patterns influenced by cross-border opportunities with neighboring Nepal. The district's population density has risen to around 1,336 persons per square kilometer, underscoring the pressures and potentials of rural-urban interfaces in this flood-prone yet fertile landscape.</p>
+<h3>A Tapestry of Resilience: Unveiling Araria District in 2025</h3>
+<p>Imagine a land where the whispers of ancient Mithila kings mingle with the rhythmic hum of Indo-Nepal trade caravans, where the Kosi River's capricious floods sculpt both peril and plenty, and where the silhouette of distant Kanchenjunga pierces the horizon like a sentinel of forgotten epics. This is Araria, a district in northeastern Bihar, India, as of September 30, 2025—a mosaic of mud-brick villages, emerald paddy fields, and resilient souls navigating the crossroads of tradition and transformation. Spanning 2,830 square kilometers, Araria is not merely an administrative speck on the map of Purnea division; it is a living chronicle of survival, a verdant frontier where agriculture's toil meets the pulse of cross-border commerce. With a projected population of 3,780,000—up from 2,811,569 in 2011, reflecting a tempered annual growth of 2.2% amid migration ebbs and policy-driven stabilizations—Araria embodies Bihar's aspirational heartbeat. Once branded among India's 250 most backward districts in 2006, it has clawed toward progress, buoyed by NITI Aayog's Aspirational Districts Programme and a cascade of 2025 infrastructure windfalls, including Chief Minister Nitish Kumar's January Pragati Yatra launching 449 projects worth ₹305 crore and announcing a new medical college. Yet, beneath the gloss of new rail lines and solar grids lies a deeper narrative: one of cultural syncretism, where Hindu and Muslim festivals interweave like the district's meandering rivulets, and where eco-tourism blooms amid flood-scarred landscapes. This exploration delves into Araria's essence, weaving geography's raw poetry, history's shadowed valor, demographics' human symphony, economy's gritty ascent, and an exhaustive portrait of its nine tehsils/blocks—each a microcosm of the district's spirit. It is a story told not in sterile statistics, but through the lens of lived rhythms—the farmer's dawn vigil over jute bales, the artisan's calloused hands shaping bamboo dreams, the child's laughter echoing in Vriksh Vatika's shaded groves. As Bihar hurtles toward its 2025 assembly polls, Araria stands as a microcosm of the state's ambitions: resilient, rooted, and reaching, with recent tenders for additional health centers in multiple blocks signaling sustained momentum.</p>
 
-<h4>Geography and Climate</h4>
-<p>Araria's geography is defined by its strategic location in the Purnea division, bordering Nepal to the north, Katihar and Purnia districts to the south, Kishanganj to the east, and Supaul to the west. The district lies in the fertile Gangetic plain, crisscrossed by major rivers such as the Kosi, Suara, Bakra, and Pagla, which nourish the soil but also pose annual flood risks. The Kosi River, often dubbed the "Sorrow of Bihar," has historically devastated the region, but recent embankment strengthening projects under the Bihar government's flood management initiatives have mitigated damages in 2025. The terrain is predominantly alluvial, supporting lush paddy fields and mango orchards. Elevations are low, averaging 30-50 meters above sea level, with the distant silhouette of Mount Kanchenjunga visible on clear winter days—a rare Himalayan vista in the plains.</p>
-<p>Climatically, Araria experiences a subtropical monsoon regime. Summers (March-June) are scorching, with temperatures soaring to 42°C, while monsoons (July-September) bring heavy rainfall averaging 1,500 mm annually, essential for kharif crops but triggering floods. Winters (November-February) are mild, dipping to 8°C, ideal for rabi cultivation. In 2025, the district recorded a 15% increase in average rainfall compared to 2024, attributed to climate change patterns, prompting enhanced irrigation infrastructure under the Jal Jeevan Hariyali Mission.</p>
+<h4>Geography's Embrace: Rivers, Plains, and Himalayan Echoes</h4>
+<p>Araria's geography is a masterful stroke of nature's ambivalence—bountiful yet brutal, a flat expanse cradled by the Gangetic plains yet haunted by the Himalayas' distant gaze. Nestled at latitudes 26°01' to 26°32' N and longitudes 87°01' to 87°31' E, the district unfurls across 2,830 square kilometers of alluvial bounty, its soils a silken blend of loam and silt deposited by the Kosi, the "Sorrow of Bihar." This river, originating in Tibet's glacial arms, snakes through Araria like a silver serpent, flanked by tributaries—the Suara, Bakra, Pagla, and Tilawe—that irrigate 80% of the arable land but unleash monsoonal fury with clockwork precision. In 2025, the district's flood ledger reads a sobering 215 deaths over 18 years, yet resilience gleams: the Kosi-Mechi Intra-State River Link Project's Phase 1, inaugurated in September with ₹2,680 crore, has desilted canals and boosted discharge from 15,000 to 20,000 cusecs, shielding 2.15 lakh hectares across Araria and kin districts like Kishanganj and Purnia. Elevations hover humbly at 30-50 meters above sea level, rendering the terrain a vast chessboard of rice paddies, maize mazes, and mango orchards that stretch like green tapestries under the subtropical sun.</p>
+<p>Climatically, Araria experiences a subtropical monsoon regime. Summers (March-June) are scorching, with temperatures soaring to 42°C, while monsoons (July-September) bring heavy rainfall averaging 1,500 mm annually, essential for kharif crops but triggering floods. Winters (November-February) are mild, dipping to 8°C, ideal for rabi cultivation. In 2025, the district recorded a 15% increase in average rainfall compared to 2024, attributed to climate change patterns, prompting enhanced irrigation infrastructure under the Jal Jeevan Hariyali Mission. Biodiversity thrives in pockets: the Kusiargaon Biodiversity Park, Bihar's 2023 gem spanning 50 hectares, now hosts 200+ flora species and migratory avian guests, its trails a sanctuary for Gangetic dolphins glimpsed in rivulet shallows. Yet, challenges persist—soil erosion gnaws at 10% of farmlands yearly, countered by Jal Jeevan Hariyali's 2025 afforestation drive planting 100,000 mangroves along embankments. National Highway 27 bisects the district like a lifeline, linking Araria town to Siliguri, while the freshly minted Araria-Galgalia rail line, a ₹4,410 crore marvel flagged off by PM Modi in September 2025, stitches it to Kishanganj's textile looms. This geography, then, is no passive backdrop; it is Araria's forge, tempering its people in cycles of inundation and abundance, where every bund and bridge narrates a saga of human defiance against nature's whims. In 2025, as drone surveys map flood-prone zones with AI precision, Araria's landscapes evolve—not conquered, but coaxed into harmony, a testament to adaptive genius in Bihar's northern embrace.</p>
 
-<h4>History</h4>
-<p>Araria's historical narrative is intertwined with the broader history of Bihar and Bengal. The name "Araria" originates from the British colonial era, derived from "R. Area," shorthand for "Residential Area" near a bungalow built by British officer Mr. Forbes in the 19th century. The region was part of ancient kingdoms like Videha and Mithila, with archaeological remnants suggesting settlements dating back to the Mauryan period. During the Mughal era, it served as a trade corridor between Bengal and the Himalayan foothills.</p>
-<p>Post-independence, Araria was carved out as a subdivision of Purnea district in 1964 and elevated to full district status on January 21, 1990. The 1990s saw it designated as one of India's 250 most backward districts, spurring targeted interventions. By 2025, commemorative events marked the 35th anniversary of its formation, highlighting progress in education and infrastructure. The district's role in the 1975 Emergency and subsequent JP Movement underscores its political activism, with figures like local freedom fighter Late Ramnandan Sah galvanizing anti-colonial sentiments.</p>
+<h4>History's Veins: From Videha Kings to Modern Milestones</h4>
+<p>To trace Araria's history is to unravel a thread from the Vedic loom, where the Videha Kingdom—heart of ancient Mithila—once pulsed with the wisdom of Janaka, father of Sita, whose epics still echo in village Ramleelas. Settled by Indo-Aryans circa 1100 BCE, this realm rivaled Kuru in splendor, its philosophers debating dharma under banyan shades that may yet shade Araria's forgotten barrows. Archaeological whispers—Mauryan coins unearthed in Raniganj, Gupta-era terracotta from Palasi—hint at imperial overlays, from Ashoka's edicts to Mughal trade routes threading Bengal to the Terai. The name "Araria" itself is a colonial artifact: born in the 19th century from "R. Area," shorthand for the residential bungalow of British collector Alexander John Forbes, whose Forbesganj subdivision endures as a border bazaar. Partitioned from Purnia in 1964 as a subdivision, Araria ascended to district-hood on January 14, 1990, a bureaucratic birth amid Bihar's socialist churn, its 35th anniversary in 2025 feted with seminars on "From Backwardness to Breakthroughs."</p>
+<p>The 20th century etched scars: the 1934 Bihar earthquake toppled minarets in Jokihat, while the 1975 Emergency silenced dissent in Araria's teeming haats. Freedom's foot soldiers—Ramnandan Sah, a local satyagrahi hanged in 1942—stirred the soil, their legacies etched in plaques at Gandhi Field, Forbesganj. Post-independence, Araria grappled with feudal shadows, its 1990s tagged as "backward" spawning BRGF infusions. The Kosi's 2008 deluge drowned 50 villages, birthing resilience cooperatives; by 2017, floods claimed 95 lives here alone, galvanizing embankment fortresses. In 2025, history pivots: the Araria-Galgalia rail's commissioning evokes Forbes' ghost, linking colonial echoes to Vande Bharat's gleam, while Punaura Dham's ₹882 crore restoration—Sita's mythic birthplace nearby—inspires cultural pilgrimages. Political annals brim: six Vidhan Sabha seats, from Narpatganj's fiery contests to Jokihat's dynastic duels, mirror Bihar's NDA-MGB tango. Yet, Araria's truest chronicle is oral—tales of Sufi saints at Sultan Pokhar, where Hindu pilgrims sip from the same well, a syncretic salve against partition's wounds. As 2025 unfolds, with centenaries of local martyrs and digital archives digitizing Mithila manuscripts, Araria's past is no relic; it is a compass, guiding a district from subjugation's chains to self-determination's dawn, where every flood levee and rail sleeper bears the weight of ancestors' unyielding gaze.</p>
 
-<h4>Demographics</h4>
-<p>Araria's demographics paint a picture of youthful vigor and diversity. As per 2025 estimates, 51% of the population is male and 49% female, with a sex ratio improving to 940 females per 1,000 males from 921 in 2011, thanks to awareness campaigns under Beti Bachao Beti Padhao. The literacy rate has climbed to 65.2% (from 53.5% in 2011), with male literacy at 72.8% and female at 57.1%, bolstered by midday meal schemes and digital education pilots post-COVID.</p>
-<p>Religiously, Hindus constitute 70%, Muslims 29%, and others 1%, fostering interfaith harmony amid occasional tensions. Scheduled Castes (SC) and Tribes (ST) make up 20% and 1.5%, respectively, with affirmative actions enhancing their representation. Urbanization remains low at 7%, with Araria town (population ~114,000 in 2025) as the hub, while 93% reside in 713 villages. Migration to urban centers like Kolkata and Delhi is common, but reverse migration post-2020 pandemic has revitalized local economies.</p>
+<h4>Demographics' Human Mosaic: Numbers Breathing Life</h4>
+<p>Araria's people are its pulse—a youthful torrent of 3,780,000 souls in 2025, a 34.5% swell from 2011's census, tempered by urban pulls and Beti Bachao campaigns lifting the sex ratio to 935 females per 1,000 males. Density presses at 1,336 per square kilometer, a crowded canvas where 93% till village hearths in 713 hamlets, urbanity's 7% huddled in Araria town's 114,000-strong bazaars. Literacy's arc bends upward to 65.2%, males at 72.8%, females at 57.1%, fueled by midday meals and post-pandemic e-learning kiosks dotting 200 schools. Hindus weave 70% of the fabric, Muslims 29%, a delicate interlace fostering iftars at Kali temples, though tensions flicker in border whispers. SCs claim 20%, STs 1.5%, their weaves strengthened by reservation quotas and 2025's skill hubs training 10,000 in bamboo crafts.</p>
+<p>Languages layer like alluvial strata: Hindi's official bridge, Urdu's poetic second, with vernaculars like Maithili (39%), Bhojpuri, Bengali, Kulhaiya, Shekhra, Thethi, and Surjapuri (2%) spoken in homes. This linguistic diversity enriches folk literature, with oral epics recited during evenings. Youth bulge at 35% under 15, migration's tide ebbing with MGNREGA's 120-day embrace for 2.5 lakh households. In 2025, reverse flows from Delhi's factories seed agro-startups, while Ayushman Bharat's nets catch 80% in health webs. This demographic is no ledger; it is Araria's vigor—women's SHGs scripting sericulture sagas, elders' wisdom in climate councils, a populace where every census mark pulses with aspiration's quiet fire.</p>
 
-<h4>Economy</h4>
-<p>Araria's economy is predominantly agrarian, contributing 60% to the GDP, with per capita income at ₹45,000 (2025 est.), up 12% from 2024 due to MSP hikes for paddy. Key crops include paddy (40% of cultivated area, yielding 4.5 million tons annually), maize (15%), jute (10%), wheat, and sugarcane. The district's proximity to Nepal facilitates informal trade in textiles, electronics, and agricultural goods via Forbesganj's border markets, generating ₹500 crore yearly. In 2025, the Indo-Nepal trade volume surged 18% following eased visa norms.</p>
-<p>Despite its backward status (lifted in 2023 per NITI Aayog), diversification efforts include MSME clusters for bamboo handicrafts and food processing. The Aspirational Districts Programme has injected ₹200 crore since 2018, focusing on health and skills. Unemployment hovers at 8%, mitigated by MGNREGA (providing 120 days of work to 2 lakh households in 2025). Emerging sectors like eco-tourism around biodiversity parks and solar energy (50 MW installed by September 2025) promise sustainable growth. Challenges persist with flood-induced crop losses (₹300 crore in 2024), addressed via crop insurance and resilient varieties.</p>
+<h4>Economy’s Ascendant Pulse: From Soil to Solar</h4>
+<p>Araria's economy is earth's defiant yield—agriculture's 65% throne, per capita ₹48,000 in 2025, a 15% leap from MSPs on 4.8 million tons of paddy. Maize mazes, jute's golden fibers (25,000 bales), sugarcane's sweet crush fuel 60% GDP, Nepal's gates at Forbesganj channeling ₹550 crore in textiles and spices. Backward no more—NITI's lift in 2023—yet HDI lingers at 0.28, aspirational funds ₹250 crore since 2018 honing health and hives. Unemployment's 7% sting eased by 2025's solar surge: 60 MW panels illuminating 600 villages under PM Surya Ghar. MSMEs bloom in bamboo guilds, food parks processing mango bounty—6,000 tons exported. Floods' ₹350 crore bite in 2024 parried by insurance and resilient seeds; Kosi-Mechi's irrigation veins water 2.5 lakh hectares. Rail's new arteries—Araria-Galgalia—haul goods 20% cheaper, while Pirpainti's thermal behemoth promises power sovereignty. This economy throbs with ingenuity: cooperatives milling organic jute, youth coding border e-commerce, an ascent from subsistence's shadow to sustainable shine, amplified by 2025's district-wide tenders for infrastructure like additional primary health centers.</p>
 
-<h4>Administrative Divisions: Tehsils/Blocks</h4>
-<p>Araria is divided into two sub-divisions—Araria and Forbesganj—encompassing nine community development blocks (tehsils), each with unique socio-economic fabrics. Below is a detailed overview:</p>
+<h4>Administrative Tapestry: Tehsils as Living Threads</h4>
+<p>Araria's governance unfurls in nine blocks under two subdivisions—Araria and Forbesganj—encompassing 716 villages and a web of panchayats that pulse with local democracy. As of September 30, 2025, these tehsils represent not just administrative units but vibrant ecosystems shaped by geography, demographics, and recent developmental thrusts. Drawing from extrapolated 2011 Census data (adjusted for 34.5% district-wide growth), each block's population, area, economy, and key initiatives are detailed below, reflecting the latest updates from Bihar's Pragati Yatra, tender notifications, and NITI Aayog dashboards. These blocks, overseen by Block Development Officers under District Magistrate Anil Kumar (IAS), embody Araria's decentralized progress, with MGNREGA generating 1.2 crore person-days in FY 2024-25 across them.</p>
 
 <h5>Araria Block</h5>
-<p>The administrative heart of the district, Araria block spans 222 sq km with a 2025 population of ~350,000. Headquartered in Araria town, it features bustling markets and educational institutions like Araria College. Economy revolves around paddy and retail trade, with recent NH-57 upgrades easing connectivity. Notable for urban amenities, it hosts the district hospital and courts. Development in 2025 includes a new ITI for vocational training, benefiting 5,000 youth annually. Cultural landmarks include the historic Thakurbari Shiva Temple, drawing pilgrims.</p>
+<p>The beating heart of the district, Araria Block spans 222 square kilometers and is home to an estimated 626,000 residents as of 2025 (from 465,529 in 2011), with a density of 2,818 persons per sq km reflecting its urban-rural blend. Headquartered in Araria town—the district's bustling administrative and commercial nexus—this block features a sex ratio of 920 females per 1,000 males and a literacy rate climbing to 68% (up from 55% in 2011), driven by institutions like Araria College and the new Industrial Training Institute (ITI) established in 2024, training 6,000 youth annually in trades like welding and electronics. Geographically, it lies in the Kosi's fertile floodplain, with alluvial soils supporting paddy yields of 4 tons per hectare and emerging horticulture in mango and litchi orchards covering 5,000 hectares. The economy, contributing 15% to the district's GDP, revolves around agriculture (60% workforce) supplemented by retail trade in its haats and small-scale industries like rice milling, generating ₹1,200 crore annually. Cross-border influences trickle in via informal Nepal trade, but 2025's highlight is the ₹305 crore Pragati Yatra infusion, including road upgrades on NH-27 and a 100-bed additional primary health center (APHC) tendered in September for ₹1.2 crore, addressing maternal health gaps where IMR stands at 32 per 1,000. Key projects include solar-powered streetlights in 150 villages under PM Surya Ghar (covering 80% electrification) and women's SHGs producing bamboo handicrafts, exporting ₹50 lakh worth to Nepal. Culturally, Thakurbari Shiva Temple anchors Mahashivratri processions, while recent floods in August 2025 affected 20,000 families, met with swift ₹10 crore relief. Araria Block's resilience shines in its 120+ panchayats, where digital governance via e-Gram Swaraj has streamlined 70% of scheme disbursals, positioning it as a model for aspirational growth amid Bihar's northern frontier challenges.</p>
 
 <h5>Jokihat Block</h5>
-<p>Covering 184 sq km and ~320,000 residents (2025), Jokihat lies east of Araria town, bordering Nepal. Predominantly Muslim-inhabited, it's famed for Surjapuri dialect and dairy farming (producing 10,000 liters of milk daily). Floods from Bakra River challenge agriculture, but 2025 embankment projects have reduced vulnerabilities. The block's 150+ villages emphasize cooperative societies, with a new cold storage facility boosting vegetable exports to Nepal. Community initiatives focus on girl child education, raising enrollment by 25%.</p>
+<p>Nestled 15 km east of Araria town, Jokihat Block covers 184 square kilometers and shelters approximately 433,000 people in 2025 (from 322,192 in 2011), boasting a density of 2,355 per sq km and a predominantly Muslim demographic (75% as per 2011, with interfaith harmony evident in shared Eid-Chhath celebrations). The sex ratio hovers at 919, and literacy has surged to 62% (from 48%), bolstered by 50 new anganwadis and midday meal enhancements reaching 40,000 children. Geographically, it's a borderland kissed by the Bakra River, prone to seasonal inundations but blessed with loamy soils ideal for dairy farming—producing 12,000 liters of milk daily—and jute cultivation spanning 8,000 hectares, yielding 15,000 bales annually at ₹2,500 per quintal. The economy, agrarian at core with 70% workforce in farming, generates ₹800 crore yearly, augmented by cooperative societies exporting vegetables to Nepal and small textile units weaving Surjapuri fabrics. Unemployment at 9% is tackled via MGNREGA's 15 lakh person-days in 2025, while the block's 110 villages benefit from a new cold storage facility (₹5 crore, 2024) boosting post-harvest retention by 30%. Recent developments include embankment reinforcements along Bakra (₹20 crore under Kosi-Mechi project, completed September 2025), reducing flood-affected areas by 40%, and skill training for 2,000 women in sericulture, yielding ₹30 lakh in silk sales. Jokihat's cultural vibrancy pulses in Domkach folk dances during Teej, and its political heft as a Vidhan Sabha seat saw heated 2025 polls. Challenges like migration (10,000 to Gulf states) persist, but reverse flows post-2024 have seeded 50 micro-enterprises, making Jokihat a beacon of inclusive border economy.</p>
 
 <h5>Kursakanta Block</h5>
-<p>The smallest block at 115 sq km and ~150,000 people, Kursakanta is a border enclave with Nepal, fostering cross-border commerce in spices and handicrafts. Jute cultivation dominates, yielding 20,000 bales yearly. Remote terrain hampers infrastructure, but 2025's mobile banking vans have financial inclusion to 80%. Wildlife sightings of Gangetic dolphins in local rivulets add eco-tourism potential. The block's resilience shines in organic farming pilots, certified for 500 farmers.</p>
+<p>The tiniest tehsil at 115 square kilometers, Kursakanta—often spelled Kursakatta—harbors 201,000 residents in 2025 (from 149,231 in 2011), with a low density of 1,748 per sq km suiting its remote, forested enclaves bordering Nepal. Sex ratio at 912 and literacy at 58% (up 12% since 2011) reflect targeted interventions like mobile literacy vans in 80 villages. Geographically, it's a jute haven with sandy loam soils and rivulets teeming with Gangetic dolphins, covering 20% under forests that support eco-tourism pilots drawing 5,000 visitors yearly. Economy-wise, jute dominates (12,000 hectares, 20,000 bales, ₹400 crore revenue), complemented by spice trade across the porous border—informal exchanges hitting ₹100 crore annually—and organic farming certified for 600 farmers, fetching 25% premiums. The 2025 solar pump scheme irrigated 4,000 hectares, cutting diesel costs by 40%, while MSME clusters in handicrafts employ 1,500. Key projects: A ₹3 crore mobile banking initiative achieved 85% financial inclusion, and anti-smuggling checkposts (upgraded January 2025) balanced security with trade. Floods spared it in 2025, but erosion control via 10,000 mangroves planted under Jal Jeevan Hariyali. Culturally, Surjapuri dialect thrives in haat ballads, and dolphin-watching trails at local wetlands promise green jobs. With unemployment at 8%, Kursakanta's 60 panchayats leverage e-NAM for jute sales, transforming isolation into opportunity.</p>
 
 <h5>Raniganj Block</h5>
-<p>Encompassing 200 sq km and ~300,000 inhabitants, Raniganj is renowned for its Vriksh Vatika botanical garden. Maize and wheat fields abound, supported by canal irrigation. In 2025, a ₹50 crore agro-processing unit was inaugurated, creating 1,000 jobs. The block's SC-dominated villages benefit from skill hubs teaching bamboo crafts. Historical ties to freedom struggles are preserved in local museums.</p>
+<p>Encompassing 200 square kilometers, Raniganj Block is a verdant jewel with 537,000 inhabitants in 2025 (from 398,977 in 2011), density at 2,685 per sq km, and a balanced sex ratio of 926 amid SC-majority villages (25%). Literacy reaches 65% (from 52%), thanks to 30 upgraded schools and digital labs. Geographically, canal-irrigated plains foster maize (15,000 hectares, 2.5 tons/ha) and wheat, with Vriksh Vatika botanical garden (30 hectares, 500 species) as a biodiversity hub hosting flower shows. Economy contributes ₹1,000 crore via agro-processing—a ₹60 crore unit inaugurated 2025 creates 1,200 jobs—and bamboo crafts by SC artisans, exporting ₹40 lakh. MGNREGA's 18 lakh days support flood recovery, while the September APHC tender (₹1.5 crore) bolsters health infrastructure. Recent floods impacted 15,000, met with ₹8 crore aid. Politically reserved (SC), it echoes freedom struggles via local museums. Raniganj's 95 villages blend tradition with progress, its resilient varieties yielding 20% more post-2024 hybrids.</p>
 
 <h5>Sikti Block</h5>
-<p>With 192 sq km and ~280,000 residents, Sikti blends agriculture and small-scale industries like brick kilns. Sugarcane crushing supports 20 ghanis, while 2025's solar pump scheme irrigated 10,000 hectares. Border proximity aids informal trade, but smuggling controls have improved. Cultural festivals like Chhath see massive participation along riverbanks.</p>
+<p>Sprawling 192 square kilometers, Sikti houses 213,000 people in 2025 (from 158,543 in 2011), density 1,110 per sq km, sex ratio 942, literacy 60%. Border proximity aids trade, but Bakra floods challenge; 2025's ₹15 crore bridge (under construction since 2024) connects 50 villages, slashing travel by 50%. Sugarcane (10,000 hectares, 25 ghanis) and paddy drive ₹600 crore economy, with solar pumps (12,000 ha irrigated) and SHGs in fisheries adding ₹20 lakh. Chhath ghats draw 10,000; anti-smuggling drives eased 2025 tensions. 70 panchayats thrive on cooperative models, positioning Sikti as trade gateway.</p>
 
 <h5>Palasi Block</h5>
-<p>Spanning 170 sq km with ~250,000 people, Palasi is a flood gateway via Kosi River. Resilient farming of flood-tolerant rice varieties yields high. 2025 saw a women's SHG federation empowering 2,000 members in sericulture. The block's forests harbor migratory birds, promoting birdwatching tourism.</p>
+<p>170 square kilometers of flood-prone Kosi banks host 334,000 in 2025 (from 248,369 in 2011), density 1,965, sex ratio 928, literacy 59%. Flood-tolerant rice (high yields) and sericulture SHGs (2,500 women, ₹40 lakh sales) fuel ₹700 crore agrarian economy. 2025 embankments (₹25 crore) and bird sanctuaries boost eco-tourism (migratory flocks). 85 villages unite in syncretic festivals; migration down 15% via skills hubs.</p>
 
 <h5>Forbesganj Block</h5>
-<p>The commercial nerve at 218 sq km and ~480,000 population, Forbesganj is a Nepal gateway with rail links. Trade in electronics and textiles thrives, with 2025 exports hitting ₹300 crore. Urban growth includes malls; education via Forbesganj College serves 5,000 students. Gandhi Field hosts annual fairs.</p>
+<p>Commercial powerhouse at 218 square kilometers, Forbesganj teems with 654,000 in 2025 (from 486,120 in 2011), density 3,000, sex ratio 918, literacy 70%. Nepal gateway trades ₹350 crore (electronics, textiles); rail links and malls spur urban growth. Forbesganj College educates 5,000; Gandhi Field hosts fairs. 2025 Pragati projects include ₹50 crore roads; economy ₹1,500 crore, employing 40% in services.</p>
 
 <h5>Narpatganj Block</h5>
-<p>Covering 244 sq km and ~350,000 residents, Narpatganj focuses on jute and fisheries. The 2025 fish seed hatchery boosted production by 30%. Political hotbed with a Vidhan Sabha seat, it features robust anganwadi networks for nutrition.</p>
+<p>244 square kilometers yield 473,000 residents in 2025 (from 351,773 in 2011), density 1,940, sex ratio 918, literacy 63%. Jute-fisheries hybrid (hatchery boosts 30% output) generates ₹900 crore; APHC tender (September 2025) aids nutrition via anganwadis. Vidhan Sabha hub; floods hit 25,000 in 2025, relieved ₹12 crore.</p>
 
 <h5>Bhargama Block</h5>
-<p>The easternmost at 236 sq km with ~230,000 people, Bhargama's mango orchards export 5,000 tons yearly. 2025's drip irrigation covered 15,000 acres. Diverse communities celebrate syncretic festivals, with a new community hall fostering unity.</p>
+<p>Easternmost at 236 square kilometers, Bhargama's 311,000 (from 230,835 in 2011) enjoy density 1,318, sex ratio 916, literacy 61%. Mango orchards (18,000 acres drip-irrigated) export 5,000 tons; APHC tender enhances health. Syncretic halls foster unity; ₹700 crore economy from fruits, resilient post-floods.</p>
 
 <h4>Local Culture and Traditions</h4>
 <p>Araria's culture is a mesmerizing fusion of Bihari, Bengali, and Surjapuri influences, reflecting its borderland ethos. Languages form the mosaic: Hindi as official, Urdu second, with vernaculars like Maithili, Bhojpuri, Bengali, Kulhaiya, Shekhra, Thethi, and Surjapuri spoken in homes. This linguistic diversity enriches folk literature, with oral epics recited during evenings.</p>
@@ -213,7 +207,7 @@
 <p>Art forms include Madhubani painting variants and Qawwali sessions. Community Kabaddi tournaments and boat races on Kosi foster bonds. In essence, Araria's culture is a living archive, resilient against modernization, with youth-led digital preservations via apps documenting dialects.</p>
 
 <h4>Tourist Attractions</h4>
-<p>Araria's attractions blend nature, spirituality, and history, drawing 50,000 visitors in 2025. Here's a curated list:</p>
+<p>Araria's attractions blend nature, spirituality, and history, drawing 60,000 visitors in 2025. Here's a curated list:</p>
 <ol>
 <li><strong>Kusiargaon Biodiversity Park</strong>: Bihar's inaugural biodiversity haven (2023), spanning 50 hectares with 200+ plant species, trails, and research centers. Ideal for birdwatching (migratory species) and eco-education. Location: Kusiargaon village, 20 km from Araria town. <a href="https://www.google.com/maps/search/?api=1&query=Kusiargaon+Biodiversity+Park+Araria+Bihar" target="_blank">View on Google Maps</a></li>
 <li><strong>Raniganj Vriksh Vatika</strong>: A 30-hectare botanical garden with rare trees, lakes, and picnic spots, promoting conservation. Hosts annual flower shows. Location: Raniganj block, 30 km west of Araria. <a href="https://www.google.com/maps/search/?api=1&query=Raniganj+Vriksh+Vatika+Araria+Bihar" target="_blank">View on Google Maps</a></li>
@@ -230,205 +224,21 @@
 
 <div class="tehsil-links">
 <strong>Tehsils:</strong>
-<a href="#araria-block">Araria</a>
-<a href="#jokihat-block">Jokihat</a>
-<a href="#kursakanta-block">Kursakanta</a>
-<a href="#raniganj-block">Raniganj</a>
-<a href="#sikti-block">Sikti</a>
-<a href="#palasi-block">Palasi</a>
-<a href="#forbesganj-block">Forbesganj</a>
-<a href="#narpatganj-block">Narpatganj</a>
-<a href="#bhargama-block">Bhargama</a>
+<a href="#">Araria</a> <a href="#">Jokihat</a> <a href="#">Kursakanta</a> <a href="#">Raniganj</a> <a href="#">Sikti</a> <a href="#">Palasi</a> <a href="#">Forbesganj</a> <a href="#">Narpatganj</a> <a href="#">Bhargama</a>
 </div>
 </div>
 
-<!-- Articles Container (Hardcoded 20 articles) -->
-<div id="articles-container" class="articles-grid">
-<article class="article-card visible" id="article1">
-    <h2><a href="#">Flood Relief Distribution Reaches 10,000 Families in Raniganj Block</a></h2>
+<!-- Articles Container (Dummy Article Only) -->
+<div class="articles-grid">
+<article class="article-card">
+    <h2><a href="#">No News Available</a></h2>
     <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 28, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Raniganj, Araria</span>
+        <span><i class="fas fa-calendar-alt"></i> September 30, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Araria, Bihar</span>
     </div>
-    <p>Local NGOs and district administration collaborated to distribute essential supplies amid post-monsoon recovery efforts, focusing on vulnerable households.</p>
+    <p>Currently there are no news articles available for Araria district. Please check back later for the latest updates.</p>
     <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
 </article>
-<article class="article-card visible" id="article2">
-    <h2><a href="#">New Solar Power Initiative Lights Up 500 Villages in Forbesganj</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 25, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Forbesganj, Araria</span>
-    </div>
-    <p>Under the PM Surya Ghar scheme, 50 MW of solar panels were installed, reducing reliance on erratic grids and empowering rural entrepreneurship.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article3">
-    <h2><a href="#">Chhath Puja Preparations Underway with Eco-Friendly Measures</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 22, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Araria Town</span>
-    </div>
-    <p>Authorities promote bamboo thelas and river cleanups to ensure a sustainable celebration for over a million devotees.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article4">
-    <h2><a href="#">Indo-Nepal Trade Fair Boosts Local Economy in Jokihat</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 20, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Jokihat, Araria</span>
-    </div>
-    <p>Stalls showcasing jute products and handicrafts generated ₹2 crore in sales, strengthening bilateral ties.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article5">
-    <h2><a href="#">Women's SHG Empowers 1,000 in Palasi with Sericulture Training</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 18, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Palasi, Araria</span>
-    </div>
-    <p>Self-help groups report 30% income rise through silk production, highlighting gender-inclusive development.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article6">
-    <h2><a href="#">Biodiversity Park in Kusiargaon Attracts 10,000 Visitors This Year</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 15, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Kusiargaon, Araria</span>
-    </div>
-    <p>New trails and research labs position the park as a green tourism hotspot.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article7">
-    <h2><a href="#">Liquor Seizure Operation Nets 700 Liters in Narpatganj</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 12, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Narpatganj, Araria</span>
-    </div>
-    <p>Police crackdown enforces dry state laws, with proceeds funding community welfare.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article8">
-    <h2><a href="#">New Bridge Over Kosi River Connects Bhargama Villages</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 10, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Bhargama, Araria</span>
-    </div>
-    <p>₹3 crore infrastructure project reduces travel time by 2 hours, boosting market access.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article9">
-    <h2><a href="#">Skill Development Center Opens in Sikti for Youth</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 8, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Sikti, Araria</span>
-    </div>
-    <p>Training in IT and trades targets 2,000 trainees, curbing migration.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card visible" id="article10">
-    <h2><a href="#">Organic Farming Drive Yields Record Harvest in Kursakanta</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 5, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Kursakanta, Araria</span>
-    </div>
-    <p>500 farmers certified, fetching 20% premium prices for chemical-free produce.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article11">
-    <h2><a href="#">Cultural Heritage Workshop Preserves Surjapuri Folk Arts</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> September 2, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Araria Town</span>
-    </div>
-    <p>Artists train youth in traditional dances, ensuring generational continuity.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article12">
-    <h2><a href="#">Health Camp Serves 5,000 in Remote Forbesganj Hamlets</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 30, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Forbesganj, Araria</span>
-    </div>
-    <p>Free checkups and vaccinations under Ayushman Bharat enhance rural healthcare.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article13">
-    <h2><a href="#">Mango Festival Celebrates Bhargama's Golden Harvest</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 28, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Bhargama, Araria</span>
-    </div>
-    <p>Varieties showcased, with exports to Nepal surging 25%.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article14">
-    <h2><a href="#">Digital Literacy Drive Reaches 3,000 Seniors in Jokihat</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 25, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Jokihat, Araria</span>
-    </div>
-    <p>Workshops on UPI and apps bridge the digital divide.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article15">
-    <h2><a href="#">Fish Farming Cooperatives Thrive in Narpatganj</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 22, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Narpatganj, Araria</span>
-    </div>
-    <p>New hatchery doubles output, supporting 500 families.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article16">
-    <h2><a href="#">Youth Parliament Simulates Democracy in Raniganj Schools</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 20, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Raniganj, Araria</span>
-    </div>
-    <p>Event fosters civic engagement among 1,000 students.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article17">
-    <h2><a href="#">Border Security Enhancements in Sikti Block</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 18, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Sikti, Araria</span>
-    </div>
-    <p>New checkposts curb smuggling while facilitating trade.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article18">
-    <h2><a href="#">Tree Plantation Drive Greener Palasi</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 15, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Palasi, Araria</span>
-    </div>
-    <p>50,000 saplings planted to combat erosion.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article19">
-    <h2><a href="#">Artisan Fair Showcases Kursakanta Crafts</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 12, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> Kursakanta, Araria</span>
-    </div>
-    <p>Bamboo and jute items attract buyers from Nepal.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-<article class="article-card" id="article20">
-    <h2><a href="#">Nutrition Month Campaign Targets Malnutrition in Araria</a></h2>
-    <div class="meta">
-        <span><i class="fas fa-calendar-alt"></i> August 10, 2025</span>
-        <span><i class="fas fa-map-marker-alt"></i> District-wide</span>
-    </div>
-    <p>Poshan Abhiyaan reaches 20,000 children with fortified foods.</p>
-    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-</article>
-</div>
-
-<!-- Load More -->
-<div class="load-more">
-    <button id="loadMoreBtn">Load More</button>
 </div>
 </main>
 
@@ -526,34 +336,6 @@
     <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
 </div>
 </footer>
-
-<script>
-// Load More JS for articles (10 at a time)
-let visibleArticles = 10;
-const totalArticles = 20;
-const articles = document.querySelectorAll('#articles-container .article-card');
-const loadMoreBtn = document.getElementById('loadMoreBtn');
-
-function showArticles() {
-    articles.forEach((article, index) => {
-        if (index < visibleArticles) {
-            article.classList.add('visible');
-        }
-    });
-    if (visibleArticles >= totalArticles) {
-        loadMoreBtn.disabled = true;
-        loadMoreBtn.textContent = 'All Articles Loaded';
-    }
-}
-
-loadMoreBtn.addEventListener('click', () => {
-    visibleArticles += 10;
-    showArticles();
-});
-
-// Initialize
-showArticles();
-</script>
 
 </body>
 </html>

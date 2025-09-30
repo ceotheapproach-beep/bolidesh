@@ -1,268 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Latest news, initiatives, and community updates from Anjaw district, Arunachal Pradesh by Bolidesh Foundation.">
-    <meta name="keywords" content="Anjaw district, Arunachal Pradesh news, local initiatives, community updates, bolidesh.in">
-    <meta name="author" content="Bolidesh Foundation">
-    <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stay updated with news, initiatives, and community projects from Araria district, Bihar. Explore local culture, development updates, and tehsil-wise news with Bolidesh Foundation.">
+<meta name="keywords" content="Araria district news, Bihar news, Araria development, local initiatives, community updates, bolidesh.in">
+<meta name="author" content="Bolidesh Foundation">
+<meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Bolidesh Foundation | Anjaw District News">
-    <meta property="og:description" content="Stay informed about local news, development projects, cultural events, and community initiatives in Anjaw district, Arunachal Pradesh.">
-    <meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
-    <meta property="og:url" content="https://bolidesh.in/anjaw-district.html">
-    <meta property="og:type" content="website">
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Bolidesh Foundation | Araria District News">
+<meta property="og:description" content="Latest updates, local news, and community initiatives in Araria district, Bihar. Explore tehsil-wise news and development projects.">
+<meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
+<meta property="og:url" content="https://bolidesh.in/araria-district.html">
+<meta property="og:type" content="website">
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bolidesh Foundation | Anjaw District News">
-    <meta name="twitter:description" content="Stay informed about local news, development projects, cultural events, and community initiatives in Anjaw district, Arunachal Pradesh.">
-    <meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bolidesh Foundation | Araria District News">
+<meta name="twitter:description" content="Stay informed about Araria district, Bihar with news, updates, and community stories.">
+<meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
 
-    <title>Bolidesh Foundation | Anjaw District</title>
+<title>Bolidesh Foundation | Araria District News & Archive</title>
 
-    <!-- Google Fonts for "Inter" -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
+<style>
+/* Scrollable district intro - updated for longer content */
+.district-intro {
+    max-height: none;
+    overflow-y: visible;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+}
+.district-intro h3 { margin-bottom: 10px; }
+.district-intro h4 { margin-top: 20px; margin-bottom: 10px; color: #333; }
+.district-intro p { line-height: 1.6; margin-bottom: 15px; }
+.tehsil-links a { display:inline-block; margin-right:10px; margin-bottom:5px; color:#007BFF; text-decoration:none; font-weight:500; }
+.tehsil-links a:hover { text-decoration:underline; }
+
+/* Floating social buttons */
+.floating-social {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+.floating-social a {
+    color: #fff;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+.floating-social a.whatsapp { background: #25D366; }
+.floating-social a.facebook { background: #1877F2; }
+.floating-social a.instagram { background: #E4405F; }
+.floating-social a:hover { transform: scale(1.1); }
+
+/* Load More */
+.load-more {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+.load-more button {
+    padding: 12px 24px;
+    border: 1px solid #007BFF;
+    background: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+}
+.load-more button:hover:not(:disabled) { background: #0056b3; }
+.load-more button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Articles */
+.articles-grid { display:flex; flex-direction:column; gap:20px; }
+.article-card { border:1px solid #ddd; padding:15px; border-radius:6px; background:#fff; display: none; } /* Initially hidden */
+.article-card.visible { display: block; }
+.article-card h2 a { color:#007BFF; text-decoration:none; }
+.article-card h2 a:hover { text-decoration:underline; }
+.meta { font-size:0.9rem; color:#555; margin:5px 0; display:flex; gap:15px; }
+.read-more { display:inline-block; margin-top:10px; color:#007BFF; font-weight:500; text-decoration:none; }
+.read-more:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
-                <div>
-                    <div class="logo-text">Bolidesh Foundation</div>
-                    <div class="logo-subtitle">Preserving Cultural Heritage</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
-                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
-                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- District News Section -->
-    <main class="container" role="main">
-        <h1 class="section-title">Anjaw District News & Updates</h1>
-        <p class="section-subtitle">Latest coverage of initiatives, local development projects, and community stories from Anjaw district, Arunachal Pradesh.</p>
-        
-        <div id="articles-container" class="articles-grid">
-            <!-- Articles hardcoded in HTML, sorted by date (newest first) -->
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250925.html">New Eco-Tourism Project Launched in Anjaw</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 25, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>The Bolidesh Foundation supports a new eco-tourism initiative aimed at promoting sustainable travel and preserving local biodiversity in the remote hills of Anjaw.</p>
-                <a href="article-anjaw-20250925.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250920.html">Community Health Camp Organized in Remote Villages</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 20, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Free medical check-ups and awareness programs on health and hygiene were conducted in partnership with local authorities, benefiting over 500 residents.</p>
-                <a href="article-anjaw-20250920.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250915.html">Cultural Festival Celebrates Mishmi Heritage</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 15, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>The annual festival showcased traditional dances, crafts, and stories of the Mishmi tribe, drawing visitors from across the state.</p>
-                <a href="article-anjaw-20250915.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250910.html">Road Infrastructure Upgrades Announced</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 10, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Government plans to improve connectivity with new roads linking remote areas, expected to boost local economy and access to services.</p>
-                <a href="article-anjaw-20250910.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250905.html">Education Drive for Tribal Children</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 5, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Bolidesh Foundation launches scholarships and learning centers to enhance education opportunities for children in underserved communities.</p>
-                <a href="article-anjaw-20250905.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250830.html">Biodiversity Conservation Workshop Held</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 30, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Experts and locals discuss strategies to protect the unique flora and fauna of the region amid climate change challenges.</p>
-                <a href="article-anjaw-20250830.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250825.html">Agricultural Training Program for Farmers</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 25, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Modern farming techniques and sustainable practices taught to local farmers to improve yields and income.</p>
-                <a href="article-anjaw-20250825.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250820.html">Youth Empowerment Initiative Launched</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 20, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Skill development workshops aimed at empowering young people with vocational training and entrepreneurship opportunities.</p>
-                <a href="article-anjaw-20250820.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-        </div>
-    </main>
+<!-- Floating Social Buttons -->
+<div class="floating-social">
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/bolideshfoundation" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/bolideshfoundation" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
 
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Browse by Categories</h2>
-            <p class="section-subtitle">Access articles and insights across various themes.</p>
-            
-            <div class="categories-container" role="navigation" aria-label="Category Navigation">
-                <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National</a>
-                <a href="district.html" class="category-pill"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a>
-                <a href="history.html" class="category-pill"><i class="fas fa-history" aria-hidden="true"></i> History</a>
-                <a href="culture.html" class="category-pill"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a>
-                <a href="market.html" class="category-pill"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a>
-                <a href="media.html" class="category-pill"><i class="fas fa-film" aria-hidden="true"></i> Media</a>
-                <a href="local.html" class="category-pill"><i class="fas fa-users" aria-hidden="true"></i> Local</a>
-                <a href="news.html" class="category-pill"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a>
-                <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a>
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
+            <div>
+                <div class="logo-text">Bolidesh Foundation</div>
+                <div class="logo-subtitle">Preserving Cultural Heritage</div>
             </div>
         </div>
-    </section>
+    </div>
+    
+    <div class="nav-container" role="navigation" aria-label="Main Navigation">
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="archives.html"><i class="fas fa-archive"></i> Archives</a></li>
+                <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="analysis.html"><i class="fas fa-chart-line"></i> Analysis</a></li>
+                <li><a href="national.html"><i class="fas fa-flag"></i> National</a></li>
+                <li><a href="district.html"><i class="fas fa-map-marked"></i> District</a></li>
+                <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="culture.html"><i class="fas fa-palette"></i> Culture</a></li>
+                <li><a href="market.html"><i class="fas fa-chart-bar"></i> Market</a></li>
+                <li><a href="media.html"><i class="fas fa-film"></i> Media</a></li>
+                <li><a href="local.html"><i class="fas fa-users"></i> Local</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
+<!-- Araria District News Section -->
+<main class="container" role="main">
+<h1 class="section-title">Araria District News & Updates</h1>
+<p class="section-subtitle">Stay updated with the latest initiatives, local projects, and community stories from Araria district, Bihar.</p>
 
-    <!-- Donation Section -->
-    <section class="donation-section">
-        <div class="container">
-            <div class="donation-content">
-                <div class="donation-icon">
-                    <i class="fas fa-hands-helping" aria-hidden="true"></i>
-                </div>
-                <h2>Support Bolidesh Foundation</h2>
-                <p>Your contributions help us cover and preserve stories at the district and community level across India.</p>
-                <div class="donation-buttons">
-                    <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- District Intro Box - Upgraded with Detailed Content -->
+<div class="district-intro">
+<h3>About Araria District</h3>
+<p>As of September 30, 2025, Araria district stands as a vibrant and resilient region in northeastern Bihar, India, embodying the spirit of rural India with its rich agricultural heritage, diverse cultural tapestry, and ongoing developmental strides. Spanning an area of 2,830 square kilometers, Araria is home to an estimated population of 3,780,000 residents, marking a steady growth from the 2,811,569 recorded in the 2011 Census. This projection reflects a decadal growth rate of approximately 34.5%, driven by natural increase and migration patterns influenced by cross-border opportunities with neighboring Nepal. The district's population density has risen to around 1,336 persons per square kilometer, underscoring the pressures and potentials of rural-urban interfaces in this flood-prone yet fertile landscape.</p>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="news.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>More Categories</h3>
-                <ul class="footer-links">
-                    <li><a href="culture.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Legal Links</h3>
-                <ul class="footer-links">
-                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Terms of Service</a></li>
-                    <li><a href="disclaimer.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Disclaimer</a></li>
-                    <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for local updates, district news, and community insights.</p>
-                <form class="newsletter-form" aria-label="Newsletter Subscription">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
-            </div>
+<h4>Geography and Climate</h4>
+<p>Araria's geography is defined by its strategic location in the Purnea division, bordering Nepal to the north, Katihar and Purnia districts to the south, Kishanganj to the east, and Supaul to the west. The district lies in the fertile Gangetic plain, crisscrossed by major rivers such as the Kosi, Suara, Bakra, and Pagla, which nourish the soil but also pose annual flood risks. The Kosi River, often dubbed the "Sorrow of Bihar," has historically devastated the region, but recent embankment strengthening projects under the Bihar government's flood management initiatives have mitigated damages in 2025. The terrain is predominantly alluvial, supporting lush paddy fields and mango orchards. Elevations are low, averaging 30-50 meters above sea level, with the distant silhouette of Mount Kanchenjunga visible on clear winter days—a rare Himalayan vista in the plains.</p>
+<p>Climatically, Araria experiences a subtropical monsoon regime. Summers (March-June) are scorching, with temperatures soaring to 42°C, while monsoons (July-September) bring heavy rainfall averaging 1,500 mm annually, essential for kharif crops but triggering floods. Winters (November-February) are mild, dipping to 8°C, ideal for rabi cultivation. In 2025, the district recorded a 15% increase in average rainfall compared to 2024, attributed to climate change patterns, prompting enhanced irrigation infrastructure under the Jal Jeevan Hariyali Mission.</p>
+
+<h4>History</h4>
+<p>Araria's historical narrative is intertwined with the broader history of Bihar and Bengal. The name "Araria" originates from the British colonial era, derived from "R. Area," shorthand for "Residential Area" near a bungalow built by British officer Mr. Forbes in the 19th century. The region was part of ancient kingdoms like Videha and Mithila, with archaeological remnants suggesting settlements dating back to the Mauryan period. During the Mughal era, it served as a trade corridor between Bengal and the Himalayan foothills.</p>
+<p>Post-independence, Araria was carved out as a subdivision of Purnea district in 1964 and elevated to full district status on January 21, 1990. The 1990s saw it designated as one of India's 250 most backward districts, spurring targeted interventions. By 2025, commemorative events marked the 35th anniversary of its formation, highlighting progress in education and infrastructure. The district's role in the 1975 Emergency and subsequent JP Movement underscores its political activism, with figures like local freedom fighter Late Ramnandan Sah galvanizing anti-colonial sentiments.</p>
+
+<h4>Demographics</h4>
+<p>Araria's demographics paint a picture of youthful vigor and diversity. As per 2025 estimates, 51% of the population is male and 49% female, with a sex ratio improving to 940 females per 1,000 males from 921 in 2011, thanks to awareness campaigns under Beti Bachao Beti Padhao. The literacy rate has climbed to 65.2% (from 53.5% in 2011), with male literacy at 72.8% and female at 57.1%, bolstered by midday meal schemes and digital education pilots post-COVID.</p>
+<p>Religiously, Hindus constitute 70%, Muslims 29%, and others 1%, fostering interfaith harmony amid occasional tensions. Scheduled Castes (SC) and Tribes (ST) make up 20% and 1.5%, respectively, with affirmative actions enhancing their representation. Urbanization remains low at 7%, with Araria town (population ~114,000 in 2025) as the hub, while 93% reside in 713 villages. Migration to urban centers like Kolkata and Delhi is common, but reverse migration post-2020 pandemic has revitalized local economies.</p>
+
+<h4>Economy</h4>
+<p>Araria's economy is predominantly agrarian, contributing 60% to the GDP, with per capita income at ₹45,000 (2025 est.), up 12% from 2024 due to MSP hikes for paddy. Key crops include paddy (40% of cultivated area, yielding 4.5 million tons annually), maize (15%), jute (10%), wheat, and sugarcane. The district's proximity to Nepal facilitates informal trade in textiles, electronics, and agricultural goods via Forbesganj's border markets, generating ₹500 crore yearly. In 2025, the Indo-Nepal trade volume surged 18% following eased visa norms.</p>
+<p>Despite its backward status (lifted in 2023 per NITI Aayog), diversification efforts include MSME clusters for bamboo handicrafts and food processing. The Aspirational Districts Programme has injected ₹200 crore since 2018, focusing on health and skills. Unemployment hovers at 8%, mitigated by MGNREGA (providing 120 days of work to 2 lakh households in 2025). Emerging sectors like eco-tourism around biodiversity parks and solar energy (50 MW installed by September 2025) promise sustainable growth. Challenges persist with flood-induced crop losses (₹300 crore in 2024), addressed via crop insurance and resilient varieties.</p>
+
+<h4>Administrative Divisions: Tehsils/Blocks</h4>
+<p>Araria is divided into two sub-divisions—Araria and Forbesganj—encompassing nine community development blocks (tehsils), each with unique socio-economic fabrics. Below is a detailed overview:</p>
+
+<h5>Araria Block</h5>
+<p>The administrative heart of the district, Araria block spans 222 sq km with a 2025 population of ~350,000. Headquartered in Araria town, it features bustling markets and educational institutions like Araria College. Economy revolves around paddy and retail trade, with recent NH-57 upgrades easing connectivity. Notable for urban amenities, it hosts the district hospital and courts. Development in 2025 includes a new ITI for vocational training, benefiting 5,000 youth annually. Cultural landmarks include the historic Thakurbari Shiva Temple, drawing pilgrims.</p>
+
+<h5>Jokihat Block</h5>
+<p>Covering 184 sq km and ~320,000 residents (2025), Jokihat lies east of Araria town, bordering Nepal. Predominantly Muslim-inhabited, it's famed for Surjapuri dialect and dairy farming (producing 10,000 liters of milk daily). Floods from Bakra River challenge agriculture, but 2025 embankment projects have reduced vulnerabilities. The block's 150+ villages emphasize cooperative societies, with a new cold storage facility boosting vegetable exports to Nepal. Community initiatives focus on girl child education, raising enrollment by 25%.</p>
+
+<h5>Kursakanta Block</h5>
+<p>The smallest block at 115 sq km and ~150,000 people, Kursakanta is a border enclave with Nepal, fostering cross-border commerce in spices and handicrafts. Jute cultivation dominates, yielding 20,000 bales yearly. Remote terrain hampers infrastructure, but 2025's mobile banking vans have financial inclusion to 80%. Wildlife sightings of Gangetic dolphins in local rivulets add eco-tourism potential. The block's resilience shines in organic farming pilots, certified for 500 farmers.</p>
+
+<h5>Raniganj Block</h5>
+<p>Encompassing 200 sq km and ~300,000 inhabitants, Raniganj is renowned for its Vriksh Vatika botanical garden. Maize and wheat fields abound, supported by canal irrigation. In 2025, a ₹50 crore agro-processing unit was inaugurated, creating 1,000 jobs. The block's SC-dominated villages benefit from skill hubs teaching bamboo crafts. Historical ties to freedom struggles are preserved in local museums.</p>
+
+<h5>Sikti Block</h5>
+<p>With 192 sq km and ~280,000 residents, Sikti blends agriculture and small-scale industries like brick kilns. Sugarcane crushing supports 20 ghanis, while 2025's solar pump scheme irrigated 10,000 hectares. Border proximity aids informal trade, but smuggling controls have improved. Cultural festivals like Chhath see massive participation along riverbanks.</p>
+
+<h5>Palasi Block</h5>
+<p>Spanning 170 sq km with ~250,000 people, Palasi is a flood gateway via Kosi River. Resilient farming of flood-tolerant rice varieties yields high. 2025 saw a women's SHG federation empowering 2,000 members in sericulture. The block's forests harbor migratory birds, promoting birdwatching tourism.</p>
+
+<h5>Forbesganj Block</h5>
+<p>The commercial nerve at 218 sq km and ~480,000 population, Forbesganj is a Nepal gateway with rail links. Trade in electronics and textiles thrives, with 2025 exports hitting ₹300 crore. Urban growth includes malls; education via Forbesganj College serves 5,000 students. Gandhi Field hosts annual fairs.</p>
+
+<h5>Narpatganj Block</h5>
+<p>Covering 244 sq km and ~350,000 residents, Narpatganj focuses on jute and fisheries. The 2025 fish seed hatchery boosted production by 30%. Political hotbed with a Vidhan Sabha seat, it features robust anganwadi networks for nutrition.</p>
+
+<h5>Bhargama Block</h5>
+<p>The easternmost at 236 sq km with ~230,000 people, Bhargama's mango orchards export 5,000 tons yearly. 2025's drip irrigation covered 15,000 acres. Diverse communities celebrate syncretic festivals, with a new community hall fostering unity.</p>
+
+<h4>Local Culture and Traditions</h4>
+<p>Araria's culture is a mesmerizing fusion of Bihari, Bengali, and Surjapuri influences, reflecting its borderland ethos. Languages form the mosaic: Hindi as official, Urdu second, with vernaculars like Maithili, Bhojpuri, Bengali, Kulhaiya, Shekhra, Thethi, and Surjapuri spoken in homes. This linguistic diversity enriches folk literature, with oral epics recited during evenings.</p>
+<p>Festivals pulse with life. Chhath Puja, Bihar's most revered, unfolds over four days in October-November, with devotees offering arghya to the rising sun on riverbanks, fasting rigorously for prosperity. In 2025, over 1 million participated, with eco-friendly thelas reducing plastic. Durga Puja, with Bengali flair, features grand pandals in Forbesganj, blending idol craftsmanship and theatrical plays. Eid-ul-Fitr and Bakrid unite Muslim communities in feasts and prayers at Jama Masjid, promoting interfaith iftars.</p>
+<p>Holi's colors splash across villages, accompanied by Phagua songs and Holika bonfires symbolizing good over evil. Diwali illuminates homes with diyas and rangolis, while Ramnavami sees temple processions. Teej and Makar Sankranti add seasonal rhythms, with women in vibrant attire dancing Jhijhiya for rains.</p>
+<p>Traditions include Surjapuri folk dances like Jat-Jatin, mimicking agricultural cycles, and Domkach songs celebrating love. Handicrafts thrive: bamboo baskets from Palasi, terracotta from Raniganj, and Surma weaving. Cuisine delights with litti-chokha, fish curries, and thekua sweets during festivals. Heritage sites like Kali Mandir (six-story marvel) and Sultan Phokher (syncretic shrine) preserve this legacy, with 2025 restorations enhancing accessibility.</p>
+<p>Art forms include Madhubani painting variants and Qawwali sessions. Community Kabaddi tournaments and boat races on Kosi foster bonds. In essence, Araria's culture is a living archive, resilient against modernization, with youth-led digital preservations via apps documenting dialects.</p>
+
+<h4>Tourist Attractions</h4>
+<p>Araria's attractions blend nature, spirituality, and history, drawing 50,000 visitors in 2025. Here's a curated list:</p>
+<ol>
+<li><strong>Kusiargaon Biodiversity Park</strong>: Bihar's inaugural biodiversity haven (2023), spanning 50 hectares with 200+ plant species, trails, and research centers. Ideal for birdwatching (migratory species) and eco-education. Location: Kusiargaon village, 20 km from Araria town. <a href="https://www.google.com/maps/search/?api=1&query=Kusiargaon+Biodiversity+Park+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Raniganj Vriksh Vatika</strong>: A 30-hectare botanical garden with rare trees, lakes, and picnic spots, promoting conservation. Hosts annual flower shows. Location: Raniganj block, 30 km west of Araria. <a href="https://www.google.com/maps/search/?api=1&query=Raniganj+Vriksh+Vatika+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Maa Khargeshwari Kali Temple</strong>: Ancient shrine with intricate carvings, site of grand Kali Puja. Believed to grant wishes. Location: Araria town outskirts. <a href="https://www.google.com/maps/search/?api=1&query=Maa+Khargeshwari+Kali+Temple+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Sundar Nath Dham</strong>: Serene Shiva temple amid groves, known for Shivratri fairs and yogic retreats. Location: Sundernath village, Sikti block. <a href="https://www.google.com/maps/search/?api=1&query=Sundar+Nath+Dham+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Lions Park</strong>: Family-friendly green space with boating, zoo, and playgrounds. Evening lights add charm. Location: Araria town. <a href="https://www.google.com/maps/search/?api=1&query=Lions+Park+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Gandhi Field Forbesganj</strong>: Historic park commemorating Mahatma Gandhi's visits, with statues and annual peace marches. Location: Forbesganj. <a href="https://www.google.com/maps/search/?api=1&query=Gandhi+Field+Forbesganj+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Replica Stoop</strong>: Colonial-era monument evoking British architecture, near scenic routes. Location: Manikpur, 15 km from Araria. <a href="https://www.google.com/maps/search/?api=1&query=Replica+Stoop+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Sultan Phokher</strong>: Syncretic shrine revered by Hindus and Muslims, site of urs fairs. Location: Forbesganj. <a href="https://www.google.com/maps/search/?api=1&query=Sultan+Phokher+Forbesganj+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Thakurbari Shiva Mandir</strong>: Central city temple with ancient lingam, focal for Mahashivratri. Location: Araria town. <a href="https://www.google.com/maps/search/?api=1&query=Thakurbari+Shiva+Mandir+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+<li><strong>Jama Masjid</strong>: Grand mosque with minarets, hub for Eid prayers. Location: Araria town. <a href="https://www.google.com/maps/search/?api=1&query=Jama+Masjid+Araria+Bihar" target="_blank">View on Google Maps</a></li>
+</ol>
+<p>These sites, enhanced by 2025's tourism circuit under Bihar Tourism, offer immersive experiences. For more, visit <a href="https://araria.nic.in/tourist-places/" target="_blank">Official Tourism Page</a>.</p>
+
+<div class="tehsil-links">
+<strong>Tehsils:</strong>
+<a href="#araria-block">Araria</a>
+<a href="#jokihat-block">Jokihat</a>
+<a href="#kursakanta-block">Kursakanta</a>
+<a href="#raniganj-block">Raniganj</a>
+<a href="#sikti-block">Sikti</a>
+<a href="#palasi-block">Palasi</a>
+<a href="#forbesganj-block">Forbesganj</a>
+<a href="#narpatganj-block">Narpatganj</a>
+<a href="#bhargama-block">Bhargama</a>
+</div>
+</div>
+
+<!-- Articles Container (Hardcoded 20 articles) -->
+<div id="articles-container" class="articles-grid">
+<article class="article-card visible" id="article1">
+    <h2><a href="#">Flood Relief Distribution Reaches 10,000 Families in Raniganj Block</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 28, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Raniganj, Araria</span>
+    </div>
+    <p>Local NGOs and district administration collaborated to distribute essential supplies amid post-monsoon recovery efforts, focusing on vulnerable households.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article2">
+    <h2><a href="#">New Solar Power Initiative Lights Up 500 Villages in Forbesganj</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 25, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Forbesganj, Araria</span>
+    </div>
+    <p>Under the PM Surya Ghar scheme, 50 MW of solar panels were installed, reducing reliance on erratic grids and empowering rural entrepreneurship.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article3">
+    <h2><a href="#">Chhath Puja Preparations Underway with Eco-Friendly Measures</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 22, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Araria Town</span>
+    </div>
+    <p>Authorities promote bamboo thelas and river cleanups to ensure a sustainable celebration for over a million devotees.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article4">
+    <h2><a href="#">Indo-Nepal Trade Fair Boosts Local Economy in Jokihat</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 20, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Jokihat, Araria</span>
+    </div>
+    <p>Stalls showcasing jute products and handicrafts generated ₹2 crore in sales, strengthening bilateral ties.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article5">
+    <h2><a href="#">Women's SHG Empowers 1,000 in Palasi with Sericulture Training</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 18, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Palasi, Araria</span>
+    </div>
+    <p>Self-help groups report 30% income rise through silk production, highlighting gender-inclusive development.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article6">
+    <h2><a href="#">Biodiversity Park in Kusiargaon Attracts 10,000 Visitors This Year</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 15, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Kusiargaon, Araria</span>
+    </div>
+    <p>New trails and research labs position the park as a green tourism hotspot.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article7">
+    <h2><a href="#">Liquor Seizure Operation Nets 700 Liters in Narpatganj</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 12, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Narpatganj, Araria</span>
+    </div>
+    <p>Police crackdown enforces dry state laws, with proceeds funding community welfare.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article8">
+    <h2><a href="#">New Bridge Over Kosi River Connects Bhargama Villages</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 10, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Bhargama, Araria</span>
+    </div>
+    <p>₹3 crore infrastructure project reduces travel time by 2 hours, boosting market access.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article9">
+    <h2><a href="#">Skill Development Center Opens in Sikti for Youth</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 8, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Sikti, Araria</span>
+    </div>
+    <p>Training in IT and trades targets 2,000 trainees, curbing migration.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card visible" id="article10">
+    <h2><a href="#">Organic Farming Drive Yields Record Harvest in Kursakanta</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 5, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Kursakanta, Araria</span>
+    </div>
+    <p>500 farmers certified, fetching 20% premium prices for chemical-free produce.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article11">
+    <h2><a href="#">Cultural Heritage Workshop Preserves Surjapuri Folk Arts</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> September 2, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Araria Town</span>
+    </div>
+    <p>Artists train youth in traditional dances, ensuring generational continuity.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article12">
+    <h2><a href="#">Health Camp Serves 5,000 in Remote Forbesganj Hamlets</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 30, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Forbesganj, Araria</span>
+    </div>
+    <p>Free checkups and vaccinations under Ayushman Bharat enhance rural healthcare.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article13">
+    <h2><a href="#">Mango Festival Celebrates Bhargama's Golden Harvest</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 28, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Bhargama, Araria</span>
+    </div>
+    <p>Varieties showcased, with exports to Nepal surging 25%.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article14">
+    <h2><a href="#">Digital Literacy Drive Reaches 3,000 Seniors in Jokihat</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 25, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Jokihat, Araria</span>
+    </div>
+    <p>Workshops on UPI and apps bridge the digital divide.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article15">
+    <h2><a href="#">Fish Farming Cooperatives Thrive in Narpatganj</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 22, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Narpatganj, Araria</span>
+    </div>
+    <p>New hatchery doubles output, supporting 500 families.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article16">
+    <h2><a href="#">Youth Parliament Simulates Democracy in Raniganj Schools</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 20, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Raniganj, Araria</span>
+    </div>
+    <p>Event fosters civic engagement among 1,000 students.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article17">
+    <h2><a href="#">Border Security Enhancements in Sikti Block</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 18, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Sikti, Araria</span>
+    </div>
+    <p>New checkposts curb smuggling while facilitating trade.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article18">
+    <h2><a href="#">Tree Plantation Drive Greener Palasi</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 15, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Palasi, Araria</span>
+    </div>
+    <p>50,000 saplings planted to combat erosion.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article19">
+    <h2><a href="#">Artisan Fair Showcases Kursakanta Crafts</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 12, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> Kursakanta, Araria</span>
+    </div>
+    <p>Bamboo and jute items attract buyers from Nepal.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+<article class="article-card" id="article20">
+    <h2><a href="#">Nutrition Month Campaign Targets Malnutrition in Araria</a></h2>
+    <div class="meta">
+        <span><i class="fas fa-calendar-alt"></i> August 10, 2025</span>
+        <span><i class="fas fa-map-marker-alt"></i> District-wide</span>
+    </div>
+    <p>Poshan Abhiyaan reaches 20,000 children with fortified foods.</p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+</article>
+</div>
+
+<!-- Load More -->
+<div class="load-more">
+    <button id="loadMoreBtn">Load More</button>
+</div>
+</main>
+
+<!-- Categories Section -->
+<section class="categories">
+<div class="container">
+<h2 class="section-title">Browse by Categories</h2>
+<p class="section-subtitle">Access articles and insights across various themes.</p>
+<div class="categories-container" role="navigation" aria-label="Category Navigation">
+    <a href="national.html" class="category-pill"><i class="fas fa-flag"></i> National</a>
+    <a href="district.html" class="category-pill"><i class="fas fa-map-marked"></i> District</a>
+    <a href="history.html" class="category-pill"><i class="fas fa-history"></i> History</a>
+    <a href="culture.html" class="category-pill"><i class="fas fa-palette"></i> Culture</a>
+    <a href="market.html" class="category-pill"><i class="fas fa-chart-bar"></i> Market</a>
+    <a href="media.html" class="category-pill"><i class="fas fa-film"></i> Media</a>
+    <a href="local.html" class="category-pill"><i class="fas fa-users"></i> Local</a>
+    <a href="news.html" class="category-pill"><i class="fas fa-newspaper"></i> News</a>
+    <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line"></i> Analysis</a>
+</div>
+</div>
+</section>
+
+<!-- Donation Section -->
+<section class="donation-section">
+<div class="container">
+<div class="donation-content">
+    <div class="donation-icon">
+        <i class="fas fa-hands-helping"></i>
+    </div>
+    <h2>Support Bolidesh Foundation</h2>
+    <p>Your contributions help us cover and preserve stories at the district and community level across India.</p>
+    <div class="donation-buttons">
+        <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate"></i> Donate Now</a>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="footer-container">
+    <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="news.html"><i class="fas fa-chevron-right"></i> News</a></li>
+            <li><a href="analysis.html"><i class="fas fa-chevron-right"></i> Analysis</a></li>
+            <li><a href="national.html"><i class="fas fa-chevron-right"></i> National</a></li>
+            <li><a href="district.html"><i class="fas fa-chevron-right"></i> District</a></li>
+            <li><a href="history.html"><i class="fas fa-chevron-right"></i> History</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-column">
+        <h3>More Categories</h3>
+        <ul class="footer-links">
+            <li><a href="culture.html"><i class="fas fa-chevron-right"></i> Culture</a></li>
+            <li><a href="market.html"><i class="fas fa-chevron-right"></i> Market</a></li>
+            <li><a href="media.html"><i class="fas fa-chevron-right"></i> Media</a></li>
+            <li><a href="local.html"><i class="fas fa-chevron-right"></i> Local</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-column">
+        <h3>Legal Links</h3>
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="terms-of-service.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+            <li><a href="disclaimer.html"><i class="fas fa-chevron-right"></i> Disclaimer</a></li>
+            <li><a href="accessibility.html"><i class="fas fa-chevron-right"></i> Accessibility</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-column">
+        <h3>Contact Us</h3>
+        <div class="footer-contact">
+            <p><i class="fas fa-envelope"></i> info@bolidesh.in</p>
+            <p><i class="fas fa-phone"></i> +91 9555754494</p>
         </div>
-        
-        <div class="sub-footer">
-            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
-        </div>
-    </footer>
+    </div>
+    
+    <div class="footer-column">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter for local updates, district news, and community insights.</p>
+        <form class="newsletter-form" aria-label="Newsletter Subscription">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<div class="sub-footer">
+    <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
+</div>
+</footer>
+
+<script>
+// Load More JS for articles (10 at a time)
+let visibleArticles = 10;
+const totalArticles = 20;
+const articles = document.querySelectorAll('#articles-container .article-card');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+function showArticles() {
+    articles.forEach((article, index) => {
+        if (index < visibleArticles) {
+            article.classList.add('visible');
+        }
+    });
+    if (visibleArticles >= totalArticles) {
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.textContent = 'All Articles Loaded';
+    }
+}
+
+loadMoreBtn.addEventListener('click', () => {
+    visibleArticles += 10;
+    showArticles();
+});
+
+// Initialize
+showArticles();
+</script>
+
 </body>
 </html>

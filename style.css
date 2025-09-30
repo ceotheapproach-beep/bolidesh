@@ -26,7 +26,7 @@ body {
     color: var(--text-dark);
     line-height: 1.9;
     overflow-x: hidden;
-    font-size: 1.1rem; /* Larger base font */
+    font-size: 1.1rem;
 }
 
 a {
@@ -42,11 +42,9 @@ a:hover {
 /* Header Styles */
 header {
     background: linear-gradient(135deg, var(--accent) 70%, var(--light-bg) 100%);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     box-shadow: var(--shadow);
     border-bottom: 1px solid var(--light-border);
+    /* Removed position: sticky to make header non-sticky */
 }
 
 .header-container {
@@ -54,7 +52,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 25px 5%;
-    max-width: 1500px; /* Wider for modern screens */
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -80,7 +78,7 @@ header {
 
 .logo-text {
     font-weight: 800;
-    font-size: 2.2rem; /* Bolder and larger */
+    font-size: 2.2rem;
     color: var(--primary);
     letter-spacing: -0.8px;
 }
@@ -111,7 +109,7 @@ nav ul {
     display: flex;
     list-style: none;
     padding: 0 5%;
-    gap: 10px; /* Larger gap for touch */
+    gap: 10px;
 }
 
 nav li {
@@ -120,7 +118,7 @@ nav li {
 
 nav a {
     color: var(--text-dark);
-    font-weight: 700; /* Bolder */
+    font-weight: 700;
     padding: 12px 24px;
     border-radius: 50px;
     display: block;
@@ -149,7 +147,7 @@ nav a::after {
 }
 
 nav a:hover::after, nav a.active::after {
-    width: 80%; /* Wider underline */
+    width: 80%;
 }
 
 /* Hero Section */
@@ -162,7 +160,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .hero h1 {
-    font-size: 4rem; /* Larger for impact */
+    font-size: 4rem;
     margin-bottom: 60px;
     color: var(--secondary);
     text-align: center;
@@ -186,7 +184,7 @@ nav a:hover::after, nav a.active::after {
 
 .hero-subtitle {
     text-align: center;
-    font-size: 1.4rem; /* Larger for readability */
+    font-size: 1.4rem;
     color: var(--text-light);
     max-width: 900px;
     margin: 0 auto 60px;
@@ -196,7 +194,7 @@ nav a:hover::after, nav a.active::after {
 .featured-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px; /* More spacious */
+    gap: 40px;
     margin-bottom: 80px;
 }
 
@@ -235,7 +233,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .featured-article h2 {
-    font-size: 2.5rem; /* Larger for readability */
+    font-size: 2.5rem;
     margin-bottom: 25px;
     color: var(--secondary);
     font-weight: 800;
@@ -243,7 +241,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .main-feature h2 {
-    font-size: 3rem; /* Even larger for main feature */
+    font-size: 3rem;
 }
 
 .meta {
@@ -272,7 +270,7 @@ nav a:hover::after, nav a.active::after {
     color: var(--text-dark);
     margin-bottom: 30px;
     flex-grow: 1;
-    font-size: 1.2rem; /* Larger for readability */
+    font-size: 1.2rem;
     line-height: 1.9;
 }
 
@@ -296,7 +294,7 @@ nav a:hover::after, nav a.active::after {
 
 /* Latest Articles */
 .section-title {
-    font-size: 2.8rem; /* Larger for prominence */
+    font-size: 2.8rem;
     margin: 100px 0 50px;
     color: var(--secondary);
     padding-bottom: 25px;
@@ -365,7 +363,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .article-card h3 {
-    font-size: 1.8rem; /* Larger for readability */
+    font-size: 1.8rem;
     margin-bottom: 25px;
     color: var(--secondary);
     font-weight: 800;
@@ -376,8 +374,11 @@ nav a:hover::after, nav a.active::after {
     color: var(--text-dark);
     margin-bottom: 30px;
     flex-grow: 1;
-    font-size: 1.2rem; /* Larger for readability */
+    font-size: 1.2rem;
     line-height: 1.9;
+    max-height: 5.7rem; /* 3 lines at 1.9 line-height */
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.4, 1);
 }
 
 /* Categories Section */
@@ -392,7 +393,7 @@ nav a:hover::after, nav a.active::after {
     display: flex;
     overflow-x: auto;
     padding: 25px 0;
-    gap: 25px; /* Larger for touch */
+    gap: 25px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -673,7 +674,7 @@ footer {
 }
 
 .footer-links a {
-    color: #E5E5E5; /* Whiter for contrast */
+    color: #E5E5E5;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -771,51 +772,40 @@ footer {
     padding: 12px;
 }
 
-/* Utility Classes */
-.container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 5%;
+/* Scroll-to-Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 100px;
+    right: 35px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--accent);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-hover);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
 }
 
-.text-center {
-    text-align: center;
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.mb-20 {
-    margin-bottom: 20px;
+.scroll-top:hover {
+    transform: scale(1.1);
 }
 
-.mt-40 {
-    margin-top: 40px;
-}
-
-/* Media Queries for Full Mobile Responsiveness */
-@media (max-width: 1200px) {
-    .featured-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-}
-
+/* Enhance Mobile Navigation Animation */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
@@ -827,14 +817,13 @@ footer {
         width: 100%;
         background-color: var(--accent);
         padding: 25px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.4, 1);
     }
 
     nav ul.active {
         display: flex;
+        transform: translateY(0);
     }
 
     nav a {

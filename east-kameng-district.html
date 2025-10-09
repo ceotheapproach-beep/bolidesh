@@ -1,268 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Latest news, initiatives, and community updates from Anjaw district, Arunachal Pradesh by Bolidesh Foundation.">
-    <meta name="keywords" content="Anjaw district, Arunachal Pradesh news, local initiatives, community updates, bolidesh.in">
-    <meta name="author" content="Bolidesh Foundation">
-    <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore news, development, and cultural insights from East Kameng district, Arunachal Pradesh. Discover its geography, history, demography, economy, and tourist destinations with Bolidesh Foundation.">
+<meta name="keywords" content="East Kameng district, Arunachal Pradesh news, East Kameng tourism, Seppa, East Kameng development, bolidesh.in">
+<meta name="author" content="Bolidesh Foundation">
+<meta name="robots" content="index, follow">
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Bolidesh Foundation | East Kameng District News">
+<meta property="og:description" content="Latest updates, development projects, and cultural insights from East Kameng district, Arunachal Pradesh.">
+<meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
+<meta property="og:url" content="https://bolidesh.in/east-kameng-district.html">
+<meta property="og:type" content="website">
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bolidesh Foundation | East Kameng District News">
+<meta name="twitter:description" content="Stay informed about East Kameng district, Arunachal Pradesh with news, updates, and community stories.">
+<meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
+<title>Bolidesh Foundation | East Kameng District News & Archive</title>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+<style>
+/* Scrollable district intro */
+.district-intro {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+}
+.district-intro h3 { margin-bottom: 10px; }
+.tehsil-links a { display:inline-block; margin-right:10px; margin-bottom:5px; color:#007BFF; text-decoration:none; font-weight:500; }
+.tehsil-links a:hover { text-decoration:underline; }
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Bolidesh Foundation | Anjaw District News">
-    <meta property="og:description" content="Stay informed about local news, development projects, cultural events, and community initiatives in Anjaw district, Arunachal Pradesh.">
-    <meta property="og:image" content="https://bolidesh.in/images/logo.jpg">
-    <meta property="og:url" content="https://bolidesh.in/anjaw-district.html">
-    <meta property="og:type" content="website">
+/* Floating social buttons */
+.floating-social {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+.floating-social a {
+    color: #fff;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+.floating-social a.whatsapp { background: #25D366; }
+.floating-social a.facebook { background: #1877F2; }
+.floating-social a.instagram { background: #E4405F; }
+.floating-social a:hover { transform: scale(1.1); }
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bolidesh Foundation | Anjaw District News">
-    <meta name="twitter:description" content="Stay informed about local news, development projects, cultural events, and community initiatives in Anjaw district, Arunachal Pradesh.">
-    <meta name="twitter:image" content="https://bolidesh.in/images/logo.jpg">
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+.pagination button {
+    padding: 8px 16px;
+    border: 1px solid #007BFF;
+    background: #fff;
+    color: #007BFF;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.pagination button:hover { background: #007BFF; color:#fff; }
+.pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    <title>Bolidesh Foundation | Anjaw District</title>
-
-    <!-- Google Fonts for "Inter" -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="style.css">
-
+/* Articles */
+.articles-grid { display:flex; flex-direction:column; gap:20px; }
+.article-card { border:1px solid #ddd; padding:15px; border-radius:6px; background:#fff; }
+.article-card h2 a { color:#007BFF; text-decoration:none; }
+.article-card h2 a:hover { text-decoration:underline; }
+.meta { font-size:0.9rem; color:#555; margin:5px 0; display:flex; gap:15px; }
+.read-more { display:inline-block; margin-top:10px; color:#007BFF; font-weight:500; text-decoration:none; }
+.read-more:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
-                <div>
-                    <div class="logo-text">Bolidesh Foundation</div>
-                    <div class="logo-subtitle">Preserving Cultural Heritage</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="archives.html"><i class="fas fa-archive" aria-hidden="true"></i> Archives</a></li>
-                    <li><a href="news.html"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-flag" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-history" aria-hidden="true"></i> History</a></li>
-                    <li><a href="culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-film" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-users" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Floating Social Buttons -->
+<div class="floating-social">
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/bolideshfoundation" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/bolideshfoundation" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</div>
 
-    <!-- District News Section -->
-    <main class="container" role="main">
-        <h1 class="section-title">Anjaw District News & Updates</h1>
-        <p class="section-subtitle">Latest coverage of initiatives, local development projects, and community stories from Anjaw district, Arunachal Pradesh.</p>
-        
-        <div id="articles-container" class="articles-grid">
-            <!-- Articles hardcoded in HTML, sorted by date (newest first) -->
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250925.html">New Eco-Tourism Project Launched in Anjaw</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 25, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>The Bolidesh Foundation supports a new eco-tourism initiative aimed at promoting sustainable travel and preserving local biodiversity in the remote hills of Anjaw.</p>
-                <a href="article-anjaw-20250925.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250920.html">Community Health Camp Organized in Remote Villages</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 20, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Free medical check-ups and awareness programs on health and hygiene were conducted in partnership with local authorities, benefiting over 500 residents.</p>
-                <a href="article-anjaw-20250920.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250915.html">Cultural Festival Celebrates Mishmi Heritage</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 15, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>The annual festival showcased traditional dances, crafts, and stories of the Mishmi tribe, drawing visitors from across the state.</p>
-                <a href="article-anjaw-20250915.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250910.html">Road Infrastructure Upgrades Announced</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 10, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Government plans to improve connectivity with new roads linking remote areas, expected to boost local economy and access to services.</p>
-                <a href="article-anjaw-20250910.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250905.html">Education Drive for Tribal Children</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> September 5, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Bolidesh Foundation launches scholarships and learning centers to enhance education opportunities for children in underserved communities.</p>
-                <a href="article-anjaw-20250905.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250830.html">Biodiversity Conservation Workshop Held</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 30, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Experts and locals discuss strategies to protect the unique flora and fauna of the region amid climate change challenges.</p>
-                <a href="article-anjaw-20250830.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250825.html">Agricultural Training Program for Farmers</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 25, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Modern farming techniques and sustainable practices taught to local farmers to improve yields and income.</p>
-                <a href="article-anjaw-20250825.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
-            
-            <article class="article-card">
-                <h2><a href="article-anjaw-20250820.html">Youth Empowerment Initiative Launched</a></h2>
-                <div class="meta">
-                    <span><i class="fas fa-calendar-alt"></i> August 20, 2025</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Anjaw, Arunachal Pradesh</span>
-                </div>
-                <p>Skill development workshops aimed at empowering young people with vocational training and entrepreneurship opportunities.</p>
-                <a href="article-anjaw-20250820.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-            </article>
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.jpg" alt="Bolidesh Foundation Logo - Preserving Cultural Heritage" loading="lazy">
+            <div>
+                <div class="logo-text">Bolidesh Foundation</div>
+                <div class="logo-subtitle">Preserving Cultural Heritage</div>
+            </div>
         </div>
-    </main>
+    </div>
+    <div class="nav-container" role="navigation" aria-label="Main Navigation">
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="archives.html"><i class="fas fa-archive"></i> Archives</a></li>
+                <li><a href="news.html"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="analysis.html"><i class="fas fa-chart-line"></i> Analysis</a></li>
+                <li><a href="national.html"><i class="fas fa-flag"></i> National</a></li>
+                <li><a href="district.html"><i class="fas fa-map-marked"></i> District</a></li>
+                <li><a href="history.html"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="culture.html"><i class="fas fa-palette"></i> Culture</a></li>
+                <li><a href="market.html"><i class="fas fa-chart-bar"></i> Market</a></li>
+                <li><a href="media.html"><i class="fas fa-film"></i> Media</a></li>
+                <li><a href="local.html"><i class="fas fa-users"></i> Local</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="section-title">Browse by Categories</h2>
-            <p class="section-subtitle">Access articles and insights across various themes.</p>
-            
-            <div class="categories-container" role="navigation" aria-label="Category Navigation">
-                <a href="national.html" class="category-pill"><i class="fas fa-flag" aria-hidden="true"></i> National</a>
-                <a href="district.html" class="category-pill"><i class="fas fa-map-marked" aria-hidden="true"></i> District</a>
-                <a href="history.html" class="category-pill"><i class="fas fa-history" aria-hidden="true"></i> History</a>
-                <a href="culture.html" class="category-pill"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a>
-                <a href="market.html" class="category-pill"><i class="fas fa-chart-bar" aria-hidden="true"></i> Market</a>
-                <a href="media.html" class="category-pill"><i class="fas fa-film" aria-hidden="true"></i> Media</a>
-                <a href="local.html" class="category-pill"><i class="fas fa-users" aria-hidden="true"></i> Local</a>
-                <a href="news.html" class="category-pill"><i class="fas fa-newspaper" aria-hidden="true"></i> News</a>
-                <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line" aria-hidden="true"></i> Analysis</a>
-            </div>
-        </div>
-    </section>
+<!-- East Kameng District Section -->
+<main class="container" role="main">
+    <h1 class="section-title">East Kameng District News & Updates</h1>
+    <p class="section-subtitle">Explore the geography, heritage, and development updates from East Kameng District, Arunachal Pradesh.</p>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" aria-label="Join our WhatsApp Channel">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
+    <div class="district-intro">
+        <h3>About East Kameng District</h3>
+        <p><strong>East Kameng District</strong>, located in western Arunachal Pradesh, is a mountainous and culturally vibrant region bounded by West Kameng in the west, Papum Pare in the east, and Assam in the south. Its headquarters is at <strong>Seppa</strong>, a picturesque valley on the banks of the Kameng River. The district forms an integral part of the Eastern Himalayas, showcasing a breathtaking mix of rugged terrain, tropical forests, and alpine highlands.</p>
 
-    <!-- Donation Section -->
-    <section class="donation-section">
-        <div class="container">
-            <div class="donation-content">
-                <div class="donation-icon">
-                    <i class="fas fa-hands-helping" aria-hidden="true"></i>
-                </div>
-                <h2>Support Bolidesh Foundation</h2>
-                <p>Your contributions help us cover and preserve stories at the district and community level across India.</p>
-                <div class="donation-buttons">
-                    <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate" aria-hidden="true"></i> Donate Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <h4>Historical Background</h4>
+        <p>Historically, East Kameng was part of the larger Kameng Frontier Division during British administration. Post-Independence, the region saw gradual administrative restructuring and became a separate district in 1980. The area is home to the <strong>Nyishi</strong>, <strong>Aka (Hrusso)</strong>, and <strong>Puroik</strong> tribes, each with distinct oral traditions, folk dances, and intricate socio-cultural systems. Despite limited written records, local legends and customary chronicles offer rich narratives about migration, clan lineage, and spiritual geography.</p>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="news.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> News</a></li>
-                    <li><a href="analysis.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Analysis</a></li>
-                    <li><a href="national.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> National</a></li>
-                    <li><a href="district.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> District</a></li>
-                    <li><a href="history.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> History</a></li>
-                </ul>
+        <h4>Geography & Climate</h4>
+        <p>The district stretches across approximately <strong>4,134 sq. km</strong> of mountainous terrain, rising from the lowlands near Assam’s border to snow-clad peaks above 3,000 meters. The <strong>Kameng River</strong> flows through its heart, providing fertile valleys for shifting and terrace cultivation. The region experiences a subtropical to alpine climate, with heavy monsoon rainfall and a cool, misty winter. Its forests support diverse flora and fauna, including orchids, hornbills, and clouded leopards.</p>
+
+        <h4>Demographics</h4>
+        <p>As per the 2011 Census, East Kameng has a population of around <strong>78,000</strong>, with literacy rates steadily improving due to government and NGO interventions. The tribal population practices animism intertwined with modern Christianity, and village councils known as <strong>“Nyele”</strong> or <strong>“Buliang”</strong> still play key roles in local governance. Nyishi is the dominant language, while Hindi and English serve as lingua francas.</p>
+
+        <h4>Economy & Development</h4>
+        <p>The economy is largely agrarian, relying on rice, maize, millet, and horticultural crops like oranges, ginger, and cardamom. Handicrafts, bamboo works, and traditional textiles form part of the cottage sector. Ongoing infrastructure projects—roads under PMGSY, hydropower development on Kameng River, and digital connectivity programs—are reshaping accessibility. Eco-tourism and organic farming are emerging as sustainable avenues for growth.</p>
+
+        <h4>Tehsils and Administrative Units</h4>
+        <div class="tehsil-links">
+            <strong>Administrative Circles:</strong>
+            <a href="#">Seppa</a>
+            <a href="#">Chayang Tajo</a>
+            <a href="#">Pakke-Kessang</a>
+            <a href="#">Pipu</a>
+            <a href="#">Bameng</a>
+            <a href="#">Lada</a>
+            <a href="#">Richukrong</a>
+            <a href="#">Sawa</a>
+        </div>
+
+        <h4>Tourist Attractions</h4>
+        <ul>
+            <li><strong>Pakke Wildlife Sanctuary</strong> – Known for hornbills and dense evergreen forests.</li>
+            <li><strong>Seppa Valley</strong> – Scenic landscapes along Kameng River with tribal markets and cultural hubs.</li>
+            <li><strong>Bameng Ridge</strong> – High-altitude village offering trekking and panoramic views.</li>
+            <li><strong>Chayang Tajo</strong> – One of the oldest administrative centers, rich in folklore.</li>
+            <li><strong>Lada</strong> – Surrounded by subtropical forests, ideal for birdwatching and nature walks.</li>
+        </ul>
+    </div>
+
+    <!-- Articles -->
+    <div id="articles-container" class="articles-grid">
+        <article class="article-card">
+            <h2><a href="#">No News Available</a></h2>
+            <div class="meta">
+                <span><i class="fas fa-calendar-alt"></i> September 26, 2025</span>
+                <span><i class="fas fa-map-marker-alt"></i> East Kameng, Arunachal Pradesh</span>
             </div>
-            
-            <div class="footer-column">
-                <h3>More Categories</h3>
-                <ul class="footer-links">
-                    <li><a href="culture.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Culture</a></li>
-                    <li><a href="market.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Market</a></li>
-                    <li><a href="media.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Media</a></li>
-                    <li><a href="local.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Local</a></li>
-                    <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                    <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
-                </ul>
+            <p>Currently there are no news articles available for East Kameng district. Please check back later for verified updates and reports.</p>
+            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </article>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prevBtn" disabled>Previous</button>
+        <button id="nextBtn" disabled>Next</button>
+    </div>
+</main>
+
+<!-- Categories Section -->
+<section class="categories">
+    <div class="container">
+        <h2 class="section-title">Browse by Categories</h2>
+        <p class="section-subtitle">Access articles and insights across various themes.</p>
+        <div class="categories-container" role="navigation" aria-label="Category Navigation">
+            <a href="national.html" class="category-pill"><i class="fas fa-flag"></i> National</a>
+            <a href="district.html" class="category-pill"><i class="fas fa-map-marked"></i> District</a>
+            <a href="history.html" class="category-pill"><i class="fas fa-history"></i> History</a>
+            <a href="culture.html" class="category-pill"><i class="fas fa-palette"></i> Culture</a>
+            <a href="market.html" class="category-pill"><i class="fas fa-chart-bar"></i> Market</a>
+            <a href="media.html" class="category-pill"><i class="fas fa-film"></i> Media</a>
+            <a href="local.html" class="category-pill"><i class="fas fa-users"></i> Local</a>
+            <a href="news.html" class="category-pill"><i class="fas fa-newspaper"></i> News</a>
+            <a href="analysis.html" class="category-pill"><i class="fas fa-chart-line"></i> Analysis</a>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Section -->
+<section class="donation-section">
+    <div class="container">
+        <div class="donation-content">
+            <div class="donation-icon">
+                <i class="fas fa-hands-helping"></i>
             </div>
-            
-            <div class="footer-column">
-                <h3>Legal Links</h3>
-                <ul class="footer-links">
-                    <li><a href="privacy-policy.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Terms of Service</a></li>
-                    <li><a href="disclaimer.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Disclaimer</a></li>
-                    <li><a href="accessibility.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Accessibility</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@bolidesh.in</p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> +91 9555754494</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://wa.me/1234567890" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    <a href="https://facebook.com/bolideshfoundation" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/bolidesh" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/bolideshfoundation" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for local updates, district news, and community insights.</p>
-                <form class="newsletter-form" aria-label="Newsletter Subscription">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Email address">
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
+            <h2>Support Bolidesh Foundation</h2>
+            <p>Your contributions help us cover and preserve stories at the district and community level across India.</p>
+            <div class="donation-buttons">
+                <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate"></i> Donate Now</a>
             </div>
         </div>
-        
-        <div class="sub-footer">
-            <p>© 2025 Bolidesh Foundation | All rights reserved | Dedicated to preserving cultural heritage | bolidesh.in</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="news.html"><i class="fas fa-chevron-right"></i> News</a></li>
+                <li><a href="analysis.html"><i class="fas fa-chevron-right"></i> Analysis</a></li>
+                <li><a href="national.html"><i class="fas fa-chevron-right"></i> National</a></li>
+                <li><a href="district.html"><i class="fas fa-chevron-right"></i> District</a></li>
+                <li><a href="history.html"><i class="fas fa-chevron-right"></i> History</a></li>
+            </ul>
         </div>
-    </footer>
-</body>
-</html>
+        <div class="footer-column">
+            <h3>More Categories</h3>
+            <ul class="footer-links">
+                <li><a href="culture.html"><i class="fas fa-chevron-right"></i> Culture</a></li>
+                <li><a href="market.html"><i class="fas fa-chevron-right"></i> Market</a></li>
+                <li><a href="media.html"><i class="fas fa-chevron-right"></i> Media</a></li>
+                <li><a href="local.html"><i class="fas fa-chevron-right"></i> Local</a></li>
+                <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Legal Links</h3>
+            <ul class="footer-links">
+                <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                <li><a href="terms-of-service.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                <li><a href="disclaimer.html"><i class="fas fa-chevron-right"></i> Disclaimer</a></li>
+                <li><a href="accessibility.html"><i class="fas fa-chevron-right"></i> Accessibility</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <div class="footer-contact">
+                <p><i class="fas fa-envelope"></i> info@bolidesh.in</p>
+                <p><i class="fas fa-phone"></i> +91 9555754494</p>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for local updates, district news, and community insights.</p>
+            <form class="newsletter-form" aria-label="Newsletter Subscription">
+                <input type="email" class="newsletter-input
